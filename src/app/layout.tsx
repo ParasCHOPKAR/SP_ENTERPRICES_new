@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   creator: "S. P. Enterprises",
 };
 
+import FloatingActions from "@/components/FloatingActions";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <FloatingActions />
+      </body>
     </html>
   );
 }
