@@ -16,7 +16,13 @@ import {
   Download,
   Building2,
   ArrowRight,
-  MessageSquare
+  MessageSquare,
+  Home,
+  ChevronRight,
+  Headphones,
+  Users,
+  Shield,
+  FileText
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -59,37 +65,94 @@ function ContactContent() {
       <Header />
 
       {/* Page Hero Banner */}
-      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)", padding: "4.5rem 0", color: "white" }}>
-        <div className="container">
-          <div style={{ maxWidth: "800px" }}>
-            <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#93c5fd", borderColor: "rgba(255,255,255,0.25)" }}>
-              <Mail size={14} /> GET IN TOUCH
+      <section 
+        className="page-hero-banner" 
+        style={{ 
+          backgroundImage: "linear-gradient(to right, rgba(2, 6, 23, 0.85) 0%, rgba(2, 6, 23, 0.6) 45%, rgba(2, 6, 23, 0) 100%), url('/contact/contact_hero_01.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          aspectRatio: "16/4",
+          display: "flex",
+          alignItems: "center",
+          color: "white" 
+        }}
+      >
+        <div className="container" style={{ width: "100%" }}>
+          <div style={{ maxWidth: "600px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", color: "#e2e8f0", marginBottom: "1.5rem" }}>
+              <Home size={16} />
+              <Link href="/" style={{ color: "inherit", textDecoration: "none" }}>Home</Link>
+              <ChevronRight size={14} />
+              <span>Contact Us</span>
             </div>
-            <h1 style={{ fontSize: "3rem", fontWeight: 800, lineHeight: 1.15, marginBottom: "1.2rem" }}>
-              Contact Our Team &amp; <span style={{ color: "#60a5fa" }}>Request a Quote</span>
+            
+            <h1 style={{ fontSize: "3.5rem", fontWeight: 800, lineHeight: 1.1, marginBottom: "1rem" }}>
+              Let's Start a<br/>
+              <span style={{ color: "#93c5fd" }}>Conversation</span>
             </h1>
-            <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.6 }}>
-              Connect directly with <strong>Mr. Pradeep Kulkarni</strong> for product pricing, delivery schedules, and technical panel sizing.
+            
+            <p style={{ fontSize: "1.05rem", color: "#f8fafc", lineHeight: 1.5, marginBottom: "2.5rem" }}>
+              Have a question, need information, or looking for a custom solution?<br/>
+              Our team is here to help you with quick and reliable support.
             </p>
+
+            <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)" }}>
+                  <Headphones size={20} color="#93c5fd" />
+                </div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 700, lineHeight: 1.2 }}>
+                  Quick<br/>Response
+                </div>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)" }}>
+                  <Users size={20} color="#93c5fd" />
+                </div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 700, lineHeight: 1.2 }}>
+                  Expert<br/>Guidance
+                </div>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)" }}>
+                  <Shield size={20} color="#93c5fd" />
+                </div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 700, lineHeight: 1.2 }}>
+                  Reliable<br/>Support
+                </div>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", backdropFilter: "blur(4px)" }}>
+                  <FileText size={20} color="#93c5fd" />
+                </div>
+                <div style={{ fontSize: "0.85rem", fontWeight: 700, lineHeight: 1.2 }}>
+                  Customer<br/>First Approach
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contact Form & Information */}
-      <section style={{ padding: "5rem 0", background: "#f8fafc" }}>
+      <section style={{ padding: "4rem 0", background: "#f8fafc" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "4rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "3rem" }}>
             {/* Form Column */}
-            <div>
-              <div className="title-pill">
-                <Send size={14} /> SEND US A MESSAGE
+            <div style={{ background: "white", padding: "2.5rem", borderRadius: "16px", boxShadow: "0 4px 20px rgba(0,0,0,0.03)", border: "1px solid #f1f5f9" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
+                <div style={{ width: "50px", height: "50px", background: "#eff6ff", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", color: "#3b82f6" }}>
+                  <Send size={24} />
+                </div>
+                <div>
+                  <h2 style={{ fontSize: "1.8rem", color: "#0f172a", margin: 0, fontWeight: 800 }}>
+                    Request a <span style={{ color: "#2563eb" }}>Quotation</span> / RFQ
+                  </h2>
+                  <p style={{ color: "#64748b", fontSize: "0.95rem", margin: "0.2rem 0 0 0" }}>
+                    Fill out the form below with your requirements. We will review and provide a commercial proposal promptly.
+                  </p>
+                </div>
               </div>
-              <h2 style={{ fontSize: "2.3rem", color: "#0f172a", margin: "0.8rem 0 1.5rem", fontWeight: 800 }}>
-                Request Quotation / RFQ
-              </h2>
-              <p style={{ color: "#64748b", marginBottom: "2rem", fontSize: "0.95rem", lineHeight: 1.6 }}>
-                Fill out the form below with your required brand, part numbers, quantity, or panel technical parameters. We will review and provide a commercial proposal promptly.
-              </p>
 
               {submitted ? (
                 <div style={{ background: "#ecfdf5", border: "1px solid #a7f3d0", padding: "2.5rem 2rem", borderRadius: "14px", color: "#065f46" }}>
@@ -210,144 +273,134 @@ function ContactContent() {
                     ></textarea>
                   </div>
 
-                  <button
-                    type="submit"
-                    className="btn-primary"
-                    style={{ background: "#2563eb", color: "white", padding: "1rem 2.2rem", borderRadius: "8px", border: "none", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: "0.6rem" }}
-                  >
-                    Submit Quotation Request <ArrowRight size={18} />
-                  </button>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "0.5rem" }}>
+                    <button
+                      type="submit"
+                      className="btn-primary"
+                      style={{ background: "#2563eb", color: "white", padding: "0.9rem 1.8rem", borderRadius: "8px", border: "none", fontWeight: 700, fontSize: "0.95rem", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "0.6rem" }}
+                    >
+                      <Send size={16} /> Submit Quotation Request <ArrowRight size={16} />
+                    </button>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#64748b", fontSize: "0.75rem" }}>
+                      <ShieldCheck size={14} />
+                      <span style={{ maxWidth: "200px", lineHeight: 1.3 }}>Your information is secure and will only be used to respond to your inquiry.</span>
+                    </div>
+                  </div>
                 </form>
               )}
             </div>
 
-            {/* Official Information Card strictly from PDF Page 29 */}
+            {/* Information Column */}
             <div>
-              <div style={{ background: "white", padding: "3rem", borderRadius: "18px", boxShadow: "0 10px 30px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0", marginBottom: "2rem" }}>
-                <span style={{ fontSize: "0.8rem", color: "#2563eb", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase" }}>
-                  OFFICIAL CONTACT DETAILS (AS PER BROCHURE)
-                </span>
-                <h3 style={{ fontSize: "1.8rem", color: "#0f172a", marginTop: "0.4rem", fontWeight: 800 }}>
-                  S. P. ENTERPRISES
-                </h3>
-                <p style={{ color: "#64748b", fontSize: "0.88rem", marginBottom: "1.8rem" }}>
-                  Authorized Industrial Partner &amp; In-House Manufacturer
-                </p>
-
-                <div style={{ display: "flex", flexDirection: "column", gap: "1.6rem" }}>
-                  <div style={{ display: "flex", gap: "1.2rem", alignItems: "flex-start" }}>
-                    <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#2563eb", flexShrink: 0 }}>
-                      <ShieldCheck size={22} />
-                    </div>
-                    <div>
-                      <h4 style={{ fontSize: "0.95rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Contact Person</h4>
-                      <p style={{ color: "#1e293b", fontSize: "1.1rem", fontWeight: 800 }}>Pradeep Kulkarni</p>
-                    </div>
+              <div style={{ marginBottom: "2rem" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                  <h2 style={{ fontSize: "2rem", color: "#0f172a", margin: 0, fontWeight: 800 }}>Contact Information</h2>
+                  <div style={{ height: "4px", width: "40px", background: "#3b82f6", borderRadius: "2px" }}></div>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                  <p style={{ color: "#64748b", fontSize: "0.95rem", margin: 0, maxWidth: "80%" }}>
+                    Feel free to reach out to us through any of the following channels.<br/>
+                    Our team will be happy to assist you.
+                  </p>
+                  <div style={{ fontFamily: "cursive", color: "#cbd5e1", fontSize: "2rem", transform: "rotate(-5deg)" }}>
+                    Get In Touch
                   </div>
+                </div>
+              </div>
 
-                  <div style={{ display: "flex", gap: "1.2rem", alignItems: "flex-start" }}>
-                    <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#2563eb", flexShrink: 0 }}>
-                      <Phone size={22} />
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.5rem" }}>
+                <div style={{ background: "white", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
+                  <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#3b82f6", flexShrink: 0 }}>
+                      <Phone size={18} fill="currentColor" />
                     </div>
                     <div>
-                      <h4 style={{ fontSize: "0.95rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Mobile Number</h4>
-                      <a href="tel:+918308502100" style={{ color: "#2563eb", fontSize: "1.15rem", fontWeight: 800, textDecoration: "none", display: "block" }}>
+                      <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Phone / Mobile</h4>
+                      <a href="tel:+918308502100" style={{ color: "#2563eb", fontSize: "1.1rem", fontWeight: 800, textDecoration: "none", display: "block" }}>
                         +91 83085 02100
                       </a>
-                      <a href="https://wa.me/918308502100" target="_blank" rel="noopener noreferrer" style={{ color: "#16a34a", fontSize: "0.82rem", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.3rem", marginTop: "4px" }}>
-                        <MessageSquare size={13} /> Chat on WhatsApp (+91 83085 02100)
+                      <a href="https://wa.me/918308502100" target="_blank" rel="noopener noreferrer" style={{ color: "#16a34a", fontSize: "0.8rem", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.3rem", marginTop: "4px" }}>
+                        <MessageSquare size={12} fill="currentColor" /> Chat on WhatsApp <ArrowRight size={12} />
                       </a>
                     </div>
                   </div>
+                </div>
 
-                  <div style={{ display: "flex", gap: "1.2rem", alignItems: "flex-start" }}>
-                    <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#2563eb", flexShrink: 0 }}>
-                      <Mail size={22} />
+                <div style={{ background: "white", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
+                  <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#3b82f6", flexShrink: 0 }}>
+                      <Mail size={18} fill="currentColor" />
                     </div>
                     <div>
-                      <h4 style={{ fontSize: "0.95rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Official Email</h4>
-                      <a href="mailto:spe@sahpl.com" style={{ color: "#1e293b", fontSize: "0.98rem", fontWeight: 700, textDecoration: "none", display: "block" }}>
+                      <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Official Email</h4>
+                      <a href="mailto:spe@sahpl.com" style={{ color: "#2563eb", fontSize: "1rem", fontWeight: 700, textDecoration: "none", display: "block", marginBottom: "2px" }}>
                         spe@sahpl.com
                       </a>
-                      <a href="mailto:Spe.mktg@gmail.com" style={{ color: "#64748b", fontSize: "0.88rem", textDecoration: "none" }}>
-                        Spe.mktg@gmail.com
+                      <a href="mailto:Spe.mktg@gmail.com" style={{ color: "#64748b", fontSize: "0.85rem", textDecoration: "none" }}>
+                        spe.mktg@gmail.com
                       </a>
                     </div>
                   </div>
+                </div>
 
-                  <div style={{ display: "flex", gap: "1.2rem", alignItems: "flex-start" }}>
-                    <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#2563eb", flexShrink: 0 }}>
-                      <ExternalLink size={22} />
+                <div style={{ background: "white", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
+                  <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#3b82f6", flexShrink: 0 }}>
+                      <ExternalLink size={18} />
                     </div>
                     <div>
-                      <h4 style={{ fontSize: "0.95rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Official Website</h4>
-                      <a href="https://www.sahpl.com" target="_blank" rel="noopener noreferrer" style={{ color: "#2563eb", fontSize: "0.95rem", fontWeight: 700, textDecoration: "underline" }}>
-                        www.sahpl.com
+                      <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Official Website</h4>
+                      <a href="https://www.sahpl.com" target="_blank" rel="noopener noreferrer" style={{ color: "#2563eb", fontSize: "1rem", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.3rem" }}>
+                        www.sahpl.com <ArrowRight size={14} />
                       </a>
                     </div>
                   </div>
+                </div>
 
-                  <div style={{ display: "flex", gap: "1.2rem", alignItems: "flex-start" }}>
-                    <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#2563eb", flexShrink: 0 }}>
-                      <MapPin size={22} />
+                <div style={{ background: "white", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
+                  <div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#3b82f6", flexShrink: 0 }}>
+                      <MapPin size={18} fill="currentColor" />
                     </div>
                     <div>
-                      <h4 style={{ fontSize: "0.95rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Registered Office</h4>
-                      <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.5 }}>
-                        Sr. No. 14/1A + 2B/2, Gujarwadi Road,<br />
-                        Near Mangdewadi, Katraj,<br />
-                        Pune &ndash; 411046, Maharashtra (India)
-                      </p>
-                    </div>
-                  </div>
-
-                  <div style={{ display: "flex", gap: "1.2rem", alignItems: "flex-start" }}>
-                    <div style={{ width: "44px", height: "44px", borderRadius: "10px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#2563eb", flexShrink: 0 }}>
-                      <Clock size={22} />
-                    </div>
-                    <div>
-                      <h4 style={{ fontSize: "0.95rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Working Hours</h4>
-                      <p style={{ color: "#475569", fontSize: "0.9rem", lineHeight: 1.4 }}>
-                        Monday &ndash; Saturday: 9:30 AM &ndash; 7:00 PM<br />
-                        Sunday: Closed (Emergency breakdown calls answered)
+                      <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Registered Office</h4>
+                      <p style={{ color: "#64748b", fontSize: "0.85rem", lineHeight: 1.4, margin: 0 }}>
+                        Sr. No. 14/1A + 2B/2, Gujarwadi Road, Near Mangdewadi, Katraj, Pune &ndash; 411046, Maharashtra (India)
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Direct PDF Download Box */}
-              <div style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)", padding: "2rem", borderRadius: "16px", color: "white" }}>
-                <h4 style={{ fontSize: "1.2rem", fontWeight: 800, marginBottom: "0.5rem" }}>Download Full PDF Catalogue</h4>
-                <p style={{ fontSize: "0.88rem", color: "#bfdbfe", lineHeight: 1.5, marginBottom: "1.2rem" }}>
-                  Get the official SP Enterprises product brochure directly on your device.
-                </p>
-                <a
-                  href="/01.SP Enterprises (1).pdf"
-                  download="SP_Enterprises_Catalogue.pdf"
-                  style={{ background: "white", color: "#1e3a8a", padding: "0.8rem 1.4rem", borderRadius: "6px", textDecoration: "none", fontWeight: 700, fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}
-                >
-                  <Download size={16} /> Download PDF (5.3 MB)
-                </a>
+              <div style={{ background: "white", padding: "1.5rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+                    <div style={{ width: "32px", height: "32px", borderRadius: "50%", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center", color: "#3b82f6" }}>
+                      <MapPin size={16} fill="currentColor" />
+                    </div>
+                    <div>
+                      <h4 style={{ fontSize: "0.9rem", color: "#0f172a", margin: 0, fontWeight: 700 }}>Our Location</h4>
+                      <p style={{ color: "#64748b", fontSize: "0.8rem", margin: 0 }}>Find us on the map and visit our registered office.</p>
+                    </div>
+                  </div>
+                  <a href="https://maps.google.com/?q=Sr.+No.+14/1A+++2B/2,+Gujarwadi+Road,+Katraj,+Pune+-+411046" target="_blank" rel="noopener noreferrer" style={{ background: "#eff6ff", color: "#2563eb", padding: "0.5rem 0.75rem", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.4rem" }}>
+                    <MapPin size={14} fill="currentColor" /> View on Google Maps <ArrowRight size={14} />
+                  </a>
+                </div>
+                <div style={{ borderRadius: "8px", overflow: "hidden", aspectRatio: "16/5", border: "1px solid #e2e8f0" }}>
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7570.037857208688!2d73.86047314206468!3d18.437449680559993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sSr.%20No.%2014%2F1A%20%2B%202B%2F2%2C%20Gujarwadi%20Road%2C%20Katraj%2C%20Pune%20-%20411046%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1791021663511!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen={true} 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Map Section */}
-      <section style={{ padding: "0 0 5rem 0", background: "#f8fafc" }}>
-        <div className="container">
-          <div style={{ background: "white", padding: "1rem", borderRadius: "18px", boxShadow: "0 10px 30px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7570.037857208688!2d73.86047314206468!3d18.437449680559993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sSr.%20No.%2014%2F1A%20%2B%202B%2F2%2C%20Gujarwadi%20Road%2C%20Katraj%2C%20Pune%20-%20411046%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1791021663511!5m2!1sen!2sin" 
-              width="100%" 
-              height="450" 
-              style={{ border: 0, borderRadius: "12px" }} 
-              allowFullScreen={true} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            </div>
           </div>
         </div>
       </section>

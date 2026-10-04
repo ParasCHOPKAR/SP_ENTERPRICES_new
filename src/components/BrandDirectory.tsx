@@ -164,14 +164,14 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
                 {/* Background Image & Overlay */}
                 <div style={{
                   position: "absolute", inset: 0,
-                  backgroundImage: "url('/products_showcase.jpg')",
+                  backgroundImage: `url('${brand.id === "eri" ? "/product_img/ERP_hero_01.png" : "/products_showcase.jpg"}')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   zIndex: 0
                 }} />
                 <div style={{
                   position: "absolute", inset: 0,
-                  background: "linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.85) 100%)",
+                  background: "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%)",
                   zIndex: 1
                 }} />
 

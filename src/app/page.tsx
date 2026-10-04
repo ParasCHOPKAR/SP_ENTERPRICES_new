@@ -367,7 +367,7 @@ export default function Home() {
             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
               <div style={{ position: "relative", height: "320px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 15px 35px rgba(0,0,0,0.08)" }}>
                 <Image
-                  src="/products_showcase.jpg"
+                  src="/home/home_about_01.png"
                   alt="S. P. Enterprises Automation Components and Manufacturing Pune"
                   fill
                   style={{ objectFit: "cover" }}
