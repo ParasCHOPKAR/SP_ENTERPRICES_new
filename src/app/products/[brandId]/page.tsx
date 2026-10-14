@@ -9,11 +9,21 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BRANDS_DATA } from "@/data/brandsData";
 
-export default function BrandDetailPage() {
-  const { brandId } = useParams();
+export default function BrandDetailPage({ params }: { params?: { brandId: string } | Promise<{ brandId: string }> }) {
+  const clientParams = useParams();
   const router = useRouter();
   
-  const brand = BRANDS_DATA.find((b) => b.id.toLowerCase() === (brandId as string)?.toLowerCase());
+  let paramBrandId = "";
+  if (params) {
+    if (typeof (params as any).then === "function") {
+      paramBrandId = React.use(params as Promise<{ brandId: string }>).brandId;
+    } else {
+      paramBrandId = (params as { brandId: string }).brandId;
+    }
+  }
+  const brandId = paramBrandId || (clientParams?.brandId as string) || "";
+  
+  const brand = BRANDS_DATA.find((b) => b.id.toLowerCase() === brandId.toLowerCase());
 
   if (!brand) {
     return (
@@ -31,6 +41,13 @@ export default function BrandDetailPage() {
     );
   }
 
+  const heroImageMap: Record<string, string> = {
+    'eri': '/product_images/ERI_HERO.png',
+    'cermet': '/product_images/Cermet_Resistive_hero.png',
+    'cd-automation': '/product_images/CD_automation.png',
+  };
+  const heroBgImage = heroImageMap[brand.id.toLowerCase()] || '/products_showcase.jpg';
+
   return (
     <div className="site-wrapper">
       <Header />
@@ -38,7 +55,7 @@ export default function BrandDetailPage() {
       {/* Brand Hero Section */}
       <section style={{ 
         position: "relative",
-        background: "linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.9) 100%), url('/products_showcase.jpg')",
+        background: `linear-gradient(to right, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.5) 45%, rgba(15, 23, 42, 0) 100%), url('${heroBgImage}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: "5rem 0", 
@@ -120,9 +137,19 @@ export default function BrandDetailPage() {
                   </div>
                   <div style={{ padding: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))", gap: "1.5rem" }}>
                     {cat.products.map((prod, pIdx) => (
-                      <div key={pIdx} style={{ border: "1px solid #e2e8f0", borderRadius: "12px", padding: "1.5rem", background: "#ffffff", display: "flex", flexDirection: "column" }}>
-                        <div style={{ width: "100%", height: "180px", backgroundColor: "#f8fafc", borderRadius: "8px", marginBottom: "1.2rem", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #cbd5e1" }}>
-                           <Image src="/product_img_product.png" alt={prod.name} fill style={{ objectFit: "contain", padding: "1rem", opacity: 0.8 }} />
+                      <div key={pIdx} style={{ border: "1px solid #e2e8f0", borderRadius: "12px", padding: "1.5rem", background: "#ffffff", display: "flex", flexDirection: "column", boxShadow: "0 2px 8px rgba(0,0,0,0.02)", transition: "all 0.25s ease" }}>
+                        <div style={{ width: "100%", height: "200px", backgroundColor: "#f8fafc", borderRadius: "10px", marginBottom: "1.2rem", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", border: prod.image ? "1px solid #e2e8f0" : "1px dashed #cbd5e1" }}>
+                           <Image 
+                             src={prod.image || "/product_img_product.png"} 
+                             alt={prod.name} 
+                             fill 
+                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                             style={{ 
+                               objectFit: "contain", 
+                               padding: prod.image ? "0.6rem" : "1rem", 
+                               opacity: prod.image ? 1 : 0.8 
+                             }} 
+                           />
                         </div>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "0.8rem" }}>
                           <h5 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#1e293b", margin: 0, lineHeight: 1.4 }}>{prod.name}</h5>

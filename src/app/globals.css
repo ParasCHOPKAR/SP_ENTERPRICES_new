@@ -213,18 +213,18 @@ body {
   position: absolute;
   inset: 0;
   background: 
-    /* Right side soft shadow to give product images higher contrast and visibility */
-    linear-gradient(270deg, rgba(2, 8, 24, 0.48) 0%, rgba(3, 12, 34, 0.3) 28%, rgba(5, 16, 42, 0.12) 48%, transparent 68%),
-    /* Soft ambient radial vignette behind the product hardware */
-    radial-gradient(ellipse 60% 55% at 76% 55%, rgba(0, 15, 45, 0.32) 0%, rgba(2, 8, 22, 0.18) 55%, transparent 85%),
-    /* Left side text backdrop */
-    linear-gradient(90deg, rgba(0, 24, 68, 0.82) 0%, rgba(0, 30, 77, 0.45) 28%, transparent 58%);
+    /* Soft left-side darkening to ensure text readability over dark blue area */
+    linear-gradient(90deg, rgba(0, 18, 52, 0.85) 0%, rgba(0, 24, 68, 0.45) 32%, transparent 55%),
+    /* Subtle bottom vignette to ground the section */
+    linear-gradient(180deg, transparent 75%, rgba(0, 15, 45, 0.35) 100%);
   z-index: 2;
   pointer-events: none;
 }
 
 .hero-container {
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding-left: clamp(2rem, 5vw, 6rem);
   padding-right: 2rem;
   height: 100%;
@@ -271,238 +271,32 @@ body {
 }
 
 .hero-bg-image img {
-  filter: brightness(0.92) contrast(1.04);
+  filter: brightness(0.95) contrast(1.02);
   transition: filter 0.3s ease;
-}
-
-.hero-product-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.hero-product-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0;
-  will-change: transform, opacity;
-}
-
-.hero-product-slide.initial {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-  z-index: 2;
-}
-
-.hero-product-slide.active {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 2;
-  animation: heroSlideIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.hero-product-slide.inactive {
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-  animation: heroSlideOut 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.hero-product-slide.hidden {
-  opacity: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-product-slide img {
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.85))
-          drop-shadow(0 0 25px rgba(56, 189, 248, 0.35))
-          drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55));
-}
-
-@keyframes heroSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(70px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes heroSlideOut {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-70px);
-  }
-}
-
-/* Hero Carousel Controls & Badge */
-.hero-product-controls {
-  position: absolute;
-  bottom: 1.5rem;
-  right: clamp(1.5rem, 4vw, 3.5rem);
-  z-index: 12;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  background: rgba(10, 25, 47, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  border-radius: 9999px;
-  padding: 0.4rem 0.95rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(37, 99, 235, 0.25);
-  transition: all 0.3s ease;
-  user-select: none;
-}
-
-.hero-product-controls:hover {
-  background: rgba(10, 25, 47, 0.92);
-  border-color: rgba(96, 165, 250, 0.6);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5), 0 0 22px rgba(59, 130, 246, 0.4);
-}
-
-.hero-product-info-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.hero-product-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #38bdf8;
-  box-shadow: 0 0 8px #38bdf8, 0 0 16px rgba(56, 189, 248, 0.7);
-  animation: hero-pulse-dot 2s infinite ease-in-out;
-  flex-shrink: 0;
-}
-
-@keyframes hero-pulse-dot {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.85;
-  }
-  50% {
-    transform: scale(1.35);
-    opacity: 1;
-    box-shadow: 0 0 12px #38bdf8, 0 0 24px rgba(56, 189, 248, 0.95);
-  }
-}
-
-.hero-product-caption {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  letter-spacing: 0.3px;
-  white-space: nowrap;
-}
-
-.hero-product-nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-left: 0.35rem;
-  padding-left: 0.65rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.hero-product-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: #93c5fd;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  padding: 0;
-}
-
-.hero-product-arrow:hover {
-  background: rgba(59, 130, 246, 0.7);
-  color: white;
-  border-color: rgba(147, 197, 253, 0.6);
-  transform: scale(1.12);
-}
-
-.hero-product-indicators {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.hero-product-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.35);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-product-dot:hover {
-  background: rgba(255, 255, 255, 0.7);
-  transform: scale(1.2);
-}
-
-.hero-product-dot.active {
-  width: 20px;
-  background: linear-gradient(90deg, #38bdf8 0%, #2563eb 100%);
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.75);
-}
-
-@media (max-width: 900px) {
-  .hero-product-slide.entering {
-    transform: translateX(40px);
-  }
-  .hero-product-slide.exiting {
-    transform: translateX(-40px);
-  }
-  .hero-product-controls {
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.35rem 0.75rem;
-    gap: 0.5rem;
-  }
-  .hero-product-caption {
-    font-size: 0.72rem;
-    max-width: 140px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
   padding: 1.5rem 0;
-  max-width: 530px;
+  max-width: 540px;
   width: 100%;
   text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .hero-gradient-overlay {
+    background: linear-gradient(90deg, rgba(0, 18, 52, 0.92) 0%, rgba(0, 24, 68, 0.85) 60%, rgba(0, 24, 68, 0.6) 100%);
+  }
+
+  .hero-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
 }
 
 .hero-label {

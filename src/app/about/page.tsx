@@ -274,10 +274,10 @@ export default function AboutPage() {
                 <a href="tel:+918308502100" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff", textDecoration: "none", background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.3)", padding: "0.4rem 0.6rem", borderRadius: "6px", fontWeight: 700, transition: "background 0.2s" }}
                    onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(59,130,246,0.3)"}
                    onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(59,130,246,0.2)"}>
-                  <Phone size={14} color="#93c5fd" /> +91 83085 02100
+                  <Phone size={14} color="#93c5fd" /> +91 8308502100
                 </a>
-                <a href="mailto:spe@sahpl.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
-                  <Mail size={14} color="#93c5fd" /> spe@sahpl.com
+                <a href="mailto:info@speautomation.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
+                  <Mail size={14} color="#93c5fd" /> info@speautomation.com
                 </a>
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", color: "#94a3b8", fontSize: "0.75rem", padding: "0.2rem" }}>
                   <MapPin size={14} color="#93c5fd" style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -449,8 +449,8 @@ export default function AboutPage() {
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem", fontSize: "0.85rem" }}>
                     {[
                       { label: "Managing Partner", value: "Mr. Pradeep Kulkarni", strong: true },
-                      { label: "Direct Phone", value: "+91 83085 02100", link: "tel:+918308502100" },
-                      { label: "Corporate Email", value: "spe@sahpl.com", link: "mailto:spe@sahpl.com" },
+                      { label: "Direct Phone", value: "+91 8308502100", link: "tel:+918308502100" },
+                      { label: "Corporate Email", value: "info@speautomation.com", link: "mailto:info@speautomation.com" },
                     ].map((row, i) => (
                       <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.4rem 0", borderBottom: "1px solid #f1f5f9" }}>
                         <span style={{ color: "#94a3b8", fontSize: "0.75rem" }}>{row.label}</span>

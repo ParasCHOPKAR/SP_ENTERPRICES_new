@@ -3,6 +3,7 @@ export interface ProductItem {
   desc: string;
   specs?: string[];
   badge?: string;
+  image?: string;
 }
 
 export interface BrandCategory {
@@ -56,33 +57,39 @@ export const BRANDS_DATA: BrandData[] = [
             name: "Single Phase Solid State Relays",
             desc: "02 to 07 Amps (PCB Mount) & 10 to 125 Amps (Panel Mount) for resistive and inductive loads.",
             specs: ["Load: 24-480 VAC", "Control: 3-32 VDC / 90-280 VAC", "Opto-isolated: 4000 Vrms", "Zero Voltage Turn-on"],
-            badge: "02A ~ 125A"
+            badge: "02A ~ 125A",
+            image: "/product_images/ERI_img/Single_Phase_Solid_State_Relays.png"
           },
           {
             name: "Three Phase Solid State Relays",
             desc: "Heavy-duty 3-pole switching for balanced 3-phase industrial heaters, ovens, and furnaces.",
             specs: ["Load: 24-530 VAC 3-Phase", "Current: 25A, 40A, 60A, 80A, 100A, 125A", "Integrated LED status indicator"],
-            badge: "10A ~ 125A"
+            badge: "10A ~ 125A",
+            image: "/product_images/ERI_img/Three_Phase_Solid_State_Relays.png"
           },
           {
             name: "Phase Control SSR",
             desc: "Proportional phase angle control relays for precise thermal regulation and lamp dimming.",
-            specs: ["Input: 4-20mA, 0-10VDC or Potentiometer", "Smooth power variation 0-100%"]
+            specs: ["Input: 4-20mA, 0-10VDC or Potentiometer", "Smooth power variation 0-100%"],
+            image: "/product_images/ERI_img/Phase_Control_SSR.png"
           },
           {
             name: "Three Phase Motor Reversing SSR",
             desc: "Solid-state forward/reverse direction switching for 3-phase AC induction motors with interlock delay.",
-            specs: ["Built-in reverse interlocking circuit", "Ultra-fast response time"]
+            specs: ["Built-in reverse interlocking circuit", "Ultra-fast response time"],
+            image: "/product_images/ERI_img/Three_Phase_Motor_Reversing_SSR.png"
           },
           {
             name: "DIN Ready SSR & ECO SSR",
             desc: "Compact modular relays with integrated heat sinks designed for quick 35mm DIN-rail snapping.",
-            specs: ["DIN Rail 35mm clip", "Integrated finger-safe terminal covers", "Optimized thermal dissipation"]
+            specs: ["DIN Rail 35mm clip", "Integrated finger-safe terminal covers", "Optimized thermal dissipation"],
+            image: "/product_images/ERI_img/DIN_Ready_SSR_ECO_SSR.png"
           },
           {
             name: "DC-DC Solid State Relays & SCP SSR",
             desc: "MOSFET and IGBT based DC switching with short circuit protection for battery and DC equipment.",
-            specs: ["DC Output: up to 200 VDC", "Fast microsecond switching speed"]
+            specs: ["DC Output: up to 200 VDC", "Fast microsecond switching speed"],
+            image: "/product_images/ERI_img/DC_DC_Solid_State_Relays_SCP_SSR.png"
           }
         ]
       },
@@ -113,7 +120,8 @@ export const BRANDS_DATA: BrandData[] = [
             name: "Multi-Channel I/O Relay Interface Cards",
             desc: "Modular DIN-rail mounting relay carrier boards available in 1, 2, 4, 8, 16, and 32 channels with LED status.",
             specs: ["1 / 2 / 4 / 8 / 16 / 32 Channels", "Pluggable relays", "Common positive/negative jumpers", "Freewheeling diode protection"],
-            badge: "1 to 32 Channels"
+            badge: "1 to 32 Channels",
+            image: "/product_images/cd_automation/Multi-Channel-Relay-Interface-Cards.png"
           }
         ]
       }
@@ -487,13 +495,15 @@ export const BRANDS_DATA: BrandData[] = [
             name: "REVO Series Thyristor Power Controllers",
             desc: "State-of-the-art intelligent thyristor units (REVO S, REVO M, REVO CL) with digital calibration and multi-zone support.",
             specs: ["Single, 2-phase, and 3-phase models", "Current: 10A to 800A+", "Voltage up to 690 VAC", "Phase angle and burst firing"],
-            badge: "REVO Series"
+            badge: "REVO Series",
+            image: "/product_images/cd_automation/REVO-Series-Thyristor-Power-Controllers-give-me-one-image.png"
           },
           {
             name: "Heat Sink SSR Assemblies",
             desc: "Complete solid-state switching blocks with pre-assembled factory-rated heat sinks and semiconductor fuses.",
             specs: ["Single and multi-phase", "Integrated thermal cutout switch", "DIN rail or backplate mounting"],
-            badge: "Integrated Heat Sink"
+            badge: "Integrated Heat Sink",
+            image: "/product_images/cd_automation/Heat-Sink-SSR-Assemblies-give-me-one-image.png"
           },
           {
             name: "DM Series Multidrive Power Controllers",
@@ -503,7 +513,8 @@ export const BRANDS_DATA: BrandData[] = [
           {
             name: "Multidrive 1-Phase / 2-Phase / 3-Phase Units",
             desc: "Modular power controllers engineered for complex heating elements like silicon carbide (SiC), molybdenum, and transformers.",
-            specs: ["Current limit and power limit (V², I², P)", "Soft-start and current ramp", "Diagnostic feedback to SCADA"]
+            specs: ["Current limit and power limit (V², I², P)", "Soft-start and current ramp", "Diagnostic feedback to SCADA"],
+            image: "/product_images/cd_automation/Multidrive1-Phase-Phase-3-Phase-Units.png"
           }
         ]
       }

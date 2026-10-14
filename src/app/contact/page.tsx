@@ -317,7 +317,7 @@ function ContactContent() {
                     <div>
                       <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Phone / Mobile</h4>
                       <a href="tel:+918308502100" style={{ color: "#2563eb", fontSize: "1.1rem", fontWeight: 800, textDecoration: "none", display: "block" }}>
-                        +91 83085 02100
+                        +91 8308502100
                       </a>
                       <a href="https://wa.me/918308502100" target="_blank" rel="noopener noreferrer" style={{ color: "#16a34a", fontSize: "0.8rem", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.3rem", marginTop: "4px" }}>
                         <MessageSquare size={12} fill="currentColor" /> Chat on WhatsApp <ArrowRight size={12} />
@@ -333,8 +333,8 @@ function ContactContent() {
                     </div>
                     <div>
                       <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.2rem", fontWeight: 700 }}>Official Email</h4>
-                      <a href="mailto:spe@sahpl.com" style={{ color: "#2563eb", fontSize: "1rem", fontWeight: 700, textDecoration: "none", display: "block", marginBottom: "2px" }}>
-                        spe@sahpl.com
+                      <a href="mailto:info@speautomation.com" style={{ color: "#2563eb", fontSize: "1rem", fontWeight: 700, textDecoration: "none", display: "block", marginBottom: "2px" }}>
+                        info@speautomation.com
                       </a>
                       <a href="mailto:Spe.mktg@gmail.com" style={{ color: "#64748b", fontSize: "0.85rem", textDecoration: "none" }}>
                         spe.mktg@gmail.com

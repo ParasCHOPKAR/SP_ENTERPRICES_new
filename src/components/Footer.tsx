@@ -71,7 +71,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                 }}
               >
                 <Image
-                  src="/logo_01.png"
+                  src="/logo_022.png"
                   alt="S. P. Enterprises"
                   width={140}
                   height={50}
@@ -428,11 +428,11 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                   }}
                 >
                   <Phone size={15} color="#38bdf8" />
-                  <span>+91 83085 02100</span>
+                  <span>+91 8308502100</span>
                 </a>
 
                 <a
-                  href="mailto:spe@sahpl.com"
+                  href="mailto:info@speautomation.com"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -442,7 +442,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                   }}
                 >
                   <Mail size={15} color="#38bdf8" />
-                  <span>spe@sahpl.com</span>
+                  <span>info@speautomation.com</span>
                 </a>
 
 

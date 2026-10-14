@@ -21,6 +21,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BRANDS_DATA, BrandData } from "@/data/brandsData";
 
+const heroImageMap: Record<string, string> = {
+  'eri': '/product_images/ERI_HERO.png',
+  'cermet': '/product_images/Cermet_Resistive_hero.png',
+  'cd-automation': '/product_images/CD_automation.png',
+};
+
 function ProductsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -167,7 +173,9 @@ function ProductsContent() {
 
           {/* Brands Grid */}
           <div className="brands-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "2rem" }}>
-            {filteredBrands.map((brand) => (
+            {filteredBrands.map((brand) => {
+              const bgImage = heroImageMap[brand.id.toLowerCase()] || '/products_showcase.jpg';
+              return (
               <div
                 key={brand.id}
                 style={{
@@ -213,14 +221,14 @@ function ProductsContent() {
                   {/* Background Image & Overlay */}
                   <div style={{
                     position: "absolute", inset: 0,
-                    backgroundImage: "url('/products_showcase.jpg')",
+                    backgroundImage: `url('${bgImage}')`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     zIndex: 0
                   }} />
                   <div style={{
                     position: "absolute", inset: 0,
-                    background: "linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.85) 100%)",
+                    background: "linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.1) 40%, rgba(15, 23, 42, 0.6) 100%)",
                     zIndex: 1
                   }} />
 
@@ -310,7 +318,8 @@ function ProductsContent() {
                   </div>
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
 
           {filteredBrands.length === 0 && (

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -21,9 +21,7 @@ import {
   Mail,
   ExternalLink,
   MapPin,
-  Factory,
-  ChevronLeft,
-  ChevronRight
+  Factory
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -31,58 +29,8 @@ import { BRANDS_DATA } from "@/data/brandsData";
 import BrandDirectory from "@/components/BrandDirectory";
 import ManufacturingSection from "@/components/ManufacturingSection";
 
-const HERO_PRODUCT_SLIDES = [
-  {
-    id: "power-switching",
-    image: "/home_hero_product.png",
-    alt: "Industrial Automation Hardware - Solid State Relays, SMPS, Heatsinks & Terminal Blocks",
-    title: "Relays, SMPS & Power Control",
-    tag: "Power Switching"
-  },
-  {
-    id: "sensors-instrumentation",
-    image: "/home_hero_product_03.png",
-    alt: "Industrial Automation Instrumentation - Pressure Transmitters, Flow Meters, Gauges, HMI & PLC",
-    title: "Sensors, Transmitters & Instrumentation",
-    tag: "Process Automation"
-  }
-];
-
 export default function Home() {
   const router = useRouter();
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [prevSlide, setPrevSlide] = useState<number | null>(null);
-
-  // Auto change product image every 5 seconds continuously
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveSlide((current) => {
-        setPrevSlide(current);
-        return (current + 1) % HERO_PRODUCT_SLIDES.length;
-      });
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const goToSlide = (nextIndex: number) => {
-    if (nextIndex === activeSlide) return;
-    setPrevSlide(activeSlide);
-    setActiveSlide(nextIndex);
-  };
-
-  const getSlideClass = (index: number) => {
-    if (index === activeSlide) {
-      return prevSlide === null ? "hero-product-slide initial" : "hero-product-slide active";
-    }
-    if (index === prevSlide) {
-      return "hero-product-slide inactive";
-    }
-    return "hero-product-slide hidden";
-  };
-
-  const handleInquire = (subject: string) => {
-    router.push(`/contact?subject=${encodeURIComponent(subject)}`);
-  };
 
   return (
     <main id="top" className="site-wrapper">
@@ -92,7 +40,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-bg-image">
           <Image
-            src="/home_hero_background.png"
+            src="/home/image.png"
             alt="SP Enterprises Industrial Automation and Control Technology"
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
@@ -100,70 +48,8 @@ export default function Home() {
           />
         </div>
 
-        {/* Dynamic Sliding Product Showcase */}
-        <div className="hero-product-layer">
-          {HERO_PRODUCT_SLIDES.map((slide, index) => {
-            const slideClass = getSlideClass(index);
-            return (
-              <div
-                key={`${slide.id}-${slideClass}`}
-                className={slideClass}
-              >
-                <Image
-                  src={slide.image}
-                  alt={slide.alt}
-                  fill
-                  style={{ objectFit: "cover", objectPosition: "center" }}
-                  priority={index === 0}
-                />
-              </div>
-            );
-          })}
-        </div>
-
         <div className="hero-gradient-overlay"></div>
 
-        {/* Interactive Slide Controls & Badge */}
-        <div className="hero-product-controls" aria-label="Hero product showcase navigation">
-          <div className="hero-product-info-pill">
-            <span className="hero-product-status-dot" />
-            <span className="hero-product-caption">
-              {HERO_PRODUCT_SLIDES[activeSlide].title}
-            </span>
-          </div>
-          <div className="hero-product-nav-actions">
-            <button
-              type="button"
-              className="hero-product-arrow"
-              onClick={() => goToSlide((activeSlide - 1 + HERO_PRODUCT_SLIDES.length) % HERO_PRODUCT_SLIDES.length)}
-              aria-label="Previous product showcase"
-              title="Previous Showcase"
-            >
-              <ChevronLeft size={14} />
-            </button>
-            <div className="hero-product-indicators">
-              {HERO_PRODUCT_SLIDES.map((slide, idx) => (
-                <button
-                  key={slide.id}
-                  type="button"
-                  className={`hero-product-dot ${idx === activeSlide ? "active" : ""}`}
-                  onClick={() => goToSlide(idx)}
-                  aria-label={`Slide to ${slide.title}`}
-                  title={slide.title}
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              className="hero-product-arrow"
-              onClick={() => goToSlide((activeSlide + 1) % HERO_PRODUCT_SLIDES.length)}
-              aria-label="Next product showcase"
-              title="Next Showcase"
-            >
-              <ChevronRight size={14} />
-            </button>
-          </div>
-        </div>
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
@@ -389,8 +275,8 @@ export default function Home() {
                 </h4>
                 <div style={{ fontSize: "0.88rem", display: "flex", flexDirection: "column", gap: "0.5rem", color: "#475569" }}>
                   <div><strong>Managing Partner:</strong> Mr. Pradeep Kulkarni</div>
-                  <div><strong>Direct Phone:</strong> <a href="tel:+918308502100" style={{ color: "#2563eb", fontWeight: 700, textDecoration: "none" }}>+91 83085 02100</a></div>
-                  <div><strong>Corporate Email:</strong> <a href="mailto:spe@sahpl.com" style={{ color: "#1e293b", textDecoration: "none" }}>spe@sahpl.com</a> / <a href="mailto:Spe.mktg@gmail.com" style={{ color: "#64748b", textDecoration: "none" }}>Spe.mktg@gmail.com</a></div>
+                  <div><strong>Direct Phone:</strong> <a href="tel:+918308502100" style={{ color: "#2563eb", fontWeight: 700, textDecoration: "none" }}>+91 8308502100</a></div>
+                  <div><strong>Corporate Email:</strong> <a href="mailto:info@speautomation.com" style={{ color: "#1e293b", textDecoration: "none" }}>info@speautomation.com</a> / <a href="mailto:Spe.mktg@gmail.com" style={{ color: "#64748b", textDecoration: "none" }}>Spe.mktg@gmail.com</a></div>
                   <div><strong>Registered Office:</strong> Katraj, Pune - 411046, Maharashtra, India</div>
                 </div>
               </div>
@@ -476,7 +362,7 @@ export default function Home() {
               Need Authentic Components or Custom Panels?
             </h2>
             <p style={{ fontSize: "1.05rem", color: "#bfdbfe" }}>
-              Talk directly with Mr. Pradeep Kulkarni (+91 83085 02100) or submit a technical quotation request.
+              Talk directly with Mr. Pradeep Kulkarni (+91 8308502100) or submit a technical quotation request.
             </p>
           </div>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>

@@ -1,25 +1,71 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Phone, Mail, MapPin, FileText, Search, ArrowRight, Menu, X, Download, ChevronDown } from "lucide-react";
+import { BRANDS_DATA } from "@/data/brandsData";
 
 export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showRecommendations, setShowRecommendations] = useState(false);
+  const searchRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowRecommendations(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    setShowRecommendations(false);
     if (searchQuery.trim()) {
       router.push(`/products?q=${encodeURIComponent(searchQuery.trim())}`);
     } else {
       router.push("/products");
     }
   };
+
+  const getRecommendations = () => {
+    if (!searchQuery.trim()) return [];
+    const query = searchQuery.toLowerCase();
+    const results = [];
+    for (const brand of BRANDS_DATA) {
+      if (brand.name.toLowerCase().includes(query) || brand.fullName.toLowerCase().includes(query)) {
+        results.push({ type: "Brand", name: brand.name, href: `/products?brand=${brand.id}` });
+      }
+      for (const cat of brand.categories) {
+        for (const product of cat.products) {
+          if (product.name.toLowerCase().includes(query) || product.desc.toLowerCase().includes(query)) {
+            results.push({ type: "Product", name: product.name, brand: brand.name, href: `/products?brand=${brand.id}&q=${encodeURIComponent(product.name)}` });
+          }
+        }
+      }
+    }
+    // Deduplicate by name and return max 6
+    const uniqueResults = [];
+    const names = new Set();
+    for (const res of results) {
+      if (!names.has(res.name)) {
+        names.add(res.name);
+        uniqueResults.push(res);
+      }
+    }
+    return uniqueResults.slice(0, 6);
+  };
+  
+  const recommendations = getRecommendations();
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -57,10 +103,10 @@ export default function Header() {
         <div className="container top-bar-container">
           <div className="top-bar-left">
             <a href="tel:+918308502100" className="top-bar-item top-bar-link">
-              <Phone size={14} /> +91 83085 02100
+              <Phone size={14} /> +91 8308502100
             </a>
-            <a href="mailto:spe@sahpl.com" className="top-bar-item top-bar-link">
-              <Mail size={14} /> spe@sahpl.com
+            <a href="mailto:info@speautomation.com" className="top-bar-item top-bar-link">
+              <Mail size={14} /> info@speautomation.com
             </a>
             <span className="top-bar-item">
               <MapPin size={14} /> Katraj, Pune - 411046
@@ -91,7 +137,7 @@ export default function Header() {
           <div className="logo-section">
             <Link href="/" className="logo-img-wrapper" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
               <Image
-                src="/logo_01.png"
+                src="/logo_022.png"
                 alt="SP Enterprises Logo"
                 width={170}
                 height={60}
@@ -172,18 +218,84 @@ export default function Header() {
 
           {/* Header Actions */}
           <div className="header-actions">
-            <form onSubmit={handleSearch} className="search-bar">
-              <Search size={18} color="#94a3b8" style={{ marginLeft: "10px" }} />
-              <input
-                type="text"
-                placeholder="Search products, brands..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              <button type="submit" className="search-btn" title="Search">
-                <Search size={18} />
-              </button>
-            </form>
+            <div ref={searchRef} style={{ position: "relative" }}>
+              <form onSubmit={handleSearch} className="search-bar">
+                <Search size={18} color="#94a3b8" style={{ marginLeft: "10px" }} />
+                <input
+                  type="text"
+                  placeholder="Search products, brands..."
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowRecommendations(true);
+                  }}
+                  onFocus={() => setShowRecommendations(true)}
+                />
+                <button type="submit" className="search-btn" title="Search">
+                  <Search size={18} />
+                </button>
+              </form>
+              
+              {showRecommendations && searchQuery.trim().length > 0 && recommendations.length > 0 && (
+                <div style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  right: 0,
+                  marginTop: "0.5rem",
+                  background: "white",
+                  borderRadius: "8px",
+                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                  border: "1px solid #e2e8f0",
+                  zIndex: 100,
+                  overflow: "hidden"
+                }}>
+                  {recommendations.map((rec, i) => (
+                    <Link
+                      key={i}
+                      href={rec.href}
+                      onClick={() => {
+                        setShowRecommendations(false);
+                        setSearchQuery("");
+                      }}
+                      style={{
+                        display: "block",
+                        padding: "0.75rem 1rem",
+                        borderBottom: i === recommendations.length - 1 ? "none" : "1px solid #f1f5f9",
+                        textDecoration: "none",
+                        color: "#334155",
+                        transition: "background 0.2s"
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "#f8fafc"}
+                      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+                    >
+                      <div style={{ fontSize: "0.85rem", fontWeight: 600 }}>{rec.name}</div>
+                      <div style={{ fontSize: "0.7rem", color: "#64748b", marginTop: "2px" }}>
+                        {rec.type} {rec.brand && `• ${rec.brand}`}
+                      </div>
+                    </Link>
+                  ))}
+                  <div 
+                    onClick={() => {
+                      setShowRecommendations(false);
+                      router.push(`/products?q=${encodeURIComponent(searchQuery.trim())}`);
+                    }}
+                    style={{
+                      padding: "0.5rem 1rem",
+                      background: "#f8fafc",
+                      borderTop: "1px solid #e2e8f0",
+                      fontSize: "0.8rem",
+                      fontWeight: 600,
+                      color: "#2563eb",
+                      textAlign: "center",
+                      cursor: "pointer"
+                    }}
+                  >
+                    View all results for "{searchQuery}"
+                  </div>
+                </div>
+              )}
+            </div>
             <Link href="/contact" className="quote-btn">
               Request Quote <ArrowRight size={16} />
             </Link>
