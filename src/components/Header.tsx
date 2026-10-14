@@ -13,7 +13,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showRecommendations, setShowRecommendations] = useState(false);
-  const searchRef = useRef<HTMLFormElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
