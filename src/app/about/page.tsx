@@ -353,8 +353,8 @@ export default function AboutPage() {
                   },
                   {
                     icon: <Factory size={22} />, color: "#16a34a", bg: "#f0fdf4",
-                    title: "In-House Manufacturing Division (4 Core Disciplines)",
-                    desc: "Design, fabrication, wiring, and testing of Control Panels (PCC, MCC, PLC, VFD, Instrumentation), Automated Material Handling Systems, Glue Packing Conveyor Lines, and cGMP Stainless Steel Pharma Furniture."
+                    title: "In-House Manufacturing Division — SAHPL (5 Core Disciplines)",
+                    desc: "Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL): End-to-end Design, Manufacturing, Installation, and Commissioning of Special Purpose Machines (SPM), Hot Melt Conveyors, Material Handling & 90° Tilters, Type-Tested Control Panels (Thyristor, VFD, APFC, Annunciator), and cGMP SS/MS Industrial Fabrication."
                   }
                 ].map((item, idx) => (
                   <div

@@ -18,7 +18,10 @@ import {
   Layers,
   Sparkles,
   Download,
-  ChevronLeft
+  ChevronLeft,
+  Building2,
+  CheckCircle,
+  ChevronRight
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -103,7 +106,7 @@ export default function ManufacturingDetailPage() {
         <div className="container">
           <div className="section-head text-center">
             <h2 className="section-title">
-              Our 4 Core <span>Manufacturing Disciplines</span>
+              Our 5 Core <span>Manufacturing Disciplines</span>
             </h2>
             <p className="section-subtitle">
               Select a division below to review technical capacities, component architecture, engineering standards, and industry applications.
@@ -148,6 +151,123 @@ export default function ManufacturingDetailPage() {
             </div>
 
             <p className="mfg-description">{activeItem.description}</p>
+
+            {/* Key Clients if available */}
+            {activeItem.featuredClients && activeItem.featuredClients.length > 0 && (
+              <div style={{ background: "#f8fafc", padding: "0.9rem 1.2rem", borderRadius: "10px", border: "1px solid #e2e8f0", margin: "1.5rem 0", display: "flex", alignItems: "center", flexWrap: "wrap", gap: "0.6rem" }}>
+                <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#334155" }}>
+                  Key Clients / Field Deployments:
+                </span>
+                {activeItem.featuredClients.map((cl, cIdx) => (
+                  <span
+                    key={cIdx}
+                    style={{
+                      background: "white",
+                      border: "1px solid #cbd5e1",
+                      color: "#1e3a8a",
+                      fontSize: "0.78rem",
+                      fontWeight: 700,
+                      padding: "0.2rem 0.55rem",
+                      borderRadius: "6px"
+                    }}
+                  >
+                    {cl}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* Featured Machinery & Equipment Systems */}
+            {activeItem.featuredProducts && activeItem.featuredProducts.length > 0 && (
+              <div style={{ margin: "2rem 0 2.5rem" }}>
+                <h4 className="mfg-subheading" style={{ marginBottom: "1.2rem" }}>
+                  <Sparkles size={18} color="#2563eb" /> Featured Equipment &amp; Machinery Systems
+                </h4>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+                  {activeItem.featuredProducts.map((prod, pIdx) => (
+                    <div
+                      key={pIdx}
+                      style={{
+                        background: "#ffffff",
+                        border: "1px solid #e2e8f0",
+                        borderRadius: "12px",
+                        padding: "1.5rem",
+                        boxShadow: "0 2px 12px rgba(0,0,0,0.03)",
+                        display: "flex",
+                        flexDirection: "column"
+                      }}
+                    >
+                      {prod.client && (
+                        <div style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#166534", padding: "0.2rem 0.5rem", borderRadius: "6px", fontSize: "0.72rem", fontWeight: 700, marginBottom: "0.6rem", width: "fit-content" }}>
+                          <CheckCircle size={12} color="#16a34a" /> Client: {prod.client}
+                        </div>
+                      )}
+                      <h5 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.25rem" }}>
+                        {prod.name}
+                      </h5>
+                      <p style={{ fontSize: "0.82rem", fontWeight: 600, color: "#2563eb", marginBottom: "0.7rem" }}>
+                        {prod.tagline}
+                      </p>
+                      <p style={{ fontSize: "0.88rem", color: "#475569", lineHeight: 1.55, marginBottom: "1rem", flex: 1 }}>
+                        {prod.description}
+                      </p>
+
+                      {/* Technical Parameters Table */}
+                      {prod.specs && prod.specs.length > 0 && (
+                        <div style={{ background: "#f8fafc", borderRadius: "8px", padding: "0.7rem 0.8rem", border: "1px solid #f1f5f9", marginBottom: "1rem" }}>
+                          <div style={{ fontSize: "0.72rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase", marginBottom: "0.4rem" }}>
+                            Technical Parameters
+                          </div>
+                          <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+                            {prod.specs.map((sp, sIdx) => (
+                              <div key={sIdx} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.8rem", borderBottom: sIdx === prod.specs.length - 1 ? "none" : "1px solid #e2e8f0", paddingBottom: "0.25rem" }}>
+                                <span style={{ color: "#64748b", fontWeight: 600 }}>{sp.label}:</span>
+                                <span style={{ color: "#0f172a", fontWeight: 700, textAlign: "right" }}>{sp.value}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Highlights */}
+                      {prod.highlights && prod.highlights.length > 0 && (
+                        <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem", marginBottom: "1rem" }}>
+                          {prod.highlights.map((hl, hIdx) => (
+                            <div key={hIdx} style={{ display: "flex", alignItems: "flex-start", gap: "0.35rem", fontSize: "0.8rem", color: "#334155" }}>
+                              <CheckCircle2 size={13} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
+                              <span>{hl}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      <button
+                        type="button"
+                        onClick={() => handleInquire(prod.name)}
+                        style={{
+                          background: "#eff6ff",
+                          color: "#2563eb",
+                          border: "1px solid #bfdbfe",
+                          borderRadius: "6px",
+                          padding: "0.55rem 0.9rem",
+                          textAlign: "center",
+                          fontSize: "0.82rem",
+                          fontWeight: 700,
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "0.35rem",
+                          marginTop: "auto"
+                        }}
+                      >
+                        Inquire About This Equipment <ChevronRight size={14} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Core Capabilities Grid */}
             <div className="mfg-capabilities-area">

@@ -6,8 +6,8 @@ import { Cpu, Truck, Package, ShieldCheck, ArrowRight, Settings2, Factory, Award
 import { MANUFACTURING_DATA } from "@/data/manufacturingData";
 
 export default function ManufacturingSection() {
-  // Only show the first 2 items for the preview
-  const previewItems = MANUFACTURING_DATA.slice(0, 2);
+  // Show first 3 divisions for the preview
+  const previewItems = MANUFACTURING_DATA.slice(0, 3);
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -30,13 +30,13 @@ export default function ManufacturingSection() {
         {/* Section Header */}
         <div className="section-head text-center">
           <div className="title-pill manufacturing-pill" style={{ background: "#e0e7ff", color: "#3730a3", border: "1px solid #c7d2fe", padding: "0.4rem 1rem", borderRadius: "50px", display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1.5rem" }}>
-            <Factory size={14} /> IN-HOUSE MANUFACTURING & ENGINEERING
+            <Factory size={14} /> IN-HOUSE MANUFACTURING UNIT • SAHPL
           </div>
           <h2 className="section-title" style={{ fontSize: "2.5rem", fontWeight: 800, color: "#0f172a", marginBottom: "1.2rem" }}>
             Custom Industrial <span style={{ color: "#2563eb" }}>Manufacturing Solutions</span>
           </h2>
-          <p className="section-subtitle" style={{ fontSize: "1.1rem", color: "#475569", maxWidth: "700px", margin: "0 auto 3rem auto", lineHeight: 1.6 }}>
-            Explore our state-of-the-art custom control panels, automated material handling, and cGMP SS equipment designed for modern industrial challenges.
+          <p className="section-subtitle" style={{ fontSize: "1.1rem", color: "#475569", maxWidth: "760px", margin: "0 auto 3rem auto", lineHeight: 1.6 }}>
+            Powered by Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL) — 8+ years of expertise in SPMs, Hot Melt Packaging, Material Handling, Chillers, and Type-Tested Control Panels.
           </p>
         </div>
 

@@ -67,7 +67,21 @@ export default function Header() {
   
   const recommendations = getRecommendations();
 
-  const navItems = [
+  interface NavDropdownItem {
+    label: string;
+    href: string;
+    sub?: string;
+    tag?: string;
+    isFeatured?: boolean;
+  }
+
+  interface NavItem {
+    label: string;
+    href: string;
+    dropdown?: NavDropdownItem[];
+  }
+
+  const navItems: NavItem[] = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { 
@@ -85,10 +99,43 @@ export default function Header() {
       label: "Manufacturing", 
       href: "/manufacturing",
       dropdown: [
-        { label: "Control Panels", href: "/manufacturing/control-panels" },
-        { label: "Material Handling", href: "/manufacturing/material-handling" },
-        { label: "Packaging Conveyors", href: "/manufacturing/glue-conveyors" },
-        { label: "Pharma SS Furniture", href: "/manufacturing/ss-fabrication" }
+        { 
+          label: "Special Purpose Machines (SPM)", 
+          sub: "Hot Oil Units, 1000 LPH Hot Water, Paint Booth & Incinerator",
+          tag: "Custom SPM",
+          href: "/manufacturing/special-purpose-machines" 
+        },
+        { 
+          label: "Packaging & Hot Melt Conveyors", 
+          sub: "Box Packaging (General Mills), 15m File Conveyor (Navneet)",
+          tag: "Automated",
+          href: "/manufacturing/glue-conveyors" 
+        },
+        { 
+          label: "Material Handling & Tilters", 
+          sub: "Roller Conveyors, 90° Chain Tilters & 6m SS304 Lifters",
+          tag: "Heavy Automation",
+          href: "/manufacturing/material-handling" 
+        },
+        { 
+          label: "Industrial Control Panels", 
+          sub: "Thyristor Panels, VFD Panels, APFC, Annunciator & SS POU",
+          tag: "Type-Tested",
+          href: "/manufacturing/control-panels" 
+        },
+        { 
+          label: "Fixtures, Trolleys & Fabrication", 
+          sub: "Industrial Trolleys (Mahindra/Hikal), SS Tables & Cleanroom Racks",
+          tag: "SS304 / MS",
+          href: "/manufacturing/ss-fabrication" 
+        },
+        {
+          label: "SAHPL In-House Manufacturing Unit",
+          sub: "Smart Automation & Hydropneumatics - 8+ Yrs, GMP Compliant",
+          tag: "Overview",
+          href: "/manufacturing",
+          isFeatured: true
+        }
       ]
     },
     { label: "Contact", href: "/contact" },
@@ -172,30 +219,56 @@ export default function Header() {
                     {activeDropdown === item.label && (
                       <div style={{
                         position: "absolute", top: "100%", left: "50%", transform: "translateX(-50%)",
-                        background: "white", borderRadius: "12px", padding: "0.8rem",
-                        boxShadow: "0 10px 40px rgba(0,0,0,0.1)", border: "1px solid #f1f5f9",
-                        minWidth: "260px", zIndex: 50, display: "flex", flexDirection: "column", gap: "0.4rem"
+                        background: "white", borderRadius: "14px", padding: "0.8rem",
+                        boxShadow: "0 20px 50px rgba(15,23,42,0.15)", border: "1px solid #e2e8f0",
+                        minWidth: item.label === "Manufacturing" ? "390px" : "280px",
+                        zIndex: 150, display: "flex", flexDirection: "column", gap: "0.4rem"
                       }}>
+                        {item.label === "Manufacturing" && (
+                          <div style={{ padding: "0.3rem 0.8rem 0.6rem", borderBottom: "1px solid #f1f5f9", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                            <span style={{ fontSize: "0.75rem", fontWeight: 800, color: "#1e3a8a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                              SAHPL Manufacturing Arm
+                            </span>
+                            <span style={{ fontSize: "0.7rem", background: "#dbeafe", color: "#1d4ed8", padding: "0.15rem 0.5rem", borderRadius: "20px", fontWeight: 700 }}>
+                              8+ Years Exp
+                            </span>
+                          </div>
+                        )}
                         {item.dropdown.map(dropItem => (
                           <Link 
                             key={dropItem.href} 
                             href={dropItem.href}
                             style={{
-                              padding: "0.8rem 1rem", borderRadius: "8px", textDecoration: "none",
-                              color: "#334155", fontSize: "0.95rem", fontWeight: 600,
-                              transition: "all 0.2s", background: "transparent"
+                              padding: "0.65rem 0.9rem", borderRadius: "8px", textDecoration: "none",
+                              color: dropItem.isFeatured ? "#1e40af" : "#1e293b",
+                              background: dropItem.isFeatured ? "#eff6ff" : "transparent",
+                              border: dropItem.isFeatured ? "1px dashed #93c5fd" : "1px solid transparent",
+                              display: "flex", flexDirection: "column", gap: "0.2rem",
+                              transition: "all 0.2s"
                             }}
                             onMouseEnter={e => {
-                              (e.currentTarget as HTMLElement).style.background = "#eff6ff";
-                              (e.currentTarget as HTMLElement).style.color = "#2563eb";
+                              (e.currentTarget as HTMLElement).style.background = dropItem.isFeatured ? "#dbeafe" : "#f8fafc";
+                              (e.currentTarget as HTMLElement).style.borderColor = "#bfdbfe";
                             }}
                             onMouseLeave={e => {
-                              (e.currentTarget as HTMLElement).style.background = "transparent";
-                              (e.currentTarget as HTMLElement).style.color = "#334155";
+                              (e.currentTarget as HTMLElement).style.background = dropItem.isFeatured ? "#eff6ff" : "transparent";
+                              (e.currentTarget as HTMLElement).style.borderColor = dropItem.isFeatured ? "#93c5fd" : "transparent";
                             }}
                             onClick={() => setActiveDropdown(null)}
                           >
-                            {dropItem.label}
+                            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
+                              <span style={{ fontSize: "0.92rem", fontWeight: 700 }}>{dropItem.label}</span>
+                              {dropItem.tag && (
+                                <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#2563eb", background: "#eff6ff", padding: "0.12rem 0.45rem", borderRadius: "4px" }}>
+                                  {dropItem.tag}
+                                </span>
+                              )}
+                            </div>
+                            {dropItem.sub && (
+                              <span style={{ fontSize: "0.75rem", color: "#64748b", lineHeight: 1.35 }}>
+                                {dropItem.sub}
+                              </span>
+                            )}
                           </Link>
                         ))}
                       </div>
@@ -315,21 +388,46 @@ export default function Header() {
           <div className="mobile-nav-drawer">
             <div className="container" style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: "1.5rem 2rem" }}>
               {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  style={{
-                    color: pathname === item.href ? "#2563eb" : "#0f172a",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    fontSize: "1.05rem",
-                    padding: "0.5rem 0",
-                    borderBottom: "1px solid #f1f5f9"
-                  }}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.href} style={{ borderBottom: "1px solid #f1f5f9", paddingBottom: "0.5rem" }}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    style={{
+                      color: pathname === item.href ? "#2563eb" : "#0f172a",
+                      fontWeight: 700,
+                      textDecoration: "none",
+                      fontSize: "1.05rem",
+                      display: "block",
+                      padding: "0.4rem 0"
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.dropdown && (
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", paddingLeft: "0.8rem", marginTop: "0.2rem" }}>
+                      {item.dropdown.map((drop) => (
+                        <Link
+                          key={drop.href}
+                          href={drop.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          style={{
+                            color: drop.isFeatured ? "#2563eb" : "#475569",
+                            fontSize: "0.85rem",
+                            textDecoration: "none",
+                            fontWeight: drop.isFeatured ? 700 : 500,
+                            padding: "0.25rem 0",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.4rem"
+                          }}
+                        >
+                          <span style={{ color: "#3b82f6", fontSize: "0.75rem" }}>•</span>
+                          <span>{drop.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginTop: "1rem" }}>
                 <Link
