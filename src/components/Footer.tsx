@@ -36,7 +36,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
       <footer
         className="main-footer"
         style={{
-          backgroundImage: "url('/footer_01.png')",
+          backgroundImage: "url('/Footer_01_new.png')",
           backgroundSize: "cover",
           backgroundPosition: "center right",
           backgroundRepeat: "no-repeat",
