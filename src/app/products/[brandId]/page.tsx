@@ -63,7 +63,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
       }}>
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
           <Link href="/products" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#93c5fd", textDecoration: "none", fontWeight: 600, marginBottom: "2rem" }}>
-            <ChevronLeft size={16} /> Back to All Brands
+            <ChevronLeft size={16} /> Back to Products
           </Link>
           
           <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
