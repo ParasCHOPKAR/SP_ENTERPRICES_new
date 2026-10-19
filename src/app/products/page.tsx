@@ -19,13 +19,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { BRANDS_DATA, BrandData } from "@/data/brandsData";
-
-const heroImageMap: Record<string, string> = {
-  'eri': '/product_images/ERI_HERO.png',
-  'cermet': '/product_images/Cermet_Resistive_hero.png',
-  'cd-automation': '/product_images/CD_automation.png',
-};
+import { BRANDS_DATA, BrandData, BRAND_HERO_MAP } from "@/data/brandsData";
 
 function ProductsContent() {
   const searchParams = useSearchParams();
@@ -44,7 +38,7 @@ function ProductsContent() {
     }
   }, [categoryParam]);
 
-  // If a brand query param is present, redirect to the brand detail page
+  // If a brand query param is present, redirect to the new brand detail page
   useEffect(() => {
     if (brandParam) {
       router.push(`/products/${brandParam}`);
@@ -58,7 +52,7 @@ function ProductsContent() {
   }, [queryParam]);
 
   const categories = [
-    { id: "all", label: "All Products" },
+    { id: "all", label: "All Products (13 Brands)" },
     { id: "relays", label: "Relays & Switching" },
     { id: "power", label: "SMPS & Power Resistors" },
     { id: "automation", label: "PLCs, HMIs & Software" },
@@ -67,24 +61,16 @@ function ProductsContent() {
   ];
 
   const filteredBrands = BRANDS_DATA.filter((brand) => {
-    // Under "All Products", show ONLY ERI
-    if (activeCategory === "all") {
-      if (brand.id.toLowerCase() !== "eri") {
-        return false;
-      }
-    } else {
-      const matchesCategory =
-        (activeCategory === "relays" && brand.filterCategory === "relays") ||
-        (activeCategory === "power" && brand.filterCategory === "power") ||
-        (activeCategory === "automation" && (brand.filterCategory === "automation" || brand.id === "automation-software")) ||
-        (activeCategory === "sensors" && (brand.filterCategory === "sensors" || brand.id === "honeywell")) ||
-        (activeCategory === "cleanroom" && brand.filterCategory === "cleanroom");
-
-      if (!matchesCategory) return false;
-    }
+    const matchesCategory =
+      activeCategory === "all" ||
+      (activeCategory === "relays" && brand.filterCategory === "relays") ||
+      (activeCategory === "power" && brand.filterCategory === "power") ||
+      (activeCategory === "automation" && (brand.filterCategory === "automation" || brand.id === "automation-software")) ||
+      (activeCategory === "sensors" && (brand.filterCategory === "sensors" || brand.id === "honeywell")) ||
+      (activeCategory === "cleanroom" && brand.filterCategory === "cleanroom");
 
     const query = searchQuery.toLowerCase().trim();
-    if (!query) return true;
+    if (!query) return matchesCategory;
 
     const matchesQuery =
       brand.name.toLowerCase().includes(query) ||
@@ -100,8 +86,10 @@ function ProductsContent() {
         )
       );
 
-    return matchesQuery;
+    return matchesCategory && matchesQuery;
   });
+
+  // Inquire logic removed from here as it's now handled on the detail page
 
   return (
     <div className="site-wrapper">
@@ -146,7 +134,7 @@ function ProductsContent() {
               <Search size={18} className="search-icon" />
               <input
                 type="text"
-                placeholder="Search across brands (e.g. SSR, SMPS, PID, LVDT)..."
+                placeholder="Search across all 13 brands (e.g. SSR, SMPS, PID, LVDT)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -166,11 +154,7 @@ function ProductsContent() {
           <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", padding: "0.9rem 1.4rem", borderRadius: "10px", marginBottom: "2.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontSize: "0.88rem", color: "#1e3a8a", fontWeight: 600 }}>
               <Sparkles size={18} color="#2563eb" />
-              <span>
-                {activeCategory === "all"
-                  ? "Showing Authorized Engineering Brand: ERI"
-                  : `Showing ${filteredBrands.length} Authorized Engineering ${filteredBrands.length === 1 ? "Brand" : "Brands"}`}
-              </span>
+              <span>Showing {filteredBrands.length} of 13 Authorized Engineering Brands</span>
             </div>
             <a
               href="/01.SP Enterprises (1).pdf"
@@ -184,7 +168,7 @@ function ProductsContent() {
           {/* Brands Grid */}
           <div className="brands-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "2rem" }}>
             {filteredBrands.map((brand) => {
-              const bgImage = heroImageMap[brand.id.toLowerCase()] || '/products_showcase.jpg';
+              const bgImage = brand.heroImage || BRAND_HERO_MAP[brand.id.toLowerCase()] || '/products_showcase.jpg';
               return (
               <div
                 key={brand.id}
@@ -217,10 +201,10 @@ function ProductsContent() {
                   (e.currentTarget as HTMLElement).style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
                 }}
               >
-                {/* Card Banner with Image */}
+                {/* Card Banner with Brand Hero Image */}
                 <div style={{
                   position: "relative",
-                  height: "160px",
+                  height: "180px",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
@@ -228,7 +212,7 @@ function ProductsContent() {
                   color: "white",
                   overflow: "hidden"
                 }}>
-                  {/* Background Image & Overlay */}
+                  {/* Background Hero Image & Overlay */}
                   <div style={{
                     position: "absolute", inset: 0,
                     backgroundImage: `url('${bgImage}')`,
@@ -238,7 +222,7 @@ function ProductsContent() {
                   }} />
                   <div style={{
                     position: "absolute", inset: 0,
-                    background: "linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.1) 40%, rgba(15, 23, 42, 0.6) 100%)",
+                    background: "linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.7) 100%)",
                     zIndex: 1
                   }} />
 
@@ -261,7 +245,7 @@ function ProductsContent() {
                   </div>
                   
                   <div style={{ position: "relative", zIndex: 2, marginTop: "auto" }}>
-                    <h3 style={{ fontSize: "2rem", fontWeight: 900, letterSpacing: "-0.5px", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
+                    <h3 style={{ fontSize: "1.9rem", fontWeight: 900, letterSpacing: "-0.5px", textShadow: "0 2px 10px rgba(0,0,0,0.5)", margin: 0 }}>
                       {brand.name}
                     </h3>
                   </div>
@@ -351,6 +335,8 @@ function ProductsContent() {
           )}
         </div>
       </section>
+
+      {/* Brand Modal has been replaced by individual detail pages */}
 
       <Footer />
     </div>

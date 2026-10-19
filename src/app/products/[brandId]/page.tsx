@@ -7,7 +7,7 @@ import Image from "next/image";
 import { CheckCircle2, Award, Download, ExternalLink, ArrowRight, ChevronLeft, ShieldCheck, Factory, Cpu } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { BRANDS_DATA } from "@/data/brandsData";
+import { BRANDS_DATA, BRAND_HERO_MAP } from "@/data/brandsData";
 
 export default function BrandDetailPage({ params }: { params?: { brandId: string } | Promise<{ brandId: string }> }) {
   const clientParams = useParams();
@@ -41,12 +41,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
     );
   }
 
-  const heroImageMap: Record<string, string> = {
-    'eri': '/product_images/ERI_HERO.png',
-    'cermet': '/product_images/Cermet_Resistive_hero.png',
-    'cd-automation': '/product_images/CD_automation.png',
-  };
-  const heroBgImage = heroImageMap[brand.id.toLowerCase()] || '/products_showcase.jpg';
+  const heroBgImage = brand.heroImage || BRAND_HERO_MAP[brand.id.toLowerCase()] || '/products_showcase.jpg';
 
   return (
     <div className="site-wrapper">
@@ -55,41 +50,135 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
       {/* Brand Hero Section */}
       <section style={{ 
         position: "relative",
-        background: `linear-gradient(to right, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.5) 45%, rgba(15, 23, 42, 0) 100%), url('${heroBgImage}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        padding: "5rem 0", 
+        overflow: "hidden",
+        background: "linear-gradient(135deg, #0b1120 0%, #0f172a 60%, #1e293b 100%)",
+        padding: "4rem 0 4.5rem 0", 
         color: "white" 
       }}>
+        {/* Ambient Blurred Glow of Brand Hero Card */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url('${heroBgImage}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.18,
+          filter: "blur(30px)",
+          transform: "scale(1.15)",
+          zIndex: 0
+        }} />
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to right, rgba(11, 17, 32, 0.95) 0%, rgba(15, 23, 42, 0.85) 50%, rgba(15, 23, 42, 0.92) 100%)",
+          zIndex: 1
+        }} />
+
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
-          <Link href="/products" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#93c5fd", textDecoration: "none", fontWeight: 600, marginBottom: "2rem" }}>
+          <Link href="/products" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#93c5fd", textDecoration: "none", fontWeight: 600, marginBottom: "1.8rem" }}>
             <ChevronLeft size={16} /> Back to All Brands
           </Link>
           
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
-            <span style={{
-              background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)",
-              border: "1px solid rgba(255,255,255,0.3)", padding: "0.4rem 1rem",
-              borderRadius: "50px", fontSize: "0.85rem", fontWeight: 700,
-              display: "flex", alignItems: "center", gap: "0.4rem"
-            }}>
-              <Award size={16} /> {brand.badge}
-            </span>
-            <span style={{
-              background: "#1e3a8a", color: "#93c5fd",
-              padding: "0.4rem 1rem", borderRadius: "50px",
-              fontSize: "0.85rem", fontWeight: 800
-            }}>
-              {brand.filterCategory.toUpperCase()}
-            </span>
-          </div>
+          <div style={{ 
+            display: "grid", 
+            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", 
+            gap: "2.5rem", 
+            alignItems: "center" 
+          }}>
+            {/* Left Column: Brand Metadata */}
+            <div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginBottom: "1.2rem" }}>
+                <span style={{
+                  background: "rgba(255,255,255,0.15)", backdropFilter: "blur(6px)",
+                  border: "1px solid rgba(255,255,255,0.25)", padding: "0.35rem 0.9rem",
+                  borderRadius: "50px", fontSize: "0.8rem", fontWeight: 700,
+                  display: "flex", alignItems: "center", gap: "0.4rem", color: "#f8fafc"
+                }}>
+                  <Award size={15} color="#60a5fa" /> {brand.badge}
+                </span>
+                <span style={{
+                  background: "#1e3a8a", color: "#93c5fd",
+                  padding: "0.35rem 0.9rem", borderRadius: "50px",
+                  fontSize: "0.78rem", fontWeight: 800, letterSpacing: "0.5px"
+                }}>
+                  {brand.filterCategory.toUpperCase()}
+                </span>
+              </div>
 
-          <h1 style={{ fontSize: "3.5rem", fontWeight: 900, marginBottom: "1rem", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
-            {brand.fullName}
-          </h1>
-          <p style={{ fontSize: "1.25rem", color: "#e2e8f0", maxWidth: "800px", lineHeight: 1.6 }}>
-            {brand.tagline}
-          </p>
+              <h1 style={{ fontSize: "2.8rem", fontWeight: 900, marginBottom: "0.8rem", lineHeight: 1.15, textShadow: "0 2px 10px rgba(0,0,0,0.4)" }}>
+                {brand.fullName}
+              </h1>
+              <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.6, marginBottom: "1.8rem" }}>
+                {brand.tagline}
+              </p>
+
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+                <button
+                  type="button"
+                  onClick={() => router.push(`/contact?subject=${encodeURIComponent(`Inquiry for ${brand.name}`)}`)}
+                  style={{
+                    background: "#2563eb",
+                    color: "white",
+                    padding: "0.8rem 1.6rem",
+                    borderRadius: "8px",
+                    fontWeight: 700,
+                    border: "none",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    boxShadow: "0 4px 15px rgba(37, 99, 235, 0.4)",
+                    transition: "background 0.2s ease"
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.background = "#1d4ed8")}
+                  onMouseLeave={e => (e.currentTarget.style.background = "#2563eb")}
+                >
+                  Request Official Quote <ArrowRight size={16} />
+                </button>
+                <a
+                  href="/01.SP Enterprises (1).pdf"
+                  download="SP_Enterprises_Catalogue.pdf"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    background: "rgba(255,255,255,0.1)",
+                    color: "white",
+                    padding: "0.8rem 1.4rem",
+                    borderRadius: "8px",
+                    textDecoration: "none",
+                    fontWeight: 600,
+                    border: "1px solid rgba(255,255,255,0.2)"
+                  }}
+                >
+                  <Download size={16} /> Product Brochure
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Prominent Brand Hero Card Showcase */}
+            <div>
+              <div style={{
+                position: "relative",
+                borderRadius: "16px",
+                overflow: "hidden",
+                boxShadow: "0 20px 45px rgba(0,0,0,0.55)",
+                border: "1px solid rgba(255,255,255,0.22)",
+                aspectRatio: "1983 / 793",
+                width: "100%",
+                background: "#0f172a"
+              }}>
+                <Image
+                  src={heroBgImage}
+                  alt={`${brand.name} Hero Showcase`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
