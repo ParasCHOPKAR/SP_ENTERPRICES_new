@@ -86,11 +86,11 @@ export default function AboutPage() {
   const milestones = [
     {
       icon: <Globe size={28} />,
-      label: "Authorized Dealership",
+      label: "Dealership & Distribution",
       title: "13 Global Brand Partnerships",
       desc: "Direct distributorship with world leaders — ERI, Weidmüller, West, Phoenix Contact, Gefran, JUMO, Emerson, Honeywell, Automation Software, and more.",
-      color: "#2563eb",
-      bg: "rgba(37,99,235,0.08)"
+      color: "#c8102e",
+      bg: "rgba(200,16,46,0.08)"
     },
     {
       icon: <Cpu size={28} />,
@@ -105,8 +105,8 @@ export default function AboutPage() {
       label: "Packaging Automation",
       title: "Glue Conveyor Systems",
       desc: "Engineered high-speed automated hot-melt and cold glue carton packing conveyors for pharma and FMCG industries.",
-      color: "#0891b2",
-      bg: "rgba(8,145,178,0.08)"
+      color: "#f59e0b",
+      bg: "rgba(245,158,11,0.08)"
     },
     {
       icon: <ShieldCheck size={28} />,
@@ -119,7 +119,7 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { value: 13, suffix: "+", label: "Authorized Global Brands", icon: <Globe size={22} /> },
+    { value: 13, suffix: "+", label: "Global Partner Brands", icon: <Globe size={22} /> },
     { value: 25, suffix: "+", label: "Years of Engineering Excellence", icon: <TrendingUp size={22} /> },
     { value: 500, suffix: "+", label: "Industrial Clients Served", icon: <Users size={22} /> },
     { value: 100, suffix: "%", label: "Genuine OEM Components", icon: <CheckCircle2 size={22} /> }
@@ -130,15 +130,15 @@ export default function AboutPage() {
       icon: <Target size={28} />,
       title: "Our Mission",
       desc: "To empower Indian industries, machine builders, and pharmaceutical facilities with certified automation hardware, type-tested control enclosures, and world-class cleanroom technologies that elevate productivity, safety, and energy efficiency.",
-      gradient: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
-      iconBg: "rgba(37,99,235,0.15)"
+      gradient: "linear-gradient(135deg, #c8102e 0%, #991b1b 100%)",
+      iconBg: "rgba(200,16,46,0.15)"
     },
     {
       icon: <Sparkles size={28} />,
       title: "Our Vision",
       desc: "To stand as Maharashtra's premier benchmark for industrial automation integration — recognized for 100% genuine components, unmatched technical consultation, and innovative manufacturing solutions driving smart Industry 4.0 transformation.",
-      gradient: "linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%)",
-      iconBg: "rgba(124,58,237,0.15)"
+      gradient: "linear-gradient(135deg, #f59e0b 0%, #b45309 100%)",
+      iconBg: "rgba(245,158,11,0.15)"
     },
     {
       icon: <ShieldCheck size={28} />,
@@ -157,7 +157,7 @@ export default function AboutPage() {
       <section
         style={{
           position: "relative",
-          background: "radial-gradient(ellipse at center, #0a1628 0%, #020617 100%)",
+          background: "radial-gradient(ellipse at center, #0f172a 0%, #020617 100%)",
           aspectRatio: "16 / 4",
           minHeight: "400px",
           display: "flex",
@@ -170,14 +170,14 @@ export default function AboutPage() {
         <div
           style={{
             position: "absolute", inset: 0,
-            backgroundImage: "linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px)",
+            backgroundImage: "linear-gradient(rgba(200,16,46,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(200,16,46,0.06) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
             pointerEvents: "none"
           }}
         />
         {/* Glowing orbs */}
-        <div style={{ position: "absolute", top: "10%", right: "8%", width: "420px", height: "420px", background: "radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", bottom: "5%", left: "3%", width: "300px", height: "300px", background: "radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", top: "10%", right: "8%", width: "420px", height: "420px", background: "radial-gradient(circle, rgba(200,16,46,0.2) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "5%", left: "3%", width: "300px", height: "300px", background: "radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
         <div className="container" style={{ position: "relative", zIndex: 1, width: "100%" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "2rem", alignItems: "center" }}>
@@ -186,8 +186,8 @@ export default function AboutPage() {
               <div
                 style={{
                   display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                  background: "rgba(59,130,246,0.18)", border: "1px solid rgba(59,130,246,0.35)",
-                  color: "#93c5fd", padding: "0.3rem 0.8rem", borderRadius: "50px",
+                  background: "rgba(200,16,46,0.18)", border: "1px solid rgba(245,158,11,0.35)",
+                  color: "#fbbf24", padding: "0.3rem 0.8rem", borderRadius: "50px",
                   fontSize: "0.7rem", fontWeight: 700, letterSpacing: "1px",
                   textTransform: "uppercase", marginBottom: "1rem"
                 }}
@@ -200,19 +200,19 @@ export default function AboutPage() {
                   fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
                   fontWeight: 900, lineHeight: 1.15,
                   marginBottom: "1rem",
-                  background: "linear-gradient(135deg, #ffffff 0%, #93c5fd 100%)",
+                  background: "linear-gradient(135deg, #ffffff 0%, #fef08a 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent"
                 }}
               >
                 Pioneering Automation,
-                <br />Control &amp; Precision <span style={{ WebkitTextFillColor: "#60a5fa" }}>Manufacturing</span>
+                <br />Control &amp; Precision <span style={{ WebkitTextFillColor: "#fbbf24" }}>Engineering Solution</span>
               </h1>
 
               <p style={{ fontSize: "0.95rem", color: "#cbd5e1", lineHeight: 1.6, maxWidth: "550px", marginBottom: "1.5rem" }}>
                 Pune&apos;s trusted industrial channel partner led by{" "}
                 <strong style={{ color: "#ffffff" }}>Mr. Pradeep Kulkarni</strong>{" "}
-                — delivering authorized global electrical components and bespoke in-house manufacturing.
+                — delivering premier global electrical components and bespoke in-house manufacturing.
               </p>
 
               <div style={{ display: "flex", gap: "0.8rem", flexWrap: "wrap" }}>
@@ -220,14 +220,14 @@ export default function AboutPage() {
                   href="/products"
                   style={{
                     display: "inline-flex", alignItems: "center", gap: "0.4rem",
-                    background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
+                    background: "linear-gradient(135deg, #c8102e, #991b1b)",
                     color: "white", padding: "0.7rem 1.4rem", borderRadius: "6px",
                     fontWeight: 700, textDecoration: "none", fontSize: "0.85rem",
-                    boxShadow: "0 4px 15px rgba(37,99,235,0.4)",
+                    boxShadow: "0 4px 15px rgba(200,16,46,0.4)",
                     transition: "transform 0.2s, box-shadow 0.2s"
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 20px rgba(37,99,235,0.5)"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 15px rgba(37,99,235,0.4)"; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 20px rgba(200,16,46,0.5)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 15px rgba(200,16,46,0.4)"; }}
                 >
                   Explore Brands <ArrowRight size={14} />
                 </Link>
@@ -261,26 +261,26 @@ export default function AboutPage() {
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1rem" }}>
-                <div style={{ width: "38px", height: "38px", borderRadius: "10px", background: "linear-gradient(135deg, #3b82f6, #1d4ed8)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: "38px", height: "38px", borderRadius: "10px", background: "linear-gradient(135deg, #c8102e, #991b1b)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Users size={18} color="white" />
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.65rem", color: "#93c5fd", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px" }}>Managing Partner</div>
+                  <div style={{ fontSize: "0.65rem", color: "#fbbf24", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px" }}>Managing Partner</div>
                   <div style={{ fontWeight: 800, fontSize: "0.95rem", color: "#fff" }}>Mr. Pradeep Kulkarni</div>
                 </div>
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", fontSize: "0.8rem" }}>
-                <a href="tel:+918308502100" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff", textDecoration: "none", background: "rgba(59,130,246,0.2)", border: "1px solid rgba(59,130,246,0.3)", padding: "0.4rem 0.6rem", borderRadius: "6px", fontWeight: 700, transition: "background 0.2s" }}
-                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(59,130,246,0.3)"}
-                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(59,130,246,0.2)"}>
-                  <Phone size={14} color="#93c5fd" /> +91 8308502100
+                <a href="tel:+918308502100" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff", textDecoration: "none", background: "rgba(200,16,46,0.2)", border: "1px solid rgba(245,158,11,0.3)", padding: "0.4rem 0.6rem", borderRadius: "6px", fontWeight: 700, transition: "background 0.2s" }}
+                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(200,16,46,0.3)"}
+                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(200,16,46,0.2)"}>
+                  <Phone size={14} color="#fbbf24" /> +91 8308502100
                 </a>
                 <a href="mailto:info@speautomation.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
-                  <Mail size={14} color="#93c5fd" /> info@speautomation.com
+                  <Mail size={14} color="#fbbf24" /> info@speautomation.com
                 </a>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", color: "#94a3b8", fontSize: "0.75rem", padding: "0.2rem" }}>
-                  <MapPin size={14} color="#93c5fd" style={{ flexShrink: 0, marginTop: "2px" }} />
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", color: "#cbd5e1", fontSize: "0.75rem", padding: "0.2rem" }}>
+                  <MapPin size={14} color="#fbbf24" style={{ flexShrink: 0, marginTop: "2px" }} />
                   <span>Sr. No. 14/1A + 2B/2, Gujarwadi Rd, Katraj, Pune</span>
                 </div>
               </div>
@@ -292,7 +292,7 @@ export default function AboutPage() {
       {/* ─── STATS BANNER ─── */}
       <section
         style={{
-          background: "linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #2563eb 100%)",
+          background: "linear-gradient(135deg, #0f172a 0%, #7f1d1d 50%, #c8102e 100%)",
           padding: "1.5rem 0"
         }}
       >
@@ -307,11 +307,11 @@ export default function AboutPage() {
                     borderRight: idx < stats.length - 1 ? "1px solid rgba(255,255,255,0.15)" : "none"
                   }}
                 >
-                  <div style={{ color: "#93c5fd", marginBottom: "0.5rem" }}>{s.icon}</div>
+                  <div style={{ color: "#fbbf24", marginBottom: "0.5rem" }}>{s.icon}</div>
                   <div style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", fontWeight: 900, lineHeight: 1, marginBottom: "0.4rem" }}>
                     <Counter target={s.value} suffix={s.suffix} />
                   </div>
-                  <div style={{ fontSize: "0.82rem", color: "#bfdbfe", fontWeight: 600 }}>{s.label}</div>
+                  <div style={{ fontSize: "0.82rem", color: "#fef08a", fontWeight: 600 }}>{s.label}</div>
                 </div>
               </FadeIn>
             ))}
@@ -325,7 +325,7 @@ export default function AboutPage() {
           <div style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: "5rem", alignItems: "center" }}>
             {/* Left text */}
             <FadeIn>
-              <span style={{ fontSize: "0.8rem", color: "#2563eb", fontWeight: 800, letterSpacing: "1.5px", textTransform: "uppercase", display: "block", marginBottom: "0.5rem" }}>
+              <span style={{ fontSize: "0.8rem", color: "#c8102e", fontWeight: 800, letterSpacing: "1.5px", textTransform: "uppercase", display: "block", marginBottom: "0.5rem" }}>
                 WHO WE ARE
               </span>
               <h2
@@ -335,7 +335,7 @@ export default function AboutPage() {
                 }}
               >
                 Bridging Global Innovation with{" "}
-                <span style={{ color: "#2563eb" }}>Domestic Manufacturing</span>
+                <span style={{ color: "#c8102e" }}>Domestic Manufacturing</span>
               </h2>
               <p style={{ fontSize: "1rem", color: "#475569", lineHeight: 1.8, marginBottom: "1rem" }}>
                 <strong>S. P. Enterprises</strong> was established in Pune, Maharashtra, to solve a critical industrial need: providing manufacturing plants and OEMs with authentic, manufacturer-backed electronic automation components combined with tailor-made electrical control panels.
@@ -347,14 +347,14 @@ export default function AboutPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "2.5rem" }}>
                 {[
                   {
-                    icon: <Award size={22} />, color: "#2563eb", bg: "#eff6ff",
-                    title: "Authorized Dealership Division (13 Brands)",
+                    icon: <Award size={22} />, color: "#c8102e", bg: "#fef2f2",
+                    title: "Dealership & Solutions Division (13 Brands)",
                     desc: "Direct distributor for ERI Solid State Relays, Weidmüller SMPS, Cermet Resistors, West PID, Phoenix Contact, Renu PLC/HMI, CD Automation, Gefran Sensors, JUMO India, Emerson HVAC, Automation Software, Honeywell Systems, and Clean Grad Slovenia."
                   },
                   {
                     icon: <Factory size={22} />, color: "#16a34a", bg: "#f0fdf4",
-                    title: "In-House Manufacturing Division — SAHPL (5 Core Disciplines)",
-                    desc: "Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL): End-to-end Design, Manufacturing, Installation, and Commissioning of Special Purpose Machines (SPM), Hot Melt Conveyors, Material Handling & 90° Tilters, Type-Tested Control Panels (Thyristor, VFD, APFC, Annunciator), and cGMP SS/MS Industrial Fabrication."
+                    title: "In-House Manufacturing Division — SP Enterprises (SAHPL Portfolio)",
+                    desc: "SP Enterprises directly designs, manufactures, and delivers the complete SAHPL product portfolio: End-to-end Design, Manufacturing, Installation, and Commissioning of Special Purpose Machines (SPM), Hot Melt Packaging Conveyors, Heavy Material Handling & 90° Tilters, Type-Tested Control Panels (Thyristor, VFD, APFC, Annunciator), and cGMP SS/MS Industrial Fabrication."
                   }
                 ].map((item, idx) => (
                   <div
@@ -383,7 +383,7 @@ export default function AboutPage() {
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                 <Link
                   href="/products"
-                  style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "linear-gradient(135deg, #2563eb, #1d4ed8)", color: "white", padding: "0.85rem 1.8rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", boxShadow: "0 4px 15px rgba(37,99,235,0.3)", transition: "transform 0.2s" }}
+                  style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "linear-gradient(135deg, #c8102e, #991b1b)", color: "white", padding: "0.85rem 1.8rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", boxShadow: "0 4px 15px rgba(200,16,46,0.3)", transition: "transform 0.2s" }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = "translateY(0)"}
                 >
@@ -414,7 +414,7 @@ export default function AboutPage() {
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%)" }} />
                   <div style={{ position: "absolute", bottom: "1.5rem", left: "1.5rem", right: "1.5rem" }}>
                     <div style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: "10px", padding: "0.8rem 1rem", color: "white" }}>
-                      <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "#93c5fd", marginBottom: "0.2rem" }}>AUTHORIZED PRODUCTS</div>
+                      <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "#fbbf24", marginBottom: "0.2rem" }}>PREMIER PRODUCTS</div>
                       <div style={{ fontWeight: 800, fontSize: "1rem" }}>13 Global Engineering Brands</div>
                     </div>
                   </div>
@@ -424,9 +424,9 @@ export default function AboutPage() {
                 <div
                   style={{
                     position: "absolute", top: "-18px", right: "-18px",
-                    background: "linear-gradient(135deg, #16a34a, #15803d)",
+                    background: "linear-gradient(135deg, #f59e0b, #d97706)",
                     borderRadius: "14px", padding: "0.9rem 1.2rem",
-                    color: "white", boxShadow: "0 10px 30px rgba(22,163,74,0.4)",
+                    color: "white", boxShadow: "0 10px 30px rgba(245,158,11,0.4)",
                     textAlign: "center", minWidth: "90px"
                   }}
                 >
@@ -444,7 +444,7 @@ export default function AboutPage() {
                   }}
                 >
                   <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <Building2 size={18} color="#2563eb" /> Key Leadership &amp; Headquarters
+                    <Building2 size={18} color="#c8102e" /> Key Leadership &amp; Headquarters
                   </h3>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem", fontSize: "0.85rem" }}>
                     {[
@@ -455,14 +455,14 @@ export default function AboutPage() {
                       <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.4rem 0", borderBottom: "1px solid #f1f5f9" }}>
                         <span style={{ color: "#94a3b8", fontSize: "0.75rem" }}>{row.label}</span>
                         {row.link ? (
-                          <a href={row.link} style={{ color: "#2563eb", fontWeight: 700, textDecoration: "none" }}>{row.value}</a>
+                          <a href={row.link} style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>{row.value}</a>
                         ) : (
                           <strong style={{ color: "#0f172a" }}>{row.value}</strong>
                         )}
                       </div>
                     ))}
                     <div style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", paddingTop: "0.3rem" }}>
-                      <MapPin size={14} color="#2563eb" style={{ flexShrink: 0, marginTop: "2px" }} />
+                      <MapPin size={14} color="#c8102e" style={{ flexShrink: 0, marginTop: "2px" }} />
                       <span style={{ color: "#64748b", fontSize: "0.8rem", lineHeight: 1.4 }}>Sr. No. 14/1A + 2B/2, Gujarwadi Road, Katraj, Pune - 411046, Maharashtra</span>
                     </div>
                   </div>
@@ -481,15 +481,15 @@ export default function AboutPage() {
           position: "relative", overflow: "hidden"
         }}
       >
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%, rgba(37,99,235,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(124,58,237,0.10) 0%, transparent 60%)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 20% 50%, rgba(200,16,46,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(245,158,11,0.10) 0%, transparent 60%)", pointerEvents: "none" }} />
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <FadeIn>
             <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 4rem" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(59,130,246,0.15)", border: "1px solid rgba(59,130,246,0.3)", color: "#93c5fd", padding: "0.4rem 1rem", borderRadius: "50px", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "1.2rem" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(200,16,46,0.15)", border: "1px solid rgba(245,158,11,0.3)", color: "#fbbf24", padding: "0.4rem 1rem", borderRadius: "50px", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "1.2rem" }}>
                 <Target size={13} /> Our Core Purpose
               </div>
               <h2 style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 900, color: "#ffffff", lineHeight: 1.2, marginBottom: "0.8rem" }}>
-                Mission, Vision &amp; <span style={{ color: "#60a5fa" }}>Commitment</span>
+                Mission, Vision &amp; <span style={{ color: "#fbbf24" }}>Commitment</span>
               </h2>
               <p style={{ fontSize: "1rem", color: "#94a3b8", lineHeight: 1.6 }}>
                 Guided by a commitment to zero-downtime engineering, transparent client dealings, and lasting value creation.
@@ -512,7 +512,7 @@ export default function AboutPage() {
                     const el = e.currentTarget as HTMLElement;
                     el.style.transform = "translateY(-6px)";
                     el.style.boxShadow = "0 20px 50px rgba(0,0,0,0.3)";
-                    el.style.borderColor = "rgba(59,130,246,0.4)";
+                    el.style.borderColor = "rgba(200,16,46,0.4)";
                   }}
                   onMouseLeave={e => {
                     const el = e.currentTarget as HTMLElement;
@@ -538,14 +538,14 @@ export default function AboutPage() {
         <div className="container">
           <FadeIn>
             <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 4rem" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#eff6ff", border: "1px solid #bfdbfe", color: "#2563eb", padding: "0.4rem 1rem", borderRadius: "50px", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "1.2rem" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#fef2f2", border: "1px solid #fecdd3", color: "#c8102e", padding: "0.4rem 1rem", borderRadius: "50px", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "1.2rem" }}>
                 <Layers size={13} /> Capabilities Journey
               </div>
               <h2 style={{ fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 900, color: "#0f172a", lineHeight: 1.2, marginBottom: "0.8rem" }}>
-                End-to-End <span style={{ color: "#2563eb" }}>Engineering Scope</span>
+                End-to-End <span style={{ color: "#c8102e" }}>Engineering Scope</span>
               </h2>
               <p style={{ fontSize: "1rem", color: "#64748b", lineHeight: 1.6 }}>
-                From authorized component sourcing to turnkey plant automation, panel building, and sterile pharma furniture.
+                From direct component sourcing to turnkey plant automation, panel building, and sterile pharma furniture.
               </p>
             </div>
           </FadeIn>
@@ -601,19 +601,19 @@ export default function AboutPage() {
       <section
         style={{
           padding: "6rem 0",
-          background: "linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%)",
+          background: "linear-gradient(135deg, #f8fafc 0%, #fff1f2 100%)",
           borderTop: "1px solid #e2e8f0"
         }}
       >
         <div className="container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
             <FadeIn>
-              <span style={{ fontSize: "0.8rem", color: "#2563eb", fontWeight: 800, letterSpacing: "1.5px", textTransform: "uppercase", display: "block", marginBottom: "0.5rem" }}>WHY CHOOSE US</span>
+              <span style={{ fontSize: "0.8rem", color: "#c8102e", fontWeight: 800, letterSpacing: "1.5px", textTransform: "uppercase", display: "block", marginBottom: "0.5rem" }}>WHY CHOOSE US</span>
               <h2 style={{ fontSize: "clamp(1.7rem, 3vw, 2.4rem)", fontWeight: 900, color: "#0f172a", lineHeight: 1.2, marginBottom: "1.5rem" }}>
-                The S. P. Enterprises <span style={{ color: "#2563eb" }}>Advantage</span>
+                The S. P. Enterprises <span style={{ color: "#c8102e" }}>Advantage</span>
               </h2>
               <p style={{ fontSize: "0.98rem", color: "#64748b", lineHeight: 1.7, marginBottom: "2rem" }}>
-                We combine the breadth of 13 globally-authorized brands with the agility and precision of in-house manufacturing — all under one roof in Pune.
+                We combine the breadth of 13 premier global brands with the agility and precision of in-house manufacturing — all under one roof in Pune.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
                 {[
@@ -625,7 +625,7 @@ export default function AboutPage() {
                   "Pan-India delivery with site commissioning support"
                 ].map((item, idx) => (
                   <div key={idx} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                    <CheckCircle2 size={18} color="#2563eb" style={{ flexShrink: 0 }} />
+                    <CheckCircle2 size={18} color="#c8102e" style={{ flexShrink: 0 }} />
                     <span style={{ fontSize: "0.92rem", color: "#374151", fontWeight: 500 }}>{item}</span>
                   </div>
                 ))}
@@ -635,9 +635,9 @@ export default function AboutPage() {
             <FadeIn delay={150}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                 {[
-                  { icon: <Globe size={24} />, title: "13 Brands", sub: "Global authorized distributorship", color: "#2563eb", bg: "#eff6ff" },
+                  { icon: <Globe size={24} />, title: "13 Brands", sub: "Global dealership & distributorship", color: "#c8102e", bg: "#fef2f2" },
                   { icon: <Factory size={24} />, title: "OEM Mfg.", sub: "In-house panel fabrication", color: "#7c3aed", bg: "#f5f3ff" },
-                  { icon: <Wrench size={24} />, title: "Site Support", sub: "Installation & commissioning", color: "#0891b2", bg: "#ecfeff" },
+                  { icon: <Wrench size={24} />, title: "Site Support", sub: "Installation & commissioning", color: "#f59e0b", bg: "#fef3c7" },
                   { icon: <Star size={24} />, title: "4.9★ Rating", sub: "50+ verified Google reviews", color: "#d97706", bg: "#fffbeb" }
                 ].map((card, idx) => (
                   <div
@@ -668,24 +668,24 @@ export default function AboutPage() {
       <section
         style={{
           position: "relative",
-          background: "linear-gradient(135deg, #0a1628 0%, #1e3a8a 50%, #2563eb 100%)",
+          background: "linear-gradient(135deg, #0f172a 0%, #7f1d1d 50%, #c8102e 100%)",
           padding: "6rem 0", color: "white", overflow: "hidden"
         }}
       >
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px)", backgroundSize: "50px 50px", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(245,158,11,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.08) 1px, transparent 1px)", backgroundSize: "50px 50px", pointerEvents: "none" }} />
         <div style={{ position: "absolute", top: "-80px", right: "-80px", width: "400px", height: "400px", background: "radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <FadeIn>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "2.5rem" }}>
               <div style={{ maxWidth: "620px" }}>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)", color: "#bfdbfe", padding: "0.4rem 1rem", borderRadius: "50px", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "1.2rem" }}>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)", color: "#fbbf24", padding: "0.4rem 1rem", borderRadius: "50px", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "1.2rem" }}>
                   <Sparkles size={13} /> Get In Touch
                 </div>
                 <h2 style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 900, lineHeight: 1.15, marginBottom: "1rem" }}>
                   Ready to Automate or Build Your Next Control Panel?
                 </h2>
-                <p style={{ fontSize: "1.05rem", color: "#bfdbfe", lineHeight: 1.6 }}>
+                <p style={{ fontSize: "1.05rem", color: "#fef08a", lineHeight: 1.6 }}>
                   Access our complete catalogue — product photographs, electrical ratings, wiring schematics, and corporate credentials. Or speak directly with our engineering team today.
                 </p>
               </div>
@@ -694,7 +694,7 @@ export default function AboutPage() {
                 <a
                   href="/01.SP Enterprises (1).pdf"
                   download="SP_Enterprises_Catalogue.pdf"
-                  style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "white", color: "#1e3a8a", padding: "1rem 2rem", borderRadius: "10px", fontWeight: 800, textDecoration: "none", fontSize: "0.95rem", boxShadow: "0 6px 20px rgba(0,0,0,0.2)", transition: "transform 0.2s, box-shadow 0.2s" }}
+                  style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "white", color: "#c8102e", padding: "1rem 2rem", borderRadius: "10px", fontWeight: 800, textDecoration: "none", fontSize: "0.95rem", boxShadow: "0 6px 20px rgba(0,0,0,0.2)", transition: "transform 0.2s, box-shadow 0.2s" }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 10px 30px rgba(0,0,0,0.25)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 20px rgba(0,0,0,0.2)"; }}
                 >

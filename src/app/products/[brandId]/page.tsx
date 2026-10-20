@@ -75,7 +75,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
         }} />
 
         <div className="container" style={{ position: "relative", zIndex: 10 }}>
-          <Link href="/products" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#93c5fd", textDecoration: "none", fontWeight: 600, marginBottom: "1.8rem" }}>
+          <Link href="/products" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#fbbf24", textDecoration: "none", fontWeight: 600, marginBottom: "1.8rem" }}>
             <ChevronLeft size={16} /> Back to All Brands
           </Link>
           
@@ -94,10 +94,10 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
                   borderRadius: "50px", fontSize: "0.8rem", fontWeight: 700,
                   display: "flex", alignItems: "center", gap: "0.4rem", color: "#f8fafc"
                 }}>
-                  <Award size={15} color="#60a5fa" /> {brand.badge}
+                  <Award size={15} color="#f59e0b" /> {brand.badge}
                 </span>
                 <span style={{
-                  background: "#1e3a8a", color: "#93c5fd",
+                  background: "#c8102e", color: "#fef08a",
                   padding: "0.35rem 0.9rem", borderRadius: "50px",
                   fontSize: "0.78rem", fontWeight: 800, letterSpacing: "0.5px"
                 }}>
@@ -117,7 +117,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
                   type="button"
                   onClick={() => router.push(`/contact?subject=${encodeURIComponent(`Inquiry for ${brand.name}`)}`)}
                   style={{
-                    background: "#2563eb",
+                    background: "#c8102e",
                     color: "white",
                     padding: "0.8rem 1.6rem",
                     borderRadius: "8px",
@@ -127,17 +127,17 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "0.5rem",
-                    boxShadow: "0 4px 15px rgba(37, 99, 235, 0.4)",
+                    boxShadow: "0 4px 15px rgba(200, 16, 46, 0.4)",
                     transition: "background 0.2s ease"
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.background = "#1d4ed8")}
-                  onMouseLeave={e => (e.currentTarget.style.background = "#2563eb")}
+                  onMouseEnter={e => (e.currentTarget.style.background = "#a30d24")}
+                  onMouseLeave={e => (e.currentTarget.style.background = "#c8102e")}
                 >
                   Request Official Quote <ArrowRight size={16} />
                 </button>
                 <a
                   href="/01.SP Enterprises (1).pdf"
-                  download="SP_Enterprises_Catalogue.pdf"
+                  download={`${brand.name.replace(/[^a-zA-Z0-9]/g, '_')}_Catalogue.pdf`}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -198,7 +198,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1rem" }}>
               {brand.keyFeatures.map((feat, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.8rem", background: "#f1f5f9", padding: "1rem", borderRadius: "10px" }}>
-                  <CheckCircle2 size={20} color="#2563eb" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <CheckCircle2 size={20} color="#c8102e" style={{ flexShrink: 0, marginTop: "2px" }} />
                   <span style={{ fontSize: "0.95rem", color: "#334155", fontWeight: 500, lineHeight: 1.5 }}>{feat}</span>
                 </div>
               ))}
@@ -209,9 +209,9 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
           <div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2rem", flexWrap: "wrap", gap: "1rem" }}>
               <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "#0f172a", display: "flex", alignItems: "center", gap: "0.6rem", margin: 0 }}>
-                <Cpu size={28} color="#2563eb" /> Complete Product Catalog
+                <Cpu size={28} color="#c8102e" /> Complete Product Catalog
               </h3>
-              <span style={{ background: "#eff6ff", color: "#2563eb", padding: "0.5rem 1rem", borderRadius: "8px", fontWeight: 700 }}>
+              <span style={{ background: "#fff1f2", color: "#c8102e", padding: "0.5rem 1rem", borderRadius: "8px", fontWeight: 700 }}>
                 {brand.categories.reduce((acc, cat) => acc + cat.products.length, 0)} Key Products Listed
               </span>
             </div>
@@ -219,7 +219,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
             <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
               {brand.categories.map((cat, idx) => (
                 <div key={idx} style={{ background: "white", borderRadius: "16px", overflow: "hidden", border: "1px solid #e2e8f0", boxShadow: "0 5px 15px rgba(0,0,0,0.03)" }}>
-                  <div style={{ background: "#f8fafc", padding: "1.5rem", borderBottom: "1px solid #e2e8f0", borderLeft: "5px solid #2563eb" }}>
+                  <div style={{ background: "#f8fafc", padding: "1.5rem", borderBottom: "1px solid #e2e8f0", borderLeft: "5px solid #c8102e" }}>
                     <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
                       {cat.categoryName}
                     </h4>
@@ -243,7 +243,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "0.8rem" }}>
                           <h5 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#1e293b", margin: 0, lineHeight: 1.4 }}>{prod.name}</h5>
                           {prod.badge && (
-                            <span style={{ border: "1px solid #2563eb", color: "#2563eb", fontSize: "0.7rem", fontWeight: 700, padding: "0.2rem 0.5rem", borderRadius: "4px", whiteSpace: "nowrap" }}>
+                            <span style={{ border: "1px solid #c8102e", color: "#c8102e", fontSize: "0.7rem", fontWeight: 700, padding: "0.2rem 0.5rem", borderRadius: "4px", whiteSpace: "nowrap" }}>
                               {prod.badge}
                             </span>
                           )}
@@ -284,11 +284,11 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
 
             <div style={{ background: "white", padding: "2rem", borderRadius: "16px", border: "1px solid #e2e8f0", boxShadow: "0 5px 15px rgba(0,0,0,0.03)" }}>
               <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#0f172a", marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <Factory size={22} color="#2563eb" /> Target Applications
+                <Factory size={22} color="#c8102e" /> Target Applications
               </h4>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
                 {brand.targetIndustries.map((ind, iIdx) => (
-                  <span key={iIdx} style={{ background: "#eff6ff", color: "#1e40af", border: "1px solid #bfdbfe", padding: "0.4rem 0.8rem", borderRadius: "8px", fontSize: "0.85rem", fontWeight: 600 }}>
+                  <span key={iIdx} style={{ background: "#fff1f2", color: "#880816", border: "1px solid #fecdd3", padding: "0.4rem 0.8rem", borderRadius: "8px", fontSize: "0.85rem", fontWeight: 600 }}>
                     {ind}
                   </span>
                 ))}
@@ -304,7 +304,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
                   <ExternalLink size={18} /> Official Reference Page
                 </a>
               )}
-              <a href="/01.SP Enterprises (1).pdf" download="SP_Enterprises_Catalogue.pdf" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(255,255,255,0.1)", color: "white", padding: "0.8rem 1.2rem", borderRadius: "8px", textDecoration: "none", fontWeight: 600 }}>
+              <a href="/01.SP Enterprises (1).pdf" download={`${brand.name.replace(/[^a-zA-Z0-9]/g, '_')}_Catalogue.pdf`} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(255,255,255,0.1)", color: "white", padding: "0.8rem 1.2rem", borderRadius: "8px", textDecoration: "none", fontWeight: 600 }}>
                 <Download size={18} /> Download Full PDF Catalogue
               </a>
             </div>
@@ -312,7 +312,7 @@ export default function BrandDetailPage({ params }: { params?: { brandId: string
             <button 
               type="button" 
               onClick={() => router.push(`/contact?subject=${encodeURIComponent(`Brand Inquiry: ${brand.fullName}`)}`)}
-              style={{ background: "#3b82f6", color: "white", padding: "1rem 2rem", borderRadius: "8px", fontSize: "1.05rem", fontWeight: 700, border: "none", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "0.6rem", boxShadow: "0 4px 15px rgba(59, 130, 246, 0.4)" }}
+              style={{ background: "#c8102e", color: "white", padding: "1rem 2rem", borderRadius: "8px", fontSize: "1.05rem", fontWeight: 700, border: "none", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: "0.6rem", boxShadow: "0 4px 15px rgba(200, 16, 46, 0.4)" }}
             >
               Request Quote for {brand.name} <ArrowRight size={18} />
             </button>

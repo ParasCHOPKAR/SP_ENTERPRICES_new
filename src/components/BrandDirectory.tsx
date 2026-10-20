@@ -2,7 +2,20 @@
 
 import React, { useState, useMemo } from "react";
 import { Search, Sparkles, ArrowRight, ShieldCheck, Check, Layers, ChevronRight } from "lucide-react";
-import { BrandData, BRANDS_DATA } from "@/data/brandsData";
+import { BrandData, BRANDS_DATA, BRAND_HERO_MAP } from "@/data/brandsData";
+
+const getBrandBannerImage = (brand: BrandData): string => {
+  if (brand.id === "weidmuller") {
+    return "/product_hero_card/Weidmuller_hero.png";
+  }
+  if (brand.id === "cermet") {
+    return "/product_images/Cermet_Resistive_hero.png";
+  }
+  if (brand.id === "eri") {
+    return "/product_images/ERI_HERO.png";
+  }
+  return BRAND_HERO_MAP[brand.id] || brand.heroImage || "/product_hero_card/Weidmuller_hero.png";
+};
 
 interface BrandDirectoryProps {
   onSelectBrand: (brand: BrandData) => void;
@@ -69,7 +82,7 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
         {/* Section Header */}
         <div className="section-head text-center">
           <div className="title-pill">
-            <Sparkles size={14} /> AUTHORIZED DEALERSHIP & DISTRIBUTORSHIP
+            <Sparkles size={14} /> GLOBAL DEALERSHIP & DISTRIBUTORSHIP
           </div>
           <h2 className="section-title">
             Global Brands, <span>Certified Excellence</span>
@@ -143,7 +156,7 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
               }}
               onMouseEnter={e => {
                 (e.currentTarget as HTMLElement).style.transform = "translateY(-6px)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 40px rgba(37, 99, 235, 0.15)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 40px rgba(200, 16, 46, 0.15)";
               }}
               onMouseLeave={e => {
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
@@ -153,7 +166,7 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
               {/* Card Banner with Image */}
               <div style={{
                 position: "relative",
-                height: "160px",
+                height: "175px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -164,7 +177,7 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
                 {/* Background Image & Overlay */}
                 <div style={{
                   position: "absolute", inset: 0,
-                  backgroundImage: `url('${brand.id === "eri" ? "/product_img/ERP_hero_01.png" : "/products_showcase.jpg"}')`,
+                  backgroundImage: `url('${getBrandBannerImage(brand)}')`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   zIndex: 0
@@ -182,10 +195,10 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
                     borderRadius: "50px", fontSize: "0.7rem", fontWeight: 700,
                     display: "flex", alignItems: "center", gap: "0.3rem", letterSpacing: "0.5px"
                   }}>
-                    <ShieldCheck size={12} /> AUTHORIZED
+                    <ShieldCheck size={12} /> VERIFIED PARTNER
                   </span>
                   <span style={{
-                    background: "#1e3a8a", color: "#93c5fd",
+                    background: "#7f1d1d", color: "#fef08a",
                     padding: "0.3rem 0.8rem", borderRadius: "6px",
                     fontSize: "0.65rem", fontWeight: 800, letterSpacing: "1px"
                   }}>
@@ -212,7 +225,7 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" }}>
                   {brand.categories.map((cat, cIdx) => (
                     <div key={cIdx} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                      <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#2563eb", flexShrink: 0 }} />
+                      <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c8102e", flexShrink: 0 }} />
                       <span style={{ fontSize: "0.82rem", color: "#334155", fontWeight: 600 }}>{cat.categoryName}</span>
                     </div>
                   ))}
@@ -233,7 +246,7 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
                     ))}
                   {brand.categories.flatMap((c) => c.products).length > 3 && (
                     <span style={{
-                      background: "#eff6ff", color: "#2563eb",
+                      background: "#fff1f2", color: "#c8102e",
                       padding: "0.3rem 0.6rem", borderRadius: "6px",
                       fontSize: "0.72rem", fontWeight: 700
                     }}>
@@ -249,13 +262,13 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
                 display: "flex", justifyContent: "space-between", alignItems: "center",
                 background: "#fafafa"
               }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#2563eb" }}>
+                <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#c8102e" }}>
                   View Product Line
                 </span>
                 <div style={{
                   width: "32px", height: "32px", borderRadius: "50%",
-                  background: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center",
-                  boxShadow: "0 4px 10px rgba(37,99,235,0.3)"
+                  background: "#c8102e", display: "flex", alignItems: "center", justifyContent: "center",
+                  boxShadow: "0 4px 10px rgba(200,16,46,0.3)"
                 }}>
                   <ArrowRight size={14} color="white" />
                 </div>
@@ -291,13 +304,13 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
                 display: "inline-flex", 
                 alignItems: "center", 
                 gap: "0.5rem", 
-                background: "#1e40af", 
+                background: "#c8102e", 
                 color: "white", 
                 padding: "1rem 2.5rem", 
                 borderRadius: "8px", 
                 fontWeight: 700,
                 textDecoration: "none",
-                boxShadow: "0 4px 15px rgba(30, 64, 175, 0.3)"
+                boxShadow: "0 4px 15px rgba(200, 16, 46, 0.3)"
               }}
             >
               Explore Complete Product Catalog <ArrowRight size={18} />

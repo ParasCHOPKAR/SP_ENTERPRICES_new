@@ -130,8 +130,8 @@ export default function Header() {
           href: "/manufacturing/ss-fabrication" 
         },
         {
-          label: "SAHPL In-House Manufacturing Unit",
-          sub: "Smart Automation & Hydropneumatics - 8+ Yrs, GMP Compliant",
+          label: "SP Enterprises Manufacturing Overview",
+          sub: "Handling Complete SAHPL Product Portfolio - 8+ Yrs, GMP Compliant",
           tag: "Overview",
           href: "/manufacturing",
           isFeatured: true
@@ -160,7 +160,7 @@ export default function Header() {
             </span>
           </div>
           <div className="top-bar-right">
-            <span style={{ fontSize: "0.78rem", color: "#93c5fd", fontWeight: 600, borderRight: "1px solid rgba(255,255,255,0.2)", paddingRight: "1rem" }}>
+            <span style={{ fontSize: "0.78rem", color: "#f59e0b", fontWeight: 700, borderRight: "1px solid rgba(255,255,255,0.2)", paddingRight: "1rem" }}>
               Contact: Pradeep Kulkarni
             </span>
             <a
@@ -184,18 +184,18 @@ export default function Header() {
           <div className="logo-section">
             <Link href="/" className="logo-img-wrapper" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
               <Image
-                src="/logo_022.png"
+                src="/new_logo_01.png"
                 alt="SP Enterprises Logo"
-                width={170}
-                height={60}
-                style={{ objectFit: "contain" }}
+                width={195}
+                height={78}
+                style={{ objectFit: "contain", height: "76px", width: "auto" }}
                 priority
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="nav-links" style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+          <nav className="nav-links" style={{ display: "flex", alignItems: "center", gap: "1.8rem" }}>
             {navItems.map((item) => {
               const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/");
               
@@ -210,7 +210,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       className={isActive ? "active" : ""}
-                      style={{ padding: "1.5rem 0", display: "inline-flex", alignItems: "center", gap: "0.2rem" }}
+                      style={{ padding: "0.5rem 0", display: "inline-flex", alignItems: "center", gap: "0.2rem" }}
                     >
                       {item.label} <ChevronDown size={15} style={{ marginTop: "2px", transition: "transform 0.2s", transform: activeDropdown === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
                     </Link>
@@ -226,11 +226,11 @@ export default function Header() {
                       }}>
                         {item.label === "Manufacturing" && (
                           <div style={{ padding: "0.3rem 0.8rem 0.6rem", borderBottom: "1px solid #f1f5f9", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                            <span style={{ fontSize: "0.75rem", fontWeight: 800, color: "#1e3a8a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                              SAHPL Manufacturing Arm
+                            <span style={{ fontSize: "0.75rem", fontWeight: 800, color: "#c8102e", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                              SP Enterprises Manufacturing (SAHPL Portfolio)
                             </span>
-                            <span style={{ fontSize: "0.7rem", background: "#dbeafe", color: "#1d4ed8", padding: "0.15rem 0.5rem", borderRadius: "20px", fontWeight: 700 }}>
-                              8+ Years Exp
+                            <span style={{ fontSize: "0.7rem", background: "#fef3c7", color: "#b45309", padding: "0.15rem 0.5rem", borderRadius: "20px", fontWeight: 700 }}>
+                              10+ Years Exp
                             </span>
                           </div>
                         )}
@@ -240,26 +240,26 @@ export default function Header() {
                             href={dropItem.href}
                             style={{
                               padding: "0.65rem 0.9rem", borderRadius: "8px", textDecoration: "none",
-                              color: dropItem.isFeatured ? "#1e40af" : "#1e293b",
-                              background: dropItem.isFeatured ? "#eff6ff" : "transparent",
-                              border: dropItem.isFeatured ? "1px dashed #93c5fd" : "1px solid transparent",
+                              color: dropItem.isFeatured ? "#c8102e" : "#1e293b",
+                              background: dropItem.isFeatured ? "#fff1f2" : "transparent",
+                              border: dropItem.isFeatured ? "1px dashed #fca5a5" : "1px solid transparent",
                               display: "flex", flexDirection: "column", gap: "0.2rem",
                               transition: "all 0.2s"
                             }}
                             onMouseEnter={e => {
-                              (e.currentTarget as HTMLElement).style.background = dropItem.isFeatured ? "#dbeafe" : "#f8fafc";
-                              (e.currentTarget as HTMLElement).style.borderColor = "#bfdbfe";
+                              (e.currentTarget as HTMLElement).style.background = dropItem.isFeatured ? "#fee2e2" : "#f8fafc";
+                              (e.currentTarget as HTMLElement).style.borderColor = "#fca5a5";
                             }}
                             onMouseLeave={e => {
-                              (e.currentTarget as HTMLElement).style.background = dropItem.isFeatured ? "#eff6ff" : "transparent";
-                              (e.currentTarget as HTMLElement).style.borderColor = dropItem.isFeatured ? "#93c5fd" : "transparent";
+                              (e.currentTarget as HTMLElement).style.background = dropItem.isFeatured ? "#fff1f2" : "transparent";
+                              (e.currentTarget as HTMLElement).style.borderColor = dropItem.isFeatured ? "#fca5a5" : "transparent";
                             }}
                             onClick={() => setActiveDropdown(null)}
                           >
                             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
                               <span style={{ fontSize: "0.92rem", fontWeight: 700 }}>{dropItem.label}</span>
                               {dropItem.tag && (
-                                <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#2563eb", background: "#eff6ff", padding: "0.12rem 0.45rem", borderRadius: "4px" }}>
+                                <span style={{ fontSize: "0.68rem", fontWeight: 700, color: "#c8102e", background: "#fff1f2", padding: "0.12rem 0.45rem", borderRadius: "4px" }}>
                                   {dropItem.tag}
                                 </span>
                               )}
@@ -359,7 +359,7 @@ export default function Header() {
                       borderTop: "1px solid #e2e8f0",
                       fontSize: "0.8rem",
                       fontWeight: 600,
-                      color: "#2563eb",
+                      color: "#c8102e",
                       textAlign: "center",
                       cursor: "pointer"
                     }}
@@ -393,7 +393,7 @@ export default function Header() {
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     style={{
-                      color: pathname === item.href ? "#2563eb" : "#0f172a",
+                      color: pathname === item.href ? "#c8102e" : "#0f172a",
                       fontWeight: 700,
                       textDecoration: "none",
                       fontSize: "1.05rem",
@@ -411,7 +411,7 @@ export default function Header() {
                           href={drop.href}
                           onClick={() => setMobileMenuOpen(false)}
                           style={{
-                            color: drop.isFeatured ? "#2563eb" : "#475569",
+                            color: drop.isFeatured ? "#c8102e" : "#475569",
                             fontSize: "0.85rem",
                             textDecoration: "none",
                             fontWeight: drop.isFeatured ? 700 : 500,
@@ -421,7 +421,7 @@ export default function Header() {
                             gap: "0.4rem"
                           }}
                         >
-                          <span style={{ color: "#3b82f6", fontSize: "0.75rem" }}>•</span>
+                          <span style={{ color: "#c8102e", fontSize: "0.75rem" }}>•</span>
                           <span>{drop.label}</span>
                         </Link>
                       ))}

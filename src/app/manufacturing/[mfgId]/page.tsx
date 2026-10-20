@@ -82,14 +82,14 @@ export default function ManufacturingDetailPage() {
       <Header />
 
       {/* Page Hero Banner */}
-      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #064e3b 0%, #1e3a8a 100%)", padding: "4.5rem 0", color: "white" }}>
+      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #7f1d1d 100%)", padding: "4.5rem 0", color: "white" }}>
         <div className="container">
-          <Link href="/manufacturing" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#a7f3d0", textDecoration: "none", fontWeight: 600, marginBottom: "2rem" }}>
+          <Link href="/manufacturing" style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#fbbf24", textDecoration: "none", fontWeight: 600, marginBottom: "2rem" }}>
             <ChevronLeft size={16} /> Back to Manufacturing Overview
           </Link>
           <div style={{ maxWidth: "800px" }}>
-            <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#a7f3d0", borderColor: "rgba(255,255,255,0.25)" }}>
-              <Factory size={14} /> IN-HOUSE MANUFACTURING DIVISION
+            <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#fbbf24", borderColor: "rgba(245,158,11,0.3)", display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.4rem 1rem", borderRadius: "50px", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1rem" }}>
+              <Factory size={14} /> SP ENTERPRISES • SAHPL IN-HOUSE MANUFACTURING
             </div>
             <h1 style={{ fontSize: "3rem", fontWeight: 800, lineHeight: 1.15, marginBottom: "1.2rem" }}>
               {activeItem.shortTitle}
@@ -109,7 +109,7 @@ export default function ManufacturingDetailPage() {
               Our 5 Core <span>Manufacturing Disciplines</span>
             </h2>
             <p className="section-subtitle">
-              Select a division below to review technical capacities, component architecture, engineering standards, and industry applications.
+              Select a division below to review technical capacities, component architecture, engineering standards, and industry applications handled under SP Enterprises.
             </p>
           </div>
 
@@ -150,6 +150,42 @@ export default function ManufacturingDetailPage() {
               </button>
             </div>
 
+            {/* Active Division Flagship Image Banner */}
+            {activeItem.image && (
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "320px",
+                  borderRadius: "14px",
+                  overflow: "hidden",
+                  margin: "1.5rem 0 2rem",
+                  boxShadow: "0 8px 30px rgba(0,0,0,0.08)",
+                  border: "1px solid #e2e8f0"
+                }}
+              >
+                <img
+                  src={activeItem.image}
+                  alt={activeItem.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.1) 60%, transparent 100%)" }} />
+                <div style={{ position: "absolute", bottom: "1.2rem", left: "1.5rem", right: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+                  <div>
+                    <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#fbbf24", textTransform: "uppercase", letterSpacing: "1px" }}>
+                      SP ENTERPRISES • SAHPL MANUFACTURING RANGE
+                    </div>
+                    <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "white" }}>
+                      {activeItem.title}
+                    </div>
+                  </div>
+                  <span style={{ background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)", color: "white", fontSize: "0.75rem", fontWeight: 700, padding: "0.35rem 0.8rem", borderRadius: "6px", border: "1px solid rgba(255,255,255,0.3)" }}>
+                    {activeItem.badge}
+                  </span>
+                </div>
+              </div>
+            )}
+
             <p className="mfg-description">{activeItem.description}</p>
 
             {/* Key Clients if available */}
@@ -164,7 +200,7 @@ export default function ManufacturingDetailPage() {
                     style={{
                       background: "white",
                       border: "1px solid #cbd5e1",
-                      color: "#1e3a8a",
+                      color: "#991b1b",
                       fontSize: "0.78rem",
                       fontWeight: 700,
                       padding: "0.2rem 0.55rem",
@@ -181,7 +217,7 @@ export default function ManufacturingDetailPage() {
             {activeItem.featuredProducts && activeItem.featuredProducts.length > 0 && (
               <div style={{ margin: "2rem 0 2.5rem" }}>
                 <h4 className="mfg-subheading" style={{ marginBottom: "1.2rem" }}>
-                  <Sparkles size={18} color="#2563eb" /> Featured Equipment &amp; Machinery Systems
+                  <Sparkles size={18} color="#f59e0b" /> Featured Equipment &amp; Machinery Systems
                 </h4>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
                   {activeItem.featuredProducts.map((prod, pIdx) => (
@@ -191,12 +227,49 @@ export default function ManufacturingDetailPage() {
                         background: "#ffffff",
                         border: "1px solid #e2e8f0",
                         borderRadius: "12px",
-                        padding: "1.5rem",
+                        padding: "1.4rem",
                         boxShadow: "0 2px 12px rgba(0,0,0,0.03)",
                         display: "flex",
                         flexDirection: "column"
                       }}
                     >
+                      {/* Product Image */}
+                      {prod.image && (
+                        <div
+                          style={{
+                            position: "relative",
+                            width: "100%",
+                            height: "190px",
+                            borderRadius: "8px",
+                            overflow: "hidden",
+                            marginBottom: "1rem",
+                            background: "#f1f5f9"
+                          }}
+                        >
+                          <img
+                            src={prod.image}
+                            alt={prod.name}
+                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                          />
+                          <div
+                            style={{
+                              position: "absolute",
+                              top: "8px",
+                              left: "8px",
+                              background: "rgba(15, 23, 42, 0.8)",
+                              color: "#fbbf24",
+                              fontSize: "0.68rem",
+                              fontWeight: 800,
+                              padding: "0.2rem 0.5rem",
+                              borderRadius: "15px",
+                              backdropFilter: "blur(4px)"
+                            }}
+                          >
+                            SP ENTERPRISES • SAHPL
+                          </div>
+                        </div>
+                      )}
+
                       {prod.client && (
                         <div style={{ display: "inline-flex", alignItems: "center", gap: "0.3rem", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#166534", padding: "0.2rem 0.5rem", borderRadius: "6px", fontSize: "0.72rem", fontWeight: 700, marginBottom: "0.6rem", width: "fit-content" }}>
                           <CheckCircle size={12} color="#16a34a" /> Client: {prod.client}
@@ -205,7 +278,7 @@ export default function ManufacturingDetailPage() {
                       <h5 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.25rem" }}>
                         {prod.name}
                       </h5>
-                      <p style={{ fontSize: "0.82rem", fontWeight: 600, color: "#2563eb", marginBottom: "0.7rem" }}>
+                      <p style={{ fontSize: "0.82rem", fontWeight: 600, color: "#c8102e", marginBottom: "0.7rem" }}>
                         {prod.tagline}
                       </p>
                       <p style={{ fontSize: "0.88rem", color: "#475569", lineHeight: 1.55, marginBottom: "1rem", flex: 1 }}>
@@ -245,9 +318,9 @@ export default function ManufacturingDetailPage() {
                         type="button"
                         onClick={() => handleInquire(prod.name)}
                         style={{
-                          background: "#eff6ff",
-                          color: "#2563eb",
-                          border: "1px solid #bfdbfe",
+                          background: "#fff1f2",
+                          color: "#c8102e",
+                          border: "1px solid #fecdd3",
                           borderRadius: "6px",
                           padding: "0.55rem 0.9rem",
                           textAlign: "center",
@@ -272,7 +345,7 @@ export default function ManufacturingDetailPage() {
             {/* Core Capabilities Grid */}
             <div className="mfg-capabilities-area">
               <h4 className="mfg-subheading">
-                <Wrench size={18} color="#2563eb" /> Engineering Capabilities &amp; Configurations
+                <Wrench size={18} color="#c8102e" /> Engineering Capabilities &amp; Configurations
               </h4>
               <div className="mfg-capabilities-grid">
                 {activeItem.capabilities.map((cap, cIdx) => (
@@ -296,7 +369,7 @@ export default function ManufacturingDetailPage() {
             <div className="mfg-specs-benefits-grid">
               <div className="mfg-specs-panel">
                 <h4 className="mfg-subheading">
-                  <Settings2 size={18} color="#0284c7" /> Design Standards &amp; Technical Parameters
+                  <Settings2 size={18} color="#f59e0b" /> Design Standards &amp; Technical Parameters
                 </h4>
                 <div className="mfg-specs-table">
                   {activeItem.specifications.map((spec, idx) => (
@@ -315,7 +388,7 @@ export default function ManufacturingDetailPage() {
                 <ul className="mfg-benefits-list">
                   {activeItem.keyBenefits.map((ben, bIdx) => (
                     <li key={bIdx} className="mfg-benefit-item">
-                      <CheckCircle2 size={16} color="#2563eb" className="benefit-check" />
+                      <CheckCircle2 size={16} color="#c8102e" className="benefit-check" />
                       <span>{ben}</span>
                     </li>
                   ))}
@@ -355,7 +428,7 @@ export default function ManufacturingDetailPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.5rem" }}>
             {processSteps.map((step, idx) => (
               <div key={idx} style={{ background: "#f8fafc", padding: "1.8rem 1.4rem", borderRadius: "14px", border: "1px solid #e2e8f0", position: "relative" }}>
-                <span style={{ fontSize: "2rem", fontWeight: 900, color: "#bfdbfe", lineHeight: 1, display: "block", marginBottom: "0.8rem" }}>
+                <span style={{ fontSize: "2rem", fontWeight: 900, color: "#fca5a5", lineHeight: 1, display: "block", marginBottom: "0.8rem" }}>
                   {step.num}
                 </span>
                 <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.5rem" }}>{step.title}</h3>
@@ -367,20 +440,20 @@ export default function ManufacturingDetailPage() {
       </section>
 
       {/* CTA Section */}
-      <section style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%)", padding: "4.5rem 0", color: "white" }}>
+      <section style={{ background: "linear-gradient(135deg, #0f172a 0%, #7f1d1d 50%, #c8102e 100%)", padding: "4.5rem 0", color: "white" }}>
         <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "2rem" }}>
           <div style={{ maxWidth: "680px" }}>
             <h2 style={{ fontSize: "2.3rem", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.8rem" }}>
               Require a Custom Control Panel or Machinery Sizing?
             </h2>
-            <p style={{ fontSize: "1.05rem", color: "#bfdbfe", lineHeight: 1.5 }}>
+            <p style={{ fontSize: "1.05rem", color: "#fef08a", lineHeight: 1.5 }}>
               Share your motor lists, electrical single-line diagrams, or packaging speeds with our engineering team for an accurate proposal.
             </p>
           </div>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link
               href="/contact"
-              style={{ background: "white", color: "#1e3a8a", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}
+              style={{ background: "white", color: "#c8102e", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}
             >
               Request Engineering Quote <ArrowRight size={18} />
             </Link>

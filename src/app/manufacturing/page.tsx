@@ -60,29 +60,86 @@ export default function ManufacturingPage() {
     { num: "05", title: "100% Pre-Dispatch Quality FAT", desc: "Rigorous dielectric high-voltage testing, insulation megger verification, pressure safety checks, and simulated full PLC logic FAT runs." }
   ];
 
+  const integratedBrands = [
+    {
+      name: "Weidmüller",
+      category: "SMPS & Terminal Connectivity in Control Panels",
+      image: "/product_hero_card/Weidmuller_hero.png",
+      role: "High-efficiency PROtop 24V power supplies & Klippon DIN-rail terminals inside our electrical and automation enclosures."
+    },
+    {
+      name: "Phoenix Contact",
+      category: "Surge Protection & Interface Relays",
+      image: "/product_hero_card/Phoenix-Contact.png",
+      role: "Class I/II surge arresters, signal conditioners, and industrial interface relays for mission-critical automation panels."
+    },
+    {
+      name: "Renu Electronics",
+      category: "PLCs, HMIs & Automated Line Control",
+      image: "/product_hero_card/Renu-Electronics.png",
+      role: "Touchscreen FlexiPanels HMIs and rugged micro-PLCs programmed in-house to power our packaging lines and Special Purpose Machines."
+    },
+    {
+      name: "ERI (Electronic Relays India)",
+      category: "Solid State Relays & Power Switching",
+      image: "/product_images/ERI_HERO.png",
+      role: "Zero-wear solid state switching for industrial heating loads, packaging sealers, and plastic extrusion machinery."
+    },
+    {
+      name: "CD Automation",
+      category: "Thyristor Power Controllers",
+      image: "/product_images/CD_automation.png",
+      role: "Multi-zone digital thyristor units (REVEX & REVO) integrated in our heavy-duty industrial heating control panels."
+    },
+    {
+      name: "Gefran",
+      category: "Linear Transducers & Pressure Sensors",
+      image: "/product_hero_card/Gefran.png",
+      role: "High-precision linear displacement transducers and melt pressure sensors for our hydraulic presses and tilters."
+    },
+    {
+      name: "JUMO India",
+      category: "Temperature & Process Controllers",
+      image: "/product_hero_card/JUMO-India.png",
+      role: "Precision RTD Pt100 temperature sensors and micro-controllers integrated into our continuous hot water and chiller skids."
+    },
+    {
+      name: "Emerson / Alco Controls",
+      category: "Refrigeration Compressors & Fluid Controls",
+      image: "/product_hero_card/Emerson.png",
+      role: "High-efficiency Copeland compressors, expansion valves, and fluid regulation integrated into our industrial chiller systems."
+    }
+  ];
+
   return (
     <div className="site-wrapper">
       <Header />
 
       {/* Hero Section */}
-      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #091e3a 0%, #1e3a8a 50%, #064e3b 100%)", padding: "5rem 0 4.5rem", color: "white", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: "radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 60%)", pointerEvents: "none" }} />
+      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #7f1d1d 100%)", padding: "5rem 0 4.5rem", color: "white", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: "radial-gradient(circle at 80% 20%, rgba(200, 16, 46, 0.25) 0%, transparent 60%)", pointerEvents: "none" }} />
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <div style={{ maxWidth: "880px" }}>
-            <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#93c5fd", borderColor: "rgba(255,255,255,0.25)", display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.45rem 1.1rem", borderRadius: "50px", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1.2rem" }}>
-              <Factory size={16} /> IN-HOUSE MANUFACTURING UNIT • SAHPL
+          <div style={{ maxWidth: "920px" }}>
+            <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#fbbf24", borderColor: "rgba(245,158,11,0.3)", display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.45rem 1.1rem", borderRadius: "50px", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1.2rem" }}>
+              <Factory size={16} /> IN-HOUSE MANUFACTURING • SP ENTERPRISES
             </div>
-            <h1 style={{ fontSize: "clamp(2.3rem, 5vw, 3.4rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: "1.2rem" }}>
-              Smart Automation &amp; <span style={{ color: "#38bdf8" }}>Hydropneumatics (SAHPL)</span>
+            <h1 style={{ fontSize: "clamp(2.4rem, 5vw, 3.6rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: "0.8rem" }}>
+              SP <span style={{ color: "#fbbf24" }}>Enterprises</span>
             </h1>
-            <p style={{ fontSize: "1.2rem", color: "#e2e8f0", lineHeight: 1.6, marginBottom: "2rem" }}>
-              Dedicated manufacturing arm of <strong>S. P. Enterprises</strong>. Providing turnkey Design, Manufacturing, Installation, and Commissioning for Special Purpose Machines (SPM), Automated Conveyors, Industrial Control Panels, Material Handling, Chillers &amp; SS Cleanroom Equipment.
+            <div style={{ fontSize: "1.2rem", color: "#f8fafc", fontWeight: 700, marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
+              <span style={{ background: "rgba(200,16,46,0.35)", padding: "0.25rem 0.8rem", borderRadius: "6px", border: "1px solid rgba(248,113,113,0.4)", color: "#fecdd3" }}>
+                In-House Manufacturing Division
+              </span>
+              <span>Handling the Complete SAHPL Engineering &amp; Product Portfolio</span>
+            </div>
+            <p style={{ fontSize: "1.15rem", color: "#e2e8f0", lineHeight: 1.6, marginBottom: "2rem" }}>
+              <strong>SP Enterprises</strong> directly manages, designs, and manufactures the entire product range originally developed under <strong>Smart Automation &amp; Hydropneumatics (SAHPL)</strong>. Providing turnkey Design, Manufacturing, Installation, and Commissioning for Special Purpose Machines (SPM), Automated Conveyors, Industrial Control Panels, Heavy Material Handling, Chillers &amp; cGMP SS Cleanroom Equipment.
             </p>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
               <a
                 href="#divisions"
-                style={{ background: "#2563eb", color: "white", padding: "0.85rem 1.8rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", boxShadow: "0 4px 15px rgba(37,99,235,0.4)" }}
+                style={{ background: "#c8102e", color: "white", padding: "0.85rem 1.8rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", boxShadow: "0 4px 15px rgba(200,16,46,0.4)" }}
               >
                 Explore All Equipment <ChevronRight size={18} />
               </a>
@@ -104,29 +161,29 @@ export default function ManufacturingPage() {
         </div>
       </section>
 
-      {/* SAHPL Core Identity & Engineering Credo */}
+      {/* SP Enterprises & SAHPL Integration Credo */}
       <section style={{ padding: "3.5rem 0", background: "#ffffff", borderBottom: "1px solid #e2e8f0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem", alignItems: "center" }}>
             <div style={{ gridColumn: "span 1" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#1d4ed8", fontWeight: 800, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.6rem" }}>
-                <Award size={18} /> 8+ Years of Industrial Trust
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#c8102e", fontWeight: 800, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.6rem" }}>
+                <Award size={18} /> 10+ Years of Industrial Trust
               </div>
               <h2 style={{ fontSize: "1.9rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.3, marginBottom: "1rem" }}>
-                Engineering Excellence by Qualified Designers &amp; Skilled Workers
+                SAHPL Product Portfolio Handled Exclusively Under SP Enterprises
               </h2>
               <p style={{ fontSize: "0.98rem", color: "#475569", lineHeight: 1.65, marginBottom: "1.2rem" }}>
-                <strong>Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL)</strong> is our manufacturing unit. We provide complete <em>Design, Manufacturing, Installation, and Commissioning</em> services for Industrial Automation, Special Purpose Machines, industrial chillers, cold rooms, material handling equipment, and control panels.
+                The complete manufacturing product range of <strong>Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL)</strong> is managed, engineered, and delivered under <strong>SP Enterprises</strong>. Operating from our advanced fabrication and assembly facility in Pune, Maharashtra, we deliver end-to-end <em>Design, Manufacturing, Installation, and Commissioning</em> for SPMs, Hot Melt Packaging Systems, Heavy Material Handling &amp; Tilters, Type-Tested Control Panels, and cGMP SS Cleanroom Equipment.
               </p>
               <p style={{ fontSize: "0.95rem", color: "#64748b", lineHeight: 1.6 }}>
-                Every product is designed by qualified engineers and execution of the same is done by skilled workers. With over 8 years in the industry, we are thoroughly familiar with <strong>GMP procedures</strong> for the equipment we specialize in, maintaining an unwavering focus on <strong>superior production quality and appropriate, transparent pricing</strong>.
+                Every system is designed by qualified engineers and built with precision by skilled shop-floor technicians. With 10+ years serving top-tier automotive OEMs, pharmaceutical giants, and packaging leaders, all equipment strictly complies with <strong>cGMP procedures, IS 8623, and IEC 61439 standards</strong>, delivering <strong>uncompromising build quality with transparent, competitive pricing</strong>.
               </p>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1rem" }}>
               {SAHPL_INFO.credentials.map((cred, idx) => (
-                <div key={idx} style={{ background: "#f8fafc", padding: "1.2rem", borderRadius: "12px", border: "1px solid #e2e8f0", borderLeft: "4px solid #2563eb" }}>
-                  <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#1e3a8a", marginBottom: "0.3rem" }}>
+                <div key={idx} style={{ background: "#f8fafc", padding: "1.2rem", borderRadius: "12px", border: "1px solid #e2e8f0", borderLeft: "4px solid #c8102e" }}>
+                  <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#c8102e", marginBottom: "0.3rem" }}>
                     {cred.value}
                   </div>
                   <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "#64748b" }}>
@@ -134,8 +191,8 @@ export default function ManufacturingPage() {
                   </div>
                 </div>
               ))}
-              <div style={{ background: "#eff6ff", padding: "1.2rem", borderRadius: "12px", border: "1px solid #bfdbfe", borderLeft: "4px solid #16a34a" }}>
-                <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#15803d", marginBottom: "0.3rem" }}>
+              <div style={{ background: "#fef2f2", padding: "1.2rem", borderRadius: "12px", border: "1px solid #fecdd3", borderLeft: "4px solid #c8102e" }}>
+                <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#991b1b", marginBottom: "0.3rem" }}>
                   Turnkey
                 </div>
                 <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "#475569" }}>
@@ -147,38 +204,131 @@ export default function ManufacturingPage() {
         </div>
       </section>
 
-      {/* Prestigious Client List Section */}
-      <section style={{ padding: "3rem 0", background: "#f1f5f9", borderBottom: "1px solid #e2e8f0" }}>
+      {/* Prestigious Client List Section with Authentic Brand Logos */}
+      <section style={{ padding: "3.5rem 0", background: "#f8fafc", borderBottom: "1px solid #e2e8f0" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "1.8rem" }}>
-            <span style={{ fontSize: "0.8rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: "#64748b" }}>
+          <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+            <span style={{ fontSize: "0.8rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", color: "#c8102e" }}>
               Field-Tested &amp; Trusted By Industry Leaders
             </span>
-            <h3 style={{ fontSize: "1.45rem", fontWeight: 800, color: "#0f172a", marginTop: "0.3rem" }}>
+            <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#0f172a", marginTop: "0.3rem" }}>
               Key Industrial Clients for Our In-House Manufactured Systems
             </h3>
+            <p style={{ fontSize: "0.95rem", color: "#64748b", maxWidth: "680px", margin: "0.5rem auto 0" }}>
+              Delivered and supported under SP Enterprises for leading industrial conglomerates across automotive, pharmaceutical, and food packaging sectors.
+            </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.2rem" }}>
             {SAHPL_INFO.clientList.map((client, idx) => (
               <div
                 key={idx}
                 style={{
                   background: "white",
-                  padding: "1rem 1.2rem",
-                  borderRadius: "10px",
+                  padding: "1.2rem 1.4rem",
+                  borderRadius: "14px",
                   border: "1px solid #e2e8f0",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.03)",
                   display: "flex",
-                  flexDirection: "column",
-                  gap: "0.3rem"
+                  alignItems: "center",
+                  gap: "1.2rem",
+                  transition: "transform 0.2s, box-shadow 0.2s, border-color 0.2s"
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                  <Building2 size={16} color="#2563eb" />
-                  <span style={{ fontWeight: 800, color: "#1e293b", fontSize: "0.95rem" }}>{client.name}</span>
+                <div
+                  style={{
+                    width: "76px",
+                    height: "54px",
+                    position: "relative",
+                    flexShrink: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "#ffffff",
+                    borderRadius: "10px",
+                    padding: "6px",
+                    border: "1px solid #e2e8f0",
+                    boxShadow: "0 1px 4px rgba(0,0,0,0.04)"
+                  }}
+                >
+                  {client.logo ? (
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                    />
+                  ) : (
+                    <Building2 size={24} color="#c8102e" />
+                  )}
                 </div>
-                <span style={{ fontSize: "0.78rem", color: "#64748b", paddingLeft: "1.5rem" }}>{client.division}</span>
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem", minWidth: 0 }}>
+                  <span style={{ fontWeight: 800, color: "#0f172a", fontSize: "0.95rem", lineHeight: 1.25 }}>
+                    {client.name}
+                  </span>
+                  <span style={{ fontSize: "0.8rem", color: "#64748b", lineHeight: 1.35 }}>
+                    {client.division}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Integrated OEM Automation & Hardware Brands Section */}
+      <section style={{ padding: "4rem 0", background: "#ffffff", borderBottom: "1px solid #e2e8f0" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#fef2f2", color: "#c8102e", border: "1px solid #fecdd3", padding: "0.35rem 0.9rem", borderRadius: "50px", fontSize: "0.82rem", fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase", marginBottom: "0.8rem" }}>
+              <Sparkles size={14} /> Tier-1 OEM Hardware Integration
+            </div>
+            <h3 style={{ fontSize: "1.9rem", fontWeight: 800, color: "#0f172a" }}>
+              Premier Brand Components Powering Our Manufactured Systems
+            </h3>
+            <p style={{ fontSize: "0.98rem", color: "#64748b", maxWidth: "750px", margin: "0.5rem auto 0", lineHeight: 1.6 }}>
+              Every control panel, SPM, and automated line built by SP Enterprises integrates authentic, globally certified electrical and automation hardware with full factory traceability.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+            {integratedBrands.map((brand, idx) => (
+              <div
+                key={idx}
+                style={{
+                  background: "#f8fafc",
+                  borderRadius: "14px",
+                  border: "1px solid #e2e8f0",
+                  overflow: "hidden",
+                  boxShadow: "0 2px 10px rgba(0,0,0,0.03)",
+                  transition: "transform 0.2s, box-shadow 0.2s, border-color 0.2s",
+                  display: "flex",
+                  flexDirection: "column"
+                }}
+              >
+                <div style={{ position: "relative", height: "160px", background: "#0f172a", overflow: "hidden" }}>
+                  <img
+                    src={brand.image}
+                    alt={brand.name}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 60%)" }} />
+                  <div style={{ position: "absolute", bottom: "0.75rem", left: "1rem", right: "1rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+                    <span style={{ color: "#ffffff", fontWeight: 800, fontSize: "1rem" }}>
+                      {brand.name}
+                    </span>
+                    <span style={{ fontSize: "0.68rem", fontWeight: 800, background: "rgba(245,158,11,0.25)", color: "#fbbf24", border: "1px solid rgba(245,158,11,0.4)", padding: "0.2rem 0.5rem", borderRadius: "4px" }}>
+                      OEM INTEGRATED
+                    </span>
+                  </div>
+                </div>
+                <div style={{ padding: "1.2rem", flex: 1, display: "flex", flexDirection: "column" }}>
+                  <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#c8102e", marginBottom: "0.4rem" }}>
+                    {brand.category}
+                  </span>
+                  <p style={{ fontSize: "0.85rem", color: "#475569", lineHeight: 1.5, margin: 0 }}>
+                    {brand.role}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -189,7 +339,7 @@ export default function ManufacturingPage() {
       <section id="divisions" style={{ padding: "4rem 0 2rem", background: "#f8fafc" }}>
         <div className="container">
           <div className="section-head text-center">
-            <div className="title-pill" style={{ background: "#e0e7ff", color: "#3730a3", border: "1px solid #c7d2fe", padding: "0.4rem 1rem", borderRadius: "50px", display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1rem" }}>
+            <div className="title-pill" style={{ background: "#fef2f2", color: "#991b1b", border: "1px solid #fecdd3", padding: "0.4rem 1rem", borderRadius: "50px", display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1rem" }}>
               <Settings2 size={15} /> 5 CORE MANUFACTURING DISCIPLINES
             </div>
             <h2 className="section-title" style={{ fontSize: "2.3rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.8rem" }}>
@@ -209,8 +359,8 @@ export default function ManufacturingPage() {
                 padding: "0.65rem 1.3rem",
                 borderRadius: "30px",
                 border: "1px solid",
-                borderColor: selectedDivision === "all" ? "#2563eb" : "#cbd5e1",
-                background: selectedDivision === "all" ? "#2563eb" : "white",
+                borderColor: selectedDivision === "all" ? "#c8102e" : "#cbd5e1",
+                background: selectedDivision === "all" ? "#c8102e" : "white",
                 color: selectedDivision === "all" ? "white" : "#475569",
                 fontWeight: 700,
                 fontSize: "0.9rem",
@@ -229,8 +379,8 @@ export default function ManufacturingPage() {
                   padding: "0.65rem 1.3rem",
                   borderRadius: "30px",
                   border: "1px solid",
-                  borderColor: selectedDivision === item.id ? "#2563eb" : "#cbd5e1",
-                  background: selectedDivision === item.id ? "#2563eb" : "white",
+                  borderColor: selectedDivision === item.id ? "#c8102e" : "#cbd5e1",
+                  background: selectedDivision === item.id ? "#c8102e" : "white",
                   color: selectedDivision === item.id ? "white" : "#475569",
                   fontWeight: 700,
                   fontSize: "0.9rem",
@@ -263,62 +413,91 @@ export default function ManufacturingPage() {
                 border: "1px solid #e2e8f0"
               }}
             >
-              {/* Division Header */}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1.5rem", borderBottom: "1px solid #f1f5f9", paddingBottom: "2rem", marginBottom: "2rem" }}>
-                <div style={{ maxWidth: "800px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "0.8rem" }}>
-                    <div style={{ color: "#2563eb", background: "#eff6ff", padding: "0.6rem", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              {/* Division Header & Flagship Equipment Image */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem", alignItems: "center", borderBottom: "1px solid #f1f5f9", paddingBottom: "2.5rem", marginBottom: "2.5rem" }}>
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "0.8rem", flexWrap: "wrap" }}>
+                    <div style={{ color: "#c8102e", background: "#fff1f2", padding: "0.6rem", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                       {getIcon(division.iconName, 28)}
                     </div>
-                    <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#2563eb", textTransform: "uppercase", background: "#e0e7ff", padding: "0.3rem 0.8rem", borderRadius: "20px" }}>
+                    <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#c8102e", textTransform: "uppercase", background: "#fef2f2", border: "1px solid #fecdd3", padding: "0.3rem 0.8rem", borderRadius: "20px" }}>
                       {division.badge}
                     </span>
                   </div>
                   <h3 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)", fontWeight: 800, color: "#0f172a", marginBottom: "0.5rem" }}>
                     {division.title}
                   </h3>
-                  <p style={{ fontSize: "1.05rem", color: "#2563eb", fontWeight: 600, marginBottom: "0.8rem" }}>
+                  <p style={{ fontSize: "1.05rem", color: "#c8102e", fontWeight: 600, marginBottom: "0.8rem" }}>
                     {division.tagline}
                   </p>
-                  <p style={{ fontSize: "0.95rem", color: "#64748b", lineHeight: 1.65 }}>
+                  <p style={{ fontSize: "0.95rem", color: "#64748b", lineHeight: 1.65, marginBottom: "1.5rem" }}>
                     {division.description}
                   </p>
+
+                  <div style={{ display: "flex", gap: "0.8rem", flexWrap: "wrap" }}>
+                    <Link
+                      href={`/contact?subject=${encodeURIComponent(`Manufacturing: ${division.title}`)}`}
+                      style={{
+                        background: "#c8102e",
+                        color: "white",
+                        padding: "0.8rem 1.4rem",
+                        borderRadius: "8px",
+                        fontWeight: 700,
+                        textDecoration: "none",
+                        fontSize: "0.92rem",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.4rem",
+                        boxShadow: "0 4px 12px rgba(200,16,46,0.3)"
+                      }}
+                    >
+                      Request Division Quote <ArrowRight size={16} />
+                    </Link>
+                    <Link
+                      href={`/manufacturing/${division.id}`}
+                      style={{
+                        background: "#f8fafc",
+                        border: "1px solid #cbd5e1",
+                        color: "#334155",
+                        padding: "0.8rem 1.3rem",
+                        borderRadius: "8px",
+                        fontSize: "0.88rem",
+                        fontWeight: 700,
+                        textDecoration: "none",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.3rem"
+                      }}
+                    >
+                      View Division Details <ChevronRight size={14} />
+                    </Link>
+                  </div>
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", alignItems: "flex-start" }}>
-                  <Link
-                    href={`/contact?subject=${encodeURIComponent(`Manufacturing: ${division.title}`)}`}
-                    style={{
-                      background: "#2563eb",
-                      color: "white",
-                      padding: "0.8rem 1.4rem",
-                      borderRadius: "8px",
-                      fontWeight: 700,
-                      textDecoration: "none",
-                      fontSize: "0.92rem",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.4rem",
-                      boxShadow: "0 4px 12px rgba(37,99,235,0.3)"
-                    }}
-                  >
-                    Request Quote for Division <ArrowRight size={16} />
-                  </Link>
-                  <Link
-                    href={`/manufacturing/${division.id}`}
-                    style={{
-                      color: "#475569",
-                      fontSize: "0.88rem",
-                      fontWeight: 600,
-                      textDecoration: "none",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.3rem"
-                    }}
-                  >
-                    View Standalone Division Page <ChevronRight size={14} />
-                  </Link>
-                </div>
+                {/* Division Flagship Photo */}
+                {division.image && (
+                  <div style={{ position: "relative", height: "280px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.08)", border: "1px solid #e2e8f0" }}>
+                    <img
+                      src={division.image}
+                      alt={division.title}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.1) 60%, transparent 100%)" }} />
+                    <div style={{ position: "absolute", bottom: "1.2rem", left: "1.2rem", right: "1.2rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+                      <div>
+                        <div style={{ fontSize: "0.72rem", fontWeight: 800, color: "#fbbf24", textTransform: "uppercase", letterSpacing: "0.8px" }}>
+                          FLAGSHIP EQUIPMENT • SP ENTERPRISES
+                        </div>
+                        <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "white" }}>
+                          {division.shortTitle}
+                        </div>
+                      </div>
+                      <span style={{ background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)", color: "white", fontSize: "0.72rem", fontWeight: 700, padding: "0.3rem 0.65rem", borderRadius: "6px", border: "1px solid rgba(255,255,255,0.3)" }}>
+                        SAHPL Range
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Client Badges if available */}
@@ -333,7 +512,7 @@ export default function ManufacturingPage() {
                       style={{
                         background: "white",
                         border: "1px solid #cbd5e1",
-                        color: "#1e3a8a",
+                        color: "#991b1b",
                         fontSize: "0.8rem",
                         fontWeight: 700,
                         padding: "0.25rem 0.65rem",
@@ -350,7 +529,7 @@ export default function ManufacturingPage() {
               {division.featuredProducts && division.featuredProducts.length > 0 && (
                 <div style={{ marginBottom: "3rem" }}>
                   <h4 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", marginBottom: "1.4rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <Sparkles size={20} color="#2563eb" /> Featured Equipment &amp; Machinery Systems
+                    <Sparkles size={20} color="#f59e0b" /> Featured Equipment &amp; Machinery Systems
                   </h4>
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "1.8rem" }}>
                     {division.featuredProducts.map((prod, pIdx) => (
@@ -360,13 +539,56 @@ export default function ManufacturingPage() {
                           background: "#ffffff",
                           border: "1px solid #e2e8f0",
                           borderRadius: "14px",
-                          padding: "1.8rem",
+                          padding: "1.5rem",
                           boxShadow: "0 4px 20px rgba(0,0,0,0.04)",
                           display: "flex",
                           flexDirection: "column",
                           transition: "border-color 0.2s"
                         }}
                       >
+                        {/* Equipment Product Image */}
+                        {prod.image && (
+                          <div
+                            style={{
+                              position: "relative",
+                              width: "100%",
+                              height: "210px",
+                              borderRadius: "10px",
+                              overflow: "hidden",
+                              marginBottom: "1.2rem",
+                              background: "#f1f5f9",
+                              boxShadow: "0 2px 10px rgba(0,0,0,0.06)"
+                            }}
+                          >
+                            <img
+                              src={prod.image}
+                              alt={prod.name}
+                              style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover"
+                              }}
+                            />
+                            <div
+                              style={{
+                                position: "absolute",
+                                top: "10px",
+                                left: "10px",
+                                background: "rgba(15, 23, 42, 0.8)",
+                                color: "#fbbf24",
+                                fontSize: "0.72rem",
+                                fontWeight: 800,
+                                padding: "0.25rem 0.65rem",
+                                borderRadius: "20px",
+                                backdropFilter: "blur(4px)",
+                                letterSpacing: "0.5px"
+                              }}
+                            >
+                              SP ENTERPRISES • SAHPL
+                            </div>
+                          </div>
+                        )}
+
                         {prod.client && (
                           <div style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", background: "#f0fdf4", border: "1px solid #bbf7d0", color: "#166534", padding: "0.25rem 0.6rem", borderRadius: "6px", fontSize: "0.75rem", fontWeight: 700, marginBottom: "0.8rem", width: "fit-content" }}>
                             <CheckCircle size={12} color="#16a34a" /> Client: {prod.client}
@@ -375,7 +597,7 @@ export default function ManufacturingPage() {
                         <h5 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.3rem" }}>
                           {prod.name}
                         </h5>
-                        <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#2563eb", marginBottom: "0.8rem" }}>
+                        <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#c8102e", marginBottom: "0.8rem" }}>
                           {prod.tagline}
                         </p>
                         <p style={{ fontSize: "0.9rem", color: "#475569", lineHeight: 1.6, marginBottom: "1.2rem", flex: 1 }}>
@@ -414,9 +636,9 @@ export default function ManufacturingPage() {
                         <Link
                           href={`/contact?subject=${encodeURIComponent(`Inquiry: ${prod.name}`)}`}
                           style={{
-                            background: "#eff6ff",
-                            color: "#2563eb",
-                            border: "1px solid #bfdbfe",
+                            background: "#fff1f2",
+                            color: "#c8102e",
+                            border: "1px solid #fecdd3",
                             borderRadius: "6px",
                             padding: "0.6rem 1rem",
                             textAlign: "center",
@@ -444,7 +666,7 @@ export default function ManufacturingPage() {
                 {/* Capabilities list */}
                 <div style={{ background: "#f8fafc", padding: "1.8rem", borderRadius: "14px", border: "1px solid #e2e8f0" }}>
                   <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <Wrench size={18} color="#2563eb" /> Manufacturing Capabilities
+                    <Wrench size={18} color="#c8102e" /> Manufacturing Capabilities
                   </h4>
                   <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
                     {division.capabilities.map((cap, cIdx) => (
@@ -452,7 +674,7 @@ export default function ManufacturingPage() {
                         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.5rem", marginBottom: "0.2rem" }}>
                           <span style={{ fontWeight: 700, color: "#0f172a", fontSize: "0.95rem" }}>{cap.name}</span>
                           {cap.client && (
-                            <span style={{ fontSize: "0.72rem", background: "#e0e7ff", color: "#3730a3", padding: "0.15rem 0.5rem", borderRadius: "4px", fontWeight: 700 }}>
+                            <span style={{ fontSize: "0.72rem", background: "#fef2f2", color: "#991b1b", border: "1px solid #fecdd3", padding: "0.15rem 0.5rem", borderRadius: "4px", fontWeight: 700 }}>
                               {cap.client}
                             </span>
                           )}
@@ -477,7 +699,7 @@ export default function ManufacturingPage() {
                   {/* Specs Table */}
                   <div style={{ background: "#ffffff", padding: "1.8rem", borderRadius: "14px", border: "1px solid #e2e8f0" }}>
                     <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                      <Settings2 size={18} color="#0284c7" /> Design &amp; Fabrication Standards
+                      <Settings2 size={18} color="#f59e0b" /> Design &amp; Fabrication Standards
                     </h4>
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                       {division.specifications.map((sp, idx) => (
@@ -497,7 +719,7 @@ export default function ManufacturingPage() {
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                       {division.keyBenefits.map((ben, bIdx) => (
                         <div key={bIdx} style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.85rem", color: "#334155" }}>
-                          <CheckCircle2 size={16} color="#2563eb" style={{ flexShrink: 0, marginTop: "2px" }} />
+                          <CheckCircle2 size={16} color="#c8102e" style={{ flexShrink: 0, marginTop: "2px" }} />
                           <span>{ben}</span>
                         </div>
                       ))}
@@ -514,7 +736,7 @@ export default function ManufacturingPage() {
       <section style={{ padding: "5rem 0", background: "#ffffff", borderTop: "1px solid #e2e8f0" }}>
         <div className="container">
           <div className="section-head text-center">
-            <div className="title-pill" style={{ background: "#e0e7ff", color: "#3730a3", border: "1px solid #c7d2fe", padding: "0.4rem 1rem", borderRadius: "50px", display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1rem" }}>
+            <div className="title-pill" style={{ background: "#fef2f2", color: "#991b1b", border: "1px solid #fecdd3", padding: "0.4rem 1rem", borderRadius: "50px", display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1rem" }}>
               <Layers size={15} /> QUALITY CONTROL PROTOCOL
             </div>
             <h2 className="section-title" style={{ fontSize: "2.3rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.8rem" }}>
@@ -539,7 +761,7 @@ export default function ManufacturingPage() {
                   flexDirection: "column"
                 }}
               >
-                <span style={{ fontSize: "2.2rem", fontWeight: 900, color: "#93c5fd", lineHeight: 1, display: "block", marginBottom: "0.8rem" }}>
+                <span style={{ fontSize: "2.2rem", fontWeight: 900, color: "#fca5a5", lineHeight: 1, display: "block", marginBottom: "0.8rem" }}>
                   {step.num}
                 </span>
                 <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.5rem" }}>
@@ -555,11 +777,11 @@ export default function ManufacturingPage() {
       </section>
 
       {/* CTA Section */}
-      <section style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%)", padding: "5rem 0", color: "white" }}>
+      <section style={{ background: "linear-gradient(135deg, #7f1d1d 0%, #0f172a 100%)", padding: "5rem 0", color: "white" }}>
         <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "2rem" }}>
           <div style={{ maxWidth: "680px" }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "rgba(59, 130, 246, 0.2)", color: "#93c5fd", padding: "0.3rem 0.8rem", borderRadius: "20px", fontSize: "0.8rem", fontWeight: 700, marginBottom: "1rem" }}>
-              <Factory size={14} /> SAHPL TURNKEY PROPOSALS
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "rgba(245, 158, 11, 0.2)", color: "#fbbf24", padding: "0.3rem 0.8rem", borderRadius: "20px", fontSize: "0.8rem", fontWeight: 700, marginBottom: "1rem" }}>
+              <Factory size={14} /> SP ENTERPRISES • SAHPL TURNKEY PROPOSALS
             </div>
             <h2 style={{ fontSize: "2.3rem", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.8rem" }}>
               Have a Custom Machine, Conveyor or Control Panel Requirement?
@@ -571,7 +793,7 @@ export default function ManufacturingPage() {
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link
               href="/contact"
-              style={{ background: "#2563eb", color: "white", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", boxShadow: "0 4px 15px rgba(37,99,235,0.4)" }}
+              style={{ background: "#c8102e", color: "white", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", boxShadow: "0 4px 15px rgba(200,16,46,0.4)" }}
             >
               Request Engineering Quote <ArrowRight size={18} />
             </Link>

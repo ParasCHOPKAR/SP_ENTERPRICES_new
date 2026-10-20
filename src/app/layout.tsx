@@ -13,11 +13,18 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "S. P. Enterprises | Authorized Dealer & Supplier",
-  description: "S. P. Enterprises is an authorized dealer & supplier for premium electrical components, SSRs, PID controllers, filters, sensors, drives, and laboratory equipment based in Pune, India.",
+  title: "S. P. Enterprises | Premier Dealer & Supplier",
+  description: "S. P. Enterprises is a trusted dealer & supplier for premium electrical components, SSRs, PID controllers, filters, sensors, drives, and laboratory equipment based in Pune, India.",
   keywords: ["S. P. Enterprises", "Electrical Components", "Pune", "SSR", "PID Controllers", "Filters", "Sensors", "Lugs", "Thyristors"],
   authors: [{ name: "Pradeep Kulkarni" }],
   creator: "S. P. Enterprises",
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 import FloatingActions from "@/components/FloatingActions";
@@ -29,6 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+      </head>
       <body>
         {children}
         <FloatingActions />

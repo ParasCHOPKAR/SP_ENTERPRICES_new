@@ -18,6 +18,7 @@ export interface FeaturedMachine {
   description: string;
   specs: { label: string; value: string }[];
   highlights: string[];
+  image?: string;
 }
 
 export interface ManufacturingItem {
@@ -28,6 +29,7 @@ export interface ManufacturingItem {
   badge: string;
   iconName: string;
   description: string;
+  image?: string;
   featuredClients?: string[];
   featuredProducts?: FeaturedMachine[];
   capabilities: ManufacturingCapability[];
@@ -37,12 +39,13 @@ export interface ManufacturingItem {
 }
 
 export const SAHPL_INFO = {
-  name: "Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL)",
-  shortName: "SAHPL",
-  role: "Dedicated Manufacturing & Automation Engineering Arm of S. P. Enterprises",
-  experienceYears: "8+ Years in Heavy & Precision Industry",
+  name: "SP Enterprises",
+  subTitle: "Handling the Complete SAHPL Manufacturing & Automation Portfolio",
+  shortName: "SP Enterprises",
+  role: "In-House Manufacturing & Turnkey Automation Engineering Arm",
+  experienceYears: "10+ Years in Heavy & Precision Industry",
   overview:
-    "Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL) is our state-of-the-art manufacturing unit located in Pune, Maharashtra. We deliver end-to-end Design, Manufacturing, Installation, and Commissioning services for Industrial Automation, Special Purpose Machines (SPM), Industrial Chillers, Cold Rooms, Material Handling Equipment, and Industrial Control Panels. Every product is engineered by qualified design engineers and executed with precision by skilled workers. Having served the industry for over 8 years, we operate strictly in compliance with GMP procedures, ensuring superior manufacturing quality with transparent, competitive pricing.",
+    "SP Enterprises is our premier engineering and in-house manufacturing enterprise located in Pune, Maharashtra, directly handling and delivering the complete product range of Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL). We deliver end-to-end Design, Manufacturing, Installation, and Commissioning services for Industrial Automation, Special Purpose Machines (SPM), Industrial Chillers, Cold Rooms, Material Handling Equipment, and Industrial Control Panels. Every product is engineered by qualified design engineers and executed with precision by skilled shop-floor technicians. Having served the industry for over 10+ years, all equipment in the SAHPL product portfolio is manufactured and managed strictly under SP Enterprises in compliance with cGMP procedures, ensuring superior manufacturing quality with transparent, competitive pricing.",
   services: [
     "Design & CAD/CAE Engineering",
     "Precision Fabrication & Assembly",
@@ -52,23 +55,22 @@ export const SAHPL_INFO = {
     "Custom Machine Overhaul & Retrofitting"
   ],
   credentials: [
-    { label: "Industry Experience", value: "8+ Years" },
+    { label: "Industry Experience", value: "10+ Years" },
     { label: "Engineering Quality", value: "Qualified Design Engineers" },
     { label: "Workforce", value: "Skilled Shop-Floor Technicians" },
     { label: "Compliance", value: "cGMP, IS 8623 & IEC 61439" },
-    { label: "Value Assurance", value: "Premium Production & Appropriate Pricing" }
+    { label: "Value Assurance", value: "Premium Production & Transparent Pricing" }
   ],
   clientList: [
-    { name: "General Mills", division: "Food Packaging & Cartons" },
-    { name: "Valco Melton", division: "Automated Adhesive Systems" },
-    { name: "Cummins Generator Technologies", division: "Heavy Material Handling & 90° Tilters" },
-    { name: "Cummins India Ltd. (Phaltan)", division: "Special Purpose Machine Paint Booth" },
-    { name: "Mahindra Vehicle Manufacturers Ltd", division: "Automotive Conveyors & Plant Trolleys" },
-    { name: "Navneet Industries", division: "15m Belt File Conveyor & Glue Dispenser" },
-    { name: "Fresenius-Kabi (Ranjangaon)", division: "SS304 Material Lifter & Cleanroom Furniture" },
-    { name: "Texol", division: "1000 LPH Continuous Hot Water Generation Unit" },
-    { name: "Midas Care", division: "SS Racks, Tables & Cross-Over Benches" },
-    { name: "Hikal Ltd", division: "Specialized Industrial Trolleys & Fixtures" }
+    { name: "Cummins Generator Technologies", division: "Heavy Material Handling & 90° Tilters", logo: "/manufacturing/brands/cummins.png" },
+    { name: "Mahindra Vehicle Manufacturers Ltd", division: "Automotive Conveyors & Plant Trolleys", logo: "/manufacturing/brands/mahindra.png" },
+    { name: "General Mills", division: "Food Packaging & Cartons", logo: "/manufacturing/brands/general_mills.png" },
+    { name: "Valco Melton", division: "Automated Adhesive Systems", logo: "/manufacturing/brands/valco_melton.png" },
+    { name: "Fresenius-Kabi (Ranjangaon)", division: "SS304 Material Lifter & Cleanroom Furniture", logo: "/manufacturing/brands/fresenius_kabi.png" },
+    { name: "Navneet Industries", division: "15m Belt File Conveyor & Glue Dispenser", logo: "/manufacturing/brands/navneet.png" },
+    { name: "Texol", division: "1000 LPH Continuous Hot Water Generation Unit", logo: "/manufacturing/brands/texol.png" },
+    { name: "Midas Care", division: "SS Racks, Tables & Cross-Over Benches", logo: "/manufacturing/brands/midas_care.png" },
+    { name: "Hikal Ltd", division: "Specialized Industrial Trolleys & Fixtures", logo: "/manufacturing/brands/hikal.png" }
   ]
 };
 
@@ -78,15 +80,17 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     title: "Industrial Control Panels (Thyristor, VFD, APFC, Annunciator & POU)",
     shortTitle: "Control Panels",
     tagline: "Custom-Engineered Type-Tested Electrical, VFD & Automation Enclosures",
-    badge: "SAHPL In-House Manufacturing",
+    badge: "SP Enterprises • SAHPL Product Range",
     iconName: "Cpu",
+    image: "/manufacturing/products/thyristor_control_panel.jpg",
     description:
-      "Engineered by qualified design engineers at SAHPL, our industrial control panels combine robust mechanical enclosures with intelligent automation switchgear. From heavy Thyristor heat-control panels and rugged VFD protection enclosures to Centralized Warning Annunciators and sanitary SS POU/WFI panels, every unit undergoes 100% rigorous pre-dispatch testing.",
+      "Handled and engineered by SP Enterprises under the SAHPL manufacturing range, our industrial control panels combine robust mechanical enclosures with intelligent automation switchgear. From heavy Thyristor heat-control panels and rugged VFD protection enclosures to Centralized Warning Annunciators and sanitary SS POU/WFI panels, every unit undergoes 100% rigorous pre-dispatch testing.",
     featuredClients: ["Heavy Manufacturing", "Chemical & Petrochemical", "Automotive Plants", "Pharmaceutical Plants", "Textile & Paper Mills"],
     featuredProducts: [
       {
         name: "Thyristor Control Panels",
         tagline: "Ultra-Fast Solid-State Voltage & Power Control for Thermal Loads",
+        image: "/manufacturing/products/thyristor_control_panel.jpg",
         description:
           "Thyristor Control panels are engineered to regulate precise power or voltage supplied to an industrial load. Typical applications are found where electrical power needs to be dynamically varied and converted into thermal energy with zero mechanical contactor wear.",
         specs: [
@@ -99,6 +103,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       {
         name: "VFD Control Panels (Harsh Environment Enclosures)",
         tagline: "High-Protection Enclosures for Dusty, Wet, Humid & Corrosive Workspaces",
+        image: "/manufacturing/products/vfd_control_panel.jpg",
         description:
           "When workspace environments are dusty, dirty, wet, humid, corrosive, or high-temperature, Variable Frequency Drives cannot remain exposed. Our VFD Control Panels provide a heavy-duty sealed enclosure protecting the drive and sensitive electronics while delivering thermostatically controlled cooling.",
         specs: [
@@ -111,6 +116,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       {
         name: "Annunciator Panels (Centralized Warning Panels - CWP)",
         tagline: "Centralized Visual & Audible Fault Monitoring System",
+        image: "/manufacturing/products/annunciator_panel.jpg",
         description:
           "An Annunciator Panel serves as a Centralized Warning Panel (CWP) featuring a grouped array of window warning lights and audible horns. It acts as the central status indicator of critical equipment and process parameters, instantly drawing operator attention to abnormal events or fault trips.",
         specs: [
@@ -123,6 +129,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       {
         name: "Capacitor Panels (Automatic APFC Panels)",
         tagline: "Automatic Power Factor Correction with Multi-Stage Bank Switching",
+        image: "/manufacturing/products/apfc_capacitor_panel.jpg",
         description:
           "Maintains the target power factor of electrical installations automatically by switching capacitor banks according to dynamic load demands. Designed with an intelligent APFC microprocessor relay, heavy-duty capacitor banks, detuned reactors, contactors, and circuit breakers.",
         specs: [
@@ -135,6 +142,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       {
         name: "SS POU / WFI Control Panels",
         tagline: "cGMP Sanitary Stainless Steel Point of Use Heating & Cooling Panels",
+        image: "/manufacturing/products/ss_pou_wfi_panel.jpg",
         description:
           "Specifically manufactured for sanitary pharmaceutical, biotech, and Water for Injection (WFI) loops. POU panels regulate critical heating and cooling applications with cleanroom-compatible SS304/SS316 enclosures and crevice-free finishes.",
         specs: [
@@ -184,7 +192,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       }
     ],
     specifications: [
-      { label: "Manufacturing Arm", value: "Smart Automation & Hydropneumatics Pvt. Ltd. (SAHPL)" },
+      { label: "Manufacturing Division", value: "SP Enterprises (Handling SAHPL Product Portfolio)" },
       { label: "Fabrication Standard", value: "IS 8623 / IEC 61439 Type-Tested Quality" },
       { label: "Sheet Construction", value: "CRCA Sheet (1.6mm - 2.0mm) or SS304/SS316 Stainless Steel" },
       { label: "Surface Finish", value: "7-Tank pre-treatment with 80-100 micron electrostatic pure polyester powder coating" },
@@ -193,7 +201,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       { label: "Testing Protocols", value: "100% HV dielectric test, insulation resistance, Megger testing, wiring continuity check" }
     ],
     keyBenefits: [
-      "Designed by qualified electrical engineers and assembled by certified technicians with 8+ years experience",
+      "Designed by qualified electrical engineers and assembled by certified technicians with 10+ years experience",
       "Tailor-made for harsh industrial conditions: dust, moisture, corrosive fumes, and extreme ambient temperatures",
       "Seamless communication interfaces supporting Modbus-RTU, Profinet, Ethernet/IP, and SCADA links",
       "Full schematic documentation including CAD Single-Line Diagrams (SLD), GA drawings, and terminal schedule charts"
@@ -205,10 +213,11 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     title: "Material Handling Equipment & Automation",
     shortTitle: "Material Handling",
     tagline: "Turn-key Automated Conveyors, 90° Chain Tilters & SS304 Material Lifters",
-    badge: "Heavy Automation Engineering",
+    badge: "SP Enterprises • SAHPL Heavy Automation",
     iconName: "Truck",
+    image: "/manufacturing/products/chain_tilter_90deg.jpg",
     description:
-      "SAHPL manufactures robust material handling automation systems designed to streamline factory production, eliminate physical handling fatigue, and accelerate internal logistics. Proven across leading automotive OEMs and pharmaceutical plants.",
+      "SP Enterprises manufactures and delivers the complete SAHPL material handling automation portfolio. Designed to streamline factory production, eliminate physical handling fatigue, and accelerate internal logistics, our systems are proven across leading automotive OEMs (Cummins, Mahindra) and pharmaceutical facilities (Fresenius-Kabi).",
     featuredClients: [
       "Cummins Generator Technologies",
       "Mahindra Vehicle Manufacturers Ltd",
@@ -219,6 +228,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Roller Based Conveyor Systems",
         client: "Cummins Generator Technologies & Mahindra Vehicle Manufacturers Ltd",
         tagline: "Heavy-Duty Powered & Gravity Roller Conveying for Automotive Components",
+        image: "/manufacturing/products/roller_conveyor_system.jpg",
         description:
           "Engineered for rugged, continuous movement of heavy vehicle sub-assemblies, engines, generators, and palletized goods. Features hardened precision rollers, robust side frames, and variable speed geared motor drives.",
         specs: [
@@ -232,6 +242,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "90° Chain Tilter (Product Rotator)",
         client: "Cummins Generator Technologies & Mahindra Vehicle Manufacturers Ltd",
         tagline: "Heavy Product 90-Degree Tilting & Reorientation for Automotive Lines",
+        image: "/manufacturing/products/chain_tilter_90deg.jpg",
         description:
           "The Chain Tilter is engineered to safely tilt and rotate heavy machinery components, engine blocks, generator stators, and metal dies by 90 degrees. Commonly utilized in automobile assembly lines to handle massive weights with zero manual strain.",
         specs: [
@@ -245,6 +256,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Material Lifter (Vertical Freight Lifter)",
         client: "Fresenius-Kabi, Ranjangaon",
         tagline: "SS304 Cleanroom Vertical Lifter for Multi-Floor Material Transfer",
+        image: "/manufacturing/products/vertical_material_lifter.jpg",
         description:
           "Manufactured specifically for Fresenius-Kabi at their Ranjangaon facility, this vertical material lifter transfers loads up to 500 kg between mezzanine floors up to 6 meters high. Fabricated completely from certified SS304 stainless steel for cleanroom hygiene and long service life.",
         specs: [
@@ -293,7 +305,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       }
     ],
     specifications: [
-      { label: "Manufacturing Arm", value: "Smart Automation & Hydropneumatics Pvt. Ltd. (SAHPL)" },
+      { label: "Manufacturing Division", value: "SP Enterprises (Handling SAHPL Product Portfolio)" },
       { label: "Key Clients", value: "Cummins Generator Technologies, Mahindra Vehicle Mfrs, Fresenius-Kabi" },
       { label: "Structural MOC", value: "Heavy MS Structural Section / Certified Stainless Steel AISI 304" },
       { label: "Lifting Capacity", value: "Up to 500 kg (standard lifter) / Up to 2,000+ kg (custom models)" },
@@ -314,10 +326,11 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     title: "Packaging Conveyors & Hot Melt Glue Machines",
     shortTitle: "Packaging Conveyors",
     tagline: "Automated Box Packaging, Valco Melton Hot-Melt Sealing & 15m File Conveyors",
-    badge: "Specialized Packaging Machine",
+    badge: "SP Enterprises • SAHPL Packaging Automation",
     iconName: "Boxes",
+    image: "/manufacturing/products/box_packaging_glue_conveyor.jpg",
     description:
-      "Engineered for high-throughput packaging environments, SAHPL manufactures fully automated carton folding and hot-melt glue machines as well as specialized 15-meter belt file conveyors. Built with PLC precision controls to adjust glue gun timing, packaging speeds, and carton sizes with minimal operator intervention.",
+      "Engineered for high-throughput packaging environments, SP Enterprises manufactures and supplies the full SAHPL packaging automation line. This includes fully automated carton folding and hot-melt glue machines as well as specialized 15-meter belt file conveyors, built with microsecond PLC precision controls to adjust glue gun timing, speeds, and carton sizes.",
     featuredClients: [
       "General Mills",
       "Valco Melton",
@@ -330,6 +343,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Hot Melt Glue Machine for Food Cartons (Box Packaging Conveyor)",
         client: "General Mills & Valco Melton",
         tagline: "Totally Automated Folding, Hot-Melt Gluing & Sealing with Minimal Human Effort",
+        image: "/manufacturing/products/box_packaging_glue_conveyor.jpg",
         description:
           "The Box Packaging Conveyor enables folding and packing cartons with hot-melt glue with very little help from human beings. It is a totally automated system where the operator only needs to place the carton box at the proper timing into the start tray. The rest of the work (automatic flap folding and glue dispensing) is completed automatically, delivering a fully packaged, tamper-evident carton box at the other side of the system. The machine is fully adjustable according to the sizes of boxes being packaged, with fast adjustment mechanisms provided to set box dimensions. The integrated PLC allows the operator to set packaging speed, startup timing, and shutdown timing for the glue gun.",
         specs: [
@@ -350,6 +364,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "15-Meter File Conveyor with Feeder & Glue Dispenser",
         client: "Navneet Industries",
         tagline: "Dual-Stage 15m Belt Conveyor with Up/Down Feeder & Sensor Glue Dropper",
+        image: "/manufacturing/products/file_conveyor_15m.jpg",
         description:
           "Manufactured for Navneet Industries, this specialized 15-meter long belt conveyor ensures an easy, swift, and jam-free flow of stationery files. The automated system features two primary operational stages: 1] Automated Up-and-Down Feeder Station: The feeder moves vertically up and down to index and allow exactly one file at a time to proceed onto the belt. 2] Precision Glue Dropper Machine: Accurately dispenses adhesive drops onto specific file positions using high-speed optical sensor triggers.",
         specs: [
@@ -370,6 +385,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Roller-Based Packaging Conveyors",
         client: "Cummins Generator Technologies & Mahindra Vehicle Manufacturers Ltd",
         tagline: "Smooth Powered Roller Conveyors for Heavy Box Transfer & Line Feeding",
+        image: "/manufacturing/products/roller_packaging_conveyor.jpg",
         description:
           "Continuous live roller packaging conveyor sections integrated with packing stations for Cummins and Mahindra automotive facilities, handling heavy parts boxes and crates.",
         specs: [
@@ -410,7 +426,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       }
     ],
     specifications: [
-      { label: "Manufacturing Arm", value: "Smart Automation & Hydropneumatics Pvt. Ltd. (SAHPL)" },
+      { label: "Manufacturing Division", value: "SP Enterprises (Handling SAHPL Product Portfolio)" },
       { label: "Key Clients", value: "General Mills, Valco Melton, Navneet Industries, Cummins, Mahindra" },
       { label: "Carton Size Range", value: "Fully adjustable according to box size (customizable tooling)" },
       { label: "Glue Dispensing", value: "Hot-melt glue gun (Valco Melton compatible) or cold glue dropper" },
@@ -431,10 +447,11 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     title: "Special Purpose Machines (SPM) & Process Units",
     shortTitle: "Special Purpose Machines",
     tagline: "Turnkey Hot Oil Systems, Hot Water Skids, Paint Booths & Air Incinerators",
-    badge: "Bespoke SPM Engineering",
+    badge: "SP Enterprises • SAHPL Bespoke SPM",
     iconName: "Settings2",
+    image: "/manufacturing/products/hot_water_generator_skid.jpg",
     description:
-      "SAHPL specializes in custom Special Purpose Machines (SPM), thermal process systems, industrial chillers, and cold rooms. Designed from the ground up by qualified engineers to solve complex heating, bacteriological incineration, continuous hot water generation, and precision surface painting challenges.",
+      "Under SP Enterprises, we design and manufacture the specialized SAHPL range of custom Special Purpose Machines (SPM), thermal process systems, industrial chillers, and cold rooms. Designed from the ground up by qualified engineers to solve complex heating, bacteriological incineration, continuous hot water generation, and precision surface painting challenges.",
     featuredClients: [
       "Texol",
       "Cummins India Ltd., Phaltan",
@@ -445,8 +462,9 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       {
         name: "Hot Oil Unit With Heating System",
         tagline: "High-Temperature Closed-Loop Thermal Fluid System up to 250°C",
+        image: "/manufacturing/products/hot_oil_heating_unit.jpg",
         description:
-          "The Hot Oil Unit is primarily used to provide circulating hot oil for various industrial process applications. The oil is heated inside an insulated SS304 Stainless Steel tank fitted with high-efficiency ceramic wool thermal insulation. The complete system consists of a circulation pump that pushes the heat transfer fluid through an insulated piping circuit to an electric heating chamber and onward to the client's processing equipment. All processes, temperatures, and interlocks are controlled automatically by dedicated SAHPL Control Panels.",
+          "The Hot Oil Unit is primarily used to provide circulating hot oil for various industrial process applications. The oil is heated inside an insulated SS304 Stainless Steel tank fitted with high-efficiency ceramic wool thermal insulation. The complete system consists of a circulation pump that pushes the heat transfer fluid through an insulated piping circuit to an electric heating chamber and onward to the client's processing equipment. All processes, temperatures, and interlocks are controlled automatically by dedicated SP Enterprises / SAHPL Control Panels.",
         specs: [
           { label: "Pump Pressure", value: "1.0 Barg" },
           { label: "Temperature Range", value: "90 to 250 °C" },
@@ -455,7 +473,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
           { label: "Pump Flow Rate", value: "1.2 M³/hr" },
           { label: "Heater Capacity", value: "3 X 3 KW (9 kW total)" },
           { label: "Thermal Insulation", value: "Ceramic Wool Insulation with SS cladding" },
-          { label: "Control System", value: "Integrated SAHPL Automation Control Panel" }
+          { label: "Control System", value: "Integrated Automation Control Panel" }
         ],
         highlights: [
           "SS304 tank insulated with high-grade ceramic wool prevents thermal radiation losses",
@@ -468,6 +486,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Continuous Hot Water Generation Unit",
         client: "Texol",
         tagline: "1000 LPH Flow Rate at 3 Bar g Pressure with ±2°C Precision PID Control",
+        image: "/manufacturing/products/hot_water_generator_skid.jpg",
         description:
           "Custom-engineered for Texol, this continuous hot water generation skid delivers 1000 LPH of heated water at 3 Bar g pressure with pinpoint temperature accuracy. Powered by a 30KW heating bank (15 heaters of 2kW each) plus an installed 2kW spare heater. Media heating is tightly regulated via advanced Thyristor/SSR solid-state control with a PT-100 RTD sensor and digital PID controller. Features a separate electronic thermostat for safety, pressure relief valve, flow switch monitoring, and pressure gauge feedback.",
         specs: [
@@ -493,6 +512,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Industrial Paint Booth",
         client: "Cummins India Ltd., Phaltan",
         tagline: "Custom Machinery Enclosure Paint Booth with Rear Air Suction Blower",
+        image: "/manufacturing/products/industrial_paint_booth.jpg",
         description:
           "Engineered and supplied to Cummins India Ltd. at Phaltan for painting different industrial machines. The main chamber is fabricated in certified SS304 stainless steel, while structural frame components are crafted in heavy-duty mild steel (MS). A powerful rear-mounted extraction blower continuously draws outside air and overspray through multi-stage filtration to maintain a clean, safe spraying environment.",
         specs: [
@@ -511,6 +531,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       {
         name: "Air Incineration System",
         tagline: "350°C Thermal Bacteriophage Elimination System with >6 Second Residence",
+        image: "/manufacturing/products/air_incineration_system.jpg",
         description:
           "Engineered for biological containment and sterile air sterilization, this Air Incineration System heats process air to 350 °C (Degree Centigrade) and maintains it for more than 6 seconds. This extreme thermal holding residence completely eliminates the contamination of Bacteriophage Bacteria and other heat-resistant biological pathogens.",
         specs: [
@@ -528,8 +549,9 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       {
         name: "Industrial Chillers & Cold Rooms",
         tagline: "Precision Process Fluid Chillers & cGMP Cold Storage Rooms",
+        image: "/manufacturing/products/industrial_chiller.jpg",
         description:
-          "SAHPL manufactures custom-engineered Industrial Chillers (air-cooled and water-cooled) and modular Cold Rooms designed for temperature-critical pharmaceutical, chemical, and food preservation processes.",
+          "SP Enterprises manufactures and commissions custom-engineered Industrial Chillers (air-cooled and water-cooled) and modular Cold Rooms designed for temperature-critical pharmaceutical, chemical, and food preservation processes.",
         specs: [
           { label: "Chiller Types", value: "Air-Cooled & Water-Cooled Process Chillers" },
           { label: "Temperature Capability", value: "-20°C to +15°C application tailored" },
@@ -573,7 +595,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       }
     ],
     specifications: [
-      { label: "Manufacturing Arm", value: "Smart Automation & Hydropneumatics Pvt. Ltd. (SAHPL)" },
+      { label: "Manufacturing Division", value: "SP Enterprises (Handling SAHPL Product Portfolio)" },
       { label: "Key Clients", value: "Texol, Cummins India Ltd. (Phaltan), General Mills, Valco Melton" },
       { label: "Hot Oil Temp Range", value: "90°C to 250°C (1.0 Barg, 1.2 M³/hr, 150L SS304 Tank, 3x3 kW)" },
       { label: "Hot Water Capacity", value: "1000 LPH at 3 Bar g (Working Temp 95°C ± 2°C, 30 kW heaters)" },
@@ -594,10 +616,11 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     title: "SS & MS Industrial Fabrication, Trolleys & Fixtures",
     shortTitle: "Trolleys & SS/MS Fabrication",
     tagline: "Custom Industrial Trolleys, Cleanroom Furniture, SS Racks & Cross-Over Benches",
-    badge: "cGMP SS 304 & MS Fabrication",
+    badge: "SP Enterprises • cGMP SS 304 & MS Fabrication",
     iconName: "Shield",
+    image: "/manufacturing/products/cleanroom_ss_furniture.jpg",
     description:
-      "SAHPL manufactures high-precision Stainless Steel (SS304/SS316) and Mild Steel (MS) fixtures, industrial plant trolleys, and cleanroom furniture. Built for heavy automotive manufacturing as well as rigorous cGMP pharmaceutical environments.",
+      "SP Enterprises delivers the full SAHPL portfolio of high-precision Stainless Steel (SS304/SS316) and Mild Steel (MS) fixtures, industrial plant trolleys, and cleanroom furniture. Built for heavy automotive manufacturing (Mahindra) as well as rigorous cGMP pharmaceutical environments (Midas Care, Fresenius-Kabi).",
     featuredClients: [
       "Mahindra Vehicle Manufacturers Ltd",
       "Hikal Ltd",
@@ -609,6 +632,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Industrial Trolleys Collection",
         client: "Mahindra Vehicle Manufacturers Ltd & Hikal Ltd",
         tagline: "Heavy-Duty Cartage, Cans, Boxes & Mesh Material Movement Trolleys",
+        image: "/manufacturing/products/industrial_trolleys.jpg",
         description:
           "Manufactured for automotive plants and chemical manufacturing facilities including Mahindra Vehicle Manufacturers Ltd and Hikal Ltd. Our specialized trolleys are engineered with heavy-duty structural steel, ergonomic push bars, and anti-static polyurethane/nylon castors.",
         specs: [
@@ -629,6 +653,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Cleanroom SS & MS Fabrication for Industry Use",
         client: "Midas Care & Fresenius-Kabi",
         tagline: "cGMP Sanitary SS Racks, Tables, MS Racks & Cross-Over Benches",
+        image: "/manufacturing/products/cleanroom_ss_furniture.jpg",
         description:
           "Fabricated for pharmaceutical formulations and healthcare plants including Midas Care and Fresenius-Kabi. Features crevice-free seamless TIG welding, rounded sanitary coving, and mirror/satin electro-polished finishes.",
         specs: [
@@ -673,7 +698,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
       }
     ],
     specifications: [
-      { label: "Manufacturing Arm", value: "Smart Automation & Hydropneumatics Pvt. Ltd. (SAHPL)" },
+      { label: "Manufacturing Division", value: "SP Enterprises (Handling SAHPL Product Portfolio)" },
       { label: "Key Clients", value: "Mahindra Vehicle Mfrs, Hikal Ltd, Midas Care, Fresenius-Kabi" },
       { label: "Material Grades", value: "AISI 304, AISI 316, AISI 316L Stainless Steel & High-Strength Mild Steel (MS)" },
       { label: "Trolley Variations", value: "Cartage, Multipurpose, Cans, Small Boxes, Carton, Wire Mesh Trolleys" },

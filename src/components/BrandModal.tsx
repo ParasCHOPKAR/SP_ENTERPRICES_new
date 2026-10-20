@@ -162,7 +162,7 @@ export default function BrandModal({ brand, onClose, onSelectBrand, onInquire }:
 
             <div className="brand-meta-card">
               <h4 className="brand-meta-title">
-                <Factory size={18} color="#2563eb" /> Typical Industry Applications
+                <Factory size={18} color="#c8102e" /> Typical Industry Applications
               </h4>
               <div className="brand-tags-list">
                 {brand.targetIndustries.map((ind, iIdx) => (
@@ -190,7 +190,7 @@ export default function BrandModal({ brand, onClose, onSelectBrand, onInquire }:
             )}
             <a
               href="/01.SP Enterprises (1).pdf"
-              download="SP_Enterprises_Catalogue.pdf"
+              download={`${brand.name.replace(/[^a-zA-Z0-9]/g, '_')}_Catalogue.pdf`}
               className="brand-catalogue-btn"
               title="Download Product Catalogue (PDF)"
             >

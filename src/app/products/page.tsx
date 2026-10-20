@@ -96,14 +96,14 @@ function ProductsContent() {
       <Header />
 
       {/* Page Hero Banner */}
-      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e40af 100%)", padding: "4.5rem 0", color: "white" }}>
+      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #7f1d1d 100%)", padding: "4.5rem 0", color: "white" }}>
         <div className="container">
           <div style={{ maxWidth: "800px" }}>
-            <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#93c5fd", borderColor: "rgba(255,255,255,0.25)" }}>
+            <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#f59e0b", borderColor: "rgba(255,255,255,0.25)" }}>
               <Cpu size={14} /> COMPLETE PRODUCT PORTFOLIO
             </div>
             <h1 style={{ fontSize: "3rem", fontWeight: 800, lineHeight: 1.15, marginBottom: "1.2rem" }}>
-              Authorized Brands &amp; <span style={{ color: "#60a5fa" }}>Industrial Products</span>
+              Brands &amp; <span style={{ color: "#fbbf24" }}>Industrial Products</span>
             </h1>
             <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.6 }}>
               Click on any brand logo or card to inspect complete product specifications, model numbers, amperage ratings, and technical sheets.
@@ -151,15 +151,15 @@ function ProductsContent() {
           </div>
 
           {/* Quick Notice */}
-          <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", padding: "0.9rem 1.4rem", borderRadius: "10px", marginBottom: "2.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontSize: "0.88rem", color: "#1e3a8a", fontWeight: 600 }}>
-              <Sparkles size={18} color="#2563eb" />
-              <span>Showing {filteredBrands.length} of 13 Authorized Engineering Brands</span>
+          <div style={{ background: "#fff1f2", border: "1px solid #fecdd3", padding: "0.9rem 1.4rem", borderRadius: "10px", marginBottom: "2.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontSize: "0.88rem", color: "#c8102e", fontWeight: 700 }}>
+              <Sparkles size={18} color="#c8102e" />
+              <span>Showing {filteredBrands.length} of 13 Premier Engineering Brands</span>
             </div>
             <a
               href="/01.SP Enterprises (1).pdf"
               download="SP_Enterprises_Catalogue.pdf"
-              style={{ fontSize: "0.85rem", color: "#2563eb", fontWeight: 700, textDecoration: "none", display: "flex", alignItems: "center", gap: "0.4rem" }}
+              style={{ fontSize: "0.85rem", color: "#c8102e", fontWeight: 700, textDecoration: "none", display: "flex", alignItems: "center", gap: "0.4rem" }}
             >
               <Download size={15} /> Download PDF Brochure (5.3 MB)
             </a>
@@ -194,7 +194,7 @@ function ProductsContent() {
                 }}
                 onMouseEnter={e => {
                   (e.currentTarget as HTMLElement).style.transform = "translateY(-6px)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 40px rgba(37, 99, 235, 0.15)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 40px rgba(200, 16, 46, 0.15)";
                 }}
                 onMouseLeave={e => {
                   (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
@@ -233,10 +233,10 @@ function ProductsContent() {
                       borderRadius: "50px", fontSize: "0.7rem", fontWeight: 700,
                       display: "flex", alignItems: "center", gap: "0.3rem", letterSpacing: "0.5px"
                     }}>
-                      <ShieldCheck size={12} /> AUTHORIZED
+                      <ShieldCheck size={12} /> VERIFIED PARTNER
                     </span>
                     <span style={{
-                      background: "#1e3a8a", color: "#93c5fd",
+                      background: "#c8102e", color: "#fef08a",
                       padding: "0.3rem 0.8rem", borderRadius: "6px",
                       fontSize: "0.65rem", fontWeight: 800, letterSpacing: "1px"
                     }}>
@@ -263,7 +263,7 @@ function ProductsContent() {
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" }}>
                     {brand.categories.map((cat, cIdx) => (
                       <div key={cIdx} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#2563eb", flexShrink: 0 }} />
+                        <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c8102e", flexShrink: 0 }} />
                         <span style={{ fontSize: "0.82rem", color: "#334155", fontWeight: 600 }}>{cat.categoryName}</span>
                       </div>
                     ))}
@@ -284,7 +284,7 @@ function ProductsContent() {
                       ))}
                     {brand.categories.flatMap((c) => c.products).length > 3 && (
                       <span style={{
-                        background: "#eff6ff", color: "#2563eb",
+                        background: "#fff1f2", color: "#c8102e",
                         padding: "0.3rem 0.6rem", borderRadius: "6px",
                         fontSize: "0.72rem", fontWeight: 700
                       }}>
@@ -300,13 +300,13 @@ function ProductsContent() {
                   display: "flex", justifyContent: "space-between", alignItems: "center",
                   background: "#fafafa"
                 }}>
-                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#2563eb" }}>
+                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#c8102e" }}>
                     View Product Line
                   </span>
                   <div style={{
                     width: "32px", height: "32px", borderRadius: "50%",
-                    background: "#2563eb", display: "flex", alignItems: "center", justifyContent: "center",
-                    boxShadow: "0 4px 10px rgba(37,99,235,0.3)"
+                    background: "#c8102e", display: "flex", alignItems: "center", justifyContent: "center",
+                    boxShadow: "0 4px 10px rgba(200,16,46,0.3)"
                   }}>
                     <ArrowRight size={14} color="white" />
                   </div>

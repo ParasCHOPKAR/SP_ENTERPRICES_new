@@ -36,13 +36,13 @@ export default function Footer({ onSelectBrand }: FooterProps) {
       <footer
         className="main-footer"
         style={{
-          backgroundImage: "url('/footer_01111.png')",
+          backgroundImage: "url('/home/footer_final_img.png')",
           backgroundSize: "cover",
           backgroundPosition: "center right",
           backgroundRepeat: "no-repeat",
           color: "white",
           position: "relative",
-          borderTop: "1px solid rgba(59, 130, 246, 0.4)",
+          borderTop: "1px solid rgba(200, 16, 46, 0.4)",
           paddingTop: "3.5rem"
         }}
       >
@@ -71,10 +71,10 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                 }}
               >
                 <Image
-                  src="/logo_022.png"
+                  src="/new_logo_01.png"
                   alt="S. P. Enterprises"
-                  width={140}
-                  height={50}
+                  width={145}
+                  height={55}
                   style={{ objectFit: "contain" }}
                 />
               </div>
@@ -93,7 +93,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               <div
                 style={{
                   fontSize: "0.76rem",
-                  color: "#38bdf8",
+                  color: "#f59e0b",
                   fontWeight: 700,
                   letterSpacing: "0.8px",
                   textTransform: "uppercase",
@@ -103,64 +103,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                 ENGINEERING &amp; AUTOMATION EXCELLENCE
               </div>
 
-              {/* Pune Facility & Head Office Map in Column 1 */}
-              <div
-                style={{
-                  background: "rgba(8, 20, 50, 0.45)",
-                  border: "1px solid rgba(59, 130, 246, 0.35)",
-                  borderRadius: "10px",
-                  padding: "0.75rem",
-                  marginBottom: "1.2rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.5rem"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                    <MapPin size={15} color="#38bdf8" />
-                    <span style={{ fontWeight: 700, fontSize: "0.82rem", color: "#ffffff" }}>
-                      Pune Facility &amp; Head Office Map
-                    </span>
-                  </div>
-                  <a
-                    href="https://maps.google.com/?q=Sr.+No.+14/1A+++2B/2,+Gujarwadi+Road,+Katraj,+Pune+-+411046"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: "#38bdf8",
-                      fontSize: "0.74rem",
-                      fontWeight: 700,
-                      textDecoration: "none",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.2rem"
-                    }}
-                  >
-                    Maps <ExternalLink size={11} />
-                  </a>
-                </div>
 
-                <div
-                  style={{
-                    borderRadius: "6px",
-                    overflow: "hidden",
-                    border: "1px solid rgba(59, 130, 246, 0.3)",
-                    height: "120px"
-                  }}
-                >
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7570.037857208688!2d73.86047314206468!3d18.437449680559993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sSr.%20No.%2014%2F1A%20%2B%202B%2F2%2C%20Gujarwadi%20Road%2C%20Katraj%2C%20Pune%20-%20411046%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1791021663511!5m2!1sen!2sin"
-                    width="100%"
-                    height="120"
-                    style={{ border: 0, display: "block" }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    title="S. P. Enterprises Pune Google Map"
-                  />
-                </div>
-              </div>
 
               {/* 4 Pillars 2x2 Grid */}
               <div
@@ -172,8 +115,9 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               >
                 <div
                   style={{
-                    background: "rgba(10, 25, 60, 0.45)",
-                    border: "1px solid rgba(59, 130, 246, 0.3)",
+                    background: "rgba(20, 8, 12, 0.65)",
+                    backdropFilter: "blur(6px)",
+                    border: "1px solid rgba(200, 16, 46, 0.35)",
                     borderRadius: "8px",
                     padding: "0.65rem 0.75rem",
                     display: "flex",
@@ -181,17 +125,18 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                     gap: "0.6rem"
                   }}
                 >
-                  <ShieldCheck size={20} color="#38bdf8" style={{ flexShrink: 0 }} />
+                  <ShieldCheck size={20} color="#f59e0b" style={{ flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#ffffff" }}>Authorized</div>
+                    <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#ffffff" }}>Global Partner</div>
                     <div style={{ fontSize: "0.68rem", color: "#cbd5e1" }}>13 Global Brands</div>
                   </div>
                 </div>
 
                 <div
                   style={{
-                    background: "rgba(10, 25, 60, 0.45)",
-                    border: "1px solid rgba(59, 130, 246, 0.3)",
+                    background: "rgba(20, 8, 12, 0.65)",
+                    backdropFilter: "blur(6px)",
+                    border: "1px solid rgba(200, 16, 46, 0.35)",
                     borderRadius: "8px",
                     padding: "0.65rem 0.75rem",
                     display: "flex",
@@ -199,7 +144,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                     gap: "0.6rem"
                   }}
                 >
-                  <Cpu size={20} color="#38bdf8" style={{ flexShrink: 0 }} />
+                  <Cpu size={20} color="#f59e0b" style={{ flexShrink: 0 }} />
                   <div>
                     <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#ffffff" }}>Type-Tested</div>
                     <div style={{ fontSize: "0.68rem", color: "#cbd5e1" }}>Control Panels</div>
@@ -208,8 +153,9 @@ export default function Footer({ onSelectBrand }: FooterProps) {
 
                 <div
                   style={{
-                    background: "rgba(10, 25, 60, 0.45)",
-                    border: "1px solid rgba(59, 130, 246, 0.3)",
+                    background: "rgba(20, 8, 12, 0.65)",
+                    backdropFilter: "blur(6px)",
+                    border: "1px solid rgba(200, 16, 46, 0.35)",
                     borderRadius: "8px",
                     padding: "0.65rem 0.75rem",
                     display: "flex",
@@ -217,7 +163,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                     gap: "0.6rem"
                   }}
                 >
-                  <Boxes size={20} color="#38bdf8" style={{ flexShrink: 0 }} />
+                  <Boxes size={20} color="#f59e0b" style={{ flexShrink: 0 }} />
                   <div>
                     <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#ffffff" }}>Automation</div>
                     <div style={{ fontSize: "0.68rem", color: "#cbd5e1" }}>Lines &amp; Conveyors</div>
@@ -226,8 +172,9 @@ export default function Footer({ onSelectBrand }: FooterProps) {
 
                 <div
                   style={{
-                    background: "rgba(10, 25, 60, 0.45)",
-                    border: "1px solid rgba(59, 130, 246, 0.3)",
+                    background: "rgba(20, 8, 12, 0.65)",
+                    backdropFilter: "blur(6px)",
+                    border: "1px solid rgba(200, 16, 46, 0.35)",
                     borderRadius: "8px",
                     padding: "0.65rem 0.75rem",
                     display: "flex",
@@ -235,7 +182,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                     gap: "0.6rem"
                   }}
                 >
-                  <HeadphonesIcon size={20} color="#38bdf8" style={{ flexShrink: 0 }} />
+                  <HeadphonesIcon size={20} color="#f59e0b" style={{ flexShrink: 0 }} />
                   <div>
                     <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#ffffff" }}>Dedicated</div>
                     <div style={{ fontSize: "0.68rem", color: "#cbd5e1" }}>Engineering Support</div>
@@ -247,7 +194,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
             {/* Column 2: Quick Navigation */}
             <div style={{ flex: "0.9 1 190px", maxWidth: "230px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1.2rem" }}>
-                <div style={{ width: "3px", height: "16px", background: "#38bdf8", borderRadius: "2px" }} />
+                <div style={{ width: "3px", height: "16px", background: "#f59e0b", borderRadius: "2px" }} />
                 <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>Quick Navigation</h3>
               </div>
 
@@ -271,21 +218,21 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                       justifyContent: "space-between",
                       transition: "color 0.2s"
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#38bdf8")}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#fbbf24")}
                     onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
                   >
                     <span>{item.label}</span>
-                    <ChevronRight size={14} color="#38bdf8" />
+                    <ChevronRight size={14} color="#f59e0b" />
                   </Link>
                 ))}
               </div>
 
-              {/* Download Brochure Blue Button */}
+              {/* Download Brochure Red Button */}
               <a
                 href="/01.SP Enterprises (1).pdf"
                 download="SP_Enterprises_Catalogue.pdf"
                 style={{
-                  background: "#1d4ed8",
+                  background: "#c8102e",
                   color: "#ffffff",
                   textDecoration: "none",
                   padding: "0.65rem 1rem",
@@ -295,11 +242,11 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  boxShadow: "0 4px 15px rgba(29, 78, 216, 0.4)",
+                  boxShadow: "0 4px 15px rgba(200, 16, 46, 0.4)",
                   transition: "background 0.2s"
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#2563eb")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#1d4ed8")}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#a30d24")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#c8102e")}
               >
                 <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                   <Download size={16} /> Download PDF Brochure
@@ -308,17 +255,17 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               </a>
             </div>
 
-            {/* Column 3: Authorized Brands (13) */}
+            {/* Column 3: Partner Brands (13) */}
             <div style={{ flex: "1.3 1 310px", maxWidth: "370px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.4rem" }}>
-                <div style={{ width: "3px", height: "16px", background: "#38bdf8", borderRadius: "2px" }} />
+                <div style={{ width: "3px", height: "16px", background: "#f59e0b", borderRadius: "2px" }} />
                 <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
-                  Authorized Brands (13)
+                  Partner Brands (13)
                 </h3>
               </div>
 
               <p style={{ fontSize: "0.78rem", color: "#cbd5e1", marginBottom: "1rem", lineHeight: "1.4" }}>
-                Direct factory-authorized distribution with genuine OEM warranty and engineering support:
+                Direct factory dealership and distribution with genuine OEM warranty and engineering support:
               </p>
 
               <div
@@ -339,10 +286,10 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                         if (onSelectBrand) onSelectBrand(brand.id);
                       }}
                       style={{
-                        background: isHighlighted ? "#1d4ed8" : "rgba(10, 25, 60, 0.55)",
+                        background: isHighlighted ? "#c8102e" : "rgba(20, 8, 12, 0.65)",
                         border: isHighlighted
-                          ? "1px solid #3b82f6"
-                          : "1px solid rgba(59, 130, 246, 0.25)",
+                          ? "1px solid #ef4444"
+                          : "1px solid rgba(200, 16, 46, 0.3)",
                         borderRadius: "5px",
                         padding: "0.4rem 0.6rem",
                         color: "#ffffff",
@@ -356,18 +303,18 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                       }}
                       onMouseEnter={(e) => {
                         if (!isHighlighted) {
-                          e.currentTarget.style.background = "rgba(29, 78, 216, 0.6)";
-                          e.currentTarget.style.borderColor = "#3b82f6";
+                          e.currentTarget.style.background = "rgba(200, 16, 46, 0.5)";
+                          e.currentTarget.style.borderColor = "#ef4444";
                         }
                       }}
                       onMouseLeave={(e) => {
                         if (!isHighlighted) {
-                          e.currentTarget.style.background = "rgba(10, 25, 60, 0.55)";
-                          e.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.25)";
+                          e.currentTarget.style.background = "rgba(20, 8, 12, 0.65)";
+                          e.currentTarget.style.borderColor = "rgba(200, 16, 46, 0.3)";
                         }
                       }}
                     >
-                      <ChevronRight size={13} color="#38bdf8" style={{ flexShrink: 0 }} />
+                      <ChevronRight size={13} color="#f59e0b" style={{ flexShrink: 0 }} />
                       <span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
                         {brand.name}
                       </span>
@@ -382,31 +329,32 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               style={{
                 flex: "1.2 1 300px",
                 maxWidth: "340px",
-                background: "rgba(8, 20, 50, 0.45)",
-                border: "1px solid rgba(59, 130, 246, 0.4)",
+                background: "rgba(20, 8, 12, 0.75)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(200, 16, 46, 0.4)",
                 borderRadius: "12px",
                 padding: "1.4rem",
-                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.35)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.45)",
                 display: "flex",
                 flexDirection: "column",
                 gap: "1rem"
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <Building2 size={18} color="#38bdf8" />
+                <Building2 size={18} color="#f59e0b" />
                 <h3 style={{ fontSize: "1.05rem", fontWeight: 700, margin: 0, color: "#ffffff" }}>
                   Pune Headquarters
                 </h3>
               </div>
 
               <div>
-                <div style={{ fontSize: "0.72rem", color: "#93c5fd", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                <div style={{ fontSize: "0.72rem", color: "#fde68a", textTransform: "uppercase", letterSpacing: "0.5px", fontWeight: 700 }}>
                   KEY CONTACT PERSON
                 </div>
                 <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#ffffff", marginTop: "0.1rem" }}>
                   Pradeep Kulkarni
                 </div>
-                <div style={{ fontSize: "0.78rem", color: "#38bdf8" }}>
+                <div style={{ fontSize: "0.78rem", color: "#fbbf24" }}>
                   Commercial &amp; Technical Sales
                 </div>
               </div>
@@ -421,13 +369,13 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                     color: "#ffffff",
                     textDecoration: "none",
                     fontWeight: 700,
-                    background: "rgba(59, 130, 246, 0.2)",
+                    background: "rgba(200, 16, 46, 0.25)",
                     padding: "0.45rem 0.75rem",
                     borderRadius: "6px",
-                    border: "1px solid rgba(59, 130, 246, 0.3)"
+                    border: "1px solid rgba(200, 16, 46, 0.4)"
                   }}
                 >
-                  <Phone size={15} color="#38bdf8" />
+                  <Phone size={15} color="#fbbf24" />
                   <span>+91 8308502100</span>
                 </a>
 
@@ -441,21 +389,19 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                     textDecoration: "none"
                   }}
                 >
-                  <Mail size={15} color="#38bdf8" />
+                  <Mail size={15} color="#fbbf24" />
                   <span>info@speautomation.com</span>
                 </a>
 
-
-
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "0.6rem" }}>
-                  <MapPin size={16} color="#38bdf8" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <MapPin size={16} color="#fbbf24" style={{ flexShrink: 0, marginTop: "2px" }} />
                   <span style={{ color: "#e2e8f0", fontSize: "0.8rem", lineHeight: "1.4" }}>
                     Sr. No. 14/1A + 2B/2, Gujarwadi Road, Katraj, Pune - 411046, Maharashtra, India
                   </span>
                 </div>
 
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", fontSize: "0.78rem" }}>
-                  <Clock size={14} color="#38bdf8" />
+                  <Clock size={14} color="#fbbf24" />
                   <span>Mon – Sat: 9:00 AM – 7:00 PM IST</span>
                 </div>
               </div>
@@ -464,7 +410,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                 href="/01.SP Enterprises (1).pdf"
                 download="SP_Enterprises_Catalogue.pdf"
                 style={{
-                  background: "#1d4ed8",
+                  background: "#c8102e",
                   color: "white",
                   padding: "0.7rem 1rem",
                   borderRadius: "6px",
@@ -475,11 +421,11 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "0.5rem",
-                  boxShadow: "0 4px 15px rgba(29, 78, 216, 0.4)",
+                  boxShadow: "0 4px 15px rgba(200, 16, 46, 0.4)",
                   transition: "background 0.2s"
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#2563eb")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#1d4ed8")}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#a30d24")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#c8102e")}
               >
                 <Download size={15} /> Download Full PDF (5.2 MB)
               </a>
@@ -502,8 +448,9 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               style={{
                 flex: "1 1 360px",
                 maxWidth: "430px",
-                background: "rgba(8, 20, 50, 0.45)",
-                border: "1px solid rgba(59, 130, 246, 0.35)",
+                background: "rgba(20, 8, 12, 0.7)",
+                backdropFilter: "blur(8px)",
+                border: "1px solid rgba(245, 158, 11, 0.3)",
                 borderRadius: "12px",
                 padding: "1.1rem 1.4rem",
                 display: "flex",
@@ -524,7 +471,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                     <div style={{ fontWeight: 800, fontSize: "0.92rem", color: "#ffffff", lineHeight: 1.2 }}>
                       Google Customer Rating
                     </div>
-                    <div style={{ fontSize: "0.74rem", color: "#38bdf8", fontWeight: 700 }}>
+                    <div style={{ fontSize: "0.74rem", color: "#f59e0b", fontWeight: 700 }}>
                       S. P. Enterprises Pune
                     </div>
                   </div>
@@ -569,9 +516,9 @@ export default function Footer({ onSelectBrand }: FooterProps) {
         {/* Mid-Footer Quality & Trust Assurance Bar with Top Button */}
         <div
           style={{
-            borderTop: "1px solid rgba(59, 130, 246, 0.25)",
-            borderBottom: "1px solid rgba(59, 130, 246, 0.25)",
-            background: "rgba(4, 12, 34, 0.6)",
+            borderTop: "1px solid rgba(245, 158, 11, 0.25)",
+            borderBottom: "1px solid rgba(245, 158, 11, 0.25)",
+            background: "rgba(15, 5, 8, 0.75)",
             padding: "1.2rem 0"
           }}
         >
@@ -589,10 +536,10 @@ export default function Footer({ onSelectBrand }: FooterProps) {
           >
             {/* 100% Genuine OEM */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flex: "1 1 200px" }}>
-              <ShieldCheck size={22} color="#38bdf8" style={{ flexShrink: 0 }} />
+              <ShieldCheck size={22} color="#f59e0b" style={{ flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#ffffff" }}>100% Genuine OEM</div>
-                <div style={{ fontSize: "0.72rem", color: "#94a3b8" }}>Direct authorized manufacturer guarantee</div>
+                <div style={{ fontSize: "0.72rem", color: "#94a3b8" }}>Direct manufacturer warranty &amp; OEM guarantee</div>
               </div>
             </div>
 
@@ -600,7 +547,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
 
             {/* Type-Tested Reliability */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flex: "1 1 200px" }}>
-              <Award size={22} color="#38bdf8" style={{ flexShrink: 0 }} />
+              <Award size={22} color="#f59e0b" style={{ flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#ffffff" }}>Type-Tested Reliability</div>
                 <div style={{ fontSize: "0.72rem", color: "#94a3b8" }}>Compliant with IEC &amp; CPRI testing standards</div>
@@ -611,7 +558,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
 
             {/* Pharma cGMP Compliant */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flex: "1 1 200px" }}>
-              <Factory size={22} color="#38bdf8" style={{ flexShrink: 0 }} />
+              <Factory size={22} color="#f59e0b" style={{ flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#ffffff" }}>Pharma cGMP Compliant</div>
                 <div style={{ fontSize: "0.72rem", color: "#94a3b8" }}>SS 304/316 Cleanroom furniture &amp; doors</div>
@@ -622,14 +569,14 @@ export default function Footer({ onSelectBrand }: FooterProps) {
 
             {/* Pan-India Delivery */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flex: "1 1 200px" }}>
-              <Truck size={22} color="#38bdf8" style={{ flexShrink: 0 }} />
+              <Truck size={22} color="#f59e0b" style={{ flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#ffffff" }}>Pan-India Delivery</div>
                 <div style={{ fontSize: "0.72rem", color: "#94a3b8" }}>Rapid dispatches &amp; site commissioning</div>
               </div>
             </div>
 
-            {/* Circular Blue Top Button */}
+            {/* Circular Crimson Top Button */}
             <a
               href="#top"
               title="Back to Top"
@@ -637,7 +584,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                 width: "44px",
                 height: "44px",
                 borderRadius: "50%",
-                background: "#1d4ed8",
+                background: "#c8102e",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -646,7 +593,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                 textDecoration: "none",
                 fontSize: "0.68rem",
                 fontWeight: 700,
-                boxShadow: "0 4px 14px rgba(29, 78, 216, 0.6)",
+                boxShadow: "0 4px 14px rgba(200, 16, 46, 0.6)",
                 flexShrink: 0,
                 transition: "transform 0.2s"
               }}
@@ -663,8 +610,8 @@ export default function Footer({ onSelectBrand }: FooterProps) {
         <div
           style={{
             padding: "1.2rem 0",
-            background: "rgba(2, 6, 20, 0.85)",
-            borderTop: "1px solid rgba(255, 255, 255, 0.08)"
+            background: "rgba(10, 3, 6, 0.92)",
+            borderTop: "1px solid rgba(200, 16, 46, 0.2)"
           }}
         >
           <div
