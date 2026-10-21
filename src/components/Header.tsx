@@ -64,7 +64,7 @@ export default function Header() {
     }
     return uniqueResults.slice(0, 6);
   };
-  
+
   const recommendations = getRecommendations();
 
   interface NavDropdownItem {
@@ -84,8 +84,8 @@ export default function Header() {
   const navItems: NavItem[] = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { 
-      label: "Products", 
+    {
+      label: "Products",
       href: "/products",
       dropdown: [
         { label: "Relays & Switching", href: "/products?category=relays" },
@@ -95,39 +95,39 @@ export default function Header() {
         { label: "Cleanroom & Pass Boxes", href: "/products?category=cleanroom" },
       ]
     },
-    { 
-      label: "Manufacturing", 
+    {
+      label: "Manufacturing",
       href: "/manufacturing",
       dropdown: [
-        { 
-          label: "Special Purpose Machines (SPM)", 
+        {
+          label: "Special Purpose Machines (SPM)",
           sub: "Hot Oil Units, 1000 LPH Hot Water, Paint Booth & Incinerator",
           tag: "Custom SPM",
-          href: "/manufacturing/special-purpose-machines" 
+          href: "/manufacturing/special-purpose-machines"
         },
-        { 
-          label: "Packaging & Hot Melt Conveyors", 
+        {
+          label: "Packaging & Hot Melt Conveyors",
           sub: "Box Packaging (General Mills), 15m File Conveyor (Navneet)",
           tag: "Automated",
-          href: "/manufacturing/glue-conveyors" 
+          href: "/manufacturing/glue-conveyors"
         },
-        { 
-          label: "Material Handling & Tilters", 
+        {
+          label: "Material Handling & Tilters",
           sub: "Roller Conveyors, 90° Chain Tilters & 6m SS304 Lifters",
           tag: "Heavy Automation",
-          href: "/manufacturing/material-handling" 
+          href: "/manufacturing/material-handling"
         },
-        { 
-          label: "Industrial Control Panels", 
+        {
+          label: "Industrial Control Panels",
           sub: "Thyristor Panels, VFD Panels, APFC, Annunciator & SS POU",
           tag: "Type-Tested",
-          href: "/manufacturing/control-panels" 
+          href: "/manufacturing/control-panels"
         },
-        { 
-          label: "Fixtures, Trolleys & Fabrication", 
+        {
+          label: "Fixtures, Trolleys & Fabrication",
           sub: "Industrial Trolleys (Mahindra/Hikal), SS Tables & Cleanroom Racks",
           tag: "SS304 / MS",
-          href: "/manufacturing/ss-fabrication" 
+          href: "/manufacturing/ss-fabrication"
         },
         {
           label: "SP Enterprises Manufacturing Overview",
@@ -138,6 +138,7 @@ export default function Header() {
         }
       ]
     },
+
     { label: "Contact", href: "/contact" },
   ];
 
@@ -150,10 +151,10 @@ export default function Header() {
         <div className="container top-bar-container">
           <div className="top-bar-left">
             <a href="tel:+918308502100" className="top-bar-item top-bar-link">
-              <Phone size={14} /> +91 8308502100
+              <Phone size={14} /> +91 83085 02100
             </a>
-            <a href="mailto:info@speautomation.com" className="top-bar-item top-bar-link">
-              <Mail size={14} /> info@speautomation.com
+            <a href="mailto:sales@sahpl.com" className="top-bar-item top-bar-link">
+              <Mail size={14} /> sales@sahpl.com
             </a>
             <span className="top-bar-item">
               <MapPin size={14} /> Katraj, Pune - 411046
@@ -161,7 +162,7 @@ export default function Header() {
           </div>
           <div className="top-bar-right">
             <span style={{ fontSize: "0.78rem", color: "#f59e0b", fontWeight: 700, borderRight: "1px solid rgba(255,255,255,0.2)", paddingRight: "1rem" }}>
-              Contact: Pradeep Kulkarni
+              Director: Mr. Pradeep Kulkarni
             </span>
             <a
               href="/01.SP Enterprises (1).pdf"
@@ -171,7 +172,7 @@ export default function Header() {
             >
               <FileText size={14} /> Download Catalogue (PDF)
             </a>
-            <Link href="/contact" className="top-bar-link">
+            <Link href="/request-quote" className="top-bar-link">
               <Mail size={14} /> Request a Quote
             </Link>
           </div>
@@ -198,11 +199,11 @@ export default function Header() {
           <nav className="nav-links" style={{ display: "flex", alignItems: "center", gap: "1.8rem" }}>
             {navItems.map((item) => {
               const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/");
-              
+
               if (item.dropdown) {
                 return (
-                  <div 
-                    key={item.href} 
+                  <div
+                    key={item.href}
                     style={{ position: "relative", height: "100%", display: "flex", alignItems: "center" }}
                     onMouseEnter={() => setActiveDropdown(item.label)}
                     onMouseLeave={() => setActiveDropdown(null)}
@@ -214,7 +215,7 @@ export default function Header() {
                     >
                       {item.label} <ChevronDown size={15} style={{ marginTop: "2px", transition: "transform 0.2s", transform: activeDropdown === item.label ? "rotate(180deg)" : "rotate(0deg)" }} />
                     </Link>
-                    
+
                     {/* Dropdown Menu */}
                     {activeDropdown === item.label && (
                       <div style={{
@@ -235,8 +236,8 @@ export default function Header() {
                           </div>
                         )}
                         {item.dropdown.map(dropItem => (
-                          <Link 
-                            key={dropItem.href} 
+                          <Link
+                            key={dropItem.href}
                             href={dropItem.href}
                             style={{
                               padding: "0.65rem 0.9rem", borderRadius: "8px", textDecoration: "none",
@@ -308,7 +309,7 @@ export default function Header() {
                   <Search size={18} />
                 </button>
               </form>
-              
+
               {showRecommendations && searchQuery.trim().length > 0 && recommendations.length > 0 && (
                 <div style={{
                   position: "absolute",
@@ -348,7 +349,7 @@ export default function Header() {
                       </div>
                     </Link>
                   ))}
-                  <div 
+                  <div
                     onClick={() => {
                       setShowRecommendations(false);
                       router.push(`/products?q=${encodeURIComponent(searchQuery.trim())}`);
@@ -369,7 +370,7 @@ export default function Header() {
                 </div>
               )}
             </div>
-            <Link href="/contact" className="quote-btn">
+            <Link href="/request-quote" className="quote-btn">
               Request Quote <ArrowRight size={16} />
             </Link>
             <button
@@ -431,7 +432,7 @@ export default function Header() {
               ))}
               <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginTop: "1rem" }}>
                 <Link
-                  href="/contact"
+                  href="/request-quote"
                   onClick={() => setMobileMenuOpen(false)}
                   className="btn-primary"
                   style={{ textAlign: "center", textDecoration: "none" }}

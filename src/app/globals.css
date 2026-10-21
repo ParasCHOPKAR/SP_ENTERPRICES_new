@@ -2198,5 +2198,73 @@ body {
   }
 }
 
+/* ==========================================================================
+   FOOTER BRAND LOGO MARQUEE LOOP
+   ========================================================================== */
+.footer-marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.6rem 0;
+}
+
+.footer-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: footerMarqueeScroll 38s linear infinite;
+  will-change: transform;
+}
+
+.footer-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.footer-marquee-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  height: 58px;
+  min-width: 155px;
+  margin: 0 0.65rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-marquee-card:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(200, 16, 46, 0.45);
+  border-color: #f59e0b;
+}
+
+@keyframes footerMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-marquee-card {
+    height: 48px;
+    min-width: 130px;
+    padding: 0.4rem 0.9rem;
+    margin: 0 0.45rem;
+  }
+  .footer-marquee-track {
+    animation-duration: 28s;
+  }
+}
+
+
 
 

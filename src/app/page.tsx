@@ -460,10 +460,12 @@ export default function Home() {
                   <Building2 size={18} color="#c8102e" /> Direct Leadership &amp; Headquarters
                 </h4>
                 <div style={{ fontSize: "0.88rem", display: "flex", flexDirection: "column", gap: "0.5rem", color: "#475569" }}>
-                  <div><strong>Managing Partner:</strong> Mr. Pradeep Kulkarni</div>
-                  <div><strong>Direct Phone:</strong> <a href="tel:+918308502100" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>+91 8308502100</a></div>
-                  <div><strong>Corporate Email:</strong> <a href="mailto:info@speautomation.com" style={{ color: "#1e293b", textDecoration: "none" }}>info@speautomation.com</a> / <a href="mailto:Spe.mktg@gmail.com" style={{ color: "#64748b", textDecoration: "none" }}>Spe.mktg@gmail.com</a></div>
-                  <div><strong>Registered Office:</strong> Katraj, Pune - 411046, Maharashtra, India</div>
+                  <div><strong>Director:</strong> Mr. Pradeep Kulkarni</div>
+                  <div><strong>Mobile No.:</strong> <a href="tel:+918308502100" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>+91 83085 02100</a>, <a href="tel:+919422012179" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>+91 94220 12179</a></div>
+                  <div><strong>Phone No.:</strong> <a href="tel:02024336245" style={{ color: "#0f172a", fontWeight: 600, textDecoration: "none" }}>020-24336245</a></div>
+                  <div><strong>Official Email:</strong> <a href="mailto:sales@sahpl.com" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>sales@sahpl.com</a> / <a href="mailto:info@speautomation.com" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>info@speautomation.com</a></div>
+                  <div><strong>Official Website:</strong> <a href="https://www.speautomation.com" target="_blank" rel="noopener noreferrer" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>www.speautomation.com</a></div>
+                  <div><strong>Registered Office:</strong> Sr. No. 14/1A + 2B/2, Gujarwadi Road, Katraj, Pune - 411046, Maharashtra, India</div>
                 </div>
               </div>
             </div>
@@ -548,12 +550,12 @@ export default function Home() {
               Need Authentic Components or Custom Panels?
             </h2>
             <p style={{ fontSize: "1.05rem", color: "#fef08a" }}>
-              Talk directly with Mr. Pradeep Kulkarni (+91 8308502100) or submit a technical quotation request.
+              Talk directly with Director Mr. Pradeep Kulkarni (+91 83085 02100 / +91 94220 12179) or submit a technical quotation request.
             </p>
           </div>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link
-              href="/contact"
+              href="/request-quote"
               style={{ background: "white", color: "#c8102e", padding: "1rem 2rem", borderRadius: "8px", fontWeight: "bold", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.95rem" }}
             >
               Request Quote <ArrowRight size={18} />

@@ -296,19 +296,52 @@ function ProductsContent() {
 
                 {/* Card Footer */}
                 <div style={{
-                  padding: "1rem 1.5rem", borderTop: "1px solid #f1f5f9",
+                  padding: "0.85rem 1.4rem", borderTop: "1px solid #f1f5f9",
                   display: "flex", justifyContent: "space-between", alignItems: "center",
                   background: "#fafafa"
                 }}>
-                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#c8102e" }}>
-                    View Product Line
-                  </span>
-                  <div style={{
-                    width: "32px", height: "32px", borderRadius: "50%",
-                    background: "#c8102e", display: "flex", alignItems: "center", justifyContent: "center",
-                    boxShadow: "0 4px 10px rgba(200,16,46,0.3)"
-                  }}>
-                    <ArrowRight size={14} color="white" />
+                  <a
+                    href={`/brochures/${brand.id}.pdf`}
+                    download={`${brand.name.replace(/[^a-zA-Z0-9]/g, '_')}_Catalogue.pdf`}
+                    onClick={(e) => e.stopPropagation()}
+                    title={`Download ${brand.name} PDF Catalogue`}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.35rem",
+                      background: "#fff1f2",
+                      color: "#c8102e",
+                      border: "1px solid #fecdd3",
+                      padding: "0.35rem 0.75rem",
+                      borderRadius: "6px",
+                      fontSize: "0.78rem",
+                      fontWeight: 700,
+                      textDecoration: "none",
+                      transition: "all 0.2s ease"
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.background = "#c8102e";
+                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.background = "#fff1f2";
+                      (e.currentTarget as HTMLElement).style.color = "#c8102e";
+                    }}
+                  >
+                    <Download size={13} /> PDF Brochure
+                  </a>
+
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#c8102e" }}>
+                      View Products
+                    </span>
+                    <div style={{
+                      width: "30px", height: "30px", borderRadius: "50%",
+                      background: "#c8102e", display: "flex", alignItems: "center", justifyContent: "center",
+                      boxShadow: "0 4px 10px rgba(200,16,46,0.3)"
+                    }}>
+                      <ArrowRight size={13} color="white" />
+                    </div>
                   </div>
                 </div>
               </div>

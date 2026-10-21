@@ -48,8 +48,8 @@ export default function ManufacturingPage() {
     }
   };
 
-  const filteredData = selectedDivision === "all" 
-    ? MANUFACTURING_DATA 
+  const filteredData = selectedDivision === "all"
+    ? MANUFACTURING_DATA
     : MANUFACTURING_DATA.filter((item) => item.id === selectedDivision);
 
   const processSteps = [
@@ -119,22 +119,42 @@ export default function ManufacturingPage() {
       <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #7f1d1d 100%)", padding: "5rem 0 4.5rem", color: "white", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: "radial-gradient(circle at 80% 20%, rgba(200, 16, 46, 0.25) 0%, transparent 60%)", pointerEvents: "none" }} />
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <div style={{ maxWidth: "920px" }}>
+          <div style={{ maxWidth: "960px" }}>
             <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#fbbf24", borderColor: "rgba(245,158,11,0.3)", display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.45rem 1.1rem", borderRadius: "50px", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1.2rem" }}>
               <Factory size={16} /> IN-HOUSE MANUFACTURING • SP ENTERPRISES
             </div>
             <h1 style={{ fontSize: "clamp(2.4rem, 5vw, 3.6rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: "0.8rem" }}>
-              SP <span style={{ color: "#fbbf24" }}>Enterprises</span>
+              In-House Manufacturing <span style={{ color: "#fbbf24" }}>&amp; Engineering</span>
             </h1>
             <div style={{ fontSize: "1.2rem", color: "#f8fafc", fontWeight: 700, marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
-              <span style={{ background: "rgba(200,16,46,0.35)", padding: "0.25rem 0.8rem", borderRadius: "6px", border: "1px solid rgba(248,113,113,0.4)", color: "#fecdd3" }}>
-                In-House Manufacturing Division
+              <span style={{ background: "rgba(200,16,46,0.4)", padding: "0.25rem 0.8rem", borderRadius: "6px", border: "1px solid rgba(248,113,113,0.4)", color: "#ffffff", fontWeight: 800 }}>
+                SP Enterprises
               </span>
               <span>Handling the Complete SAHPL Engineering &amp; Product Portfolio</span>
             </div>
-            <p style={{ fontSize: "1.15rem", color: "#e2e8f0", lineHeight: 1.6, marginBottom: "2rem" }}>
-              <strong>SP Enterprises</strong> directly manages, designs, and manufactures the entire product range originally developed under <strong>Smart Automation &amp; Hydropneumatics (SAHPL)</strong>. Providing turnkey Design, Manufacturing, Installation, and Commissioning for Special Purpose Machines (SPM), Automated Conveyors, Industrial Control Panels, Heavy Material Handling, Chillers &amp; cGMP SS Cleanroom Equipment.
+            <p style={{ fontSize: "1.15rem", color: "#e2e8f0", lineHeight: 1.65, marginBottom: "1.8rem" }}>
+              The complete manufacturing, engineering, and turnkey automation product range of <strong>Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL)</strong> is managed, manufactured, and delivered under <strong>SP Enterprises</strong>. Operating from our advanced fabrication and assembly facility in Pune, Maharashtra, we deliver turnkey Design, CNC Fabrication, Installation, and Commissioning for Special Purpose Machines (SPM), Automated Conveyors, Industrial Control Panels, Heavy Material Handling Tilters, Industrial Chillers, and cGMP SS Cleanroom Equipment.
             </p>
+
+            {/* Quick Trust Matrix inside Hero */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: "0.8rem", marginBottom: "2rem" }}>
+              <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "8px", padding: "0.7rem 1rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                <CheckCircle2 size={18} color="#fbbf24" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: "0.85rem", color: "#f1f5f9", fontWeight: 600 }}>100% SAHPL Range Handled Under SP Enterprises</span>
+              </div>
+              <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "8px", padding: "0.7rem 1rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                <CheckCircle2 size={18} color="#fbbf24" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: "0.85rem", color: "#f1f5f9", fontWeight: 600 }}>Turnkey: Design → CNC Build → Installation</span>
+              </div>
+              <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "8px", padding: "0.7rem 1rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                <CheckCircle2 size={18} color="#fbbf24" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: "0.85rem", color: "#f1f5f9", fontWeight: 600 }}>10+ Yrs Serving Cummins, Mahindra, Fresenius</span>
+              </div>
+              <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "8px", padding: "0.7rem 1rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                <CheckCircle2 size={18} color="#fbbf24" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: "0.85rem", color: "#f1f5f9", fontWeight: 600 }}>Direct OEM Spares &amp; Lifetime Technical Support</span>
+              </div>
+            </div>
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
               <a
@@ -161,43 +181,121 @@ export default function ManufacturingPage() {
         </div>
       </section>
 
-      {/* SP Enterprises & SAHPL Integration Credo */}
-      <section style={{ padding: "3.5rem 0", background: "#ffffff", borderBottom: "1px solid #e2e8f0" }}>
+      {/* Official Operational Notice Banner */}
+      <section style={{ background: "linear-gradient(90deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)", borderBottom: "3px solid #c8102e", padding: "1.35rem 0", color: "#ffffff" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem", alignItems: "center" }}>
-            <div style={{ gridColumn: "span 1" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#c8102e", fontWeight: 800, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.6rem" }}>
-                <Award size={18} /> 10+ Years of Industrial Trust
+          <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", flexWrap: "wrap", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1rem", flex: "1 1 650px" }}>
+              <div style={{ background: "rgba(200, 16, 46, 0.25)", border: "1px solid #c8102e", borderRadius: "10px", width: "46px", height: "46px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "#fbbf24" }}>
+                <ShieldCheck size={24} />
               </div>
-              <h2 style={{ fontSize: "1.9rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.3, marginBottom: "1rem" }}>
-                SAHPL Product Portfolio Handled Exclusively Under SP Enterprises
-              </h2>
-              <p style={{ fontSize: "0.98rem", color: "#475569", lineHeight: 1.65, marginBottom: "1.2rem" }}>
-                The complete manufacturing product range of <strong>Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL)</strong> is managed, engineered, and delivered under <strong>SP Enterprises</strong>. Operating from our advanced fabrication and assembly facility in Pune, Maharashtra, we deliver end-to-end <em>Design, Manufacturing, Installation, and Commissioning</em> for SPMs, Hot Melt Packaging Systems, Heavy Material Handling &amp; Tilters, Type-Tested Control Panels, and cGMP SS Cleanroom Equipment.
-              </p>
-              <p style={{ fontSize: "0.95rem", color: "#64748b", lineHeight: 1.6 }}>
-                Every system is designed by qualified engineers and built with precision by skilled shop-floor technicians. With 10+ years serving top-tier automotive OEMs, pharmaceutical giants, and packaging leaders, all equipment strictly complies with <strong>cGMP procedures, IS 8623, and IEC 61439 standards</strong>, delivering <strong>uncompromising build quality with transparent, competitive pricing</strong>.
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", marginBottom: "0.25rem" }}>
+                  <span style={{ fontSize: "0.72rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: "1px", background: "#c8102e", color: "white", padding: "0.2rem 0.55rem", borderRadius: "4px" }}>
+                    OPERATIONAL NOTICE
+                  </span>
+                  <span style={{ fontSize: "0.95rem", fontWeight: 700, color: "#f8fafc" }}>
+                    Complete SAHPL Product Portfolio Handled Exclusively Under SP Enterprises
+                  </span>
+                </div>
+                <p style={{ margin: 0, fontSize: "0.86rem", color: "#cbd5e1", lineHeight: 1.5 }}>
+                  All industrial machinery lines, custom SPMs, conveyor systems, material handling tilters, control panels, and cleanroom SS equipment originally developed under <strong>Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL)</strong> are actively managed, manufactured, warranted, and serviced under <strong>SP Enterprises</strong> from our facility in Pune.
+                </p>
+              </div>
+            </div>
+            <div style={{ display: "flex", gap: "0.8rem", alignItems: "center" }}>
+              <a href="#sahpl-transition" style={{ fontSize: "0.85rem", fontWeight: 700, color: "#fbbf24", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.3rem", background: "rgba(255,255,255,0.1)", padding: "0.5rem 1rem", borderRadius: "6px", border: "1px solid rgba(255,255,255,0.2)" }}>
+                Integration Scope <ArrowRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SP Enterprises & SAHPL Integration Credo */}
+      <section id="sahpl-transition" style={{ padding: "4rem 0", background: "#ffffff", borderBottom: "1px solid #e2e8f0" }}>
+        <div className="container">
+          <div style={{ textAlign: "center", maxWidth: "880px", margin: "0 auto 2.8rem" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", color: "#c8102e", fontWeight: 800, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.6rem" }}>
+              <Award size={18} /> 10+ Years of Industrial Trust &amp; Engineering Continuity
+            </div>
+            <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)", fontWeight: 800, color: "#0f172a", lineHeight: 1.25, marginBottom: "1rem" }}>
+              SAHPL Product Range Handled Exclusively Under SP Enterprises
+            </h2>
+            <p style={{ fontSize: "1.05rem", color: "#475569", lineHeight: 1.65, margin: 0 }}>
+              The complete manufacturing, design, and automation engineering portfolio of <strong>Smart Automation and Hydropneumatics Pvt. Ltd. (SAHPL)</strong> is managed and executed directly under <strong>SP Enterprises</strong>. Operating from our advanced fabrication and assembly facility in Pune, Maharashtra, we provide turnkey <em>Design, Manufacturing, Installation, and Commissioning</em> for SPMs, Hot Melt Packaging Systems, Heavy Material Handling &amp; Tilters, Type-Tested Control Panels, and cGMP SS Cleanroom Equipment.
+            </p>
+          </div>
+
+          {/* 4-Pillar Integration Breakdown */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.4rem", marginBottom: "2.8rem" }}>
+            <div style={{ background: "#f8fafc", padding: "1.5rem", borderRadius: "14px", border: "1px solid #e2e8f0", borderTop: "4px solid #c8102e" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.6rem" }}>
+                <div style={{ background: "#fef2f2", color: "#c8102e", padding: "0.4rem", borderRadius: "8px" }}>
+                  <Boxes size={20} />
+                </div>
+                <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>Full Portfolio Continuity</h4>
+              </div>
+              <p style={{ fontSize: "0.86rem", color: "#64748b", lineHeight: 1.55, margin: 0 }}>
+                Every machine, conveyor, tilter, panel, and SS fixture from the SAHPL engineering catalog is manufactured and supplied directly under SP Enterprises.
               </p>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1rem" }}>
-              {SAHPL_INFO.credentials.map((cred, idx) => (
-                <div key={idx} style={{ background: "#f8fafc", padding: "1.2rem", borderRadius: "12px", border: "1px solid #e2e8f0", borderLeft: "4px solid #c8102e" }}>
-                  <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#c8102e", marginBottom: "0.3rem" }}>
-                    {cred.value}
-                  </div>
-                  <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "#64748b" }}>
-                    {cred.label}
-                  </div>
+            <div style={{ background: "#f8fafc", padding: "1.5rem", borderRadius: "14px", border: "1px solid #e2e8f0", borderTop: "4px solid #c8102e" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.6rem" }}>
+                <div style={{ background: "#fef2f2", color: "#c8102e", padding: "0.4rem", borderRadius: "8px" }}>
+                  <Wrench size={20} />
                 </div>
-              ))}
-              <div style={{ background: "#fef2f2", padding: "1.2rem", borderRadius: "12px", border: "1px solid #fecdd3", borderLeft: "4px solid #c8102e" }}>
-                <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#991b1b", marginBottom: "0.3rem" }}>
-                  Turnkey
+                <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>In-House Pune Works</h4>
+              </div>
+              <p style={{ fontSize: "0.86rem", color: "#64748b", lineHeight: 1.55, margin: 0 }}>
+                Complete CNC shearing, fiber laser cutting, 7-tank phosphating pre-treatment, powder coating, and panel wiring under SP Enterprises' direct quality oversight.
+              </p>
+            </div>
+
+            <div style={{ background: "#f8fafc", padding: "1.5rem", borderRadius: "14px", border: "1px solid #e2e8f0", borderTop: "4px solid #c8102e" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.6rem" }}>
+                <div style={{ background: "#fef2f2", color: "#c8102e", padding: "0.4rem", borderRadius: "8px" }}>
+                  <ShieldCheck size={20} />
                 </div>
-                <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "#475569" }}>
-                  Design → Install → Commission
+                <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>OEM Warranty &amp; Spares</h4>
+              </div>
+              <p style={{ fontSize: "0.86rem", color: "#64748b", lineHeight: 1.55, margin: 0 }}>
+                SP Enterprises directly issues official factory warranties, handles plant modifications, and supplies 100% genuine replacement spares for all SAHPL systems.
+              </p>
+            </div>
+
+            <div style={{ background: "#f8fafc", padding: "1.5rem", borderRadius: "14px", border: "1px solid #e2e8f0", borderTop: "4px solid #c8102e" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.6rem" }}>
+                <div style={{ background: "#fef2f2", color: "#c8102e", padding: "0.4rem", borderRadius: "8px" }}>
+                  <Award size={20} />
                 </div>
+                <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>Certified Standards</h4>
+              </div>
+              <p style={{ fontSize: "0.86rem", color: "#64748b", lineHeight: 1.55, margin: 0 }}>
+                Strict compliance with cGMP pharmaceutical documentation (DQ/IQ/OQ), IS 8623 / IEC 61439 electrical switchgear norms, and industrial safety codes.
+              </p>
+            </div>
+          </div>
+
+          {/* Key Credentials & Numbers Row */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
+            {SAHPL_INFO.credentials.map((cred, idx) => (
+              <div key={idx} style={{ background: "#f8fafc", padding: "1.2rem", borderRadius: "12px", border: "1px solid #e2e8f0", borderLeft: "4px solid #c8102e" }}>
+                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#c8102e", marginBottom: "0.25rem" }}>
+                  {cred.value}
+                </div>
+                <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "#64748b" }}>
+                  {cred.label}
+                </div>
+              </div>
+            ))}
+            <div style={{ background: "#fef2f2", padding: "1.2rem", borderRadius: "12px", border: "1px solid #fecdd3", borderLeft: "4px solid #c8102e" }}>
+              <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#991b1b", marginBottom: "0.25rem" }}>
+                Turnkey Execution
+              </div>
+              <div style={{ fontSize: "0.82rem", fontWeight: 600, color: "#475569" }}>
+                Design → Build → Install → Commission
               </div>
             </div>
           </div>
@@ -214,8 +312,8 @@ export default function ManufacturingPage() {
             <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "#0f172a", marginTop: "0.3rem" }}>
               Key Industrial Clients for Our In-House Manufactured Systems
             </h3>
-            <p style={{ fontSize: "0.95rem", color: "#64748b", maxWidth: "680px", margin: "0.5rem auto 0" }}>
-              Delivered and supported under SP Enterprises for leading industrial conglomerates across automotive, pharmaceutical, and food packaging sectors.
+            <p style={{ fontSize: "0.95rem", color: "#64748b", maxWidth: "750px", margin: "0.5rem auto 0" }}>
+              Field-proven systems from the SAHPL product range engineered, manufactured, and supported under SP Enterprises for leading industrial conglomerates across automotive, pharmaceutical, and food packaging sectors.
             </p>
           </div>
 
@@ -343,10 +441,10 @@ export default function ManufacturingPage() {
               <Settings2 size={15} /> 5 CORE MANUFACTURING DISCIPLINES
             </div>
             <h2 className="section-title" style={{ fontSize: "2.3rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.8rem" }}>
-              Comprehensive <span>Manufacturing Portfolio</span>
+              Comprehensive <span>Manufacturing Portfolio</span> (SAHPL Range)
             </h2>
-            <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "#64748b", maxWidth: "760px", margin: "0 auto" }}>
-              Explore detailed specifications, operational capabilities, client implementations, and technical parameters for our in-house engineered equipment.
+            <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "#64748b", maxWidth: "800px", margin: "0 auto" }}>
+              All 5 manufacturing divisions below represent the complete SAHPL product range, engineered, fabricated, and delivered directly under SP Enterprises. Explore technical specifications, operational capabilities, and client implementations.
             </p>
           </div>
 
@@ -423,6 +521,9 @@ export default function ManufacturingPage() {
                     <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#c8102e", textTransform: "uppercase", background: "#fef2f2", border: "1px solid #fecdd3", padding: "0.3rem 0.8rem", borderRadius: "20px" }}>
                       {division.badge}
                     </span>
+                    <span style={{ fontSize: "0.76rem", fontWeight: 700, color: "#166534", background: "#f0fdf4", border: "1px solid #bbf7d0", padding: "0.25rem 0.65rem", borderRadius: "20px", display: "inline-flex", alignItems: "center", gap: "0.3rem" }}>
+                      <CheckCircle size={12} color="#16a34a" /> Handled Under SP Enterprises
+                    </span>
                   </div>
                   <h3 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)", fontWeight: 800, color: "#0f172a", marginBottom: "0.5rem" }}>
                     {division.title}
@@ -493,7 +594,7 @@ export default function ManufacturingPage() {
                         </div>
                       </div>
                       <span style={{ background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)", color: "white", fontSize: "0.72rem", fontWeight: 700, padding: "0.3rem 0.65rem", borderRadius: "6px", border: "1px solid rgba(255,255,255,0.3)" }}>
-                        SAHPL Range
+                        SAHPL Range Handled Under SP Enterprises
                       </span>
                     </div>
                   </div>
@@ -584,7 +685,7 @@ export default function ManufacturingPage() {
                                 letterSpacing: "0.5px"
                               }}
                             >
-                              SP ENTERPRISES • SAHPL
+                              SAHPL RANGE • SP ENTERPRISES
                             </div>
                           </div>
                         )}
@@ -737,13 +838,13 @@ export default function ManufacturingPage() {
         <div className="container">
           <div className="section-head text-center">
             <div className="title-pill" style={{ background: "#fef2f2", color: "#991b1b", border: "1px solid #fecdd3", padding: "0.4rem 1rem", borderRadius: "50px", display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1rem" }}>
-              <Layers size={15} /> QUALITY CONTROL PROTOCOL
+              <Layers size={15} /> QUALITY CONTROL &amp; FAT PROTOCOL
             </div>
             <h2 className="section-title" style={{ fontSize: "2.3rem", fontWeight: 800, color: "#0f172a", marginBottom: "0.8rem" }}>
               Our 5-Stage <span>Turnkey Execution Process</span>
             </h2>
-            <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "#64748b", maxWidth: "700px", margin: "0 auto 3rem auto" }}>
-              From custom engineering drawings to factory floor installation and commissioning, we adhere to strict GMP and electrical safety codes.
+            <p className="section-subtitle" style={{ fontSize: "1.05rem", color: "#64748b", maxWidth: "750px", margin: "0 auto 3rem auto" }}>
+              How SP Enterprises manufactures, tests, and commissions the SAHPL product range—from initial CAD modeling in Pune to factory floor installation and handover across India.
             </p>
           </div>
 
@@ -781,18 +882,18 @@ export default function ManufacturingPage() {
         <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "2rem" }}>
           <div style={{ maxWidth: "680px" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", background: "rgba(245, 158, 11, 0.2)", color: "#fbbf24", padding: "0.3rem 0.8rem", borderRadius: "20px", fontSize: "0.8rem", fontWeight: 700, marginBottom: "1rem" }}>
-              <Factory size={14} /> SP ENTERPRISES • SAHPL TURNKEY PROPOSALS
+              <Factory size={14} /> SP ENTERPRISES • SAHPL TURNKEY MANUFACTURING
             </div>
             <h2 style={{ fontSize: "2.3rem", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.8rem" }}>
               Have a Custom Machine, Conveyor or Control Panel Requirement?
             </h2>
             <p style={{ fontSize: "1.05rem", color: "#cbd5e1", lineHeight: 1.6 }}>
-              Share your machinery specifications, electrical motor schedules, or single-line diagrams with our qualified engineering team in Pune for a comprehensive technical and commercial proposal.
+              Whether you need machinery systems from the SAHPL product range, repeat equipment builds, or custom turnkey automation, SP Enterprises handles complete design, fabrication, and on-site commissioning from Pune, Maharashtra. Share your machinery specifications or single-line diagrams with our engineering team for a comprehensive technical proposal.
             </p>
           </div>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <Link
-              href="/contact"
+              href="/request-quote?subject=Manufacturing%20Division%20Quotation"
               style={{ background: "#c8102e", color: "white", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 700, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", boxShadow: "0 4px 15px rgba(200,16,46,0.4)" }}
             >
               Request Engineering Quote <ArrowRight size={18} />

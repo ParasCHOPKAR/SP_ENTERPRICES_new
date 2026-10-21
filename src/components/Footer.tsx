@@ -24,6 +24,75 @@ import {
 } from "lucide-react";
 import { BRANDS_DATA } from "@/data/brandsData";
 
+const BRAND_MARQUEE_LOGOS = [
+  {
+    id: "eri",
+    name: "Electronic Relays India (ERI)",
+    logo: "/Brand_logo/ERI.png",
+    href: "/products?brand=eri"
+  },
+  {
+    id: "cd",
+    name: "CD Automation",
+    logo: "/Brand_logo/cd.png",
+    href: "/products?brand=cd-automation"
+  },
+  {
+    id: "ceermet",
+    name: "Cermet Resistive",
+    logo: "/Brand_logo/ceermet.png",
+    href: "/products?brand=cermet"
+  },
+  {
+    id: "cleangrad",
+    name: "Cleangrad Cleanrooms",
+    logo: "/Brand_logo/cleangrad.png",
+    href: "/products?brand=cleangrad"
+  },
+  {
+    id: "emerson",
+    name: "Emerson / Alco Controls",
+    logo: "/Brand_logo/emerson.jpg",
+    href: "/products?brand=emerson"
+  },
+  {
+    id: "gefran",
+    name: "Gefran Automation",
+    logo: "/Brand_logo/gefran.png",
+    href: "/products?brand=gefran"
+  },
+  {
+    id: "honeywell",
+    name: "Honeywell Process Solutions",
+    logo: "/Brand_logo/honeywell.png",
+    href: "/products?brand=honeywell"
+  },
+  {
+    id: "jumo",
+    name: "JUMO India",
+    logo: "/Brand_logo/jumo.png",
+    href: "/products?brand=jumo"
+  },
+  {
+    id: "phoenix",
+    name: "Phoenix Contact",
+    logo: "/Brand_logo/phoenix.png",
+    href: "/products?brand=phoenix"
+  },
+  {
+    id: "renu",
+    name: "Renu Electronics",
+    logo: "/Brand_logo/renu.png",
+    href: "/products?brand=renu"
+  },
+  {
+    id: "weidmuller",
+    name: "Weidmüller",
+    logo: "/Brand_logo/weidmullerr.png",
+    href: "/products?brand=weidmuller"
+  }
+];
+
 interface FooterProps {
   onSelectBrand?: (brandId: string) => void;
 }
@@ -204,6 +273,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                   { label: "About S. P. Enterprises", href: "/about" },
                   { label: "Products (13 Global Brands)", href: "/products" },
                   { label: "Manufacturing Division", href: "/manufacturing" },
+                  { label: "Request a Quote (Instant RFQ)", href: "/request-quote" },
                   { label: "Contact & Location", href: "/contact" }
                 ].map((item, idx) => (
                   <Link
@@ -337,7 +407,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                 boxShadow: "0 10px 30px rgba(0, 0, 0, 0.45)",
                 display: "flex",
                 flexDirection: "column",
-                gap: "1rem"
+                gap: "0.9rem"
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
@@ -348,60 +418,146 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               </div>
 
               <div>
-                <div style={{ fontSize: "0.72rem", color: "#fde68a", textTransform: "uppercase", letterSpacing: "0.5px", fontWeight: 700 }}>
-                  KEY CONTACT PERSON
+                <div style={{ fontSize: "0.72rem", color: "#fde68a", textTransform: "uppercase", letterSpacing: "0.8px", fontWeight: 700 }}>
+                  DIRECTOR
                 </div>
-                <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#ffffff", marginTop: "0.1rem" }}>
-                  Pradeep Kulkarni
+                <div style={{ fontSize: "1.15rem", fontWeight: 800, color: "#ffffff", marginTop: "0.1rem" }}>
+                  Mr. Pradeep Kulkarni
                 </div>
                 <div style={{ fontSize: "0.78rem", color: "#fbbf24" }}>
-                  Commercial &amp; Technical Sales
+                  S. P. Enterprises &bull; Commercial &amp; Technical Sales
                 </div>
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem", fontSize: "0.82rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", fontSize: "0.82rem" }}>
+                {/* Mobile Numbers */}
+                <div>
+                  <div style={{ fontSize: "0.7rem", color: "#fde68a", textTransform: "uppercase", letterSpacing: "0.5px", fontWeight: 700, marginBottom: "0.3rem" }}>
+                    Mobile No.
+                  </div>
+                  <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
+                    <a
+                      href="tel:+918308502100"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.35rem",
+                        color: "#ffffff",
+                        textDecoration: "none",
+                        fontWeight: 700,
+                        fontSize: "0.78rem",
+                        background: "rgba(200, 16, 46, 0.3)",
+                        padding: "0.35rem 0.6rem",
+                        borderRadius: "5px",
+                        border: "1px solid rgba(200, 16, 46, 0.45)"
+                      }}
+                    >
+                      <Phone size={12} color="#fbbf24" />
+                      <span>83085 02100</span>
+                    </a>
+                    <a
+                      href="tel:+919422012179"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.35rem",
+                        color: "#ffffff",
+                        textDecoration: "none",
+                        fontWeight: 700,
+                        fontSize: "0.78rem",
+                        background: "rgba(200, 16, 46, 0.3)",
+                        padding: "0.35rem 0.6rem",
+                        borderRadius: "5px",
+                        border: "1px solid rgba(200, 16, 46, 0.45)"
+                      }}
+                    >
+                      <Phone size={12} color="#fbbf24" />
+                      <span>94220 12179</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Phone Landline */}
                 <a
-                  href="tel:+918308502100"
+                  href="tel:02024336245"
                   style={{
                     display: "flex",
                     alignItems: "center",
                     gap: "0.6rem",
                     color: "#ffffff",
                     textDecoration: "none",
-                    fontWeight: 700,
-                    background: "rgba(200, 16, 46, 0.25)",
-                    padding: "0.45rem 0.75rem",
-                    borderRadius: "6px",
-                    border: "1px solid rgba(200, 16, 46, 0.4)"
+                    fontWeight: 600,
+                    fontSize: "0.82rem"
                   }}
                 >
-                  <Phone size={15} color="#fbbf24" />
-                  <span>+91 8308502100</span>
+                  <Phone size={14} color="#fbbf24" />
+                  <span>Phone: 020-24336245</span>
                 </a>
 
+                {/* Official Emails with consistent font styling and colour */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+                  <a
+                    href="mailto:sales@sahpl.com"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.6rem",
+                      color: "#ffffff",
+                      fontSize: "0.82rem",
+                      fontWeight: 600,
+                      fontFamily: "inherit",
+                      textDecoration: "none"
+                    }}
+                  >
+                    <Mail size={14} color="#fbbf24" />
+                    <span>sales@sahpl.com</span>
+                  </a>
+                  <a
+                    href="mailto:info@speautomation.com"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.6rem",
+                      color: "#ffffff",
+                      fontSize: "0.82rem",
+                      fontWeight: 600,
+                      fontFamily: "inherit",
+                      textDecoration: "none"
+                    }}
+                  >
+                    <Mail size={14} color="#fbbf24" />
+                    <span>info@speautomation.com</span>
+                  </a>
+                </div>
+
+                {/* Official Website */}
                 <a
-                  href="mailto:info@speautomation.com"
+                  href="https://www.speautomation.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     display: "flex",
                     alignItems: "center",
                     gap: "0.6rem",
                     color: "#ffffff",
+                    fontSize: "0.82rem",
+                    fontWeight: 600,
                     textDecoration: "none"
                   }}
                 >
-                  <Mail size={15} color="#fbbf24" />
-                  <span>info@speautomation.com</span>
+                  <ExternalLink size={14} color="#fbbf24" />
+                  <span>www.speautomation.com</span>
                 </a>
 
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "0.6rem" }}>
-                  <MapPin size={16} color="#fbbf24" style={{ flexShrink: 0, marginTop: "2px" }} />
-                  <span style={{ color: "#e2e8f0", fontSize: "0.8rem", lineHeight: "1.4" }}>
+                  <MapPin size={15} color="#fbbf24" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <span style={{ color: "#e2e8f0", fontSize: "0.78rem", lineHeight: "1.4" }}>
                     Sr. No. 14/1A + 2B/2, Gujarwadi Road, Katraj, Pune - 411046, Maharashtra, India
                   </span>
                 </div>
 
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", fontSize: "0.78rem" }}>
-                  <Clock size={14} color="#fbbf24" />
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", fontSize: "0.76rem" }}>
+                  <Clock size={13} color="#fbbf24" />
                   <span>Mon – Sat: 9:00 AM – 7:00 PM IST</span>
                 </div>
               </div>
@@ -412,10 +568,10 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                 style={{
                   background: "#c8102e",
                   color: "white",
-                  padding: "0.7rem 1rem",
+                  padding: "0.65rem 1rem",
                   borderRadius: "6px",
                   textDecoration: "none",
-                  fontSize: "0.84rem",
+                  fontSize: "0.82rem",
                   fontWeight: 700,
                   display: "flex",
                   alignItems: "center",
@@ -509,6 +665,123 @@ export default function Footer({ onSelectBrand }: FooterProps) {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Brand Partners Infinite Marquee Loop */}
+        <div
+          style={{
+            borderTop: "1px solid rgba(245, 158, 11, 0.25)",
+            borderBottom: "1px solid rgba(245, 158, 11, 0.25)",
+            background: "linear-gradient(180deg, rgba(14, 5, 9, 0.92) 0%, rgba(8, 2, 5, 0.98) 100%)",
+            padding: "1.4rem 0 1.6rem",
+            position: "relative",
+            overflow: "hidden"
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "1560px",
+              margin: "0 auto",
+              padding: "0 2rem 0.9rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "0.8rem"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+              <div style={{ width: "3px", height: "18px", background: "#f59e0b", borderRadius: "2px" }} />
+              <div>
+                <span
+                  style={{
+                    fontSize: "0.72rem",
+                    color: "#f59e0b",
+                    fontWeight: 800,
+                    letterSpacing: "1px",
+                    textTransform: "uppercase"
+                  }}
+                >
+                  AUTHORIZED DISTRIBUTION &amp; CHANNEL PARTNERS
+                </span>
+                <h4 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: "0.1rem 0 0" }}>
+                  Global Industrial Automation &amp; Control Brands
+                </h4>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontSize: "0.78rem",
+                color: "#cbd5e1"
+              }}
+            >
+              <ShieldCheck size={16} color="#f59e0b" />
+              <span>100% Genuine Factory-Sealed Products with OEM Warranty</span>
+            </div>
+          </div>
+
+          {/* Marquee Track with edge fade masks */}
+          <div className="footer-marquee-container">
+            {/* Left Gradient Mask */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                bottom: 0,
+                width: "90px",
+                background: "linear-gradient(to right, rgba(8, 2, 5, 0.98), transparent)",
+                zIndex: 2,
+                pointerEvents: "none"
+              }}
+            />
+            {/* Right Gradient Mask */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                right: 0,
+                bottom: 0,
+                width: "90px",
+                background: "linear-gradient(to left, rgba(8, 2, 5, 0.98), transparent)",
+                zIndex: 2,
+                pointerEvents: "none"
+              }}
+            />
+
+            {/* Moving Track */}
+            <div className="footer-marquee-track">
+              {[...BRAND_MARQUEE_LOGOS, ...BRAND_MARQUEE_LOGOS, ...BRAND_MARQUEE_LOGOS, ...BRAND_MARQUEE_LOGOS].map((brand, idx) => (
+                <Link
+                  key={`${brand.id}-${idx}`}
+                  href={brand.href}
+                  title={`${brand.name} - Explore Products`}
+                  className="footer-marquee-card"
+                  onClick={() => {
+                    setSelectedBrand(brand.id);
+                    if (onSelectBrand) onSelectBrand(brand.id);
+                  }}
+                >
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    loading="lazy"
+                    style={{
+                      maxHeight: "38px",
+                      maxWidth: "120px",
+                      width: "auto",
+                      height: "auto",
+                      objectFit: "contain",
+                      display: "block"
+                    }}
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         </div>

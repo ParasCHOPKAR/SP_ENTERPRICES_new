@@ -265,19 +265,22 @@ export default function AboutPage() {
                   <Users size={18} color="white" />
                 </div>
                 <div>
-                  <div style={{ fontSize: "0.65rem", color: "#fbbf24", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px" }}>Managing Partner</div>
+                  <div style={{ fontSize: "0.65rem", color: "#fbbf24", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.5px" }}>DIRECTOR</div>
                   <div style={{ fontWeight: 800, fontSize: "0.95rem", color: "#fff" }}>Mr. Pradeep Kulkarni</div>
                 </div>
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", fontSize: "0.8rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", fontSize: "0.8rem" }}>
                 <a href="tel:+918308502100" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff", textDecoration: "none", background: "rgba(200,16,46,0.2)", border: "1px solid rgba(245,158,11,0.3)", padding: "0.4rem 0.6rem", borderRadius: "6px", fontWeight: 700, transition: "background 0.2s" }}
                    onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(200,16,46,0.3)"}
                    onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(200,16,46,0.2)"}>
-                  <Phone size={14} color="#fbbf24" /> +91 8308502100
+                  <Phone size={14} color="#fbbf24" /> +91 83085 02100 / 94220 12179
                 </a>
-                <a href="mailto:info@speautomation.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
-                  <Mail size={14} color="#fbbf24" /> info@speautomation.com
+                <a href="tel:02024336245" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
+                  <Phone size={14} color="#fbbf24" /> Phone: 020-24336245
+                </a>
+                <a href="mailto:sales@sahpl.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
+                  <Mail size={14} color="#fbbf24" /> sales@sahpl.com
                 </a>
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", color: "#cbd5e1", fontSize: "0.75rem", padding: "0.2rem" }}>
                   <MapPin size={14} color="#fbbf24" style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -448,9 +451,11 @@ export default function AboutPage() {
                   </h3>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.7rem", fontSize: "0.85rem" }}>
                     {[
-                      { label: "Managing Partner", value: "Mr. Pradeep Kulkarni", strong: true },
-                      { label: "Direct Phone", value: "+91 8308502100", link: "tel:+918308502100" },
-                      { label: "Corporate Email", value: "info@speautomation.com", link: "mailto:info@speautomation.com" },
+                      { label: "Director", value: "Mr. Pradeep Kulkarni", strong: true },
+                      { label: "Mobile No.", value: "+91 83085 02100, +91 94220 12179", link: "tel:+918308502100" },
+                      { label: "Phone No.", value: "020-24336245", link: "tel:02024336245" },
+                      { label: "Official Email", value: "sales@sahpl.com", link: "mailto:sales@sahpl.com" },
+                      { label: "Official Website", value: "www.speautomation.com", link: "https://www.speautomation.com" },
                     ].map((row, i) => (
                       <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.4rem 0", borderBottom: "1px solid #f1f5f9" }}>
                         <span style={{ color: "#94a3b8", fontSize: "0.75rem" }}>{row.label}</span>

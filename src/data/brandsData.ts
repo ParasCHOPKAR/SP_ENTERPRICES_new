@@ -28,6 +28,11 @@ export interface BrandData {
   targetIndustries: string[];
   externalReference?: string;
   heroImage?: string;
+  brochurePdf?: string;
+}
+
+export function getBrandBrochure(brandId: string): string {
+  return `/brochures/${brandId.toLowerCase()}.pdf`;
 }
 
 export const BRAND_HERO_MAP: Record<string, string> = {
