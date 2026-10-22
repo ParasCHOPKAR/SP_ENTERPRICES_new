@@ -156,12 +156,12 @@ export default function Header() {
             <a href="mailto:sales@sahpl.com" className="top-bar-item top-bar-link">
               <Mail size={14} /> sales@sahpl.com
             </a>
-            <span className="top-bar-item">
+            <span className="top-bar-item top-bar-location">
               <MapPin size={14} /> Katraj, Pune - 411046
             </span>
           </div>
           <div className="top-bar-right">
-            <span style={{ fontSize: "0.78rem", color: "#f59e0b", fontWeight: 700, borderRight: "1px solid rgba(255,255,255,0.2)", paddingRight: "1rem" }}>
+            <span className="top-bar-director" style={{ fontSize: "0.78rem", color: "#f59e0b", fontWeight: 700, borderRight: "1px solid rgba(255,255,255,0.2)", paddingRight: "1rem" }}>
               Director: Mr. Pradeep Kulkarni
             </span>
             <a
@@ -196,7 +196,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="nav-links" style={{ display: "flex", alignItems: "center", gap: "1.8rem" }}>
+          <nav className="nav-links">
             {navItems.map((item) => {
               const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/");
 

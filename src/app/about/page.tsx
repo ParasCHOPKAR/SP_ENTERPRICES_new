@@ -158,8 +158,8 @@ export default function AboutPage() {
         style={{
           position: "relative",
           background: "radial-gradient(ellipse at center, #0f172a 0%, #020617 100%)",
-          aspectRatio: "16 / 4",
-          minHeight: "400px",
+          minHeight: "380px",
+          padding: "clamp(3rem, 6vw, 4.5rem) 0",
           display: "flex",
           alignItems: "center",
           overflow: "hidden",
@@ -180,7 +180,7 @@ export default function AboutPage() {
         <div style={{ position: "absolute", bottom: "5%", left: "3%", width: "300px", height: "300px", background: "radial-gradient(circle, rgba(245,158,11,0.15) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
         <div className="container" style={{ position: "relative", zIndex: 1, width: "100%" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "2rem", alignItems: "center" }}>
+          <div className="about-hero-grid">
             <div>
               {/* Pill badge */}
               <div
@@ -300,10 +300,11 @@ export default function AboutPage() {
         }}
       >
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "0" }}>
+          <div className="about-stats-grid">
             {stats.map((s, idx) => (
               <FadeIn key={idx} delay={idx * 100}>
                 <div
+                  className="about-stat-item"
                   style={{
                     display: "flex", flexDirection: "column", alignItems: "center",
                     textAlign: "center", padding: "0.5rem 1rem", color: "white",
@@ -323,9 +324,9 @@ export default function AboutPage() {
       </section>
 
       {/* ─── WHO WE ARE ─── */}
-      <section style={{ padding: "7rem 0", background: "#ffffff", overflow: "hidden" }}>
+      <section style={{ padding: "clamp(3rem, 6vw, 5rem) 0", background: "#ffffff", overflow: "hidden" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: "5rem", alignItems: "center" }}>
+          <div className="about-whoweare-grid">
             {/* Left text */}
             <FadeIn>
               <span style={{ fontSize: "0.8rem", color: "#c8102e", fontWeight: 800, letterSpacing: "1.5px", textTransform: "uppercase", display: "block", marginBottom: "0.5rem" }}>
@@ -481,7 +482,7 @@ export default function AboutPage() {
       {/* ─── MISSION / VISION / QUALITY ─── */}
       <section
         style={{
-          padding: "7rem 0",
+          padding: "clamp(3rem, 6vw, 5rem) 0",
           background: "linear-gradient(180deg, #020617 0%, #0a1628 100%)",
           position: "relative", overflow: "hidden"
         }}
@@ -539,7 +540,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CAPABILITIES TIMELINE ─── */}
-      <section style={{ padding: "7rem 0", background: "#ffffff" }}>
+      <section style={{ padding: "clamp(3rem, 6vw, 5rem) 0", background: "#ffffff" }}>
         <div className="container">
           <FadeIn>
             <div style={{ textAlign: "center", maxWidth: "650px", margin: "0 auto 4rem" }}>

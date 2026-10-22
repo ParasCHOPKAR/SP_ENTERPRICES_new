@@ -73,7 +73,7 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
           
           <div style={{ 
             display: "grid", 
-            gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", 
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", 
             gap: "2.5rem", 
             alignItems: "center" 
           }}>
@@ -192,7 +192,7 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
               {brand.overview}
             </p>
             
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "1rem" }}>
               {brand.keyFeatures.map((feat, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.8rem", background: "#f1f5f9", padding: "1rem", borderRadius: "10px" }}>
                   <CheckCircle2 size={20} color="#c8102e" style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -221,7 +221,7 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
                       {cat.categoryName}
                     </h4>
                   </div>
-                  <div style={{ padding: "2rem", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))", gap: "1.5rem" }}>
+                  <div style={{ padding: "clamp(1rem, 3vw, 2rem)", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 290px), 1fr))", gap: "1.5rem" }}>
                     {cat.products.map((prod, pIdx) => (
                       <div key={pIdx} style={{ border: "1px solid #e2e8f0", borderRadius: "12px", padding: "1.5rem", background: "#ffffff", display: "flex", flexDirection: "column", boxShadow: "0 2px 8px rgba(0,0,0,0.02)", transition: "all 0.25s ease" }}>
                         <div style={{ width: "100%", height: "200px", backgroundColor: "#f8fafc", borderRadius: "10px", marginBottom: "1.2rem", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", border: prod.image ? "1px solid #e2e8f0" : "1px dashed #cbd5e1" }}>

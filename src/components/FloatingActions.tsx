@@ -27,29 +27,17 @@ export default function FloatingActions() {
   };
 
   return (
-    <div style={{
-      position: "fixed",
-      bottom: "2rem",
-      right: "2rem",
-      display: "flex",
-      flexDirection: "column",
-      gap: "1rem",
-      zIndex: 9999
-    }}>
+    <div className="floating-actions-container">
       {/* WhatsApp Button */}
       <a 
         href="https://wa.me/918308502100" 
         target="_blank" 
         rel="noopener noreferrer"
         title="Chat on WhatsApp"
+        className="floating-action-btn"
         style={{
-          width: "55px", height: "55px",
           background: "linear-gradient(135deg, #25D366, #128C7E)",
-          borderRadius: "50%",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          color: "white",
-          boxShadow: "0 6px 20px rgba(37, 211, 102, 0.4)",
-          transition: "transform 0.2s, box-shadow 0.2s"
+          boxShadow: "0 6px 20px rgba(37, 211, 102, 0.4)"
         }}
         onMouseEnter={e => {
           (e.currentTarget as HTMLElement).style.transform = "scale(1.1)";
@@ -71,14 +59,10 @@ export default function FloatingActions() {
       <a 
         href="tel:+918308502100" 
         title="Call Us Now"
+        className="floating-action-btn"
         style={{
-          width: "55px", height: "55px",
           background: "linear-gradient(135deg, #2563eb, #1d4ed8)",
-          borderRadius: "50%",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          color: "white",
-          boxShadow: "0 6px 20px rgba(37, 99, 235, 0.4)",
-          transition: "transform 0.2s, box-shadow 0.2s"
+          boxShadow: "0 6px 20px rgba(37, 99, 235, 0.4)"
         }}
         onMouseEnter={e => {
           (e.currentTarget as HTMLElement).style.transform = "scale(1.1)";
@@ -96,12 +80,9 @@ export default function FloatingActions() {
       <button 
         onClick={scrollToTop}
         title="Scroll to Top"
+        className="floating-scroll-btn"
         style={{
-          width: "45px", height: "45px",
           background: "rgba(15, 23, 42, 0.8)",
-          borderRadius: "50%",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          color: "white",
           border: "1px solid rgba(255, 255, 255, 0.1)",
           boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
           backdropFilter: "blur(4px)",
@@ -109,9 +90,7 @@ export default function FloatingActions() {
           transition: "all 0.3s ease",
           opacity: showScrollTop ? 1 : 0,
           visibility: showScrollTop ? "visible" : "hidden",
-          transform: showScrollTop ? "translateY(0)" : "translateY(20px)",
-          margin: "0 auto",
-          marginTop: "0.5rem"
+          transform: showScrollTop ? "translateY(0)" : "translateY(20px)"
         }}
         onMouseEnter={e => {
           (e.currentTarget as HTMLElement).style.background = "#0f172a";

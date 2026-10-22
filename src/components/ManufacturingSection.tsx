@@ -41,7 +41,7 @@ export default function ManufacturingSection() {
         </div>
 
         {/* Preview Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2rem", marginBottom: "3rem" }}>
+        <div className="mfg-preview-grid">
           {previewItems.map((item) => (
             <div 
               key={item.id} 

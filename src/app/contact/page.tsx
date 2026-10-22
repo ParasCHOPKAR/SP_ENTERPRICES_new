@@ -89,7 +89,8 @@ ${message.trim()}
           backgroundImage: "linear-gradient(to right, rgba(2, 6, 23, 0.85) 0%, rgba(2, 6, 23, 0.6) 45%, rgba(2, 6, 23, 0) 100%), url('/contact/contact_hero_img.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          aspectRatio: "16/4",
+          minHeight: "360px",
+          padding: "clamp(3rem, 6vw, 4.5rem) 0",
           display: "flex",
           alignItems: "center",
           color: "white"
@@ -104,7 +105,7 @@ ${message.trim()}
               <span>Contact Us</span>
             </div>
 
-            <h1 style={{ fontSize: "3.5rem", fontWeight: 800, lineHeight: 1.1, marginBottom: "1rem" }}>
+            <h1 style={{ fontSize: "clamp(2.2rem, 5vw, 3.5rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: "1rem" }}>
               Let's Start a<br />
               <span style={{ color: "#fbbf24" }}>Conversation</span>
             </h1>
@@ -153,11 +154,11 @@ ${message.trim()}
       </section>
 
       {/* Contact Form & Information */}
-      <section style={{ padding: "4rem 0", background: "#f8fafc" }}>
+      <section style={{ padding: "clamp(2.5rem, 5vw, 4rem) 0", background: "#f8fafc" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "3rem" }}>
+          <div className="contact-main-grid">
             {/* Form Column */}
-            <div style={{ background: "white", padding: "2.5rem", borderRadius: "16px", boxShadow: "0 4px 20px rgba(0,0,0,0.03)", border: "1px solid #f1f5f9" }}>
+            <div style={{ background: "white", padding: "clamp(1.5rem, 4vw, 2.5rem)", borderRadius: "16px", boxShadow: "0 4px 20px rgba(0,0,0,0.03)", border: "1px solid #f1f5f9" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.5rem" }}>
                 <div style={{ width: "50px", height: "50px", background: "#fff1f2", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", color: "#c8102e" }}>
                   <Send size={24} />
@@ -223,7 +224,7 @@ ${message.trim()}
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.3rem" }}>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem" }}>
+                  <div className="contact-input-row" style={{ gap: "1.2rem" }}>
                     <div>
                       <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#334155", marginBottom: "0.4rem" }}>
                         Full Name *
@@ -252,7 +253,7 @@ ${message.trim()}
                     </div>
                   </div>
 
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem" }}>
+                  <div className="contact-input-row" style={{ gap: "1.2rem" }}>
                     <div>
                       <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#334155", marginBottom: "0.4rem" }}>
                         Phone / Mobile Number *

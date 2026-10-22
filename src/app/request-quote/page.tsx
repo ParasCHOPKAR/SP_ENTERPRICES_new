@@ -113,7 +113,7 @@ ${specifications.trim() || "Standard OEM specifications requested."}
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          aspectRatio: "2048/512",
+          minHeight: "220px",
           position: "relative"
         }}
       >
@@ -123,9 +123,9 @@ ${specifications.trim() || "Standard OEM specifications requested."}
       </section>
 
       {/* Main Quotation Form & Support Information */}
-      <section style={{ padding: "4rem 0", background: "#f8fafc" }}>
+      <section style={{ padding: "clamp(2.5rem, 5vw, 4rem) 0", background: "#f8fafc" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 0.9fr", gap: "2.5rem", alignItems: "flex-start" }}>
+          <div className="quote-main-grid">
 
             {/* Left Column: Quotation Form / Success View */}
             <div style={{ background: "white", padding: "2.5rem", borderRadius: "16px", boxShadow: "0 8px 30px rgba(0,0,0,0.04)", border: "1px solid #e2e8f0" }}>
@@ -279,7 +279,7 @@ ${specifications.trim() || "Standard OEM specifications requested."}
                         1. Your Contact Information
                       </div>
 
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.1rem", marginBottom: "1.1rem" }}>
+                      <div className="quote-input-row" style={{ marginBottom: "1.1rem" }}>
                         <div>
                           <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#334155", marginBottom: "0.4rem" }}>
                             Full Name *
@@ -308,7 +308,7 @@ ${specifications.trim() || "Standard OEM specifications requested."}
                         </div>
                       </div>
 
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.1rem" }}>
+                      <div className="quote-input-row">
                         <div>
                           <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#334155", marginBottom: "0.4rem" }}>
                             WhatsApp / Mobile Number *
@@ -377,7 +377,7 @@ ${specifications.trim() || "Standard OEM specifications requested."}
                         </select>
                       </div>
 
-                      <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "1.1rem" }}>
+                      <div className="quote-input-row">
                         <div>
                           <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#334155", marginBottom: "0.4rem" }}>
                             Part Number / Model / Machine Name
@@ -411,7 +411,7 @@ ${specifications.trim() || "Standard OEM specifications requested."}
                         3. Technical Specifications &amp; Timeline
                       </div>
 
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.1rem", marginBottom: "1.1rem" }}>
+                      <div className="quote-input-row" style={{ marginBottom: "1.1rem" }}>
                         <div>
                           <label style={{ display: "block", fontSize: "0.82rem", fontWeight: 700, color: "#334155", marginBottom: "0.4rem" }}>
                             Delivery Urgency

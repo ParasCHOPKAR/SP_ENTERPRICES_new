@@ -166,7 +166,7 @@ function ProductsContent() {
           </div>
 
           {/* Brands Grid */}
-          <div className="brands-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "2rem" }}>
+          <div className="brands-grid">
             {filteredBrands.map((brand) => {
               const bgImage = brand.heroImage || BRAND_HERO_MAP[brand.id.toLowerCase()] || '/products_showcase.jpg';
               return (

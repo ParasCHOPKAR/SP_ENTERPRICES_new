@@ -91,10 +91,10 @@ export default function ManufacturingDetailClient({ mfgId: propMfgId }: { mfgId?
             <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#fbbf24", borderColor: "rgba(245,158,11,0.3)", display: "inline-flex", alignItems: "center", gap: "0.4rem", padding: "0.4rem 1rem", borderRadius: "50px", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1rem" }}>
               <Factory size={14} /> SP ENTERPRISES • SAHPL IN-HOUSE MANUFACTURING
             </div>
-            <h1 style={{ fontSize: "3rem", fontWeight: 800, lineHeight: 1.15, marginBottom: "1.2rem" }}>
+            <h1 style={{ fontSize: "clamp(1.85rem, 5vw, 3rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: "1.2rem" }}>
               {activeItem.shortTitle}
             </h1>
-            <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.6 }}>
+            <p style={{ fontSize: "clamp(1rem, 2.5vw, 1.15rem)", color: "#cbd5e1", lineHeight: 1.6 }}>
               {activeItem.tagline}
             </p>
           </div>
@@ -156,7 +156,7 @@ export default function ManufacturingDetailClient({ mfgId: propMfgId }: { mfgId?
                 style={{
                   position: "relative",
                   width: "100%",
-                  height: "320px",
+                  height: "clamp(200px, 35vw, 320px)",
                   borderRadius: "14px",
                   overflow: "hidden",
                   margin: "1.5rem 0 2rem",
@@ -219,7 +219,7 @@ export default function ManufacturingDetailClient({ mfgId: propMfgId }: { mfgId?
                 <h4 className="mfg-subheading" style={{ marginBottom: "1.2rem" }}>
                   <Sparkles size={18} color="#f59e0b" /> Featured Equipment &amp; Machinery Systems
                 </h4>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "1.5rem" }}>
                   {activeItem.featuredProducts.map((prod, pIdx) => (
                     <div
                       key={pIdx}
@@ -425,7 +425,7 @@ export default function ManufacturingDetailClient({ mfgId: propMfgId }: { mfgId?
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "1.5rem" }}>
             {processSteps.map((step, idx) => (
               <div key={idx} style={{ background: "#f8fafc", padding: "1.8rem 1.4rem", borderRadius: "14px", border: "1px solid #e2e8f0", position: "relative" }}>
                 <span style={{ fontSize: "2rem", fontWeight: 900, color: "#fca5a5", lineHeight: 1, display: "block", marginBottom: "0.8rem" }}>
@@ -443,7 +443,7 @@ export default function ManufacturingDetailClient({ mfgId: propMfgId }: { mfgId?
       <section style={{ background: "linear-gradient(135deg, #0f172a 0%, #7f1d1d 50%, #c8102e 100%)", padding: "4.5rem 0", color: "white" }}>
         <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "2rem" }}>
           <div style={{ maxWidth: "680px" }}>
-            <h2 style={{ fontSize: "2.3rem", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.8rem" }}>
+            <h2 style={{ fontSize: "clamp(1.5rem, 4vw, 2.3rem)", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.8rem" }}>
               Require a Custom Control Panel or Machinery Sizing?
             </h2>
             <p style={{ fontSize: "1.05rem", color: "#fef08a", lineHeight: 1.5 }}>

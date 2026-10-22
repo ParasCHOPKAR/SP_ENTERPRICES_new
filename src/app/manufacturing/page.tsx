@@ -137,7 +137,7 @@ export default function ManufacturingPage() {
             </p>
 
             {/* Quick Trust Matrix inside Hero */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))", gap: "0.8rem", marginBottom: "2rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 210px), 1fr))", gap: "0.8rem", marginBottom: "2rem" }}>
               <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "8px", padding: "0.7rem 1rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
                 <CheckCircle2 size={18} color="#fbbf24" style={{ flexShrink: 0 }} />
                 <span style={{ fontSize: "0.85rem", color: "#f1f5f9", fontWeight: 600 }}>100% SAHPL Range Handled Under SP Enterprises</span>
@@ -228,7 +228,7 @@ export default function ManufacturingPage() {
           </div>
 
           {/* 4-Pillar Integration Breakdown */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.4rem", marginBottom: "2.8rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))", gap: "1.4rem", marginBottom: "2.8rem" }}>
             <div style={{ background: "#f8fafc", padding: "1.5rem", borderRadius: "14px", border: "1px solid #e2e8f0", borderTop: "4px solid #c8102e" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.6rem" }}>
                 <div style={{ background: "#fef2f2", color: "#c8102e", padding: "0.4rem", borderRadius: "8px" }}>
@@ -279,7 +279,7 @@ export default function ManufacturingPage() {
           </div>
 
           {/* Key Credentials & Numbers Row */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 180px), 1fr))", gap: "1rem" }}>
             {SAHPL_INFO.credentials.map((cred, idx) => (
               <div key={idx} style={{ background: "#f8fafc", padding: "1.2rem", borderRadius: "12px", border: "1px solid #e2e8f0", borderLeft: "4px solid #c8102e" }}>
                 <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#c8102e", marginBottom: "0.25rem" }}>
@@ -317,7 +317,7 @@ export default function ManufacturingPage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.2rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: "1.2rem" }}>
             {SAHPL_INFO.clientList.map((client, idx) => (
               <div
                 key={idx}
@@ -388,7 +388,7 @@ export default function ManufacturingPage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: "1.5rem" }}>
             {integratedBrands.map((brand, idx) => (
               <div
                 key={idx}
@@ -512,7 +512,7 @@ export default function ManufacturingPage() {
               }}
             >
               {/* Division Header & Flagship Equipment Image */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem", alignItems: "center", borderBottom: "1px solid #f1f5f9", paddingBottom: "2.5rem", marginBottom: "2.5rem" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))", gap: "2.5rem", alignItems: "center", borderBottom: "1px solid #f1f5f9", paddingBottom: "2.5rem", marginBottom: "2.5rem" }}>
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", marginBottom: "0.8rem", flexWrap: "wrap" }}>
                     <div style={{ color: "#c8102e", background: "#fff1f2", padding: "0.6rem", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>

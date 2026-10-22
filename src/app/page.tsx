@@ -194,6 +194,7 @@ export default function Home() {
 
         {/* Hero Slide Switcher Controls */}
         <div
+          className="hero-slide-controls"
           style={{
             position: "absolute",
             bottom: "1.5rem",
@@ -303,7 +304,7 @@ export default function Home() {
       {/* Middle Trust Bar */}
       <div className="middle-features-bar" style={{ background: "white", borderBottom: "1px solid #e2e8f0" }}>
         <div className="container" style={{ display: "flex", alignItems: "stretch", flexWrap: "wrap" }}>
-          <div style={{ flex: "1.5 1 500px", display: "flex", justifyContent: "space-between", padding: "1.5rem 2rem 1.5rem 0", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+          <div className="trust-badges-wrapper">
             <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
               <Award size={28} color="#c8102e" />
               <span style={{ fontSize: "0.9rem", fontWeight: "bold", color: "#1e293b" }}>
@@ -332,8 +333,8 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <div style={{ flex: "1 1 280px", background: "linear-gradient(135deg, #7f1d1d 0%, #c8102e 50%, #991b1b 100%)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.5rem", position: "relative" }}>
-            <div style={{ textAlign: "right" }}>
+          <div className="crimson-credo-box" style={{ flex: "1 1 280px", background: "linear-gradient(135deg, #7f1d1d 0%, #c8102e 50%, #991b1b 100%)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.5rem", position: "relative" }}>
+            <div>
               <h3 style={{ fontSize: "1.2rem", letterSpacing: "2px", marginBottom: "0.2rem" }}>S. P. ENTERPRISES</h3>
               <p style={{ fontSize: "0.75rem", letterSpacing: "1px", color: "#fef08a" }}>
                 PIONEERING INDUSTRIAL AUTOMATION<br />AND CONTROL ENGINEERING
@@ -349,7 +350,7 @@ export default function Home() {
         className="about-section"
         style={{
           position: "relative",
-          padding: "5.5rem 0",
+          padding: "clamp(3.5rem, 6vw, 5.5rem) 0",
           overflow: "hidden",
           borderTop: "1px solid #e2e8f0"
         }}
@@ -373,7 +374,7 @@ export default function Home() {
         </div>
 
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "4rem", alignItems: "center" }}>
+          <div className="home-about-grid">
             <div>
               <div className="title-pill" style={{ marginBottom: "1rem" }}>
                 <Sparkles size={14} /> ABOUT S. P. ENTERPRISES

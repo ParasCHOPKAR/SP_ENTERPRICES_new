@@ -130,7 +130,7 @@ export default function BrandDirectory({ onSelectBrand, searchQuery = "", onSear
         )}
 
         {/* Brands Grid */}
-        <div className="brands-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "2rem" }}>
+        <div className="brands-grid">
           {(limit ? filteredBrands.slice(0, limit) : filteredBrands).map((brand) => (
             <div
               key={brand.id}

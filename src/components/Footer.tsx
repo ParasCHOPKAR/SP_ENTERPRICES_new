@@ -18,7 +18,6 @@ import {
   Clock,
   Award,
   Building2,
-  Star,
   Factory,
   Truck
 } from "lucide-react";
@@ -117,18 +116,9 @@ export default function Footer({ onSelectBrand }: FooterProps) {
       >
         <div style={{ maxWidth: "1560px", margin: "0 auto", padding: "0 2rem" }}>
           {/* Main 4 Columns Row */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "flex-start",
-              flexWrap: "wrap",
-              gap: "2.5rem",
-              marginBottom: "2.5rem"
-            }}
-          >
+          <div className="footer-main-grid">
             {/* Column 1: S. P. ENTERPRISES Profile */}
-            <div style={{ flex: "1.2 1 290px", maxWidth: "340px" }}>
+            <div style={{ minWidth: 0 }}>
               <div
                 style={{
                   background: "#ffffff",
@@ -261,7 +251,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
             </div>
 
             {/* Column 2: Quick Navigation */}
-            <div style={{ flex: "0.9 1 190px", maxWidth: "230px" }}>
+            <div style={{ minWidth: 0 }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1.2rem" }}>
                 <div style={{ width: "3px", height: "16px", background: "#f59e0b", borderRadius: "2px" }} />
                 <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>Quick Navigation</h3>
@@ -326,7 +316,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
             </div>
 
             {/* Column 3: Partner Brands (13) */}
-            <div style={{ flex: "1.3 1 310px", maxWidth: "370px" }}>
+            <div style={{ minWidth: 0 }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.4rem" }}>
                 <div style={{ width: "3px", height: "16px", background: "#f59e0b", borderRadius: "2px" }} />
                 <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
@@ -397,8 +387,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
             {/* Column 4: Pune Headquarters Box */}
             <div
               style={{
-                flex: "1.2 1 300px",
-                maxWidth: "340px",
+                minWidth: 0,
                 background: "rgba(20, 8, 12, 0.75)",
                 backdropFilter: "blur(10px)",
                 border: "1px solid rgba(200, 16, 46, 0.4)",
@@ -587,86 +576,6 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               </a>
             </div>
           </div>
-
-          {/* Middle Row: Google Rating Card & Google Map Card */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "stretch",
-              flexWrap: "wrap",
-              gap: "2rem",
-              marginBottom: "2.5rem"
-            }}
-          >
-            {/* Google Customer Rating Card */}
-            <div
-              style={{
-                flex: "1 1 360px",
-                maxWidth: "430px",
-                background: "rgba(20, 8, 12, 0.7)",
-                backdropFilter: "blur(8px)",
-                border: "1px solid rgba(245, 158, 11, 0.3)",
-                borderRadius: "12px",
-                padding: "1.1rem 1.4rem",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                gap: "0.8rem"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.7rem" }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
-                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z" />
-                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z" />
-                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" />
-                  </svg>
-                  <div>
-                    <div style={{ fontWeight: 800, fontSize: "0.92rem", color: "#ffffff", lineHeight: 1.2 }}>
-                      Google Customer Rating
-                    </div>
-                    <div style={{ fontSize: "0.74rem", color: "#f59e0b", fontWeight: 700 }}>
-                      S. P. Enterprises Pune
-                    </div>
-                  </div>
-                </div>
-
-                <span
-                  style={{
-                    background: "rgba(34, 197, 94, 0.2)",
-                    border: "1px solid rgba(34, 197, 94, 0.5)",
-                    color: "#4ade80",
-                    padding: "0.2rem 0.65rem",
-                    borderRadius: "14px",
-                    fontSize: "0.72rem",
-                    fontWeight: 700
-                  }}
-                >
-                  Verified Reviews
-                </span>
-              </div>
-
-              <div style={{ display: "flex", alignItems: "center", gap: "0.9rem" }}>
-                <span style={{ fontSize: "2.1rem", fontWeight: 900, color: "#ffffff", lineHeight: 1 }}>
-                  4.9
-                </span>
-                <div>
-                  <div style={{ display: "flex", gap: "0.2rem", color: "#fbbf24" }}>
-                    <Star size={16} fill="#fbbf24" stroke="#fbbf24" />
-                    <Star size={16} fill="#fbbf24" stroke="#fbbf24" />
-                    <Star size={16} fill="#fbbf24" stroke="#fbbf24" />
-                    <Star size={16} fill="#fbbf24" stroke="#fbbf24" />
-                    <Star size={16} fill="#fbbf24" stroke="#fbbf24" />
-                  </div>
-                  <div style={{ fontSize: "0.74rem", color: "#cbd5e1", marginTop: "0.2rem" }}>
-                    Rated 4.9/5 by 50+ Industrial OEM &amp; Corporate Clients
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Brand Partners Infinite Marquee Loop */}
@@ -796,6 +705,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
           }}
         >
           <div
+            className="footer-trust-row"
             style={{
               maxWidth: "1560px",
               margin: "0 auto",
@@ -816,7 +726,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               </div>
             </div>
 
-            <div style={{ width: "1px", height: "30px", background: "rgba(255, 255, 255, 0.15)" }} />
+            <div className="footer-trust-divider" style={{ width: "1px", height: "30px", background: "rgba(255, 255, 255, 0.15)" }} />
 
             {/* Type-Tested Reliability */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flex: "1 1 200px" }}>
@@ -827,7 +737,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               </div>
             </div>
 
-            <div style={{ width: "1px", height: "30px", background: "rgba(255, 255, 255, 0.15)" }} />
+            <div className="footer-trust-divider" style={{ width: "1px", height: "30px", background: "rgba(255, 255, 255, 0.15)" }} />
 
             {/* Pharma cGMP Compliant */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flex: "1 1 200px" }}>
@@ -838,7 +748,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
               </div>
             </div>
 
-            <div style={{ width: "1px", height: "30px", background: "rgba(255, 255, 255, 0.15)" }} />
+            <div className="footer-trust-divider" style={{ width: "1px", height: "30px", background: "rgba(255, 255, 255, 0.15)" }} />
 
             {/* Pan-India Delivery */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flex: "1 1 200px" }}>
@@ -888,6 +798,7 @@ export default function Footer({ onSelectBrand }: FooterProps) {
           }}
         >
           <div
+            className="footer-legal-bar"
             style={{
               maxWidth: "1560px",
               margin: "0 auto",
