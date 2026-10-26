@@ -433,8 +433,8 @@ ${message.trim()}
                 </div>
               </div>
 
-              {/* 4 Information Cards Grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.2rem" }}>
+              {/* 3 Information Cards Grid */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem", marginBottom: "1.2rem" }}>
                 {/* Mobile Numbers */}
                 <div style={{ background: "white", padding: "1.4rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
                   <div style={{ display: "flex", gap: "0.9rem", alignItems: "flex-start" }}>
@@ -458,24 +458,6 @@ ${message.trim()}
                   </div>
                 </div>
 
-                {/* Landline Phone */}
-                <div style={{ background: "white", padding: "1.4rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
-                  <div style={{ display: "flex", gap: "0.9rem", alignItems: "flex-start" }}>
-                    <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#fff1f2", display: "flex", alignItems: "center", justifyContent: "center", color: "#c8102e", flexShrink: 0 }}>
-                      <PhoneCall size={18} />
-                    </div>
-                    <div>
-                      <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.3rem", fontWeight: 700 }}>Phone No. (Landline)</h4>
-                      <a href="tel:02024336245" style={{ color: "#c8102e", fontSize: "1.05rem", fontWeight: 800, textDecoration: "none", display: "inline-block" }}>
-                        020-24336245
-                      </a>
-                      <span style={{ fontSize: "0.74rem", color: "#64748b", marginTop: "0.3rem", display: "block" }}>
-                        Office Line &bull; 9:00 AM &ndash; 7:00 PM IST
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Official Email */}
                 <div style={{ background: "white", padding: "1.4rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
                   <div style={{ display: "flex", gap: "0.9rem", alignItems: "flex-start" }}>
@@ -485,20 +467,6 @@ ${message.trim()}
                     <div style={{ width: "100%" }}>
                       <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.35rem", fontWeight: 700 }}>Official Email</h4>
                       <div style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
-                        <a
-                          href="mailto:sales@sahpl.com"
-                          style={{
-                            color: "#c8102e",
-                            fontSize: "0.95rem",
-                            fontWeight: 700,
-                            fontFamily: "inherit",
-                            textDecoration: "none",
-                            display: "inline-block",
-                            transition: "opacity 0.2s"
-                          }}
-                        >
-                          sales@sahpl.com
-                        </a>
                         <a
                           href="mailto:info@speautomation.com"
                           style={{

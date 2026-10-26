@@ -276,11 +276,8 @@ export default function AboutPage() {
                    onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(200,16,46,0.2)"}>
                   <Phone size={14} color="#fbbf24" /> +91 83085 02100 / 94220 12179
                 </a>
-                <a href="tel:02024336245" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
-                  <Phone size={14} color="#fbbf24" /> Phone: 020-24336245
-                </a>
-                <a href="mailto:sales@sahpl.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
-                  <Mail size={14} color="#fbbf24" /> sales@sahpl.com
+                <a href="mailto:info@speautomation.com" style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#e2e8f0", textDecoration: "none", padding: "0.2rem" }}>
+                  <Mail size={14} color="#fbbf24" /> info@speautomation.com
                 </a>
                 <div style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", color: "#cbd5e1", fontSize: "0.75rem", padding: "0.2rem" }}>
                   <MapPin size={14} color="#fbbf24" style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -454,8 +451,7 @@ export default function AboutPage() {
                     {[
                       { label: "Director", value: "Mr. Pradeep Kulkarni", strong: true },
                       { label: "Mobile No.", value: "+91 83085 02100, +91 94220 12179", link: "tel:+918308502100" },
-                      { label: "Phone No.", value: "020-24336245", link: "tel:02024336245" },
-                      { label: "Official Email", value: "sales@sahpl.com", link: "mailto:sales@sahpl.com" },
+                      { label: "Official Email", value: "info@speautomation.com", link: "mailto:info@speautomation.com" },
                       { label: "Official Website", value: "www.speautomation.com", link: "https://www.speautomation.com" },
                     ].map((row, i) => (
                       <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.4rem 0", borderBottom: "1px solid #f1f5f9" }}>

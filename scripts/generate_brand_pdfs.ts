@@ -60,7 +60,7 @@ async function generateBrandPdf(brand: BrandData): Promise<string> {
       doc.fontSize(7.5).fillColor('#64748b').font('Helvetica-Bold')
         .text('AUTHORISED OEM DISTRIBUTOR & AUTOMATION SPECIALIST', 180, topY + 2, { align: 'right', width: 379 });
       doc.fontSize(7).fillColor('#0f172a').font('Helvetica')
-        .text('Pune HQ: +91 83085 02100 | sales@sahpl.com | www.speautomation.com', 180, topY + 14, { align: 'right', width: 379 });
+        .text('Pune HQ: +91 83085 02100 | info@speautomation.com | www.speautomation.com', 180, topY + 14, { align: 'right', width: 379 });
 
       doc.moveTo(36, topY + 30).lineTo(559, topY + 30).strokeColor('#c8102e').lineWidth(1.5).stroke();
     };
@@ -243,9 +243,9 @@ async function generateBrandPdf(brand: BrandData): Promise<string> {
     doc.fontSize(7.5).fillColor('#e2e8f0').font('Helvetica-Bold')
       .text('Director: Mr. Pradeep Kulkarni', 48, curY + 35);
     doc.fontSize(7.2).fillColor('#cbd5e1').font('Helvetica')
-      .text('Mobile: +91 83085 02100 / +91 94220 12179 | Phone: 020-24336245', 48, curY + 47);
+      .text('Mobile: +91 83085 02100 / +91 94220 12179', 48, curY + 47);
     doc.fontSize(7.2).fillColor('#fde68a').font('Helvetica')
-      .text('Email: sales@sahpl.com | info@speautomation.com | Online RFQ: www.speautomation.com/request-quote', 48, curY + 59);
+      .text('Email: info@speautomation.com | Online RFQ: www.speautomation.com/request-quote', 48, curY + 59);
 
     curY += 84;
 

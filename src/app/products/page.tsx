@@ -29,16 +29,10 @@ function ProductsContent() {
   const queryParam = searchParams.get("q");
   const categoryParam = searchParams.get("category");
 
-  const [activeCategory, setActiveCategory] = useState<string>(categoryParam || "all");
+  const [selectedBrand, setSelectedBrand] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>(queryParam || "");
 
-  useEffect(() => {
-    if (categoryParam) {
-      setActiveCategory(categoryParam);
-    }
-  }, [categoryParam]);
-
-  // If a brand query param is present, redirect to the new brand detail page
+  // If a brand query param is present, redirect to the brand detail page
   useEffect(() => {
     if (brandParam) {
       router.push(`/products/${brandParam}`);
@@ -51,26 +45,28 @@ function ProductsContent() {
     }
   }, [queryParam]);
 
-  const categories = [
-    { id: "all", label: "All Products (13 Brands)" },
-    { id: "relays", label: "Relays & Switching" },
-    { id: "power", label: "SMPS & Power Resistors" },
-    { id: "automation", label: "PLCs, HMIs & Software" },
-    { id: "sensors", label: "Sensors & Instrumentation" },
-    { id: "cleanroom", label: "Cleanroom & Pass Boxes" },
+  const brandTabs = [
+    { id: "all", label: "All Brands (13)" },
+    ...BRANDS_DATA.map((brand) => ({
+      id: brand.id,
+      label: brand.name,
+    })),
   ];
 
+  const handleBrandClick = (brandId: string) => {
+    if (selectedBrand === brandId && brandId !== "all") {
+      setSelectedBrand("all");
+    } else {
+      setSelectedBrand(brandId);
+    }
+  };
+
   const filteredBrands = BRANDS_DATA.filter((brand) => {
-    const matchesCategory =
-      activeCategory === "all" ||
-      (activeCategory === "relays" && brand.filterCategory === "relays") ||
-      (activeCategory === "power" && brand.filterCategory === "power") ||
-      (activeCategory === "automation" && (brand.filterCategory === "automation" || brand.id === "automation-software")) ||
-      (activeCategory === "sensors" && (brand.filterCategory === "sensors" || brand.id === "honeywell")) ||
-      (activeCategory === "cleanroom" && brand.filterCategory === "cleanroom");
+    const matchesBrand =
+      selectedBrand === "all" || brand.id === selectedBrand;
 
     const query = searchQuery.toLowerCase().trim();
-    if (!query) return matchesCategory;
+    if (!query) return matchesBrand;
 
     const matchesQuery =
       brand.name.toLowerCase().includes(query) ||
@@ -86,7 +82,7 @@ function ProductsContent() {
         )
       );
 
-    return matchesCategory && matchesQuery;
+    return matchesBrand && matchesQuery;
   });
 
   // Inquire logic removed from here as it's now handled on the detail page
@@ -118,14 +114,14 @@ function ProductsContent() {
           {/* Controls Bar */}
           <div className="brand-filters-container">
             <div className="brand-category-tabs">
-              {categories.map((cat) => (
+              {brandTabs.map((tab) => (
                 <button
-                  key={cat.id}
+                  key={tab.id}
                   type="button"
-                  className={`brand-cat-btn ${activeCategory === cat.id ? "active" : ""}`}
-                  onClick={() => setActiveCategory(cat.id)}
+                  className={`brand-cat-btn ${selectedBrand === tab.id ? "active" : ""}`}
+                  onClick={() => handleBrandClick(tab.id)}
                 >
-                  {cat.label}
+                  {tab.label}
                 </button>
               ))}
             </div>
@@ -358,7 +354,7 @@ function ProductsContent() {
                 type="button"
                 className="btn-primary"
                 onClick={() => {
-                  setActiveCategory("all");
+                  setSelectedBrand("all");
                   setSearchQuery("");
                 }}
               >

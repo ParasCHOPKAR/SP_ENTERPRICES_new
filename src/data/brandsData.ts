@@ -51,6 +51,88 @@ export const BRAND_HERO_MAP: Record<string, string> = {
   'cleangrad': '/product_hero_card/Cleangrad.png',
 };
 
+export interface BrandStripLogo {
+  id: string;
+  name: string;
+  logo: string;
+  href: string;
+}
+
+export const BRAND_STRIP_LOGOS: BrandStripLogo[] = [
+  {
+    id: "jumo",
+    name: "JUMO India",
+    logo: "/Brand_logo/jumo.png",
+    href: "/products/jumo"
+  },
+  {
+    id: "phoenix",
+    name: "Phoenix Contact",
+    logo: "/Brand_logo/phoenix.png",
+    href: "/products/phoenix"
+  },
+  {
+    id: "renu",
+    name: "Renu Electronics",
+    logo: "/Brand_logo/renu.png",
+    href: "/products/renu"
+  },
+  {
+    id: "weidmuller",
+    name: "Weidmüller",
+    logo: "/Brand_logo/weidmullerr.png",
+    href: "/products/weidmuller"
+  },
+  {
+    id: "eri",
+    name: "Electronic Relays India (ERI)",
+    logo: "/Brand_logo/ERI.png",
+    href: "/products/eri"
+  },
+  {
+    id: "cd",
+    name: "CD Automation",
+    logo: "/Brand_logo/cd.png",
+    href: "/products/cd-automation"
+  },
+  {
+    id: "ceermet",
+    name: "Cermet Resistive",
+    logo: "/Brand_logo/ceermet.png",
+    href: "/products/cermet"
+  },
+  {
+    id: "cleangrad",
+    name: "Cleangrad Cleanrooms",
+    logo: "/Brand_logo/cleangrad.png",
+    href: "/products/cleangrad"
+  },
+  {
+    id: "emerson",
+    name: "Emerson",
+    logo: "/Brand_logo/emerson.jpg",
+    href: "/products/emerson"
+  },
+  {
+    id: "gefran",
+    name: "Gefran Automation",
+    logo: "/Brand_logo/gefran.png",
+    href: "/products/gefran"
+  },
+  {
+    id: "honeywell",
+    name: "Honeywell Process Solutions",
+    logo: "/Brand_logo/honeywell.png",
+    href: "/products/honeywell"
+  },
+  {
+    id: "west",
+    name: "West Control Solutions",
+    logo: "/Brand_logo/west.svg",
+    href: "/products/west"
+  }
+];
+
 export const BRANDS_DATA: BrandData[] = [
   {
     id: "eri",

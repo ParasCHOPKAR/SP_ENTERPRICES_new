@@ -250,7 +250,7 @@ ${specifications.trim() || "Standard OEM specifications requested."}
                     </button>
 
                     <div style={{ fontSize: "0.8rem", color: "#64748b" }}>
-                      Direct calls answered at <a href="tel:02024336245" style={{ color: "#0f172a", fontWeight: 700, textDecoration: "none" }}>020-24336245</a>
+                      Direct calls answered at <a href="tel:+918308502100" style={{ color: "#0f172a", fontWeight: 700, textDecoration: "none" }}>+91 83085 02100</a>
                     </div>
                   </div>
                 </div>
@@ -586,25 +586,9 @@ ${specifications.trim() || "Standard OEM specifications requested."}
                     <span>Mobile 2: +91 94220 12179</span>
                   </a>
 
-                  {/* Landline */}
-                  <a
-                    href="tel:02024336245"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.6rem",
-                      color: "#ffffff",
-                      textDecoration: "none",
-                      padding: "0.2rem 0.4rem"
-                    }}
-                  >
-                    <PhoneCall size={16} color="#fbbf24" />
-                    <span>Landline: 020-24336245</span>
-                  </a>
-
                   {/* Official Email */}
                   <a
-                    href="mailto:sales@sahpl.com"
+                    href="mailto:info@speautomation.com"
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -615,7 +599,7 @@ ${specifications.trim() || "Standard OEM specifications requested."}
                     }}
                   >
                     <Mail size={16} color="#fbbf24" />
-                    <span>Official Email: sales@sahpl.com</span>
+                    <span>Official Email: info@speautomation.com</span>
                   </a>
 
                   {/* Address */}

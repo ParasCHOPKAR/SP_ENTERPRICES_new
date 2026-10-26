@@ -27,9 +27,16 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { BRANDS_DATA } from "@/data/brandsData";
+import { BRANDS_DATA, BRAND_STRIP_LOGOS } from "@/data/brandsData";
 import BrandDirectory from "@/components/BrandDirectory";
 import ManufacturingSection from "@/components/ManufacturingSection";
+
+const HOME_MARQUEE_BRAND_ITEMS = [
+  ...BRAND_STRIP_LOGOS,
+  ...BRAND_STRIP_LOGOS,
+  ...BRAND_STRIP_LOGOS,
+  ...BRAND_STRIP_LOGOS
+];
 
 const HERO_BG_IMAGES = [
   {
@@ -61,6 +68,42 @@ const HERO_BG_IMAGES = [
     brand: "Emerson",
     id: "emerson",
     title: "Emerson Industrial Automation & Control Technology",
+  },
+  {
+    src: "/home/hero_honeywell_bg.png",
+    brand: "Honeywell",
+    id: "honeywell",
+    title: "Honeywell Process & Building Automation Solutions",
+  },
+  {
+    src: "/home/hero_gefran_bg.png",
+    brand: "Gefran",
+    id: "gefran",
+    title: "Gefran Industrial Sensors, Controllers & SSRs",
+  },
+  {
+    src: "/home/hero_west_control_bg.png",
+    brand: "West Control",
+    id: "west",
+    title: "West Control Solutions PID Temperature & Process Controllers",
+  },
+  {
+    src: "/home/hero_CD_bg.png",
+    brand: "CD Automation",
+    id: "cd-automation",
+    title: "CD Automation Heavy-Duty Thyristor Power Controllers",
+  },
+  {
+    src: "/home/hero_cermet_bg.png",
+    brand: "Cermet Resistors",
+    id: "cermet",
+    title: "Cermet Resistive Products & Dynamic Braking Resistors",
+  },
+  {
+    src: "/home/hero_custom_bg.png",
+    brand: "SCADA & Software",
+    id: "automation-software",
+    title: "Custom Industrial Automation Software & SCADA Systems",
   },
 ];
 
@@ -301,42 +344,282 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Middle Trust Bar */}
-      <div className="middle-features-bar" style={{ background: "white", borderBottom: "1px solid #e2e8f0" }}>
-        <div className="container" style={{ display: "flex", alignItems: "stretch", flexWrap: "wrap" }}>
-          <div className="trust-badges-wrapper">
-            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-              <Award size={28} color="#c8102e" />
-              <span style={{ fontSize: "0.9rem", fontWeight: "bold", color: "#1e293b" }}>
-                Premier<br />Distributor
-              </span>
+      {/* Authorized Global Brands Marquee Slider (Below Hero Section) */}
+      <section
+        className="hero-brand-marquee-section"
+        style={{
+          background: "linear-gradient(180deg, #07090e 0%, #12050a 50%, #07090e 100%)",
+          borderTop: "1px solid rgba(245, 158, 11, 0.35)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+          padding: "1.25rem 0 1.5rem 0",
+          position: "relative",
+          zIndex: 5,
+          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.4)"
+        }}
+      >
+        <div style={{ maxWidth: "1560px", margin: "0 auto", padding: "0 clamp(1rem, 3vw, 2.5rem)", marginBottom: "0.9rem" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.8rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+              <div
+                style={{
+                  width: "4px",
+                  height: "24px",
+                  background: "linear-gradient(180deg, #c8102e, #f59e0b)",
+                  borderRadius: "2px"
+                }}
+              />
+              <div>
+                <div
+                  style={{
+                    fontSize: "0.7rem",
+                    color: "#f59e0b",
+                    fontWeight: 800,
+                    letterSpacing: "1.2px",
+                    textTransform: "uppercase",
+                    lineHeight: 1.2
+                  }}
+                >
+                  AUTHORIZED DISTRIBUTION &amp; CHANNEL PARTNERS
+                </div>
+                <h2
+                  style={{
+                    fontSize: "1.05rem",
+                    fontWeight: 700,
+                    color: "#ffffff",
+                    letterSpacing: "0.3px",
+                    margin: 0
+                  }}
+                >
+                  Global Industrial Automation &amp; Control Brands
+                </h2>
+              </div>
             </div>
-            <div style={{ width: "1px", height: "40px", background: "#e2e8f0" }} className="feature-divider"></div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-              <Package size={28} color="#c8102e" />
-              <span style={{ fontSize: "0.9rem", fontWeight: "bold", color: "#1e293b" }}>
-                13 Premier<br />Global Brands
-              </span>
-            </div>
-            <div style={{ width: "1px", height: "40px", background: "#e2e8f0" }} className="feature-divider"></div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-              <Truck size={28} color="#c8102e" />
-              <span style={{ fontSize: "0.9rem", fontWeight: "bold", color: "#1e293b" }}>
-                Pan-India<br />Prompt Supply
-              </span>
-            </div>
-            <div style={{ width: "1px", height: "40px", background: "#e2e8f0" }} className="feature-divider"></div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
-              <HeadphonesIcon size={28} color="#c8102e" />
-              <span style={{ fontSize: "0.9rem", fontWeight: "bold", color: "#1e293b" }}>
-                Technical<br />Engineering Support
-              </span>
+
+            <div style={{ display: "flex", alignItems: "center", gap: "1.1rem", flexWrap: "wrap" }}>
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.45rem",
+                  fontSize: "0.78rem",
+                  color: "#cbd5e1"
+                }}
+              >
+                <ShieldCheck size={16} color="#ef4444" />
+                <span>100% Genuine Factory-Sealed OEM Stock</span>
+              </div>
+              <Link
+                href="/products"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.4rem",
+                  color: "#f59e0b",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                  padding: "0.35rem 0.85rem",
+                  borderRadius: "20px",
+                  background: "rgba(245, 158, 11, 0.12)",
+                  border: "1px solid rgba(245, 158, 11, 0.35)",
+                  transition: "all 0.2s"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(245, 158, 11, 0.25)";
+                  e.currentTarget.style.transform = "translateX(2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgba(245, 158, 11, 0.12)";
+                  e.currentTarget.style.transform = "translateX(0)";
+                }}
+              >
+                Explore All 13 Brands <ChevronRight size={14} />
+              </Link>
             </div>
           </div>
-          <div className="crimson-credo-box" style={{ flex: "1 1 280px", background: "linear-gradient(135deg, #7f1d1d 0%, #c8102e 50%, #991b1b 100%)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.5rem", position: "relative" }}>
+        </div>
+
+        {/* Continuous Marquee Slider Track */}
+        <div
+          className="footer-marquee-container"
+          style={{
+            position: "relative",
+            overflow: "hidden",
+            width: "100%",
+            padding: "0.3rem 0"
+          }}
+        >
+          {/* Left Edge Ambient Fade Mask */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              left: 0,
+              width: "100px",
+              background: "linear-gradient(to right, #07090e, transparent)",
+              zIndex: 2,
+              pointerEvents: "none"
+            }}
+          />
+
+          {/* Right Edge Ambient Fade Mask */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              right: 0,
+              width: "100px",
+              background: "linear-gradient(to left, #07090e, transparent)",
+              zIndex: 2,
+              pointerEvents: "none"
+            }}
+          />
+
+          <div className="footer-marquee-track">
+            {HOME_MARQUEE_BRAND_ITEMS.map((brand, index) => (
+              <Link
+                key={`home-marquee-${brand.id}-${index}`}
+                href={brand.href}
+                title={`${brand.name} - Explore Products`}
+                className="footer-marquee-card"
+              >
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  loading="lazy"
+                  style={{
+                    maxHeight: "34px",
+                    maxWidth: "125px",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                    display: "block"
+                  }}
+                />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Middle Trust Features Bar */}
+      <div
+        className="middle-features-bar"
+        style={{
+          background: "#ffffff",
+          borderBottom: "1px solid #e2e8f0",
+          boxShadow: "0 4px 15px rgba(0, 0, 0, 0.03)",
+          position: "relative",
+          zIndex: 4,
+          overflow: "hidden"
+        }}
+      >
+        <div className="middle-features-container">
+          {/* 4 Trust Badges Horizontal Row */}
+          <div
+            className="trust-badges-wrapper"
+            style={{
+              flex: "1 1 auto",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "1.1rem clamp(1rem, 2.5vw, 3rem)",
+              gap: "clamp(0.8rem, 1.6vw, 2rem)"
+            }}
+          >
+            {/* Badge 1 */}
+            <div className="trust-badge-item">
+              <div className="trust-badge-icon">
+                <Award size={24} color="#c8102e" />
+              </div>
+              <div>
+                <div style={{ fontSize: "0.92rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.25 }}>
+                  Premier Distributor
+                </div>
+                <div style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 600 }}>
+                  100% Genuine OEM Sourcing
+                </div>
+              </div>
+            </div>
+
+            <div className="feature-divider" />
+
+            {/* Badge 2 */}
+            <div className="trust-badge-item">
+              <div className="trust-badge-icon">
+                <Package size={24} color="#c8102e" />
+              </div>
+              <div>
+                <div style={{ fontSize: "0.92rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.25 }}>
+                  13 Premier Brands
+                </div>
+                <div style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 600 }}>
+                  Full Factory Warranty
+                </div>
+              </div>
+            </div>
+
+            <div className="feature-divider" />
+
+            {/* Badge 3 */}
+            <div className="trust-badge-item">
+              <div className="trust-badge-icon">
+                <Truck size={24} color="#c8102e" />
+              </div>
+              <div>
+                <div style={{ fontSize: "0.92rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.25 }}>
+                  Pan-India Supply
+                </div>
+                <div style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 600 }}>
+                  Prompt Express Dispatch
+                </div>
+              </div>
+            </div>
+
+            <div className="feature-divider" />
+
+            {/* Badge 4 */}
+            <div className="trust-badge-item">
+              <div className="trust-badge-icon">
+                <HeadphonesIcon size={24} color="#c8102e" />
+              </div>
+              <div>
+                <div style={{ fontSize: "0.92rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.25 }}>
+                  Technical Support
+                </div>
+                <div style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 600 }}>
+                  Application Engineering
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Crimson Credo Box (Right Side Fixed Anchor) */}
+          <div className="crimson-credo-box">
             <div>
-              <h3 style={{ fontSize: "1.2rem", letterSpacing: "2px", marginBottom: "0.2rem" }}>S. P. ENTERPRISES</h3>
-              <p style={{ fontSize: "0.75rem", letterSpacing: "1px", color: "#fef08a" }}>
+              <h3
+                style={{
+                  fontSize: "1.05rem",
+                  fontWeight: 800,
+                  letterSpacing: "1.5px",
+                  marginBottom: "0.2rem",
+                  color: "#ffffff"
+                }}
+              >
+                S. P. ENTERPRISES
+              </h3>
+              <p
+                style={{
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.8px",
+                  color: "#fef08a",
+                  fontWeight: 700,
+                  margin: 0,
+                  lineHeight: 1.3
+                }}
+              >
                 PIONEERING INDUSTRIAL AUTOMATION<br />AND CONTROL ENGINEERING
               </p>
             </div>
@@ -438,19 +721,74 @@ export default function Home() {
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-              <div style={{ position: "relative", height: "320px", borderRadius: "16px", overflow: "hidden", boxShadow: "0 15px 35px rgba(0,0,0,0.08)" }}>
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "1536 / 1024",
+                  minHeight: "320px",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  background: "#ffffff",
+                  border: "1px solid rgba(226, 232, 240, 0.9)",
+                  boxShadow: "0 18px 45px rgba(0, 0, 0, 0.08)"
+                }}
+              >
                 <Image
-                  src="/home/home_about_01.png"
-                  alt="S. P. Enterprises Automation Components and Manufacturing Pune"
+                  src="/home/all_product_img.png"
+                  alt="S. P. Enterprises Authorized Industrial Automation Components & Control Systems"
                   fill
                   style={{ objectFit: "cover" }}
+                  priority
                 />
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top, rgba(15,23,42,0.85), transparent)", padding: "1.5rem", color: "white" }}>
-                  <div style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "1px", color: "#fbbf24", fontWeight: 700 }}>
-                    Pune Facility &bull; Katraj
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "1rem",
+                    right: "1rem",
+                    background: "rgba(15, 23, 42, 0.85)",
+                    backdropFilter: "blur(8px)",
+                    color: "#ffffff",
+                    padding: "0.35rem 0.8rem",
+                    borderRadius: "20px",
+                    fontSize: "0.75rem",
+                    fontWeight: 700,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.4rem",
+                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+                    border: "1px solid rgba(255, 255, 255, 0.2)"
+                  }}
+                >
+                  <ShieldCheck size={14} color="#22c55e" />
+                  <span>100% Genuine OEM Stock</span>
+                </div>
+
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    background: "linear-gradient(to top, rgba(15, 23, 42, 0.90) 0%, rgba(15, 23, 42, 0.45) 60%, transparent 100%)",
+                    padding: "1.2rem 1.4rem",
+                    color: "white"
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: "0.72rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "1px",
+                      color: "#fbbf24",
+                      fontWeight: 700,
+                      marginBottom: "0.2rem"
+                    }}
+                  >
+                    13 Premier OEM Brands Stocked
                   </div>
                   <div style={{ fontSize: "1.05rem", fontWeight: 700 }}>
-                    Trusted Partner to 200+ Industrial Plants
+                    Direct Authorized Distribution &amp; Engineering Supply
                   </div>
                 </div>
               </div>
@@ -463,8 +801,7 @@ export default function Home() {
                 <div style={{ fontSize: "0.88rem", display: "flex", flexDirection: "column", gap: "0.5rem", color: "#475569" }}>
                   <div><strong>Director:</strong> Mr. Pradeep Kulkarni</div>
                   <div><strong>Mobile No.:</strong> <a href="tel:+918308502100" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>+91 83085 02100</a>, <a href="tel:+919422012179" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>+91 94220 12179</a></div>
-                  <div><strong>Phone No.:</strong> <a href="tel:02024336245" style={{ color: "#0f172a", fontWeight: 600, textDecoration: "none" }}>020-24336245</a></div>
-                  <div><strong>Official Email:</strong> <a href="mailto:sales@sahpl.com" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>sales@sahpl.com</a> / <a href="mailto:info@speautomation.com" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>info@speautomation.com</a></div>
+                  <div><strong>Official Email:</strong> <a href="mailto:info@speautomation.com" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>info@speautomation.com</a></div>
                   <div><strong>Official Website:</strong> <a href="https://www.speautomation.com" target="_blank" rel="noopener noreferrer" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>www.speautomation.com</a></div>
                   <div><strong>Registered Office:</strong> Sr. No. 14/1A + 2B/2, Gujarwadi Road, Katraj, Pune - 411046, Maharashtra, India</div>
                 </div>
@@ -477,9 +814,9 @@ export default function Home() {
       {/* Interactive Products & Brand Directory */}
       <BrandDirectory 
         onSelectBrand={(brand) => router.push(`/products/${brand.id}`)} 
-        limit={3}
         hideFilters={true}
         showViewAll={true}
+        asSlider={true}
       />
 
       {/* Manufacturing Showcase */}
