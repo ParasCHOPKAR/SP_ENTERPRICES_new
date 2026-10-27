@@ -19,6 +19,7 @@ export interface FeaturedMachine {
   specs: { label: string; value: string }[];
   highlights: string[];
   image?: string;
+  images?: string[];
 }
 
 export interface ManufacturingItem {
@@ -91,66 +92,112 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         name: "Thyristor Control Panels",
         tagline: "Ultra-Fast Solid-State Voltage & Power Control for Thermal Loads",
         image: "/manufacturing/products/thyristor_control_panel.jpg",
-        description:
-          "Thyristor Control panels are engineered to regulate precise power or voltage supplied to an industrial load. Typical applications are found where electrical power needs to be dynamically varied and converted into thermal energy with zero mechanical contactor wear.",
-        specs: [
-          { label: "Control Mode", value: "Zero-Cross / Phase Angle Firing" },
-          { label: "Thermal Efficiency", value: "High precision PID feedback" },
-          { label: "Protection", value: "Ultra-fast semiconductor fuses & RC snubbers" }
+        images: [
+          "/manufacturing/products/thyristor_control_panel.jpg",
+          "/manufacturing/products/thyristor_panel_internal.jpg",
+          "/manufacturing/products/thyristor_panel_multizone.jpg"
         ],
-        highlights: ["Smooth stepless power regulation", "Eliminates thermal shock to heating elements", "Built-in thyristor heatsink with forced ventilation"]
+        description:
+          "Thyristor Control panels are used to control power or voltage supplied to a load. Typical applications are generally found where power needs to be varied and ultimately converted into thermal energy.",
+        specs: [
+          { label: "Control Mode", value: "Zero-Cross / Phase Angle Firing (SCR)" },
+          { label: "Thermal Efficiency", value: "High precision PID feedback regulation" },
+          { label: "Protection", value: "Ultra-fast semiconductor fuses, RC snubbers & MOVs" },
+          { label: "Output Rating", value: "25A to 1200A+ continuous industrial duty" }
+        ],
+        highlights: [
+          "Smooth stepless power regulation eliminates thermal shock",
+          "Zero mechanical contactor wear extends heating element service life",
+          "Built-in thyristor heatsink assembly with forced ventilation cooling"
+        ]
       },
       {
         name: "VFD Control Panels (Harsh Environment Enclosures)",
         tagline: "High-Protection Enclosures for Dusty, Wet, Humid & Corrosive Workspaces",
         image: "/manufacturing/products/vfd_control_panel.jpg",
+        images: [
+          "/manufacturing/products/vfd_control_panel.jpg",
+          "/manufacturing/products/vfd_panel_internal.jpg"
+        ],
         description:
-          "When workspace environments are dusty, dirty, wet, humid, corrosive, or high-temperature, Variable Frequency Drives cannot remain exposed. Our VFD Control Panels provide a heavy-duty sealed enclosure protecting the drive and sensitive electronics while delivering thermostatically controlled cooling.",
+          "When work space is dusty, dirty, wet, humid, corrosive, or hot. In those harsh environments, you cannot just mount your VFD exposed. You need a VFD Control panel an enclosure that protects the VFD and other electric components.",
         specs: [
           { label: "Enclosure Ingress", value: "IP54 / IP55 / IP65 Polyurethane Gasketed" },
-          { label: "Cooling Architecture", value: "Filter fans with louvers / Air Conditioned" },
-          { label: "Power Ratings", value: "0.75 kW to 500+ kW motors" }
+          { label: "Cooling Architecture", value: "Thermostatically controlled filter fans / Industrial Panel AC" },
+          { label: "Power Ratings", value: "0.75 kW to 500+ kW motor control" },
+          { label: "Harmonic Mitigation", value: "Integrated line chokes and dV/dt output reactors" }
         ],
-        highlights: ["Integrated line chokes and dV/dt output reactors", "Dynamic braking resistor integration", "Emergency bypass contactor configuration"]
+        highlights: [
+          "Sealed enclosure shields drives from conductive dust, moisture and corrosive vapors",
+          "Engineered thermal management prevents VFD overheating and unexpected tripping",
+          "Dynamic braking resistor integration and emergency bypass contactor configuration"
+        ]
       },
       {
         name: "Annunciator Panels (Centralized Warning Panels - CWP)",
         tagline: "Centralized Visual & Audible Fault Monitoring System",
         image: "/manufacturing/products/annunciator_panel.jpg",
-        description:
-          "An Annunciator Panel serves as a Centralized Warning Panel (CWP) featuring a grouped array of window warning lights and audible horns. It acts as the central status indicator of critical equipment and process parameters, instantly drawing operator attention to abnormal events or fault trips.",
-        specs: [
-          { label: "Indicator Type", value: "High-luminance LED matrix fault windows" },
-          { label: "Alert Mechanism", value: "Dual-tone industrial electronic hooter/siren" },
-          { label: "Function Sequence", value: "ISA-18.1 standard (Acknowledge / Reset / Test)" }
+        images: [
+          "/manufacturing/products/annunciator_panel.jpg",
+          "/manufacturing/products/annunciator_panel_multiwindow.jpg",
+          "/manufacturing/products/annunciator_panel_internal.jpg"
         ],
-        highlights: ["Fast diagnostics reducing downtime", "Potential-free fault contact inputs", "Available in flush panel or wall-mount styles"]
+        description:
+          "An Annunciator Panel is a Centralized Warning Panel (CWP). Group of lights used as a central indicator of status of equipment or systems in an industrial process, building or other installation. Usually, the annunciator panel includes a main warning lamp or audible signal to draw the attention of operating personnel to the annunciator panel for abnormal events or condition.",
+        specs: [
+          { label: "Indicator Type", value: "High-luminance LED matrix fault windows (8 to 64+ windows)" },
+          { label: "Alert Mechanism", value: "Dual-tone industrial electronic hooter/siren (90-110 dB)" },
+          { label: "Function Sequence", value: "ISA-18.1 standard (Acknowledge / Reset / Test / Mute)" },
+          { label: "Signal Interface", value: "Optically isolated potential-free NO/NC fault contacts" }
+        ],
+        highlights: [
+          "Instant centralized fault diagnostics significantly reducing plant downtime",
+          "First-out fault tripping sequence pinpoints exact initiating root cause",
+          "Available in flush-door instrument fascia or wall-mount styles"
+        ]
       },
       {
         name: "Capacitor Panels (Automatic APFC Panels)",
         tagline: "Automatic Power Factor Correction with Multi-Stage Bank Switching",
         image: "/manufacturing/products/apfc_capacitor_panel.jpg",
+        images: [
+          "/manufacturing/products/apfc_capacitor_panel.jpg",
+          "/manufacturing/products/apfc_capacitor_panel_banks.jpg"
+        ],
         description:
-          "Maintains the target power factor of electrical installations automatically by switching capacitor banks according to dynamic load demands. Designed with an intelligent APFC microprocessor relay, heavy-duty capacitor banks, detuned reactors, contactors, and circuit breakers.",
+          "A capacitor panel maintains the power factor of the system automatically by switching the capacitor banks as per the needs of the system. Normally, an APFC relay along with a bank of capacitors, contactors and circuit breaker are the switchgear components used in the designing of the panel.",
         specs: [
           { label: "Controller", value: "Microprocessor-based multi-stage APFC relay" },
-          { label: "Switchgear", value: "Capacitor duty contactors with damping resistors" },
-          { label: "Power Factor", value: "Maintained consistently near unity (0.99 PF)" }
+          { label: "Switchgear", value: "Capacitor duty contactors with damping resistors & MCCBs" },
+          { label: "Target Power Factor", value: "Maintained consistently near unity (0.98 - 0.99 PF)" },
+          { label: "Capacitors", value: "Heavy-duty cylindrical gas/oil-filled MPP capacitors" }
         ],
-        highlights: ["Eliminates utility low-PF penalties", "Minimizes kVA billing and line transmission losses", "Detuned harmonic filters prevent resonance"]
+        highlights: [
+          "Eliminates utility low-PF penalties and power factor surcharges",
+          "Minimizes kVA demand billing and internal distribution copper losses",
+          "Detuned harmonic filters prevent resonance and ensure long capacitor service life"
+        ]
       },
       {
         name: "SS POU / WFI Control Panels",
         tagline: "cGMP Sanitary Stainless Steel Point of Use Heating & Cooling Panels",
         image: "/manufacturing/products/ss_pou_wfi_panel.jpg",
-        description:
-          "Specifically manufactured for sanitary pharmaceutical, biotech, and Water for Injection (WFI) loops. POU panels regulate critical heating and cooling applications with cleanroom-compatible SS304/SS316 enclosures and crevice-free finishes.",
-        specs: [
-          { label: "MOC Enclosure", value: "Stainless Steel AISI 304 / 316L (Ra < 0.4 µm)" },
-          { label: "Process Duty", value: "Point of Use (POU) Sanitary Heating & Cooling" },
-          { label: "Sanitary Rating", value: "cGMP compliant flush door with silicone gasket" }
+        images: [
+          "/manufacturing/products/ss_pou_wfi_panel.jpg"
         ],
-        highlights: ["Resistant to sterile chemical washdowns (IPA/Spor-Klenz)", "Precision RTD/PT100 sensor interface", "Seamless integration into pharmaceutical SCADA"]
+        description:
+          "POU panels are used in heating and cooling applications",
+        specs: [
+          { label: "MOC Enclosure", value: "Stainless Steel AISI 304 / 316L (Ra < 0.4 µm mirror finish)" },
+          { label: "Process Duty", value: "Point of Use (POU) Sanitary Heating & Cooling" },
+          { label: "Sanitary Rating", value: "cGMP compliant flush door with silicone gasket & sloped roof" },
+          { label: "Ingress Protection", value: "IP65 / IP66 washdown protection with sanitary cable glands" }
+        ],
+        highlights: [
+          "Sloped hygienic roof and crevice-free welding prevent bacterial pooling",
+          "Resistant to sterile pharmaceutical washdowns (IPA, Spor-Klenz, peracetic acid)",
+          "Seamless integration into pharmaceutical cleanroom SCADA / BMS loops"
+        ]
       }
     ],
     capabilities: [
@@ -325,12 +372,12 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     id: "glue-conveyors",
     title: "Packaging Conveyors & Hot Melt Glue Machines",
     shortTitle: "Packaging Conveyors",
-    tagline: "Automated Box Packaging, Valco Melton Hot-Melt Sealing & 15m File Conveyors",
+    tagline: "Automated Box Packaging, Valco Melton Hot-Melt Sealing, 15m File Conveyors & 90° Tilters",
     badge: "SP Enterprises • SAHPL Packaging Automation",
     iconName: "Boxes",
     image: "/manufacturing/products/box_packaging_glue_conveyor.jpg",
     description:
-      "Engineered for high-throughput packaging environments, SP Enterprises manufactures and supplies the full SAHPL packaging automation line. This includes fully automated carton folding and hot-melt glue machines as well as specialized 15-meter belt file conveyors, built with microsecond PLC precision controls to adjust glue gun timing, speeds, and carton sizes.",
+      "HOT MELT GLUE MACHINE FOOD CARTONS (Client - General Mills and Valco Melton): Box Packaging Conveyor offers you to fold and pack the box with glue with very little help from human being. It’s totally automated system, where we just want to put the box at proper timing in the start tray. Rest of the work (folding and gluing) is done automatically and we get the fully packaged box at other side of the system. Also it can be adjusted according to sizes of the box we are packaging. Adjustments are given to set the system according to box size. PLC helps you to set the speed of packaging, start up and end up timing for glue gun.\n\nRoller Based Conveyor (Client - Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd): Heavy-duty continuous conveying engineered for robust automotive sub-assemblies, heavy component boxes, and crates.\n\nFile Conveyor (Client - Navneet Industries): Total length of conveyor is 15m. Belt conveyor is used to easy and swift flow of files. There are two main stages of this conveyor 1] Feeder    2] Glue dropper machine. Feeder: Feeder move up and down to allow only one file to proceed onto the conveyor. Glue dropper machine: This machine drops the glue on specific position with the help of sensor. Feeder Belt Conveyor Glue dispensing machine.\n\nChain Tilter (Client - Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd): Chain Tilter is used to tilt/rotate the product by 90 degree. This application is used normally in automobile industry to handle heavy weight products.",
     featuredClients: [
       "General Mills",
       "Valco Melton",
@@ -340,60 +387,103 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     ],
     featuredProducts: [
       {
-        name: "Hot Melt Glue Machine for Food Cartons (Box Packaging Conveyor)",
-        client: "General Mills & Valco Melton",
-        tagline: "Totally Automated Folding, Hot-Melt Gluing & Sealing with Minimal Human Effort",
+        name: "HOT MELT GLUE MACHINE FOOD CARTONS",
+        client: "General Mills and Valco Melton",
+        tagline: "Totally Automated Box Folding, Hot-Melt Gluing & Sealing with Minimal Human Effort",
         image: "/manufacturing/products/box_packaging_glue_conveyor.jpg",
+        images: [
+          "/manufacturing/products/box_packaging_glue_conveyor.jpg",
+          "/manufacturing/products/box_packaging_glue_conveyor_action.jpg"
+        ],
         description:
-          "The Box Packaging Conveyor enables folding and packing cartons with hot-melt glue with very little help from human beings. It is a totally automated system where the operator only needs to place the carton box at the proper timing into the start tray. The rest of the work (automatic flap folding and glue dispensing) is completed automatically, delivering a fully packaged, tamper-evident carton box at the other side of the system. The machine is fully adjustable according to the sizes of boxes being packaged, with fast adjustment mechanisms provided to set box dimensions. The integrated PLC allows the operator to set packaging speed, startup timing, and shutdown timing for the glue gun.",
+          "Box Packaging Conveyor offers you to fold and pack the box with glue with very little help from human being. It’s totally automated system, where we just want to put the box at proper timing in the start tray. Rest of the work (folding and gluing) is done automatically and we get the fully packaged box at other side of the system.\n\nAlso it can be adjusted according to sizes of the box we are packaging. Adjustments are given to set the system according to box size. PLC helps you to set the speed of packaging, start up and end up timing for glue gun.",
         specs: [
-          { label: "Clients", value: "General Mills and Valco Melton" },
-          { label: "Application", value: "Food Carton Packaging & Hot Melt Sealing" },
-          { label: "Automation Level", value: "Totally automated (loading tray only, rest is auto)" },
-          { label: "Control System", value: "PLC control with timing adjustment for glue gun" },
-          { label: "Size Flexibility", value: "Adjustable settings for multiple box dimensions" }
+          { label: "Client Deployment", value: "General Mills and Valco Melton" },
+          { label: "System Operation", value: "Totally automated (start tray loading only, rest is auto)" },
+          { label: "Box Size Flexibility", value: "Adjustments provided to set system according to box size" },
+          { label: "PLC Controls", value: "Set speed of packaging, start up and end timing for glue gun" },
+          { label: "Adhesive Application", value: "Hot-melt high-adhesion glue dispensing & mechanical flap folding" }
         ],
         highlights: [
-          "Operator only puts the box in the start tray at proper timing",
-          "Automated mechanical flap folding and high-pressure glue bonding",
-          "Fully adjustable to various carton sizes with quick changeover knobs",
-          "Integrated PLC manages conveyor speed, glue gun start/end timing with microsecond accuracy"
+          "Very little help from human being: Operator only puts the box in the start tray at proper timing",
+          "Folding and gluing are completed automatically, delivering a fully packaged box at the other side",
+          "Fully adjustable according to carton dimensions being packaged with quick adjustment knobs",
+          "Integrated PLC manages packaging speed, glue gun startup timing, and shutdown duration"
         ]
       },
       {
-        name: "15-Meter File Conveyor with Feeder & Glue Dispenser",
-        client: "Navneet Industries",
-        tagline: "Dual-Stage 15m Belt Conveyor with Up/Down Feeder & Sensor Glue Dropper",
-        image: "/manufacturing/products/file_conveyor_15m.jpg",
-        description:
-          "Manufactured for Navneet Industries, this specialized 15-meter long belt conveyor ensures an easy, swift, and jam-free flow of stationery files. The automated system features two primary operational stages: 1] Automated Up-and-Down Feeder Station: The feeder moves vertically up and down to index and allow exactly one file at a time to proceed onto the belt. 2] Precision Glue Dropper Machine: Accurately dispenses adhesive drops onto specific file positions using high-speed optical sensor triggers.",
-        specs: [
-          { label: "Client", value: "Navneet Industries" },
-          { label: "Total Length", value: "15 meters (15m) Belt Conveyor" },
-          { label: "Conveyor Type", value: "Smooth continuous belt for easy and swift file flow" },
-          { label: "Stage 1: Feeder", value: "Up and down mechanical motion to allow only 1 file" },
-          { label: "Stage 2: Glue Dropper", value: "Sensor-based automated glue dispensing machine" }
-        ],
-        highlights: [
-          "Continuous 15m run ensures high-speed stationery file processing",
-          "Feeder moves up and down automatically to separate files and prevent double-feeding",
-          "Optical sensor triggers glue dropper machine for exact adhesive placement",
-          "Seamless flow from feeder belt conveyor to glue dispensing machine"
-        ]
-      },
-      {
-        name: "Roller-Based Packaging Conveyors",
-        client: "Cummins Generator Technologies & Mahindra Vehicle Manufacturers Ltd",
-        tagline: "Smooth Powered Roller Conveyors for Heavy Box Transfer & Line Feeding",
+        name: "Roller Based Conveyor",
+        client: "Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd",
+        tagline: "Heavy-Duty Powered & Gravity Roller Conveying for Vehicle Parts & Box Handling",
         image: "/manufacturing/products/roller_packaging_conveyor.jpg",
-        description:
-          "Continuous live roller packaging conveyor sections integrated with packing stations for Cummins and Mahindra automotive facilities, handling heavy parts boxes and crates.",
-        specs: [
-          { label: "Clients", value: "Cummins & Mahindra Vehicle Manufacturers Ltd" },
-          { label: "Frame Construction", value: "Heavy-duty powder coated structural MS" },
-          { label: "Roller Construction", value: "Galvanized / Stainless Steel rollers" }
+        images: [
+          "/manufacturing/products/roller_packaging_conveyor.jpg",
+          "/manufacturing/products/roller_conveyor_system.jpg"
         ],
-        highlights: ["Zero-pressure accumulation logic", "Smooth handoff to packaging and palletizing stations", "Integrated emergency pull-cords"]
+        description:
+          "Heavy-duty Roller Based Conveyors engineered for Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd. Built to handle continuous, smooth movement of heavy product boxes, crates, vehicle components, and palletized assemblies across manufacturing and packaging lines with zero-pressure accumulation.",
+        specs: [
+          { label: "Client Deployment", value: "Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd" },
+          { label: "Application", value: "Heavy automotive components, boxed assemblies & factory line feeding" },
+          { label: "Roller Construction", value: "Precision-ground hardened steel / galvanized rollers" },
+          { label: "Frame Structure", value: "Heavy-duty powder coated structural steel side frames" },
+          { label: "Drive Architecture", value: "Chain-driven live rollers with VFD speed regulation" }
+        ],
+        highlights: [
+          "High payload capacity engineered for heavy vehicle components and industrial crates",
+          "Smooth integration into packaging, sorting, and manual assembly workstations",
+          "Low-friction bearing assemblies guarantee quiet, continuous 24/7 industrial duty"
+        ]
+      },
+      {
+        name: "File Conveyor (15m Belt Conveyor with Feeder & Glue Dropper)",
+        client: "Navneet Industries",
+        tagline: "Dual-Stage 15m Continuous Belt Conveyor with Up/Down Feeder & Sensor Glue Dropper",
+        image: "/manufacturing/products/file_conveyor_15m.jpg",
+        images: [
+          "/manufacturing/products/file_conveyor_15m.jpg",
+          "/manufacturing/products/file_conveyor_15m_stationery.jpg"
+        ],
+        description:
+          "Total length of conveyor is 15m Belt conveyor is used to easy and swift flow of files. There are two main stages of this conveyor 1] Feeder    2] Glue dropper machine\n\nFeeder: Feeder move up and down to allow only one file to proceed onto the conveyor.\n\nGlue dropper machine: This machine drops the glue on specific position with the help of sensor.\n\nFeeder Belt Conveyor Glue dispensing machine.",
+        specs: [
+          { label: "Client Deployment", value: "Navneet Industries" },
+          { label: "Total Length", value: "15 meters (15m) Belt Conveyor" },
+          { label: "Conveyor Duty", value: "Belt conveyor for easy and swift flow of files" },
+          { label: "Stage 1: Feeder", value: "Feeder moves up and down to allow only one file to proceed" },
+          { label: "Stage 2: Glue Dropper", value: "Sensor-based machine drops glue on specific position" },
+          { label: "System Elements", value: "Feeder + Belt Conveyor + Glue Dispensing Machine" }
+        ],
+        highlights: [
+          "Continuous 15m length delivers rapid, smooth, and jam-free stationery file throughput",
+          "Feeder moves up and down automatically to separate files and prevent double-feeding",
+          "High-speed optical sensor triggers glue dropper machine for exact adhesive placement",
+          "Seamless synchronized workflow from feeder station to glue dispenser"
+        ]
+      },
+      {
+        name: "Chain Tilter (90° Product Rotator)",
+        client: "Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd",
+        tagline: "Heavy-Duty 90-Degree Product Tilting & Rotation for Automobile Plants",
+        image: "/manufacturing/products/chain_tilter_90deg.jpg",
+        images: [
+          "/manufacturing/products/chain_tilter_90deg.jpg",
+          "/manufacturing/products/chain_tilter_automotive.jpg"
+        ],
+        description:
+          "Chain Tilter is used to tilt/rotate the product by 90 degree. This application is used normally in automobile industry to handle heavy weight products.\n\nManufactured for Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd, the heavy-duty chain tilter eliminates hazardous manual crane lifting and ensures safe, controlled 0° to 90° rotation of engine blocks, generator stators, and heavy metal castings.",
+        specs: [
+          { label: "Client Deployment", value: "Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd" },
+          { label: "Application", value: "Used normally in automobile industry to handle heavy weight products" },
+          { label: "Rotation Duty", value: "Tilts and rotates the product by 90 degrees (90°)" },
+          { label: "Drive System", value: "Heavy-duty geared motor with dual high-tensile roller chains" },
+          { label: "Safety Controls", value: "Counterbalanced cradle, mechanical lock pins and safety interlocks" }
+        ],
+        highlights: [
+          "Tilts and rotates heavy products by 90 degrees with zero manual physical strain",
+          "Field-proven across Cummins and Mahindra heavy automobile manufacturing plants",
+          "High safety factor with fail-safe electromechanical brake and emergency stop interlocks"
+        ]
       }
     ],
     capabilities: [
@@ -405,6 +495,13 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         specs: ["Client: General Mills & Valco Melton", "Adjustable box dimensions", "PLC speed and glue gun timing synchronization", "Minimal human intervention"]
       },
       {
+        name: "Roller Based Heavy Conveyor Lines",
+        client: "Cummins Generator Technologies & Mahindra Vehicle Manufacturers Ltd",
+        description:
+          "Heavy roller conveyors designed for continuous handling of industrial crates, boxed automotive components, and generator sub-assemblies.",
+        specs: ["Precision ball bearings", "VFD smooth speed control", "Emergency stop trip wires"]
+      },
+      {
         name: "15m Belt File Conveyor with Up/Down Feeder & Glue Dispenser",
         client: "Navneet Industries",
         description:
@@ -412,35 +509,38 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         specs: ["Client: Navneet Industries", "Total Length: 15 meters", "Stage 1: Up/Down Feeder", "Stage 2: Sensor-triggered Glue Dropper"]
       },
       {
-        name: "Roller Based Conveyors for Heavy Carton Packaging",
+        name: "Industrial 90-Degree Chain Tilters",
         client: "Cummins Generator Technologies & Mahindra Vehicle Manufacturers Ltd",
         description:
-          "Heavy roller conveyors designed for continuous handling of industrial crates, boxed automotive components, and generator sub-assemblies.",
-        specs: ["Precision ball bearings", "VFD smooth speed control", "Emergency stop trip wires"]
-      },
-      {
-        name: "Motorized Flap Compression & Curing Section",
-        description:
-          "Synchronized top and side compression belts applying uniform pressure while hot-melt or cold adhesive bonds, preventing spring-backs.",
-        specs: ["Adjustable spring-loaded compression", "Non-marking silicone belt surfaces", "Variable speed matching upstream packer"]
+          "Specialized rotary equipment to tilt and position heavy automotive components by 90 degrees for inspection, machining, and secondary line transfer.",
+        specs: ["90° bidirectional tilt cycle", "Heavy-gauge reinforced steel cradle", "Fail-safe motor brake holding mechanism"]
       }
     ],
     specifications: [
       { label: "Manufacturing Division", value: "SP Enterprises (Handling SAHPL Product Portfolio)" },
-      { label: "Key Clients", value: "General Mills, Valco Melton, Navneet Industries, Cummins, Mahindra" },
-      { label: "Carton Size Range", value: "Fully adjustable according to box size (customizable tooling)" },
-      { label: "Glue Dispensing", value: "Hot-melt glue gun (Valco Melton compatible) or cold glue dropper" },
-      { label: "Control Architecture", value: "Integrated PLC with HMI for packaging speed, startup & end timing adjustments" },
+      { label: "Key Clients", value: "General Mills, Valco Melton, Navneet Industries, Cummins Generator Technologies, Mahindra" },
+      { label: "Box Packaging System", value: "Totally automated folding, hot-melt gluing & sealing with fast size adjustments" },
       { label: "File Conveyor Length", value: "15 meters (15m continuous belt conveyor)" },
-      { label: "Automation Level", value: "Operator loads start tray; folding, gluing, and discharge are 100% automated" }
+      { label: "File Conveyor Stages", value: "1] Up/Down Mechanical Feeder • 2] Sensor-Triggered Glue Dropper Machine" },
+      { label: "Chain Tilter Range", value: "0° to 90° bidirectional controlled rotation for heavy automobile products" },
+      { label: "Control Architecture", value: "Integrated PLC with HMI for packaging speed, startup & end timing adjustments" },
+      { label: "Factory Testing", value: "100% FAT mechanical synchronization, speed calibration & load testing" }
     ],
     keyBenefits: [
-      "Dramatically reduces manual labor and fatigue; operator simply places box in start tray",
-      "Tamper-evident, high-integrity carton closure for food and pharmaceutical packages",
+      "Very little help from human being: Operator only places the box in the start tray at proper timing",
+      "Tamper-evident, high-integrity carton closure for food and industrial packages",
       "Quick adjustments provided to configure the machine according to various box sizes",
-      "PLC control allows micro-timing tuning for adhesive start, duration, and shutoff"
+      "PLC control allows micro-timing tuning for adhesive start, duration, and shutoff",
+      "15m file conveyor feeder moves up and down automatically to ensure single file flow",
+      "90-degree chain tilter handles heavy weight products safely in automotive lines"
     ],
-    industriesServed: ["Food Cartons & Confectionery", "Publishing & Stationery (Navneet)", "Pharmaceutical Packaging", "Automobile Parts Packaging", "E-Commerce Fulfillment"]
+    industriesServed: [
+      "Food Cartons & Confectionery (General Mills, Valco Melton)",
+      "Publishing & Stationery (Navneet Industries)",
+      "Automobile & Heavy Vehicle Manufacturing (Cummins, Mahindra)",
+      "Industrial Warehouse & Distribution Logistics",
+      "General Engineering & Packaging Automation"
+    ]
   },
   {
     id: "special-purpose-machines",
@@ -455,95 +555,118 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     featuredClients: [
       "Texol",
       "Cummins India Ltd., Phaltan",
-      "Process & Pharmaceutical Plants",
-      "Automotive & Chemical Plants"
+      "General Mills",
+      "Valco Melton",
+      "Process & Pharmaceutical Plants"
     ],
     featuredProducts: [
       {
         name: "Hot Oil Unit With Heating System",
-        tagline: "High-Temperature Closed-Loop Thermal Fluid System up to 250°C",
+        tagline: "SS Tank with Ceramic Wool Insulation & Closed-Loop Heating up to 250°C",
         image: "/manufacturing/products/hot_oil_heating_unit.jpg",
+        images: [
+          "/manufacturing/products/hot_oil_heating_unit.jpg",
+          "/manufacturing/products/hot_oil_unit_system.jpg"
+        ],
         description:
-          "The Hot Oil Unit is engineered to deliver a dependable, continuous supply of high-temperature circulating thermal oil for specialized industrial process applications up to 250°C. By circulating heat transfer oil through a pressurized closed loop, the unit supplies consistent, high-efficiency thermal energy to chemical reactors, jacketed vessels, packaging lines, and heating platens without the high operating pressures and hazards of traditional steam boilers.\n\nThe thermal fluid is contained and heated within a heavy-gauge Stainless Steel SS 304 tank with a 150-liter capacity, insulated with high-density ceramic wool and encased in clean stainless steel cladding to minimize thermal radiation losses and safeguard shop-floor operators. A heavy-duty high-temperature centrifugal pump circulates the thermal oil through the closed loop at a continuous 1.0 Barg operating pressure and 1.2 M³/hr flow rate.\n\nHeating is powered by triple incoloy electric immersion heating elements rated at 3 kW each (9 kW total capacity), allowing staged or simultaneous firing for rapid, uniform thermal ramp-up. Process safety and precision temperature regulation are governed by a custom-built SP Enterprises automation control panel equipped with digital PID controllers, an automated low-level float switch, an independent over-temperature safety thermostat, and spring-loaded pressure relief valves.",
+          "Oil heating system is mainly used to provide hot oil for other process applications. Oil is heating in SS Tank, this SS tank has provided with ceramic wool insulation. The system is made up of a pump that pushes the heat transfer fluid through an insulated piping system to a heater to the processing equipment. All processes are controlled by Control panels.\n\nBuilt entirely from heavy-duty Stainless Steel SS 304 for both the tank and piping network, the system guarantees long-term thermal integrity and corrosion resistance at continuous operating temperatures from 90 to 250 degree C. High-density ceramic wool insulation prevents surface heat loss, maximizing energy efficiency and shop-floor safety.",
         specs: [
           { label: "Pump Pressure", value: "1.0 Barg" },
-          { label: "Temperature Range", value: "90 to 250 °C" },
-          { label: "MOC (Tank & Piping)", value: "Stainless Steel SS 304" },
+          { label: "Temperature range", value: "90 to 250 degree C" },
+          { label: "MOC of System Components", value: "SS 304 (SS tank and Piping)" },
+          { label: "Pump Flow rate", value: "1.2 M3/hr" },
           { label: "Tank Capacity", value: "150 Liters" },
-          { label: "Pump Flow Rate", value: "1.2 M³/hr" },
-          { label: "Heater Capacity", value: "3 X 3 KW (9 kW total)" },
-          { label: "Thermal Insulation", value: "Ceramic Wool Insulation with SS cladding" },
-          { label: "Control System", value: "Integrated Automation Control Panel" }
+          { label: "Heater Capacity", value: "3X3 KW" },
+          { label: "Tank Insulation", value: "Ceramic wool insulation" },
+          { label: "Control System", value: "Dedicated Control panels" }
         ],
         highlights: [
-          "SS304 tank insulated with high-grade ceramic wool prevents thermal radiation losses",
-          "High-temperature pump circulates thermal fluid continuously at 1.0 Barg and 1.2 M³/hr",
-          "Triple 3kW heating elements (3x3 kW) deliver rapid, uniform thermal rise up to 250°C",
-          "Automated over-temperature cutout, low-level interlock, and pressure relief safety"
-        ]
-      },
-      {
-        name: "Continuous Hot Water Generation Unit",
-        client: "Texol",
-        tagline: "1000 LPH Flow Rate at 3 Bar g Pressure with ±2°C Precision PID Control",
-        image: "/manufacturing/products/hot_water_generator_skid.jpg",
-        description:
-          "Custom-engineered and commissioned specifically for Texol, this skid-mounted Continuous Hot Water Generation Unit delivers an uninterrupted output of 1000 Liters Per Hour (LPH) of heated water at a steady 3 Bar g operating pressure. Built to satisfy stringent industrial and sanitary washdown and process blending demands, the system maintains steady thermal delivery even under varying intake water temperatures.\n\nThe heating chamber is powered by a high-capacity 30 kW electric heating bank comprised of 15 high-density incoloy immersion heaters (2 kW each), plus an integrated 2 kW spare heater allowing continuous production during routine element maintenance. Media heating is tightly regulated through advanced Thyristor / Solid State Relay (SSR) zero-cross firing paired with a precision PT-100 RTD temperature sensor and a digital PID controller, guaranteeing tight temperature accuracy within ±2.0°C without mechanical contactor arcing or electrical harmonics.\n\nOperator and facility protection is enforced through a multi-tier safety architecture. An independent high-limit electronic thermostat cuts main power if threshold temperatures are exceeded. An integrated in-line flow switch interlocks heater activation directly with positive water circulation to eliminate element dry-run burnout, complemented by a calibrated pressure safety valve (PSV) guarding the skid against hydraulic overpressure.",
-        specs: [
-          { label: "Client", value: "Texol" },
-          { label: "Flow Rate Capacity", value: "1000 LPH (Liters Per Hour)" },
-          { label: "Operating Pressure", value: "3 Bar g pressure" },
-          { label: "Temperature Range", value: "Ambient to 95 °C (Working temp: 95 °C)" },
-          { label: "Temperature Accuracy", value: "+/- 2.0 °C" },
-          { label: "Temperature Controller", value: "Digital PID Controller" },
-          { label: "Temperature Sensor", value: "PT-100 RTD Sensor" },
-          { label: "Heating Power", value: "30 KW (2 kW X 15 nos) + 1 spare 2 kW heater" },
-          { label: "Power Regulation", value: "Thyristor / SSR Solid-State Control" },
-          { label: "Safety Protections", value: "Separate Electronic Thermostat, Pressure Safety Valve, Flow Switch" }
-        ],
-        highlights: [
-          "Continuous 1000 LPH hot water delivery at steady 3 Bar g pressure",
-          "30 kW primary heating bank (15 x 2kW) with 1 built-in 2kW spare heater for zero downtime",
-          "Thyristor/SSR firing delivers exact ±2.0°C precision without contactor arcing",
-          "Comprehensive safety: Flow switch interlock prevents dry-run; electronic thermostat prevents over-temp"
-        ]
-      },
-      {
-        name: "Industrial Paint Booth",
-        client: "Cummins India Ltd., Phaltan",
-        tagline: "Custom Machinery Enclosure Paint Booth with Rear Air Suction Blower",
-        image: "/manufacturing/products/industrial_paint_booth.jpg",
-        description:
-          "Custom-engineered and supplied to Cummins India Ltd. at Phaltan, this Special Purpose Machinery Paint Booth is built for applying durable industrial coatings and precision paint finishes to diverse machine assemblies, heavy engine components, and fabrication structures under strict plant environmental standards.\n\nThe main internal painting chamber is constructed from certified AISI SS304 stainless steel sheets, providing a non-porous, corrosion-resistant interior surface that enables rapid cleaning of overspray, pigments, and chemical solvents. The external structural framework and reinforcement skeleton are fabricated from heavy-gauge mild steel (MS) sections, finished in industrial epoxy paint for long-term vibration dampening and structural rigidity.\n\nAir quality, laminar airflow, and operator safety are maintained via a high-capacity rear-mounted extraction suction blower. The blower pulls fresh air across the workspace through intake diffusion filters and draws overspray through high-efficiency multi-stage particulate arrestors, ensuring clean, continuous exhaust air discharge while preventing solvent accumulation inside the paint chamber.",
-        specs: [
-          { label: "Client", value: "Cummins India Ltd., Phaltan" },
-          { label: "Application", value: "Special Purpose Application to paint different Machines" },
-          { label: "Main Chamber MOC", value: "Stainless Steel SS 304" },
-          { label: "Other Structure MOC", value: "Heavy-Gauge Mild Steel (MS)" },
-          { label: "Ventilation", value: "High-capacity blower located at rear to suck outside air" }
-        ],
-        highlights: [
-          "SS304 interior walls allow quick clean-up of paint overspray and solvents",
-          "Rear suction blower ensures uniform laminar airflow across the workpiece",
-          "Supplied to Cummins technology standards for durable machine finishing"
+          "Oil heating in SS 304 tank equipped with dense ceramic wool insulation",
+          "Pump pushes heat transfer fluid through insulated piping to heater & processing equipment",
+          "Operates at 1.0 Barg pump pressure with 1.2 M3/hr flow rate and 90 to 250 degree C range",
+          "Heavy-gauge SS 304 tank and piping with 3X3 KW heater capacity and control panel"
         ]
       },
       {
         name: "Air Incineration System",
-        tagline: "350°C Thermal Bacteriophage Elimination System with >6 Second Residence",
+        tagline: "350°C Thermal Sterilization (>6 Sec) Eliminating Bacteriophage Bacteria",
         image: "/manufacturing/products/air_incineration_system.jpg",
+        images: [
+          "/manufacturing/products/air_incineration_system.jpg",
+          "/manufacturing/products/air_incineration_system_chamber.jpg"
+        ],
         description:
-          "The Air Incineration System is a high-temperature thermal sterilization unit specifically engineered for sterile biotechnology facilities, pharmaceutical fermentation suites, and critical biological containment zones. The system neutralizes airborne biological contaminants by raising process air to an extreme temperature of 350°C and maintaining that thermal state for a continuous duration exceeding 6 seconds.\n\nThis prolonged thermal holding residence completely eliminates the contamination of Bacteriophage Bacteria and other heat-resistant viral, spore, and bacterial pathogens before air is introduced into sterile bioreactors or exhausted to the atmosphere. The internal heating chamber is fabricated from high-temperature alloy steel lined with thick ceramic fiber insulation, engineered with internal baffling to prevent cold air channeling or thermal stratification.\n\nThermal generation is executed by specialized high-density electric incoloy heating elements managed by a digital PID controller. Multi-point thermal sensors continuously audit the residence chamber; automated safety interlocks prevent unsterilized process air discharge in the event of any temperature deviation below 350°C.",
+          "In this system, Air is heated to 350 °C (Degree Centigrade) and maintained more than 6 sec. to eliminate the contamination of Bacteriophage Bacteria.\n\nSpecially developed for critical biotechnology, pharmaceutical fermentation, and cleanroom air systems, the Air Incineration System destroys heat-resistant bacteriophage bacteria, bacterial viruses, and virulent airborne biological pathogens before process air enters sensitive bioreactors or discharges to the environment. The precision thermal chamber ensures uniform heat exposure across 100% of the air volume.",
         specs: [
-          { label: "Operating Temperature", value: "350 °C (Degree Centigrade)" },
-          { label: "Holding Residence Time", value: "Maintained more than 6 seconds (> 6 sec)" },
-          { label: "Target Microorganism", value: "Elimination of Bacteriophage Bacteria contamination" },
-          { label: "Heating Mechanism", value: "High-density electric incoloy heating elements" }
+          { label: "Operating Temperature", value: "Heated to 350 °C (Degree Centigrade)" },
+          { label: "Holding Residence Time", value: "Maintained more than 6 sec (> 6 seconds)" },
+          { label: "Biological Target", value: "Eliminate contamination of Bacteriophage Bacteria" },
+          { label: "Chamber Construction", value: "High-temperature stainless steel with thermal isolation" },
+          { label: "Process Control", value: "Automated PID temperature interlock with fail-safe shutoff" }
         ],
         highlights: [
-          "Guaranteed biological sterilization for fermentation and biotech air streams",
-          "Thermal holding chamber designed for zero temperature drop across the holding zone",
-          "Fully automated temperature interlock preventing un-sterilized air discharge"
+          "Air is heated to 350 °C (Degree Centigrade) with uniform heat distribution",
+          "Air temperature maintained more than 6 sec to eliminate Bacteriophage Bacteria",
+          "High-temperature thermal chamber engineered for zero cold-spot bypass",
+          "Continuous digital audit with fail-safe low-temperature process trip"
+        ]
+      },
+      {
+        name: "Paint Booth",
+        client: "Cummins India Ltd., Phaltan",
+        tagline: "Special Purpose Machinery Paint Booth with SS304 Chamber & Rear Blower",
+        image: "/manufacturing/products/industrial_paint_booth.jpg",
+        images: [
+          "/manufacturing/products/industrial_paint_booth.jpg",
+          "/manufacturing/products/cummins_paint_booth_ss304.jpg"
+        ],
+        description:
+          "Client - Cummins India Ltd., Phaltan\n\nPaint booth is the special purpose application required to paint different Machines. We provided this application to Cummins technology. Main Chamber is in SS304 and other part made in MS. Blower located at rear part will be used to suck outside air.\n\nFabricated to withstand heavy industrial painting cycles, the stainless steel SS304 main chamber ensures easy wash-down and resistance against solvents and paint chemicals. The rigid mild steel (MS) base and structural framing provide heavy load-bearing capacity, while the rear extraction blower continuously pulls outside air through filtering media to maintain clean, balanced, and fume-free conditions.",
+        specs: [
+          { label: "Client", value: "Cummins India Ltd., Phaltan" },
+          { label: "Application", value: "Special purpose application required to paint different Machines" },
+          { label: "Provided To", value: "Cummins technology" },
+          { label: "Main Chamber MOC", value: "SS304 (Stainless Steel 304)" },
+          { label: "Other Parts MOC", value: "MS (Mild Steel structural fabrication)" },
+          { label: "Blower / Airflow", value: "Blower located at rear part will be used to suck outside air" },
+          { label: "Air Quality Control", value: "Intake filtration and exhaust overspray arrestor filters" }
+        ],
+        highlights: [
+          "Special purpose application required to paint different Machines, provided to Cummins technology",
+          "Main Chamber fabricated in SS304 for chemical durability and easy clean-down",
+          "Other parts made in MS providing rigid heavy-duty structural stability",
+          "Blower located at rear part used to suck outside air and remove paint fumes"
+        ]
+      },
+      {
+        name: "Continuous Hot water Generation Unit",
+        client: "Texol",
+        tagline: "1000 LPH Flow Rate at 3 Bar g Pressure with Thyristor/SSR & ±2.0°C Accuracy",
+        image: "/manufacturing/products/hot_water_generator_skid.jpg",
+        images: [
+          "/manufacturing/products/hot_water_generator_skid.jpg",
+          "/manufacturing/products/hot_water_generator_skid_detail.jpg"
+        ],
+        description:
+          "Client- Texol\n\nThis Unit can generate continuous hot water with flow rate of 1000LPH with 3 Bar g pressure. TempRange: Ambientto 95degC(working temp. 95 degC ). Accuracy:+/ - 2.0 degC. Temp Control: PIDController. TempSensor:PT-100.\n\nSeparate Electronicthermostat for safety and pressure safety valve. Water flow monitored and controlled by flow switch & Pressure monitored by pressure gauge. 30KWHeaters (2kw X15nos) will be used to heat the Media and provision for one no spare heater of 2 kw capacity. Heatercontrolvia thyristor/SSR.",
+        specs: [
+          { label: "Client", value: "Texol" },
+          { label: "Flow Rate", value: "Continuous hot water with flow rate of 1000LPH" },
+          { label: "Operating Pressure", value: "3 Bar g pressure" },
+          { label: "TempRange", value: "Ambientto 95degC (working temp. 95 degC)" },
+          { label: "Accuracy", value: "+/ - 2.0 degC" },
+          { label: "Temp Control", value: "PIDController" },
+          { label: "TempSensor", value: "PT-100" },
+          { label: "Heater Capacity", value: "30KWHeaters (2kw X15nos) + 1 no spare heater of 2 kw capacity" },
+          { label: "Heater Control", value: "Heatercontrolvia thyristor/SSR" },
+          { label: "Safety Devices", value: "Separate Electronicthermostat for safety and pressure safety valve" },
+          { label: "Flow & Pressure Monitoring", value: "Water flow monitored and controlled by flow switch & Pressure monitored by pressure gauge" }
+        ],
+        highlights: [
+          "Generates continuous hot water with flow rate of 1000LPH with 3 Bar g pressure for Texol",
+          "TempRange: Ambient to 95degC (working temp. 95 degC) with ±2.0 degC accuracy, PIDController & PT-100",
+          "30KWHeaters (2kw X15nos) to heat the Media and provision for one no spare heater of 2 kw capacity",
+          "Heatercontrolvia thyristor/SSR; flow switch, pressure gauge, electronic thermostat & safety valve"
         ]
       },
       {
@@ -562,30 +685,44 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     ],
     capabilities: [
       {
-        name: "Hot Oil Unit with SS304 Insulated Heating System",
+        name: "Hot Oil Unit With Heating System",
         description:
-          "Closed-loop 90-250°C thermal oil heating skid with 1.0 Barg pump, 1.2 M³/hr flow, 150L SS304 ceramic-wool insulated tank, and 3x3 kW heating elements.",
-        specs: ["Pump Pressure: 1.0 Barg", "Temp: 90 - 250 °C", "MOC: SS304", "Flow: 1.2 M³/hr", "Capacity: 150L", "Heaters: 3x3 KW"]
+          "SS Tank with ceramic wool insulation. Pump pushes heat transfer fluid through insulated piping to heater & processing equipment, all controlled by Control panels.",
+        specs: [
+          "Pump Pressure: 1.0 Barg",
+          "Temp Range: 90 to 250 degree C",
+          "MOC: SS 304 (SS tank & Piping)",
+          "Pump Flow Rate: 1.2 M3/hr",
+          "Tank: 150 Liters",
+          "Heater: 3X3 KW"
+        ]
       },
       {
-        name: "Continuous Hot Water Generation Unit (1000 LPH)",
-        client: "Texol",
+        name: "Air Incineration System",
         description:
-          "Continuous 1000 LPH hot water generator at 3 Bar g pressure with 30KW heaters (15x2kW + spare), ±2.0°C PID control, PT-100 sensor, and Thyristor/SSR regulation.",
-        specs: ["Flow: 1000 LPH", "Pressure: 3 Bar g", "Temp: Ambient to 95°C", "Accuracy: ±2°C", "30kW Heaters + spare", "Thyristor control"]
+          "Air is heated to 350 °C (Degree Centigrade) and maintained more than 6 sec. to eliminate the contamination of Bacteriophage Bacteria.",
+        specs: ["Temp: Heated to 350 °C", "Residence: Maintained > 6 sec", "Target: Eliminate Bacteriophage Bacteria", "Safety: PID interlock"]
       },
       {
-        name: "Special Purpose Paint Booth for Machinery",
+        name: "Paint Booth",
         client: "Cummins India Ltd., Phaltan",
         description:
-          "Industrial spray painting booth with SS304 main chamber, MS structural framework, and high-flow rear extraction blower for painting heavy equipment.",
-        specs: ["Client: Cummins India Ltd., Phaltan", "Main Chamber: SS304", "Structure: MS", "Rear suction blower"]
+          "Special purpose application required to paint different Machines, provided to Cummins technology. Main Chamber in SS304, other parts MS, rear blower sucks outside air.",
+        specs: ["Client: Cummins India Ltd., Phaltan", "Main Chamber: SS304", "Other parts: MS", "Rear blower sucks outside air"]
       },
       {
-        name: "Air Incineration System (350°C, >6 Seconds)",
+        name: "Continuous Hot water Generation Unit",
+        client: "Texol",
         description:
-          "High-temperature thermal air sterilization unit heating air to 350°C for >6 seconds to neutralize Bacteriophage Bacteria in sterile biotech air streams.",
-        specs: ["Sterilization Temp: 350 °C", "Holding Time: > 6 seconds", "Eliminates Bacteriophage Bacteria"]
+          "Generates continuous hot water (1000LPH, 3 Bar g, ambient to 95degC working 95degC, +/-2.0 degC accuracy, PID, PT-100, 30KW heaters 15x2kW + 1 spare 2kW, thyristor/SSR).",
+        specs: [
+          "Flow: 1000LPH at 3 Bar g",
+          "Temp: Ambient to 95degC (working 95degC)",
+          "Accuracy: +/- 2.0 degC",
+          "30KW Heaters (15x2kw) + 1 spare 2kw",
+          "Thyristor/SSR control",
+          "Safety: Thermostat & PSV"
+        ]
       },
       {
         name: "Industrial Process Chillers & Cold Rooms",
@@ -597,16 +734,16 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     specifications: [
       { label: "Manufacturing Division", value: "SP Enterprises (Handling SAHPL Product Portfolio)" },
       { label: "Key Clients", value: "Texol, Cummins India Ltd. (Phaltan), General Mills, Valco Melton" },
-      { label: "Hot Oil Temp Range", value: "90°C to 250°C (1.0 Barg, 1.2 M³/hr, 150L SS304 Tank, 3x3 kW)" },
-      { label: "Hot Water Capacity", value: "1000 LPH at 3 Bar g (Working Temp 95°C ± 2°C, 30 kW heaters)" },
-      { label: "Incinerator Temp", value: "350°C maintained for more than 6 seconds (>6 sec)" },
-      { label: "Paint Booth MOC", value: "SS304 Main Chamber with MS structure and rear exhaust blower" },
-      { label: "Control System", value: "Custom PID / PLC Automation Panels with Thyristor / SSR solid-state firing" }
+      { label: "Hot Oil Unit Specs", value: "1.0 Barg, 90-250°C, SS 304 tank & piping, 1.2 M3/hr, 150L, 3X3 KW, ceramic wool insulation" },
+      { label: "Air Incineration Specs", value: "Heated to 350 °C maintained > 6 sec to eliminate Bacteriophage Bacteria" },
+      { label: "Paint Booth Specs", value: "Cummins India Ltd. (Phaltan) - SS304 Main Chamber, MS parts, rear suction blower" },
+      { label: "Hot Water Unit Specs", value: "Texol - 1000LPH, 3 Bar g, 95°C (±2°C), PT-100, PID, 30KW (15x2kW) + 1 spare 2kW, Thyristor/SSR" },
+      { label: "Control System", value: "Dedicated Automation Control Panels, Thyristor / SSR solid-state firing, PID controllers" }
     ],
     keyBenefits: [
       "Custom-tailored machinery solutions built precisely around client process parameters",
-      "Field-proven in critical applications at Cummins India (Phaltan) and Texol",
-      "Full adherence to cGMP, pressure vessel safety, and thermal insulation protocols",
+      "Field-proven in critical applications at Cummins India Ltd. (Phaltan) and Texol",
+      "SS304 construction, high-efficiency ceramic wool insulation, and full safety relief valves",
       "Single-source turnkey responsibility: Design, Manufacturing, Installation & Commissioning"
     ],
     industriesServed: ["Automotive Machine Building (Cummins)", "Chemical & Petrochemical Skids", "Pharmaceutical & Biotechnology", "Food & Beverage Processing", "Industrial Painting & Finishing"]

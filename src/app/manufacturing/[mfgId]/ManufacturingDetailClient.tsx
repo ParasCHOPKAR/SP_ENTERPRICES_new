@@ -27,6 +27,82 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { MANUFACTURING_DATA } from "@/data/manufacturingData";
 
+function EquipmentGallery({
+  name,
+  images,
+  defaultImage
+}: {
+  name: string;
+  images?: string[];
+  defaultImage?: string;
+}) {
+  const allImages = images && images.length > 0 ? images : defaultImage ? [defaultImage] : [];
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  if (allImages.length === 0) return null;
+
+  const currentImg = allImages[activeIndex] || allImages[0];
+
+  return (
+    <div className="mfg-equipment-gallery-wrap">
+      <div className="mfg-equipment-img-wrapper">
+        <img
+          src={currentImg}
+          alt={`${name} photo ${activeIndex + 1}`}
+          className="mfg-equipment-img"
+        />
+        <div className="mfg-equipment-img-badge">
+          SP ENTERPRISES • SAHPL
+        </div>
+
+        {allImages.length > 1 && (
+          <div className="mfg-equipment-gallery-counter">
+            {activeIndex + 1} / {allImages.length} Photos
+          </div>
+        )}
+
+        {allImages.length > 1 && (
+          <div className="mfg-gallery-nav-btns">
+            <button
+              type="button"
+              onClick={() => setActiveIndex((prev) => (prev - 1 + allImages.length) % allImages.length)}
+              className="mfg-gallery-nav-btn"
+              aria-label="Previous photo"
+            >
+              &#8249;
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveIndex((prev) => (prev + 1) % allImages.length)}
+              className="mfg-gallery-nav-btn"
+              aria-label="Next photo"
+            >
+              &#8250;
+            </button>
+          </div>
+        )}
+      </div>
+
+      {allImages.length > 1 && (
+        <div className="mfg-equipment-thumbnails-row">
+          {allImages.map((imgUrl, idx) => (
+            <button
+              type="button"
+              key={idx}
+              onClick={() => setActiveIndex(idx)}
+              className={`mfg-thumb-btn ${idx === activeIndex ? "active" : ""}`}
+              aria-label={`View ${name} photo ${idx + 1}`}
+            >
+              <img src={imgUrl} alt={`${name} thumb ${idx + 1}`} />
+              <span className="mfg-thumb-num">{idx + 1}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ManufacturingDetailClient({ mfgId: propMfgId }: { mfgId?: string }) {
   const router = useRouter();
   const params = useParams();
@@ -387,18 +463,11 @@ export default function ManufacturingDetailClient({ mfgId: propMfgId }: { mfgId?
                       <div className="mfg-equipment-grid">
                         {/* Left Column: Visual, Quick Metrics & Highlights */}
                         <div className="mfg-equipment-media-col">
-                          {prod.image && (
-                            <div className="mfg-equipment-img-wrapper">
-                              <img
-                                src={prod.image}
-                                alt={prod.name}
-                                className="mfg-equipment-img"
-                              />
-                              <div className="mfg-equipment-img-badge">
-                                SP ENTERPRISES • SAHPL
-                              </div>
-                            </div>
-                          )}
+                          <EquipmentGallery
+                            name={prod.name}
+                            images={prod.images}
+                            defaultImage={prod.image}
+                          />
 
                           {/* Quick Metric Badges (first 4 specs) */}
                           {prod.specs && prod.specs.length > 0 && (
