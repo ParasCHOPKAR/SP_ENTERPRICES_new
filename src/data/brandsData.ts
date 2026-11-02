@@ -868,19 +868,19 @@ export const BRANDS_DATA: BrandData[] = [
             desc: "High-speed programmable automation controller with multi-core processing, gigabit backplane, and hot-standby redundancy.",
             specs: ["Hot-swap modular I/O", "High-speed PROFINET ring redundancy (MRP)", "Embedded cyber security"],
             badge: "PACSystems RX3i",
-            image: "/product_images/emerson/pacsystems_rx3i.png"
+            image: "/product_images/emerson/PACSystems-RX3i-Controllers.png"
           },
           {
             name: "RSTi-EP Slice I/O & Micro PLCs",
             desc: "Ultra-compact distributed I/O slices (11.5mm width) with integrated test points and pluggable spring terminals.",
             specs: ["Up to 64 modules per network node", "PROFINET, EtherNet/IP, Modbus TCP adapters"],
-            image: "/product_images/emerson/pacsystems_rx3i.png"
+            image: "/product_images/emerson/RSTi-EP-Slice-Micro-PLCs.png"
           },
           {
             name: "QuickPanel+ Touchscreen Operator Interfaces",
             desc: "All-in-one HMI combining graphical visualization, PLC control logic, and data historian on a multi-touch screen.",
             specs: ["Screen sizes: 6\", 7\", 10\", 12\", 15\"", "Multi-touch projected capacitive display", "Built-in VNC remote server"],
-            image: "/product_images/emerson/quickpanel_hmi.png"
+            image: "/product_images/emerson/QuickPanel-Touchscreen-Operator-Interfaces-emerson.png"
           }
         ]
       },
