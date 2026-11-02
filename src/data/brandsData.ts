@@ -998,20 +998,20 @@ export const BRANDS_DATA: BrandData[] = [
             desc: "Distributed control system unifying controller networks, batch management, plant safety, and advanced process control.",
             specs: ["Fault-tolerant controller architecture", "Integrated alarm & historian management", "High-fidelity simulation support"],
             badge: "Experion DCS / LX",
-            image: "/product_images/honeywell/experion_dcs.jpg"
+            image: "/product_images/honeywell/Honeywell-Experion-Control-System-DCS-LX.png"
           },
           {
             name: "MasterLogic PLC (ML-200 / ML-50R)",
             desc: "Redundant, high-speed industrial programmable controller delivering DCS-grade reliability at a modular PLC price point.",
             specs: ["CPU redundancy with sub-millisecond bump-less transfer", "IEC 61131-3 logic programming", "Fiber optic I/O networks"],
             badge: "MasterLogic PLC",
-            image: "/product_images/honeywell/masterlogic_plc.jpg"
+            image: "/product_images/honeywell/MasterLogic-PLC-ML-200-ML-50R.png"
           },
           {
             name: "Experion HS & Visu+ SCADA Solutions",
             desc: "Compact, pre-configured SCADA solution tailored for mid-sized process plants, utilities, and pharmaceutical manufacturing.",
             specs: ["Pre-built graphic symbols & faceplates", "Trend charts and Excel reporting", "Native OPC client & server"],
-            image: "/product_images/honeywell/experion_dcs.jpg"
+            image: "/product_images/honeywell/Experion_HS_Visu_SCADA_Solutions.png"
           }
         ]
       },
@@ -1036,7 +1036,7 @@ export const BRANDS_DATA: BrandData[] = [
             name: "Honeywell Fire Alarm & Security Solutions",
             desc: "Intelligent addressable fire alarm panels (Notifier), VESDA aspirating smoke detection, and building security integration.",
             specs: ["Early warning air-sampling detection", "EN54 and UL certified panels", "Graphic emergency response workstation"],
-            image: "/product_images/honeywell/experion_dcs.jpg"
+            image: "/product_images/honeywell/Honeywell-Fire-Alarm-Security-Solutions.png"
           },
           {
             name: "OneWireless Industrial System Solutions",
