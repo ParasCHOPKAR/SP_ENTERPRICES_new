@@ -1140,7 +1140,7 @@ export const BRANDS_DATA: BrandData[] = [
   {
     id: "emi-solutions",
     heroImage: "/home/hero_EMI_.png",
-    name: "EMI Solutions",
+    name: "EMI Solutions (EMIS)",
     fullName: "EMI Solutions Pvt. Ltd. (EMIS)",
     tagline: "EMI / EMC Power Line Filters, EMP Protection & Suppression Solutions",
     badge: "Dealer & Supplier",

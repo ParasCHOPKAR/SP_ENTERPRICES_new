@@ -41,9 +41,9 @@ const HOME_MARQUEE_BRAND_ITEMS = [
 const HERO_BG_IMAGES = [
   {
     src: "/home/hero_EMI_.png",
-    brand: "EMI Solutions",
+    brand: "EMI Solutions Pvt. Ltd. (EMIS)",
     id: "emi-solutions",
-    title: "EMI Solutions (EMIS) Power Line Filters & EMP Protection",
+    title: "EMI Solutions Pvt. Ltd. (EMIS) — Power Line Filters, EMP Protection & Suppression Devices",
   },
   {
     src: "/home/hero_ERI_BG.png",
@@ -165,12 +165,39 @@ export default function Home() {
 
         <div className="hero-container">
           <div className="hero-content">
+            {/* Active Brand Indicator Pill */}
+            <Link
+              href={`/products/${HERO_BG_IMAGES[currentHeroSlide]?.id}`}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.55rem",
+                background: "rgba(15, 23, 42, 0.75)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(251, 191, 36, 0.5)",
+                borderRadius: "30px",
+                padding: "0.38rem 1rem",
+                marginBottom: "1.2rem",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.35)",
+                textDecoration: "none",
+                cursor: "pointer",
+                transition: "all 0.25s ease"
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#fbbf24")}
+            >
+              <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#10b981", boxShadow: "0 0 10px #10b981", flexShrink: 0 }} />
+              <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#fbbf24", letterSpacing: "0.5px" }}>
+                Featured OEM Partner: <span style={{ color: "#ffffff" }}>{HERO_BG_IMAGES[currentHeroSlide]?.brand}</span>
+              </span>
+              <ArrowRight size={14} color="#fbbf24" />
+            </Link>
+
             <h1 className="hero-title">
               Precision Solutions for<br />
               <span className="highlight">Industrial Automation</span> &amp; Control
             </h1>
             <p className="hero-desc">
-              Channel Partner for 15 premier global engineering brands including EMI Solutions Filters, Degson Connectivity, ERI Solid State Relays, Weidmüller SMPS, Phoenix Contact, Gefran, West PID, Renu, JUMO, Emerson, and Honeywell Automation &mdash; coupled with in-house Control Panel and Packaging Machine Manufacturing in Pune.
+              Channel Partner for 15 premier global engineering brands including EMI Solutions Pvt. Ltd. (EMIS) Filters, Degson Connectivity, ERI Solid State Relays, Weidmüller SMPS, Phoenix Contact, Gefran, West PID, Renu, JUMO, Emerson, and Honeywell Automation &mdash; coupled with in-house Control Panel and Packaging Machine Manufacturing in Pune.
             </p>
 
             <div className="hero-actions">
@@ -195,28 +222,23 @@ export default function Home() {
               <span style={{ fontSize: "0.75rem", color: "#f59e0b", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginRight: "0.5rem" }}>
                 Featured Brands:
               </span>
-              {BRANDS_DATA.slice(0, 7).map((b) => {
-                const heroIndex = HERO_BG_IMAGES.findIndex((s) => s.id === b.id);
-                const isCurrentSlide = heroIndex === currentHeroSlide;
+              {HERO_BG_IMAGES.slice(0, 8).map((slide, sIdx) => {
+                const isCurrentSlide = sIdx === currentHeroSlide;
                 return (
                   <button
-                    key={b.id}
+                    key={slide.id}
                     type="button"
                     onClick={() => {
-                      if (heroIndex !== -1) {
-                        setCurrentHeroSlide(heroIndex);
-                      }
-                      router.push(`/products/${b.id}`);
+                      setCurrentHeroSlide(sIdx);
+                      router.push(`/products/${slide.id}`);
                     }}
                     onMouseEnter={() => {
-                      if (heroIndex !== -1) {
-                        setCurrentHeroSlide(heroIndex);
-                      }
+                      setCurrentHeroSlide(sIdx);
                     }}
                     style={{
-                      background: isCurrentSlide ? "rgba(200, 16, 46, 0.75)" : "rgba(255, 255, 255, 0.15)",
+                      background: isCurrentSlide ? "rgba(200, 16, 46, 0.85)" : "rgba(255, 255, 255, 0.15)",
                       border: isCurrentSlide ? "1px solid #fbbf24" : "1px solid rgba(255, 255, 255, 0.25)",
-                      boxShadow: isCurrentSlide ? "0 0 12px rgba(251, 191, 36, 0.5)" : "none",
+                      boxShadow: isCurrentSlide ? "0 0 14px rgba(251, 191, 36, 0.6)" : "none",
                       color: "white",
                       padding: "0.25rem 0.65rem",
                       borderRadius: "14px",
@@ -225,9 +247,9 @@ export default function Home() {
                       cursor: "pointer",
                       transition: "all 0.25s ease"
                     }}
-                    title={`Click to view ${b.name} products`}
+                    title={`Click to view ${slide.brand} products`}
                   >
-                    {b.name}
+                    {slide.brand}
                   </button>
                 );
               })}
@@ -235,7 +257,7 @@ export default function Home() {
                 href="/products"
                 style={{ color: "#fbbf24", fontSize: "0.75rem", fontWeight: 700, textDecoration: "none", marginLeft: "0.5rem" }}
               >
-                +{BRANDS_DATA.length - 7} more &rarr;
+                +{BRANDS_DATA.length - 8} more &rarr;
               </Link>
             </div>
           </div>
@@ -311,6 +333,10 @@ export default function Home() {
               />
             ))}
           </div>
+
+          <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#fbbf24", padding: "0 0.35rem", whiteSpace: "nowrap" }}>
+            {HERO_BG_IMAGES[currentHeroSlide]?.brand}
+          </span>
 
           <button
             type="button"
