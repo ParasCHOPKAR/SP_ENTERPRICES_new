@@ -538,13 +538,13 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="mailto:spe.mkte@gmail.com"
+                  href="mailto:spe.mktg@gmail.com"
                   style={{ display: "flex", alignItems: "center", gap: "0.6rem", color: "#cbd5e1", textDecoration: "none" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#fbbf24")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#cbd5e1")}
                 >
                   <Mail size={15} color="#fbbf24" style={{ flexShrink: 0 }} />
-                  <span>spe.mkte@gmail.com</span>
+                  <span>spe.mktg@gmail.com</span>
                 </a>
 
                 <a

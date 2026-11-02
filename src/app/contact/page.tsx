@@ -482,7 +482,7 @@ ${message.trim()}
                           info@speautomation.com
                         </a>
                         <a
-                          href="mailto:spe.mkte@gmail.com"
+                          href="mailto:spe.mktg@gmail.com"
                           style={{
                             color: "#c8102e",
                             fontSize: "0.95rem",
@@ -493,7 +493,7 @@ ${message.trim()}
                             transition: "opacity 0.2s"
                           }}
                         >
-                          spe.mkte@gmail.com
+                          spe.mktg@gmail.com
                         </a>
                       </div>
                       <span style={{ fontSize: "0.74rem", color: "#64748b", marginTop: "0.3rem", display: "block" }}>
