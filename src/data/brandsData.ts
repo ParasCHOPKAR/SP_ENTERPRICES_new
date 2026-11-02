@@ -49,8 +49,8 @@ export const BRAND_HERO_MAP: Record<string, string> = {
   'automation-software': '/product_hero_card/SCADA.png',
   'honeywell': '/product_hero_card/Honeywell.png',
   'cleangrad': '/product_hero_card/Cleangrad.png',
-  'emi-solutions': '/product_hero_card/EMIS.png',
-  'emis': '/product_hero_card/EMIS.png',
+  'emi-solutions': '/home/hero_EMI_.png',
+  'emis': '/home/hero_EMI_.png',
   'degson': '/product_hero_card/Degson.png',
 };
 
@@ -1139,7 +1139,7 @@ export const BRANDS_DATA: BrandData[] = [
   },
   {
     id: "emi-solutions",
-    heroImage: "/product_hero_card/EMIS.png",
+    heroImage: "/home/hero_EMI_.png",
     name: "EMI Solutions",
     fullName: "EMI Solutions Pvt. Ltd. (EMIS)",
     tagline: "EMI / EMC Power Line Filters, EMP Protection & Suppression Solutions",

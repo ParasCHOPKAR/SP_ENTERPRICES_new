@@ -208,3 +208,4 @@ async function generateAssets() {
   console.log('Degson Hero Card created.');
 }
 generateAssets();
+

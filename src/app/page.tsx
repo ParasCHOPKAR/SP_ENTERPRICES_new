@@ -40,6 +40,12 @@ const HOME_MARQUEE_BRAND_ITEMS = [
 
 const HERO_BG_IMAGES = [
   {
+    src: "/home/hero_EMI_.png",
+    brand: "EMI Solutions",
+    id: "emi-solutions",
+    title: "EMI Solutions (EMIS) Power Line Filters & EMP Protection",
+  },
+  {
     src: "/home/hero_ERI_BG.png",
     brand: "ERI",
     id: "eri",
@@ -229,7 +235,7 @@ export default function Home() {
                 href="/products"
                 style={{ color: "#fbbf24", fontSize: "0.75rem", fontWeight: 700, textDecoration: "none", marginLeft: "0.5rem" }}
               >
-                +6 more &rarr;
+                +{BRANDS_DATA.length - 7} more &rarr;
               </Link>
             </div>
           </div>
