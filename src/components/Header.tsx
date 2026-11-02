@@ -204,7 +204,7 @@ export default function Header() {
           href: "/manufacturing/special-purpose-machines"
         },
         {
-          label: "Packaging & Hot Melt Conveyors",
+          label: "Box Packing Conveyors",
           sub: "Box Packaging (General Mills), 15m File Conveyor (Navneet)",
           tag: "Automated",
           href: "/manufacturing/glue-conveyors"

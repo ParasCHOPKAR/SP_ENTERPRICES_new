@@ -370,12 +370,12 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
   },
   {
     id: "glue-conveyors",
-    title: "Packaging Conveyors & Hot Melt Glue Machines",
-    shortTitle: "Packaging Conveyors",
+    title: "Box Packing Conveyors & Hot Melt Glue Machines",
+    shortTitle: "Box Packing Conveyors",
     tagline: "Automated Box Packaging, Valco Melton Hot-Melt Sealing, 15m File Conveyors & 90° Tilters",
     badge: "SP Enterprises • SAHPL Packaging Automation",
     iconName: "Boxes",
-    image: "/manufacturing/products/box_packaging_glue_conveyor.jpg",
+    image: "/manufacturing/image.png",
     description:
       "HOT MELT GLUE MACHINE FOOD CARTONS (Client - General Mills and Valco Melton): Box Packaging Conveyor offers you to fold and pack the box with glue with very little help from human being. It’s totally automated system, where we just want to put the box at proper timing in the start tray. Rest of the work (folding and gluing) is done automatically and we get the fully packaged box at other side of the system. Also it can be adjusted according to sizes of the box we are packaging. Adjustments are given to set the system according to box size. PLC helps you to set the speed of packaging, start up and end up timing for glue gun.\n\nRoller Based Conveyor (Client - Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd): Heavy-duty continuous conveying engineered for robust automotive sub-assemblies, heavy component boxes, and crates.\n\nFile Conveyor (Client - Navneet Industries): Total length of conveyor is 15m. Belt conveyor is used to easy and swift flow of files. There are two main stages of this conveyor 1] Feeder    2] Glue dropper machine. Feeder: Feeder move up and down to allow only one file to proceed onto the conveyor. Glue dropper machine: This machine drops the glue on specific position with the help of sensor. Feeder Belt Conveyor Glue dispensing machine.\n\nChain Tilter (Client - Cummins Generator Technologies and Mahindra Vehicle Manufacturers Ltd): Chain Tilter is used to tilt/rotate the product by 90 degree. This application is used normally in automobile industry to handle heavy weight products.",
     featuredClients: [
