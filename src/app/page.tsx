@@ -122,7 +122,7 @@ export default function Home() {
     if (isHeroPaused) return;
     const timer = setInterval(() => {
       setCurrentHeroSlide((prev) => (prev + 1) % HERO_BG_IMAGES.length);
-    }, 1000);
+    }, 2000);
     return () => clearInterval(timer);
   }, [isHeroPaused]);
 
@@ -144,7 +144,7 @@ export default function Home() {
                 position: "absolute",
                 inset: 0,
                 opacity: idx === currentHeroSlide ? 1 : 0,
-                transition: "opacity 0.4s ease-in-out, transform 1.2s ease-out",
+                transition: "opacity 0.6s ease-in-out, transform 2.2s ease-out",
                 transform: idx === currentHeroSlide ? "scale(1.02)" : "scale(1.0)",
                 zIndex: idx === currentHeroSlide ? 1 : 0,
                 pointerEvents: "none",
