@@ -231,11 +231,11 @@ img {
   transition: background 0.2s;
 }
 
-/* Hero Section - Matched to Hero Image Aspect Ratio (2170 x 725 ≈ 2.99:1) */
+/* Hero Section - Matched to Hero Image Aspect Ratio (2056 x 765 ≈ 2.6876:1) */
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 2170 / 725;
+  aspect-ratio: 2056 / 765;
   background: #080303;
   color: white;
   overflow: hidden;
@@ -318,10 +318,11 @@ img {
 }
 
 .hero-bg-image img {
-  object-fit: contain !important;
+  object-fit: cover !important;
   object-position: center !important;
   width: 100% !important;
   height: 100% !important;
+  max-width: none !important;
   filter: brightness(0.98) contrast(1.02);
   transition: filter 0.3s ease;
 }
@@ -339,7 +340,7 @@ img {
   .hero-bg-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 2170 / 725;
+    aspect-ratio: 2056 / 765;
     height: auto;
     inset: auto;
   }

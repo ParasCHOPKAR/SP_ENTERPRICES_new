@@ -154,7 +154,7 @@ export default function Home() {
                 src={item.src}
                 alt={item.title}
                 fill
-                style={{ objectFit: "contain", objectPosition: "center" }}
+                style={{ objectFit: "cover", objectPosition: "center" }}
                 priority={idx === 0}
               />
             </div>
