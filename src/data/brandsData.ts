@@ -1159,7 +1159,7 @@ export const BRANDS_DATA: BrandData[] = [
             desc: "Compact chassis and PCB-mount RFI power line noise suppression filters designed for single-phase equipment, automation controllers, and SMPS power supplies.",
             specs: ["Current: 1A to 100A", "Voltage: 110V / 250V AC 50/60Hz", "Low leakage current (medical versions available)", "High differential & common mode attenuation"],
             badge: "Single Phase",
-            image: "/product_images/emis/line_filters.jpg"
+            image: "/product_images/emis/image.png"
           },
           {
             name: "Three Phase EMI Filters (Delta & Wye)",
