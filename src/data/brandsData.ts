@@ -881,6 +881,18 @@ export const BRANDS_DATA: BrandData[] = [
             desc: "All-in-one HMI combining graphical visualization, PLC control logic, and data historian on a multi-touch screen.",
             specs: ["Screen sizes: 6\", 7\", 10\", 12\", 15\"", "Multi-touch projected capacitive display", "Built-in VNC remote server"],
             image: "/product_images/emerson/QuickPanel-Touchscreen-Operator-Interfaces-emerson.png"
+          },
+          {
+            name: "Emerson HMI M822E Industrial Operator Interface",
+            desc: "Compact 5-inch industrial HMI touchscreen operator interface engineered for machine automation, equipment parameter setting, and PLC graphical visualization.",
+            specs: [
+              "Display: 5 Inch (in) Industrial Touchscreen",
+              "Application: Industrial Machine Automation",
+              "Weight: 600 Grams (g) | Color: Black",
+              "Price: Approx. ₹2,000 / Unit | In Stock"
+            ],
+            badge: "HMI M822E",
+            image: "/product_images/emerson/Emerson-HMI-M822E.png"
           }
         ]
       },
