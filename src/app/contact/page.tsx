@@ -466,7 +466,7 @@ ${message.trim()}
                     </div>
                     <div style={{ width: "100%" }}>
                       <h4 style={{ fontSize: "0.85rem", color: "#0f172a", marginBottom: "0.35rem", fontWeight: 700 }}>Official Email</h4>
-                      <div style={{ display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+                      <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
                         <a
                           href="mailto:info@speautomation.com"
                           style={{
@@ -480,6 +480,20 @@ ${message.trim()}
                           }}
                         >
                           info@speautomation.com
+                        </a>
+                        <a
+                          href="mailto:spe.mkte@gmail.com"
+                          style={{
+                            color: "#c8102e",
+                            fontSize: "0.95rem",
+                            fontWeight: 700,
+                            fontFamily: "inherit",
+                            textDecoration: "none",
+                            display: "inline-block",
+                            transition: "opacity 0.2s"
+                          }}
+                        >
+                          spe.mkte@gmail.com
                         </a>
                       </div>
                       <span style={{ fontSize: "0.74rem", color: "#64748b", marginTop: "0.3rem", display: "block" }}>

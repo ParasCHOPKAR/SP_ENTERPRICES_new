@@ -806,7 +806,7 @@ export default function Home() {
                 <div style={{ fontSize: "0.88rem", display: "flex", flexDirection: "column", gap: "0.5rem", color: "#475569" }}>
                   <div><strong>Director:</strong> Mr. Pradeep Kulkarni</div>
                   <div><strong>Mobile No.:</strong> <a href="tel:+918308502100" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>+91 83085 02100</a>, <a href="tel:+919422012179" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>+91 94220 12179</a></div>
-                  <div><strong>Official Email:</strong> <a href="mailto:info@speautomation.com" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>info@speautomation.com</a></div>
+                  <div><strong>Official Email:</strong> <a href="mailto:info@speautomation.com" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>info@speautomation.com</a>, <a href="mailto:spe.mkte@gmail.com" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>spe.mkte@gmail.com</a></div>
                   <div><strong>Official Website:</strong> <a href="https://www.speautomation.com" target="_blank" rel="noopener noreferrer" style={{ color: "#c8102e", fontWeight: 700, textDecoration: "none" }}>www.speautomation.com</a></div>
                   <div><strong>Registered Office:</strong> Sr. No. 14/1A + 2B/2, Gujarwadi Road, Katraj, Pune - 411046, Maharashtra, India</div>
                 </div>
