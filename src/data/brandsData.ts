@@ -48,7 +48,7 @@ export const BRAND_HERO_MAP: Record<string, string> = {
   'emerson': '/product_images/emerson/image.png',
   'automation-software': '/product_hero_card/SCADA.png',
   'honeywell': '/product_hero_card/Honeywell.png',
-  'cleangrad': '/product_hero_card/Cleangrad.png',
+  'cleangrad': '/caaaaaaaa.png',
   'emi-solutions': '/home/hero_EMI_.png',
   'emis': '/home/hero_EMI_.png',
 };
@@ -1064,7 +1064,7 @@ export const BRANDS_DATA: BrandData[] = [
   },
   {
     id: "cleangrad",
-    heroImage: "/product_hero_card/Cleangrad.png",
+    heroImage: "/caaaaaaaa.png",
     name: "Clean Grad Slovenia",
     fullName: "Cleangrad d.o.o. (Slovenia)",
     tagline: "GMP Cleanroom Partition Walls, Ceilings & Dynamic/Static Pass Boxes",
