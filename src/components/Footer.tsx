@@ -44,15 +44,161 @@ export default function Footer() {
           backgroundRepeat: "no-repeat",
           backgroundColor: "#080205",
           color: "white",
-          paddingTop: "3.5rem",
+          paddingTop: "0",
           overflow: "hidden",
           boxShadow: "inset 0 35px 70px rgba(0, 0, 0, 0.92), inset 0 -35px 70px rgba(0, 0, 0, 0.92), 0 -20px 40px rgba(0, 0, 0, 0.5)",
           borderTop: "1px solid rgba(245, 158, 11, 0.35)"
         }}
       >
-        <div style={{ maxWidth: "1560px", margin: "0 auto", padding: "0 2rem" }}>
+        {/* Top Section: Authorized Distribution & Channel Partners Banner & Marquee */}
+        <div
+          style={{
+            borderBottom: "1px solid rgba(245, 158, 11, 0.25)",
+            background: "rgba(10, 3, 6, 0.75)",
+            padding: "1.3rem 0 1.6rem",
+            position: "relative"
+          }}
+        >
+          <div
+            style={{
+              maxWidth: "1560px",
+              margin: "0 auto",
+              padding: "0 2rem 1.1rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "1rem"
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  fontSize: "0.72rem",
+                  color: "#f59e0b",
+                  fontWeight: 800,
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  marginBottom: "0.2rem"
+                }}
+              >
+                AUTHORIZED DISTRIBUTION &amp; CHANNEL PARTNERS
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+                <div style={{ width: "3px", height: "18px", background: "#f59e0b", borderRadius: "2px" }} />
+                <h4 style={{ fontSize: "1.15rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
+                  Global Industrial Automation &amp; Control Brands
+                </h4>
+              </div>
+            </div>
+
+            <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", flexWrap: "wrap" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.45rem",
+                  fontSize: "0.8rem",
+                  color: "#cbd5e1"
+                }}
+              >
+                <ShieldCheck size={16} color="#ef4444" />
+                <span>100% Genuine Factory-Sealed Products with OEM Warranty</span>
+              </div>
+
+              <a
+                href="/01.SP Enterprises (1).pdf"
+                download="SP_Enterprises_Catalogue.pdf"
+                style={{
+                  background: "#c8102e",
+                  color: "#ffffff",
+                  padding: "0.55rem 1.15rem",
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  fontSize: "0.82rem",
+                  fontWeight: 700,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.45rem",
+                  boxShadow: "0 4px 14px rgba(200, 16, 46, 0.5)",
+                  transition: "background 0.2s"
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#a30d24")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#c8102e")}
+              >
+                <Download size={14} /> Download Brochure <ChevronRight size={14} />
+              </a>
+            </div>
+          </div>
+
+          {/* Continuous Partner Brand Marquee Slider */}
+          <div
+            className="footer-marquee-container"
+            style={{
+              position: "relative",
+              overflow: "hidden",
+              padding: "0.5rem 0 0.8rem 0",
+              width: "100%"
+            }}
+          >
+            {/* Left Edge Ambient Fade Mask */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                left: 0,
+                width: "90px",
+                background: "linear-gradient(to right, rgba(8, 2, 5, 0.95), transparent)",
+                zIndex: 2,
+                pointerEvents: "none"
+              }}
+            />
+
+            {/* Right Edge Ambient Fade Mask */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                right: 0,
+                width: "90px",
+                background: "linear-gradient(to left, rgba(8, 2, 5, 0.95), transparent)",
+                zIndex: 2,
+                pointerEvents: "none"
+              }}
+            />
+
+            <div className="footer-marquee-track">
+              {MARQUEE_BRAND_ITEMS.map((brand, index) => (
+                <Link
+                  key={`${brand.id}-${index}`}
+                  href={brand.href}
+                  title={`${brand.name} - View Products`}
+                  className="footer-marquee-card"
+                >
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    loading="lazy"
+                    style={{
+                      maxHeight: "34px",
+                      maxWidth: "125px",
+                      width: "auto",
+                      height: "auto",
+                      objectFit: "contain",
+                      display: "block"
+                    }}
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div style={{ maxWidth: "1560px", margin: "0 auto", padding: "3rem 2rem 2.8rem" }}>
           {/* Main 4 Columns Row */}
-          <div className="footer-main-grid" style={{ marginBottom: "2.8rem" }}>
+          <div className="footer-main-grid" style={{ marginBottom: "0" }}>
             {/* Column 1: S. P. ENTERPRISES Profile */}
             <div style={{ minWidth: 0 }}>
               <div
@@ -416,153 +562,6 @@ export default function Footer() {
                   <span>Mon – Sat: 9:00 AM – 7:00 PM IST</span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Middle Section: Authorized Distribution & Channel Partners Banner */}
-        <div
-          style={{
-            borderTop: "1px solid rgba(245, 158, 11, 0.25)",
-            borderBottom: "1px solid rgba(245, 158, 11, 0.25)",
-            background: "rgba(10, 3, 6, 0.75)",
-            padding: "1.3rem 0 1.6rem",
-            position: "relative"
-          }}
-        >
-          <div
-            style={{
-              maxWidth: "1560px",
-              margin: "0 auto",
-              padding: "0 2rem 1.1rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-              gap: "1rem"
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  fontSize: "0.72rem",
-                  color: "#f59e0b",
-                  fontWeight: 800,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  marginBottom: "0.2rem"
-                }}
-              >
-                AUTHORIZED DISTRIBUTION &amp; CHANNEL PARTNERS
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
-                <div style={{ width: "3px", height: "18px", background: "#f59e0b", borderRadius: "2px" }} />
-                <h4 style={{ fontSize: "1.15rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
-                  Global Industrial Automation &amp; Control Brands
-                </h4>
-              </div>
-            </div>
-
-            <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", flexWrap: "wrap" }}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.45rem",
-                  fontSize: "0.8rem",
-                  color: "#cbd5e1"
-                }}
-              >
-                <ShieldCheck size={16} color="#ef4444" />
-                <span>100% Genuine Factory-Sealed Products with OEM Warranty</span>
-              </div>
-
-              <a
-                href="/01.SP Enterprises (1).pdf"
-                download="SP_Enterprises_Catalogue.pdf"
-                style={{
-                  background: "#c8102e",
-                  color: "#ffffff",
-                  padding: "0.55rem 1.15rem",
-                  borderRadius: "6px",
-                  textDecoration: "none",
-                  fontSize: "0.82rem",
-                  fontWeight: 700,
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.45rem",
-                  boxShadow: "0 4px 14px rgba(200, 16, 46, 0.5)",
-                  transition: "background 0.2s"
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = "#a30d24")}
-                onMouseLeave={(e) => (e.currentTarget.style.background = "#c8102e")}
-              >
-                <Download size={14} /> Download Brochure <ChevronRight size={14} />
-              </a>
-            </div>
-          </div>
-
-          {/* Continuous Partner Brand Marquee Slider */}
-          <div
-            className="footer-marquee-container"
-            style={{
-              position: "relative",
-              overflow: "hidden",
-              padding: "0.5rem 0 0.8rem 0",
-              width: "100%"
-            }}
-          >
-            {/* Left Edge Ambient Fade Mask */}
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                left: 0,
-                width: "90px",
-                background: "linear-gradient(to right, rgba(8, 2, 5, 0.95), transparent)",
-                zIndex: 2,
-                pointerEvents: "none"
-              }}
-            />
-
-            {/* Right Edge Ambient Fade Mask */}
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                right: 0,
-                width: "90px",
-                background: "linear-gradient(to left, rgba(8, 2, 5, 0.95), transparent)",
-                zIndex: 2,
-                pointerEvents: "none"
-              }}
-            />
-
-            <div className="footer-marquee-track">
-              {MARQUEE_BRAND_ITEMS.map((brand, index) => (
-                <Link
-                  key={`${brand.id}-${index}`}
-                  href={brand.href}
-                  title={`${brand.name} - View Products`}
-                  className="footer-marquee-card"
-                >
-                  <img
-                    src={brand.logo}
-                    alt={brand.name}
-                    loading="lazy"
-                    style={{
-                      maxHeight: "34px",
-                      maxWidth: "125px",
-                      width: "auto",
-                      height: "auto",
-                      objectFit: "contain",
-                      display: "block"
-                    }}
-                  />
-                </Link>
-              ))}
             </div>
           </div>
         </div>
