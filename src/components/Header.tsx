@@ -11,10 +11,19 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState<{ [key: string]: boolean }>({});
   const [searchQuery, setSearchQuery] = useState("");
   const [showRecommendations, setShowRecommendations] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
+  const mobileSearchRef = useRef<HTMLDivElement>(null);
+
+  const toggleMobileSubmenu = (label: string) => {
+    setMobileSubmenuOpen((prev) => ({
+      ...prev,
+      [label]: !prev[label]
+    }));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +38,10 @@ export default function Header() {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (
+        searchRef.current && !searchRef.current.contains(event.target as Node) &&
+        (!mobileSearchRef.current || !mobileSearchRef.current.contains(event.target as Node))
+      ) {
         setShowRecommendations(false);
       }
     }
@@ -594,68 +606,262 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu Drawer */}
         {mobileMenuOpen && (
           <div className="mobile-nav-drawer">
-            <div className="container" style={{ display: "flex", flexDirection: "column", gap: "1rem", padding: "1.5rem 2rem" }}>
-              {navItems.map((item) => (
-                <div key={item.href} style={{ borderBottom: "1px solid #f1f5f9", paddingBottom: "0.5rem" }}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    style={{
-                      color: pathname === item.href ? "#c8102e" : "#0f172a",
-                      fontWeight: 700,
-                      textDecoration: "none",
-                      fontSize: "1.05rem",
-                      display: "block",
-                      padding: "0.4rem 0"
+            <div className="container" style={{ display: "flex", flexDirection: "column", gap: "0.85rem", padding: "1.2rem 1.4rem" }}>
+              {/* Mobile Quick Search Bar */}
+              <div ref={mobileSearchRef} style={{ position: "relative", width: "100%" }}>
+                <form onSubmit={handleSearch} className="search-bar" style={{ width: "100%", height: "42px", display: "flex" }}>
+                  <Search size={18} color="#94a3b8" style={{ marginLeft: "10px", flexShrink: 0 }} />
+                  <input
+                    type="text"
+                    placeholder="Search 14 brands, products, SSRs..."
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setShowRecommendations(true);
                     }}
-                  >
-                    {item.label}
-                  </Link>
-                  {item.dropdown && (
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", paddingLeft: "0.8rem", marginTop: "0.2rem" }}>
-                      {item.dropdown.map((drop) => (
-                        <Link
-                          key={drop.href}
-                          href={drop.href}
-                          onClick={() => setMobileMenuOpen(false)}
+                    onFocus={() => setShowRecommendations(true)}
+                    style={{ width: "100%", fontSize: "0.95rem" }}
+                  />
+                  <button type="submit" className="search-btn" title="Search" style={{ padding: "0 1rem" }}>
+                    <Search size={18} />
+                  </button>
+                </form>
+
+                {showRecommendations && searchQuery.trim().length > 0 && recommendations.length > 0 && (
+                  <div style={{
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    right: 0,
+                    marginTop: "0.4rem",
+                    background: "white",
+                    borderRadius: "8px",
+                    boxShadow: "0 12px 30px rgba(0, 0, 0, 0.15)",
+                    border: "1px solid #e2e8f0",
+                    zIndex: 200,
+                    overflow: "hidden"
+                  }}>
+                    {recommendations.map((rec, i) => (
+                      <Link
+                        key={i}
+                        href={rec.href}
+                        onClick={() => {
+                          setShowRecommendations(false);
+                          setSearchQuery("");
+                          setMobileMenuOpen(false);
+                        }}
+                        style={{
+                          display: "block",
+                          padding: "0.75rem 1rem",
+                          borderBottom: i === recommendations.length - 1 ? "none" : "1px solid #f1f5f9",
+                          textDecoration: "none",
+                          color: "#334155"
+                        }}
+                      >
+                        <div style={{ fontSize: "0.88rem", fontWeight: 700 }}>{rec.name}</div>
+                        <div style={{ fontSize: "0.72rem", color: "#64748b", marginTop: "2px" }}>
+                          {rec.type} {rec.brand && `• ${rec.brand}`}
+                        </div>
+                      </Link>
+                    ))}
+                    <div
+                      onClick={() => {
+                        setShowRecommendations(false);
+                        setMobileMenuOpen(false);
+                        router.push(`/products?q=${encodeURIComponent(searchQuery.trim())}`);
+                      }}
+                      style={{
+                        padding: "0.6rem 1rem",
+                        background: "#fff1f2",
+                        borderTop: "1px solid #fecdd3",
+                        fontSize: "0.82rem",
+                        fontWeight: 700,
+                        color: "#c8102e",
+                        textAlign: "center",
+                        cursor: "pointer"
+                      }}
+                    >
+                      View all results for "{searchQuery}" &rarr;
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Quick Contact Bar on Mobile */}
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "0.5rem",
+                padding: "0.5rem 0",
+                borderBottom: "1px solid #e2e8f0"
+              }}>
+                <a
+                  href="tel:+918308502100"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "0.4rem",
+                    background: "#f0fdf4",
+                    border: "1px solid #bbf7d0",
+                    color: "#166534",
+                    padding: "0.55rem 0.6rem",
+                    borderRadius: "8px",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    textDecoration: "none"
+                  }}
+                >
+                  <Phone size={14} color="#16a34a" /> Call Direct
+                </a>
+                <a
+                  href="mailto:info@speautomation.com"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "0.4rem",
+                    background: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    color: "#334155",
+                    padding: "0.55rem 0.6rem",
+                    borderRadius: "8px",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    textDecoration: "none"
+                  }}
+                >
+                  <Mail size={14} color="#c8102e" /> Email Us
+                </a>
+              </div>
+
+              {/* Navigation Items with Accordion Submenus */}
+              {navItems.map((item) => {
+                const isSubOpen = !!mobileSubmenuOpen[item.label];
+
+                return (
+                  <div key={item.href} style={{ borderBottom: "1px solid #f1f5f9", paddingBottom: "0.4rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                      <Link
+                        href={item.href}
+                        onClick={() => {
+                          if (!item.dropdown) setMobileMenuOpen(false);
+                        }}
+                        style={{
+                          color: pathname === item.href ? "#c8102e" : "#0f172a",
+                          fontWeight: 700,
+                          textDecoration: "none",
+                          fontSize: "1.05rem",
+                          padding: "0.45rem 0",
+                          flex: 1
+                        }}
+                      >
+                        {item.label}
+                      </Link>
+
+                      {item.dropdown && (
+                        <button
+                          type="button"
+                          onClick={() => toggleMobileSubmenu(item.label)}
+                          aria-label={`Toggle ${item.label} submenu`}
                           style={{
-                            color: drop.isFeatured ? "#c8102e" : "#475569",
-                            fontSize: "0.85rem",
-                            textDecoration: "none",
-                            fontWeight: drop.isFeatured ? 700 : 500,
-                            padding: "0.25rem 0",
+                            background: isSubOpen ? "#fee2e2" : "#f1f5f9",
+                            border: "none",
+                            borderRadius: "6px",
+                            padding: "0.4rem 0.6rem",
+                            cursor: "pointer",
                             display: "flex",
                             alignItems: "center",
-                            gap: "0.4rem"
+                            gap: "0.3rem",
+                            color: isSubOpen ? "#c8102e" : "#64748b",
+                            fontSize: "0.72rem",
+                            fontWeight: 700
                           }}
                         >
-                          <span style={{ color: "#c8102e", fontSize: "0.75rem" }}>•</span>
-                          <span>{drop.label}</span>
-                        </Link>
-                      ))}
+                          <span>{item.dropdown.length} items</span>
+                          <ChevronDown
+                            size={16}
+                            style={{
+                              transform: isSubOpen ? "rotate(180deg)" : "rotate(0deg)",
+                              transition: "transform 0.2s ease"
+                            }}
+                          />
+                        </button>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.8rem", marginTop: "1rem" }}>
+
+                    {item.dropdown && isSubOpen && (
+                      <div style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.35rem",
+                        padding: "0.5rem 0.5rem 0.4rem 0.8rem",
+                        marginTop: "0.25rem",
+                        background: "#fafafa",
+                        borderRadius: "8px",
+                        borderLeft: "3px solid #c8102e"
+                      }}>
+                        {item.dropdown.map((drop) => (
+                          <Link
+                            key={drop.href}
+                            href={drop.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            style={{
+                              color: drop.isFeatured ? "#c8102e" : "#334155",
+                              fontSize: "0.85rem",
+                              textDecoration: "none",
+                              fontWeight: drop.isFeatured ? 800 : 600,
+                              padding: "0.35rem 0",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                              gap: "0.4rem"
+                            }}
+                          >
+                            <span style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                              <span style={{ color: "#c8102e", fontSize: "0.8rem" }}>•</span>
+                              <span>{drop.label}</span>
+                            </span>
+                            {drop.tag && (
+                              <span style={{
+                                fontSize: "0.65rem",
+                                fontWeight: 700,
+                                color: drop.isFeatured ? "#ffffff" : "#c8102e",
+                                background: drop.isFeatured ? "#c8102e" : "#fff1f2",
+                                padding: "0.1rem 0.4rem",
+                                borderRadius: "4px"
+                              }}>
+                                {drop.tag}
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+
+              {/* Action Buttons at bottom of mobile menu */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginTop: "0.8rem", paddingBottom: "1rem" }}>
                 <Link
                   href="/request-quote"
                   onClick={() => setMobileMenuOpen(false)}
                   className="btn-primary"
-                  style={{ textAlign: "center", textDecoration: "none" }}
+                  style={{ textAlign: "center", textDecoration: "none", padding: "0.85rem 1.4rem", fontWeight: 700 }}
                 >
-                  Request a Quote
+                  Request a Quote &rarr;
                 </Link>
                 <a
                   href="/01.SP Enterprises (1).pdf"
                   download="SP_Enterprises_Catalogue.pdf"
                   className="btn-outline"
-                  style={{ textAlign: "center", textDecoration: "none", borderColor: "#cbd5e1", color: "#334155" }}
+                  style={{ textAlign: "center", textDecoration: "none", borderColor: "#cbd5e1", color: "#334155", padding: "0.75rem 1.2rem", fontWeight: 600 }}
                 >
-                  <Download size={16} /> Download PDF Catalogue
+                  <Download size={16} /> Download PDF Catalogue (5.2 MB)
                 </a>
               </div>
             </div>

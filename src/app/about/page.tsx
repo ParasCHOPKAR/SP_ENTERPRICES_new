@@ -499,7 +499,7 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "1.5rem" }}>
             {values.map((v, idx) => (
               <FadeIn key={idx} delay={idx * 120}>
                 <div
@@ -552,7 +552,7 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", gap: "1.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: "1.5rem" }}>
             {milestones.map((m, idx) => (
               <FadeIn key={idx} delay={idx * 100}>
                 <div

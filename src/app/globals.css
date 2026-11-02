@@ -336,6 +336,10 @@ img {
   text-align: left;
 }
 
+.hero-slide-num-pill {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .hero-bg-image {
     position: relative;
@@ -1182,7 +1186,7 @@ img {
 
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 1.5rem;
 }
 
@@ -1819,7 +1823,7 @@ img {
 
 .brand-features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 0.6rem;
 }
 
@@ -1889,7 +1893,7 @@ img {
 
 .brand-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1rem;
 }
 
@@ -2234,7 +2238,7 @@ img {
 
 .mfg-capabilities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.2rem;
   margin-bottom: 2.5rem;
 }
@@ -2566,9 +2570,11 @@ img {
   background: white;
   border-top: 1px solid #e2e8f0;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-  max-height: calc(100vh - 75px);
+  max-height: calc(100vh - 70px);
+  max-height: calc(100dvh - 70px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
 }
 
 /* Page Hero Banner Generic */
@@ -2751,8 +2757,27 @@ img {
   }
   .hero-slide-controls {
     position: static !important;
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
     display: inline-flex !important;
+    max-width: calc(100vw - 2.5rem);
+    justify-content: center;
+    box-sizing: border-box;
+    align-self: center;
+  }
+  .hero-slide-brand-pill {
+    display: none !important;
+  }
+  .hero-slide-num-pill {
+    display: inline-block !important;
+  }
+  /* Prevent iOS zoom on input focus */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
   }
   .top-bar-location {
     display: none !important;
@@ -2873,7 +2898,7 @@ img {
     display: none;
   }
   .logo-img-wrapper img {
-    height: 52px !important;
+    height: 48px !important;
     width: auto !important;
   }
   .footer-main-grid {
@@ -2888,8 +2913,8 @@ img {
     grid-template-columns: 1fr !important;
   }
   .floating-actions-container {
-    bottom: 1.2rem;
-    right: 1.2rem;
+    bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1.2rem + env(safe-area-inset-right, 0px));
     gap: 0.6rem;
   }
   .floating-action-btn {
@@ -2925,24 +2950,66 @@ img {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding: 0.8rem 0.5rem !important;
   }
+  .mfg-spec-row-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    padding: 0.6rem 0.9rem;
+  }
+  .mfg-spec-val {
+    text-align: left !important;
+  }
+  .mfg-btn-inquire-equipment {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .hero-brand-tags {
+    gap: 0.35rem !important;
+    margin-top: 1.5rem !important;
+  }
+  .hero-brand-marquee-section {
+    padding: 1rem 0 1.25rem 0 !important;
+  }
 }
 
 /* ==========================================================================
    Breakpoint 5: Extra-Small Screens (max-width: 400px)
    ========================================================================== */
 @media (max-width: 400px) {
+  .logo-img-wrapper img {
+    height: 42px !important;
+    width: auto !important;
+  }
   .hero-title {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
   }
   .section-title {
-    font-size: 1.55rem;
+    font-size: 1.45rem;
   }
   .btn-primary, .btn-secondary, .btn-outline {
     font-size: 0.82rem;
     padding: 0.7rem 1rem;
+    width: 100%;
+    justify-content: center;
   }
   .trust-badges-wrapper {
     grid-template-columns: 1fr !important;
+  }
+  .brand-cat-btn {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.65rem;
+  }
+  .title-pill {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.65rem;
+  }
+  .mfg-equipment-metrics-row {
+    grid-template-columns: 1fr;
+  }
+  .footer-marquee-card {
+    height: 42px;
+    min-width: 110px;
+    padding: 0.35rem 0.65rem;
   }
 }
 

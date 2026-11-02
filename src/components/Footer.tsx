@@ -261,8 +261,8 @@ export default function Footer() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
-                  gap: "0.45rem"
+                  gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 120px), 1fr))",
+                  gap: "0.5rem"
                 }}
               >
                 <div
@@ -488,8 +488,10 @@ export default function Footer() {
                   padding: "0.45rem 0.8rem",
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "0.8rem",
-                  marginBottom: "0.9rem"
+                  flexWrap: "wrap",
+                  gap: "0.6rem",
+                  marginBottom: "0.9rem",
+                  maxWidth: "100%"
                 }}
               >
                 <a
@@ -591,7 +593,7 @@ export default function Footer() {
               margin: "0 auto",
               padding: "0 2rem",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
               alignItems: "center",
               gap: "1.2rem"
             }}

@@ -308,7 +308,7 @@ export default function BrandDirectory({
         </div>
         
         <div style={{ position: "relative", zIndex: 2, marginTop: "auto" }}>
-          <h3 style={{ fontSize: "2rem", fontWeight: 900, letterSpacing: "-0.5px", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
+          <h3 style={{ fontSize: "clamp(1.35rem, 3.8vw, 1.95rem)", fontWeight: 900, letterSpacing: "-0.5px", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>
             {brand.name}
           </h3>
         </div>

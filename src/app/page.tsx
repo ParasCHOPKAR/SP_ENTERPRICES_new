@@ -281,7 +281,7 @@ export default function Home() {
             <ChevronLeft size={18} />
           </button>
 
-          <div style={{ display: "flex", gap: "0.4rem", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "0.35rem", alignItems: "center" }}>
             {HERO_BG_IMAGES.map((slide, idx) => (
               <button
                 key={slide.src}
@@ -292,9 +292,9 @@ export default function Home() {
                 style={{
                   background:
                     idx === currentHeroSlide ? "#c8102e" : "rgba(255, 255, 255, 0.35)",
-                  width: idx === currentHeroSlide ? "24px" : "8px",
-                  height: "8px",
-                  borderRadius: "4px",
+                  width: idx === currentHeroSlide ? "20px" : "6px",
+                  height: "6px",
+                  borderRadius: "3px",
                   border: "none",
                   cursor: "pointer",
                   transition: "all 0.35s ease",
@@ -306,10 +306,6 @@ export default function Home() {
               />
             ))}
           </div>
-
-          <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#fbbf24", padding: "0 0.35rem", whiteSpace: "nowrap" }}>
-            {HERO_BG_IMAGES[currentHeroSlide]?.brand}
-          </span>
 
           <button
             type="button"
@@ -334,6 +330,7 @@ export default function Home() {
           </button>
 
           <span
+            className="hero-slide-brand-pill"
             style={{
               fontSize: "0.72rem",
               color: "#fbbf24",
@@ -342,9 +339,23 @@ export default function Home() {
               paddingLeft: "0.4rem",
               borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
               letterSpacing: "0.5px",
+              whiteSpace: "nowrap"
             }}
           >
             {HERO_BG_IMAGES[currentHeroSlide].brand}
+          </span>
+          <span
+            className="hero-slide-num-pill"
+            style={{
+              fontSize: "0.7rem",
+              color: "#ffffff",
+              fontWeight: 700,
+              marginLeft: "0.2rem",
+              opacity: 0.85,
+              whiteSpace: "nowrap"
+            }}
+          >
+            {currentHeroSlide + 1}/{HERO_BG_IMAGES.length}
           </span>
         </div>
       </section>
@@ -834,9 +845,9 @@ export default function Home() {
             <span style={{ fontSize: "0.85rem", color: "#c8102e", letterSpacing: "2px", textTransform: "uppercase", fontWeight: "bold" }}>
               Client Trust &amp; Reviews
             </span>
-            <h2 style={{ fontSize: "2.4rem", color: "#0f172a", margin: "0.8rem 0" }}>What Industrial Clients Say</h2>
+            <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.4rem)", color: "#0f172a", margin: "0.8rem 0", fontWeight: 800 }}>What Industrial Clients Say</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "1.5rem" }}>
             <div style={{ background: "white", padding: "2rem", borderRadius: "14px", border: "1px solid #e2e8f0" }}>
               <div style={{ display: "flex", gap: "0.2rem", marginBottom: "1rem" }}>
                 {[...Array(5)].map((_, i) => (

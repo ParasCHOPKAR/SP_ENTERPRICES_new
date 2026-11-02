@@ -73,13 +73,13 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
           
           <div style={{ 
             display: "grid", 
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", 
-            gap: "2.5rem", 
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", 
+            gap: "clamp(1.5rem, 3vw, 2.5rem)", 
             alignItems: "center" 
           }}>
             {/* Left Column: Brand Metadata */}
             <div>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginBottom: "1.2rem" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", marginBottom: "1.2rem" }}>
                 <span style={{
                   background: "rgba(255,255,255,0.15)", backdropFilter: "blur(6px)",
                   border: "1px solid rgba(255,255,255,0.25)", padding: "0.35rem 0.9rem",
@@ -97,14 +97,14 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
                 </span>
               </div>
 
-              <h1 style={{ fontSize: "2.8rem", fontWeight: 900, marginBottom: "0.8rem", lineHeight: 1.15, textShadow: "0 2px 10px rgba(0,0,0,0.4)" }}>
+              <h1 style={{ fontSize: "clamp(1.75rem, 4.5vw, 2.8rem)", fontWeight: 900, marginBottom: "0.8rem", lineHeight: 1.15, textShadow: "0 2px 10px rgba(0,0,0,0.4)" }}>
                 {brand.fullName}
               </h1>
-              <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.6, marginBottom: "1.8rem" }}>
+              <p style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.15rem)", color: "#cbd5e1", lineHeight: 1.6, marginBottom: "1.8rem" }}>
                 {brand.tagline}
               </p>
 
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
                 <button
                   type="button"
                   onClick={() => router.push(`/request-quote?subject=${encodeURIComponent(`Brand: ${brand.fullName}`)}`)}
@@ -265,7 +265,7 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
           </div>
 
           {/* Certifications & Target Industries */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "2rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "2rem" }}>
             <div style={{ background: "white", padding: "2rem", borderRadius: "16px", border: "1px solid #e2e8f0", boxShadow: "0 5px 15px rgba(0,0,0,0.03)" }}>
               <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#0f172a", marginBottom: "1.2rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 <ShieldCheck size={22} color="#16a34a" /> Quality Certifications

@@ -204,7 +204,7 @@ export default function ManufacturingSection() {
           <div className="title-pill manufacturing-pill" style={{ background: "#fff1f2", color: "#c8102e", border: "1px solid #fecdd3", padding: "0.4rem 1rem", borderRadius: "50px", display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", fontWeight: 700, marginBottom: "1.5rem" }}>
             <Factory size={14} /> IN-HOUSE MANUFACTURING • SP ENTERPRISES
           </div>
-          <h2 className="section-title" style={{ fontSize: "2.5rem", fontWeight: 800, color: "#0f172a", marginBottom: "1.2rem" }}>
+          <h2 className="section-title" style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 800, color: "#0f172a", marginBottom: "1.2rem" }}>
             Custom &amp; Precision <span style={{ color: "#c8102e" }}>Engineering Process Solutions</span>
           </h2>
           <p className="section-subtitle" style={{ fontSize: "1.1rem", color: "#475569", maxWidth: "800px", margin: "0 auto 1.5rem auto", lineHeight: 1.6 }}>

@@ -434,7 +434,7 @@ ${message.trim()}
               </div>
 
               {/* 3 Information Cards Grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1rem", marginBottom: "1.2rem" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 240px), 1fr))", gap: "1rem", marginBottom: "1.2rem" }}>
                 {/* Mobile Numbers */}
                 <div style={{ background: "white", padding: "1.4rem", borderRadius: "12px", boxShadow: "0 2px 10px rgba(0,0,0,0.02)", border: "1px solid #f1f5f9" }}>
                   <div style={{ display: "flex", gap: "0.9rem", alignItems: "flex-start" }}>
