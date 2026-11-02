@@ -231,24 +231,26 @@ img {
   transition: background 0.2s;
 }
 
-/* Hero Section - 16:6 Panoramic Aspect Ratio */
+/* Hero Section - Matched to Hero Image Aspect Ratio (2170 x 725 ≈ 2.99:1) */
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 6;
-  min-height: 480px;
-  background: #0f172a;
+  aspect-ratio: 2170 / 725;
+  background: #080303;
   color: white;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .hero {
     aspect-ratio: auto;
-    min-height: 520px;
-    padding: 3rem 0;
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 0 2.5rem;
+    background: #080303;
   }
 }
 
@@ -256,8 +258,8 @@ img {
   position: absolute;
   inset: 0;
   background: 
-    linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 41, 59, 0.5) 35%, transparent 58%),
-    linear-gradient(180deg, transparent 75%, rgba(15, 23, 42, 0.45) 100%);
+    linear-gradient(90deg, rgba(8, 3, 3, 0.85) 0%, rgba(8, 3, 3, 0.55) 26%, rgba(8, 3, 3, 0.12) 42%, transparent 52%),
+    linear-gradient(180deg, transparent 80%, rgba(8, 3, 3, 0.4) 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -309,34 +311,47 @@ img {
   right: 0;
   bottom: 0;
   z-index: 1;
+  background: #080303;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-bg-image img {
-  filter: brightness(0.95) contrast(1.02);
+  object-fit: contain !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  filter: brightness(0.98) contrast(1.02);
   transition: filter 0.3s ease;
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
-  padding: 1.5rem 0;
-  max-width: 540px;
+  padding: 1rem 0;
+  max-width: min(540px, 48%);
   width: 100%;
   text-align: left;
 }
 
-@media (max-width: 1024px) {
-  .hero-gradient-overlay {
-    background: linear-gradient(90deg, rgba(15, 23, 42, 0.94) 0%, rgba(20, 28, 48, 0.88) 60%, rgba(20, 28, 48, 0.65) 100%);
+@media (max-width: 900px) {
+  .hero-bg-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2170 / 725;
+    height: auto;
+    inset: auto;
   }
 
   .hero-container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .hero-content {
     max-width: 100%;
+    padding: 0;
   }
 }
 
@@ -2709,12 +2724,6 @@ img {
   .brand-meta-grid {
     grid-template-columns: 1fr;
   }
-  .hero-gradient-overlay {
-    background: linear-gradient(90deg, rgba(15, 23, 42, 0.94) 0%, rgba(20, 28, 48, 0.88) 60%, rgba(20, 28, 48, 0.65) 100%);
-  }
-  .hero-content {
-    max-width: 100%;
-  }
 }
 
 /* ==========================================================================
@@ -2724,7 +2733,7 @@ img {
   .hero {
     aspect-ratio: auto;
     min-height: auto;
-    padding: 3rem 0 4rem;
+    padding: 0 0 2.5rem;
   }
   .hero-title {
     font-size: clamp(1.8rem, 6vw, 2.4rem);
