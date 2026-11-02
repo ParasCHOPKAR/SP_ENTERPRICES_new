@@ -892,19 +892,19 @@ export const BRANDS_DATA: BrandData[] = [
             desc: "Dedicated supermarket refrigeration, chiller plant, and cold chain controllers (E2 / E3 facility management).",
             specs: ["Multi-compressor sequencing", "Floating suction/condensing optimization", "Refrigerant leak detection integration"],
             badge: "HVAC & Cold Chain",
-            image: "/product_images/emerson/copeland_e2_controller.jpeg"
+            image: "/product_images/emerson/Copeland-Emerson-Facility-Rack-Controllers-emerson.png"
           },
           {
             name: "Chiller & AHU Dedicated Controllers",
             desc: "Microprocessor-based control boards programmed for chillers, air handling units (AHU), and variable air volume (VAV).",
             specs: ["Precision PID temperature/humidity staging", "BACnet MS/TP and IP communication"],
-            image: "/product_images/emerson/copeland_e2_controller.jpeg"
+            image: "/product_images/emerson/Chiller_AHU_Dedicated_Controllers.png"
           },
           {
             name: "Electronic Expansion Valve (EEV) Drivers",
             desc: "Stepper motor driver modules for electronic expansion valves ensuring optimal superheat control and energy savings.",
             specs: ["Ultra-fast superheat response", "Battery backup safety valve closure"],
-            image: "/product_images/emerson/copeland_e2_controller.jpeg"
+            image: "/product_images/emerson/Electronic_Expansion_Valve_EEV_Drivers.png"
           }
         ]
       }
