@@ -165,33 +165,6 @@ export default function Home() {
 
         <div className="hero-container">
           <div className="hero-content">
-            {/* Active Brand Indicator Pill */}
-            <Link
-              href={`/products/${HERO_BG_IMAGES[currentHeroSlide]?.id}`}
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.55rem",
-                background: "rgba(15, 23, 42, 0.75)",
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(251, 191, 36, 0.5)",
-                borderRadius: "30px",
-                padding: "0.38rem 1rem",
-                marginBottom: "1.2rem",
-                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.35)",
-                textDecoration: "none",
-                cursor: "pointer",
-                transition: "all 0.25s ease"
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#fbbf24")}
-            >
-              <span style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#10b981", boxShadow: "0 0 10px #10b981", flexShrink: 0 }} />
-              <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#fbbf24", letterSpacing: "0.5px" }}>
-                Featured OEM Partner: <span style={{ color: "#ffffff" }}>{HERO_BG_IMAGES[currentHeroSlide]?.brand}</span>
-              </span>
-              <ArrowRight size={14} color="#fbbf24" />
-            </Link>
-
             <h1 className="hero-title">
               Precision Solutions for<br />
               <span className="highlight">Industrial Automation</span> &amp; Control
