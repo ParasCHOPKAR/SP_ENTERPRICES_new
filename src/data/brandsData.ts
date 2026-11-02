@@ -213,7 +213,7 @@ export const BRANDS_DATA: BrandData[] = [
             name: "AC Output Modules (3 - 5 Amp)",
             desc: "Triac-based isolated output drivers for contactors, solenoids, valves, and motor starters.",
             specs: ["Load: 12-280 VAC", "Logic: 5V, 12V, 24V DC", "Optical isolation 4KV"],
-            image: "/product_images/ERI_img/AC_Output_Modules.png"
+            image: "/product_images/ERI_img/AC-Output-Modules-Amp.png"
           },
           {
             name: "DC Output Modules (3 - 5 Amp)",
@@ -225,7 +225,7 @@ export const BRANDS_DATA: BrandData[] = [
             name: "AC Input Modules (110 / 220 VAC)",
             desc: "Safe conditioning and isolation of 110V/220V field voltages to digital micro-controller logic levels.",
             specs: ["Field Input: 90-280 VAC", "Logic Output: 5V/15V/24V DC", "Filter delay suppression"],
-            image: "/product_images/ERI_img/AC_Input_Modules.png"
+            image: "/product_images/ERI_img/AC-nput-Modules-110-220-VAC.png"
           },
           {
             name: "DC Input Modules (48 / 110 / 220 VDC)",
