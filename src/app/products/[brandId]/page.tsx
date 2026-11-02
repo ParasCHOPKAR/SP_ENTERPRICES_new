@@ -3,9 +3,11 @@ import { BRANDS_DATA } from "@/data/brandsData";
 import BrandDetailClient from "./BrandDetailClient";
 
 export function generateStaticParams() {
-  return BRANDS_DATA.map((brand) => ({
+  const params = BRANDS_DATA.map((brand) => ({
     brandId: brand.id,
   }));
+  params.push({ brandId: "emis" });
+  return params;
 }
 
 export default async function BrandDetailPage({

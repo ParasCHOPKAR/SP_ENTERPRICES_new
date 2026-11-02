@@ -49,6 +49,9 @@ export const BRAND_HERO_MAP: Record<string, string> = {
   'automation-software': '/product_hero_card/SCADA.png',
   'honeywell': '/product_hero_card/Honeywell.png',
   'cleangrad': '/product_hero_card/Cleangrad.png',
+  'emi-solutions': '/product_hero_card/EMIS.png',
+  'emis': '/product_hero_card/EMIS.png',
+  'degson': '/product_hero_card/Degson.png',
 };
 
 export interface BrandStripLogo {
@@ -130,6 +133,18 @@ export const BRAND_STRIP_LOGOS: BrandStripLogo[] = [
     name: "West Control Solutions",
     logo: "/Brand_logo/west.svg",
     href: "/products/west"
+  },
+  {
+    id: "emis",
+    name: "EMI Solutions (EMIS)",
+    logo: "/Brand_logo/emis.png",
+    href: "/products/emi-solutions"
+  },
+  {
+    id: "degson",
+    name: "Degson Electronics",
+    logo: "/Brand_logo/degson.png",
+    href: "/products/degson"
   }
 ];
 
@@ -1121,5 +1136,159 @@ export const BRANDS_DATA: BrandData[] = [
     ],
     certifications: ["GMP Grade A/B/C/D Compliant", "ISO 14644-1 Cleanroom Standard", "CE Certified", "Fire Resistance EI 30 / EI 60"],
     targetIndustries: ["Pharmaceutical & Biopharmaceutical", "Sterile Injectable Facilities", "Medical Device Manufacturing", "Semiconductor Cleanrooms", "Stem Cell & Gene Therapy Labs"]
+  },
+  {
+    id: "emi-solutions",
+    heroImage: "/product_hero_card/EMIS.png",
+    name: "EMI Solutions",
+    fullName: "EMI Solutions Pvt. Ltd. (EMIS)",
+    tagline: "EMI / EMC Power Line Filters, EMP Protection & Suppression Solutions",
+    badge: "Dealer & Supplier",
+    accentColor: "#059669",
+    logoBg: "linear-gradient(135deg, #064e3b 0%, #059669 100%)",
+    logoColor: "#ffffff",
+    filterCategory: "power",
+    overview:
+      "EMI Solutions Pvt. Ltd. (EMIS) is a premier Indian manufacturer and solution provider for Electromagnetic Interference (EMI) and Electromagnetic Compatibility (EMC) compliance. From single and three-phase power line noise suppression filters to high-performance military-grade EMP chamber filters, feedthrough capacitors, and IEC power entry modules, EMIS delivers total noise suppression and electromagnetic immunity across critical industrial, medical, and defense systems.",
+    keyFeatures: [
+      "High attenuation across broad frequency spectrum (10 kHz to 30 MHz conducted & high GHz radiated)",
+      "Chamber filters engineered for HEMP (High-Altitude Electromagnetic Pulse) & Tempest shielded enclosures",
+      "Comprehensive Single Phase (1A to 100A) and Three Phase (up to 1200A) line filters with low earth leakage",
+      "Panel and chassis-mount IEC inlet power entry filters with integrated fuse and DPST switch options",
+      "Power Feedthrough capacitors, cylindrical suppression filters, and industrial surge protection devices (SPD)"
+    ],
+    categories: [
+      {
+        categoryName: "EMI & EMC Power Line Filters",
+        products: [
+          {
+            name: "Single Phase EMI Power Line Filters",
+            desc: "Compact chassis and PCB-mount RFI power line noise suppression filters designed for single-phase equipment, automation controllers, and SMPS power supplies.",
+            specs: ["Current: 1A to 100A", "Voltage: 110V / 250V AC 50/60Hz", "Low leakage current (medical versions available)", "High differential & common mode attenuation"],
+            badge: "Single Phase",
+            image: "/product_images/emis/line_filters.jpg"
+          },
+          {
+            name: "Three Phase EMI Filters (Delta & Wye)",
+            desc: "Heavy-duty three-phase (with or without neutral) RFI noise filters engineered specifically for Variable Frequency Drives (VFDs), inverters, servo systems, and CNC machinery.",
+            specs: ["Current: 5A to 1200A", "Voltage: 440V / 520V AC", "Mitigates motor drive harmonics & EMI feedback", "Finger-safe touch-proof terminal blocks"],
+            badge: "Three Phase",
+            image: "/product_images/emis/line_filters.jpg"
+          },
+          {
+            name: "Chamber Filters with EMP Protection",
+            desc: "Severe-duty shielded room, test facility, and defense installation filters offering high-energy surge handling and multi-gigahertz attenuation against HEMP and EMP threats.",
+            specs: ["Attenuation: >100 dB from 14 kHz to 10 GHz", "MIL-STD-188-125 compliant", "High surge current withstand capacity", "Robust welded enclosure with RF gasket"],
+            badge: "MIL-STD HEMP",
+            image: "/product_images/emis/emp_chamber_filters.jpg"
+          }
+        ]
+      },
+      {
+        categoryName: "Feedthrough, Inlets & Power Suppression Components",
+        products: [
+          {
+            name: "Power Feedthrough Capacitors & Filters",
+            desc: "Threaded cylindrical and solder-in feedthrough capacitors designed for shielded cabinets, telecommunication basestations, and high-frequency power feeds.",
+            specs: ["Capacitance: 10 pF to 4.7 µF", "Operating Voltage: Up to 1000V DC / 440V AC", "Very high self-resonance frequency", "Hermetically sealed brass/nickel-plated body"],
+            badge: "Feedthrough",
+            image: "/product_images/emis/cylindrical_filters.jpg"
+          },
+          {
+            name: "IEC Inlet Filter Modules",
+            desc: "Chassis-mount IEC 320 C14 & C20 power entry modules with integrated EMI noise filter, optional fuse holder, and illuminated rocker power switch.",
+            specs: ["Rated Current: 1A to 15A at 250V AC", "Snap-in and screw-mount options", "General purpose and low-leakage medical Grade M options", "UL / CE / VDE approvals"],
+            badge: "IEC Inlet",
+            image: "/product_images/emis/iec_inlet_filter.jpg"
+          },
+          {
+            name: "Power Surge Protection Devices (SPD) & EMC Components",
+            desc: "Specialized transient voltage surge suppressors, cylindrical suppression filter networks, spark quenchers, and EMC chokes for industrial equipment protection.",
+            specs: ["High discharge surge withstand (8/20 µs)", "Fast nanosecond response time", "Transient overvoltage clamping", "DIN rail & chassis mount"],
+            badge: "Surge Protection",
+            image: "/product_images/emis/pcb_potted_filters.jpg"
+          }
+        ]
+      }
+    ],
+    certifications: ["CE Marked", "UL Recognized", "MIL-STD-188-125", "ISO 9001:2015", "RoHS Compliant"],
+    targetIndustries: ["Defense & Aerospace", "Industrial Automation & Drives", "Medical Imaging & Diagnostic Equipment", "Telecommunications & Data Centers", "Renewable Energy & Solar Inverters"]
+  },
+  {
+    id: "degson",
+    heroImage: "/product_hero_card/Degson.png",
+    name: "Degson",
+    fullName: "Degson Electronics Co., Ltd.",
+    tagline: "Terminal Blocks, Heavy Duty Connectors, SMPS & Panel Connectivity",
+    badge: "Dealer & Supplier",
+    accentColor: "#005596",
+    logoBg: "linear-gradient(135deg, #002b4d 0%, #005596 100%)",
+    logoColor: "#ffffff",
+    filterCategory: "automation",
+    overview:
+      "Degson is a world-renowned manufacturer of electrical connection technology, industrial electronic components, and control cabinet accessories. With global certifications including UL, VDE, and CE, Degson delivers vibration-proof DIN-rail terminal blocks, heavy-duty multipole industrial rectangular connectors, high-efficiency DIN-rail SMPS power supplies, slim PLC relay modules, and panel infrastructure accessories designed for demanding industrial automation environments.",
+    keyFeatures: [
+      "Modular DIN-Rail Terminal Blocks: Push-in (PT), screw clamp, spring-cage, and multi-tier disconnect terminals",
+      "HEAVYCON Heavy Duty Multipole Connectors: IP65 / IP67 / IP68 die-cast aluminium hoods, bases, and inserts",
+      "Industrial DIN-Rail SMPS Power Supplies: High-efficiency 12V, 24V, 48V DC outputs with robust short-circuit protection",
+      "Interface Relay Boards & Ultra-Slim 6.2mm PLC Relays with LED status and reverse polarity protection",
+      "Complete Panel Wiring Infrastructure: Industrial Ethernet switches, surge arrestors, DIN rails, PVC wire ducts, lugs, and junction boxes"
+    ],
+    categories: [
+      {
+        categoryName: "Industrial Connectivity & Terminal Blocks",
+        products: [
+          {
+            name: "DIN-Rail Modular Terminal Blocks",
+            desc: "Universal feed-through, ground, multi-level disconnect, and fuse terminal blocks with tool-free push-in technology and vibration-proof screw clamps.",
+            specs: ["Wire Range: 0.2 mm² to 95 mm²", "Rated: 800V / up to 232A", "Cross-connect bridging CLIPLINE compatible", "UL94 V-0 flame-retardant housing"],
+            badge: "Push-in & Screw",
+            image: "/product_images/degson/terminal_blocks_relays.jpg"
+          },
+          {
+            name: "Heavy Duty Multipole Connectors (HDC)",
+            desc: "Rugged die-cast aluminium alloy hoods, bulkhead and surface-mount housings, and modular pin inserts (6 to 216 poles) for harsh factory environment wiring.",
+            specs: ["Protection Rating: IP65 / IP67 / IP68", "Current: 10A to 100A per contact", "Screw, crimp, and push-in spring pin inserts", "Salt-spray and vibration resistant"],
+            badge: "IP65 / IP67 HDC",
+            image: "/product_images/degson/heavy_duty_connectors.jpg"
+          },
+          {
+            name: "Circular Sensor / Actuator Cables & Connectors",
+            desc: "Overmolded M8, M12, and 7/8\" sensor and fieldbus connection cables with A, B, and D coding for sensor-to-panel connectivity.",
+            specs: ["M8 & M12 (3, 4, 5, 8-pin)", "IP67 / IP68 waterproof rating", "Oil-resistant PUR / PVC jacket", "Pre-molded with straight and 90° angled options"],
+            badge: "M8 / M12 Cables",
+            image: "/product_images/degson/sensor_cables.jpg"
+          }
+        ]
+      },
+      {
+        categoryName: "Panel Power, Electronics & Accessories",
+        products: [
+          {
+            name: "Industrial DIN-Rail SMPS Power Supplies",
+            desc: "High-reliability industrial switch mode power supplies designed for 24V DC control cabinet systems, instrumentation, and PLCs.",
+            specs: ["Output: 12V, 24V, 48V DC (30W to 480W)", "Efficiency up to 92%", "Wide AC input range with active PFC", "Overload, overvoltage & short-circuit protection"],
+            badge: "DIN-Rail SMPS",
+            image: "/product_images/degson/industrial_smps.jpg"
+          },
+          {
+            name: "Interface Relay Boards & PLC Coupling Relays",
+            desc: "Ultra-compact 6.2mm PLC interface coupling relays and multi-channel relay modules (4, 8, 16 channel) with pluggable sub-miniature relays.",
+            specs: ["Control Voltages: 12V, 24V DC / 230V AC", "Contact Rating: 1 CO / 2 CO (6A/10A)", "Integrated LED coil status & free-wheeling diode", "Space-saving DIN rail design"],
+            badge: "PLC Relays",
+            image: "/product_images/degson/terminal_blocks_relays.jpg"
+          },
+          {
+            name: "Panel Accessories: Ethernet Switches, Ducts, Arrestors & Boxes",
+            desc: "Turnkey panel building supplies including unmanaged industrial Ethernet switches, DIN rail surge arrestors, slotted PVC wiring cable ducts, copper cable lugs, and IP66 junction boxes.",
+            specs: ["5 to 8 port DIN-rail Ethernet switches", "Type 2 Surge Arrestors (40kA)", "Zinc-plated & aluminium DIN rails 35x7.5 / 35x15", "Self-extinguishing slotted PVC wire ducts"],
+            badge: "Panel Infrastructure",
+            image: "/product_images/degson/terminal_blocks_relays.jpg"
+          }
+        ]
+      }
+    ],
+    certifications: ["UL Recognized", "VDE Certified", "CE Marked", "CQC", "ISO 9001 / ISO 14001 / IATF 16949"],
+    targetIndustries: ["Control Panel Builders & OEMs", "Industrial Automation & Robotics", "Rail Transit & Transportation", "Renewable Energy (Solar & Wind)", "Machinery & Equipment Manufacturing"]
   }
 ];

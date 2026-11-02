@@ -47,7 +47,7 @@ export default function BrandDirectory({
   const userInteractionTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const categories = [
-    { id: "all", label: "All Brands (13)" },
+    { id: "all", label: `All Brands (${BRANDS_DATA.length})` },
     { id: "relays", label: "Relays & I/O" },
     { id: "power", label: "Power & Resistors" },
     { id: "automation", label: "PLCs, HMIs & Software" },
@@ -406,7 +406,7 @@ export default function BrandDirectory({
               fontWeight: 700, 
               marginTop: "0.75rem" 
             }}>
-              <Sparkles size={13} color="#c8102e" /> 13 Premier Global Brands &bull; Auto-sliding &bull; Swipe or click arrows
+              <Sparkles size={13} color="#c8102e" /> {BRANDS_DATA.length} Premier Global Brands &bull; Auto-sliding &bull; Swipe or click arrows
             </div>
           )}
         </div>

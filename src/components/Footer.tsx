@@ -132,7 +132,7 @@ export default function Footer() {
                 >
                   <ShieldCheck size={18} color="#f59e0b" style={{ flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontSize: "0.74rem", fontWeight: 700, color: "#ffffff", lineHeight: 1.1 }}>13+</div>
+                    <div style={{ fontSize: "0.74rem", fontWeight: 700, color: "#ffffff", lineHeight: 1.1 }}>15+</div>
                     <div style={{ fontSize: "0.62rem", color: "#94a3b8", lineHeight: 1.2 }}>Global Brands</div>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function Footer() {
                 {[
                   { label: "Home", href: "/" },
                   { label: "About S. P. Enterprises", href: "/about" },
-                  { label: "Products (13 Global Brands)", href: "/products" },
+                  { label: "Products (15 Global Brands)", href: "/products" },
                   { label: "Manufacturing Division", href: "/manufacturing" },
                   { label: "Request a Quote", href: "/request-quote" },
                   { label: "Contact & Location", href: "/contact" }
@@ -239,7 +239,7 @@ export default function Footer() {
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1.2rem" }}>
                 <div style={{ width: "3px", height: "18px", background: "#f59e0b", borderRadius: "2px" }} />
                 <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
-                  Partner Brands (13)
+                  Partner Brands (15)
                 </h3>
               </div>
 
@@ -253,6 +253,7 @@ export default function Footer() {
                     { name: "JUMO India", id: "jumo" },
                     { name: "Automation Software", id: "automation-software" },
                     { name: "Clean Grad Slovenia", id: "cleangrad" },
+                    { name: "EMI Solutions (EMIS)", id: "emi-solutions" },
                   ].map((b) => (
                     <Link
                       key={b.id}
@@ -285,6 +286,7 @@ export default function Footer() {
                     { name: "Gefran", id: "gefran" },
                     { name: "Emerson", id: "emerson" },
                     { name: "Honeywell Automation", id: "honeywell" },
+                    { name: "Degson Electronics", id: "degson" },
                   ].map((b) => (
                     <Link
                       key={b.id}

@@ -15,7 +15,7 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
   
   const brandId = propBrandId || (clientParams?.brandId as string) || "";
   
-  const brand = BRANDS_DATA.find((b) => b.id.toLowerCase() === brandId.toLowerCase());
+  const brand = BRANDS_DATA.find((b) => b.id.toLowerCase() === brandId.toLowerCase() || (brandId.toLowerCase() === "emis" && b.id === "emi-solutions"));
 
   if (!brand) {
     return (

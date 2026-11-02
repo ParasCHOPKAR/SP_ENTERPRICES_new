@@ -164,12 +164,12 @@ export default function Home() {
               <span className="highlight">Industrial Automation</span> &amp; Control
             </h1>
             <p className="hero-desc">
-              Channel Partner for 13 premier global engineering brands including ERI Solid State Relays, Weidmüller SMPS, Phoenix Contact, Gefran, West PID, Renu, JUMO, Emerson, and Honeywell Automation &mdash; coupled with in-house Control Panel and Packaging Machine Manufacturing in Pune.
+              Channel Partner for 15 premier global engineering brands including EMI Solutions Filters, Degson Connectivity, ERI Solid State Relays, Weidmüller SMPS, Phoenix Contact, Gefran, West PID, Renu, JUMO, Emerson, and Honeywell Automation &mdash; coupled with in-house Control Panel and Packaging Machine Manufacturing in Pune.
             </p>
 
             <div className="hero-actions">
               <Link href="/products" className="btn-primary">
-                Explore Products (13 Brands) <ArrowRight size={18} />
+                Explore Products (15 Brands) <ArrowRight size={18} />
               </Link>
               <Link href="/manufacturing" className="btn-secondary" style={{ background: "#ffffff", color: "#c8102e", padding: "0.9rem 1.6rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
                 <Cpu size={18} /> Manufacturing Side
@@ -433,7 +433,7 @@ export default function Home() {
                   e.currentTarget.style.transform = "translateX(0)";
                 }}
               >
-                Explore All 13 Brands <ChevronRight size={14} />
+                Explore All 15 Brands <ChevronRight size={14} />
               </Link>
             </div>
           </div>
@@ -553,7 +553,7 @@ export default function Home() {
               </div>
               <div>
                 <div style={{ fontSize: "0.92rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.25 }}>
-                  13 Premier Brands
+                  15 Premier Brands
                 </div>
                 <div style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 600 }}>
                   Full Factory Warranty
@@ -678,7 +678,7 @@ export default function Home() {
                   <Award size={22} color="#c8102e" style={{ flexShrink: 0, marginTop: "3px" }} />
                   <div>
                     <h4 style={{ fontSize: "1rem", color: "#0f172a", fontWeight: 700, marginBottom: "0.25rem" }}>
-                      Channel Partner (13 Premier Brands)
+                      Channel Partner (15 Premier Brands)
                     </h4>
                     <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: "1.5", margin: 0 }}>
                       Direct distributor for ERI Solid State Relays, Weidmüller SMPS, Phoenix Contact, Gefran, West PID, Renu, JUMO, Emerson, and Honeywell Automation with full manufacturer warranties.
@@ -708,7 +708,7 @@ export default function Home() {
                   className="btn-secondary"
                   style={{ background: "#f1f5f9", color: "#0f172a", padding: "0.85rem 1.5rem", borderRadius: "6px", textDecoration: "none", fontSize: "0.9rem", fontWeight: "bold", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}
                 >
-                  Explore 13 Brands <Boxes size={16} />
+                  Explore 15 Brands <Boxes size={16} />
                 </Link>
                 <a
                   href="/01.SP Enterprises (1).pdf"
@@ -785,7 +785,7 @@ export default function Home() {
                       marginBottom: "0.2rem"
                     }}
                   >
-                    13 Premier OEM Brands Stocked
+                    15 Premier OEM Brands Stocked
                   </div>
                   <div style={{ fontSize: "1.05rem", fontWeight: 700 }}>
                     Direct Authorized Distribution &amp; Engineering Supply

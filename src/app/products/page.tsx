@@ -46,7 +46,7 @@ function ProductsContent() {
   }, [queryParam]);
 
   const brandTabs = [
-    { id: "all", label: "All Brands (13)" },
+    { id: "all", label: `All Brands (${BRANDS_DATA.length})` },
     ...BRANDS_DATA.map((brand) => ({
       id: brand.id,
       label: brand.name,
