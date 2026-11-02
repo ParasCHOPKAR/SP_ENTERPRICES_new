@@ -17,16 +17,7 @@ const emisSvg = Buffer.from(`
 </svg>
 `);
 
-// 2. Degson Logo SVG
-const degsonSvg = Buffer.from(`
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" width="500" height="160">
-  <text x="40" y="98" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="900" fill="#003876" letter-spacing="2">DEGSON</text>
-  <rect x="42" y="108" width="410" height="5" fill="#003876" rx="2.5"/>
-  <text x="44" y="132" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#64748b" letter-spacing="2">INDUSTRIAL CONNECTIVITY &amp; TERMINALS</text>
-</svg>
-`);
-
-// 3. Hero Cards: 1983 x 793
+// 2. Hero Cards: 1983 x 793
 async function generateAssets() {
   const brandLogoDir = path.join(process.cwd(), 'public', 'Brand_logo');
   const heroCardDir = path.join(process.cwd(), 'public', 'product_hero_card');
@@ -35,9 +26,6 @@ async function generateAssets() {
 
   await sharp(emisSvg).png().toFile(path.join(brandLogoDir, 'emis.png'));
   fs.writeFileSync(path.join(brandLogoDir, 'emis.svg'), emisSvg);
-
-  await sharp(degsonSvg).png().toFile(path.join(brandLogoDir, 'degson.png'));
-  fs.writeFileSync(path.join(brandLogoDir, 'degson.svg'), degsonSvg);
 
   console.log('Brand logos created.');
 
@@ -124,88 +112,6 @@ async function generateAssets() {
     .toFile(path.join(heroCardDir, 'EMIS.png'));
 
   console.log('EMIS Hero Card created.');
-
-  // Create Hero Card for Degson: 1983 x 793
-  const degsonConnImg = await sharp('public/product_images/degson/heavy_duty_connectors.jpg')
-    .resize(500, 360, { fit: 'contain', background: { r: 15, g: 23, b: 42, alpha: 0 } })
-    .toBuffer();
-  const degsonSmpsImg = await sharp('public/product_images/degson/industrial_smps.jpg')
-    .resize(460, 330, { fit: 'contain', background: { r: 15, g: 23, b: 42, alpha: 0 } })
-    .toBuffer();
-  const degsonTerminalImg = await sharp('public/product_images/degson/terminal_blocks_relays.jpg')
-    .resize(480, 340, { fit: 'contain', background: { r: 15, g: 23, b: 42, alpha: 0 } })
-    .toBuffer();
-
-  const degsonHeroSvg = Buffer.from(`
-  <svg xmlns="http://www.w3.org/2000/svg" width="1983" height="793" viewBox="0 0 1983 793">
-    <defs>
-      <linearGradient id="degsonBg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#021a36" />
-        <stop offset="45%" stop-color="#003876" />
-        <stop offset="80%" stop-color="#02569e" />
-        <stop offset="100%" stop-color="#0284c7" />
-      </linearGradient>
-      <linearGradient id="cardGlowDeg" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12" />
-        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02" />
-      </linearGradient>
-    </defs>
-    <!-- Background -->
-    <rect width="1983" height="793" fill="url(#degsonBg)" />
-    <!-- High-tech background grid -->
-    <circle cx="1550" cy="400" r="420" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.1" />
-    <circle cx="1550" cy="400" r="280" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="10 15" stroke-opacity="0.15" />
-
-    <!-- Left Badge & Content -->
-    <rect x="140" y="130" width="360" height="42" rx="21" fill="#ffffff" fill-opacity="0.15" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
-    <text x="320" y="157" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#67e8f9" text-anchor="middle" letter-spacing="2">AUTHORIZED DEALER &amp; SUPPLIER</text>
-
-    <!-- Main Title -->
-    <text x="140" y="270" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="900" fill="#ffffff" letter-spacing="2">DEGSON</text>
-    <text x="140" y="340" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#93c5fd">Terminal Blocks, Heavy Duty Connectors &amp; SMPS</text>
-
-    <!-- Tagline & Description -->
-    <text x="140" y="415" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#e0f2fe">
-      DIN-Rail Push-in &amp; Screw Terminals • Heavy Duty IP65/IP67 Connectors
-    </text>
-    <text x="140" y="455" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#e0f2fe">
-      Industrial SMPS Power Supplies • PLC Relay Modules • Ethernet Switches
-    </text>
-
-    <!-- Stat Highlights -->
-    <g transform="translate(140, 520)">
-      <rect x="0" y="0" width="220" height="110" rx="16" fill="url(#cardGlowDeg)" stroke="#ffffff" stroke-opacity="0.2"/>
-      <text x="110" y="52" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" fill="#ffffff" text-anchor="middle">IP65 - IP68</text>
-      <text x="110" y="85" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#bae6fd" text-anchor="middle">Protection Rating</text>
-    </g>
-
-    <g transform="translate(390, 520)">
-      <rect x="0" y="0" width="220" height="110" rx="16" fill="url(#cardGlowDeg)" stroke="#ffffff" stroke-opacity="0.2"/>
-      <text x="110" y="52" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" fill="#ffffff" text-anchor="middle">95 mm²</text>
-      <text x="110" y="85" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#bae6fd" text-anchor="middle">Max Terminal Gauge</text>
-    </g>
-
-    <g transform="translate(640, 520)">
-      <rect x="0" y="0" width="220" height="110" rx="16" fill="url(#cardGlowDeg)" stroke="#ffffff" stroke-opacity="0.2"/>
-      <text x="110" y="52" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold" fill="#ffffff" text-anchor="middle">UL / VDE</text>
-      <text x="110" y="85" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#bae6fd" text-anchor="middle">Global Certification</text>
-    </g>
-
-    <!-- Right Card Frames -->
-    <rect x="990" y="100" width="910" height="593" rx="24" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1.5"/>
-  </svg>
-  `);
-
-  await sharp(degsonHeroSvg)
-    .composite([
-      { input: degsonConnImg, top: 120, left: 1010 },
-      { input: degsonTerminalImg, top: 290, left: 1370 },
-      { input: degsonSmpsImg, top: 130, left: 1470 }
-    ])
-    .png()
-    .toFile(path.join(heroCardDir, 'Degson.png'));
-
-  console.log('Degson Hero Card created.');
 }
 generateAssets();
 

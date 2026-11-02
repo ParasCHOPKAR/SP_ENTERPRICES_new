@@ -185,15 +185,9 @@ export default function Header() {
           href: "/products/emi-solutions",
         },
         {
-          label: "Degson",
-          sub: "Terminal Blocks, Heavy Duty Connectors & SMPS",
-          tag: "Connectivity",
-          href: "/products/degson",
-        },
-        {
           label: "View All Products & Brands",
-          sub: "Explore full product catalog across all 15 authorized engineering brands",
-          tag: "15 Brands",
+          sub: "Explore full product catalog across all 14 authorized engineering brands",
+          tag: "14 Brands",
           href: "/products",
           isFeatured: true,
         },
@@ -341,7 +335,7 @@ export default function Header() {
                               SP Enterprises — Authorised Distributor Brands
                             </span>
                             <span style={{ fontSize: "0.7rem", background: "#fef3c7", color: "#b45309", padding: "0.15rem 0.5rem", borderRadius: "20px", fontWeight: 700 }}>
-                              15 Global Brands
+                              14 Global Brands
                             </span>
                           </div>
                         )}
