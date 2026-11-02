@@ -45,7 +45,7 @@ export const BRAND_HERO_MAP: Record<string, string> = {
   'cd-automation': '/product_images/CD_automation.png',
   'gefran': '/product_hero_card/Gefran.png',
   'jumo': '/product_hero_card/JUMO-India.png',
-  'emerson': '/product_hero_card/Emerson.png',
+  'emerson': '/product_images/emerson/image.png',
   'automation-software': '/product_hero_card/SCADA.png',
   'honeywell': '/product_hero_card/Honeywell.png',
   'cleangrad': '/product_hero_card/Cleangrad.png',
@@ -841,7 +841,7 @@ export const BRANDS_DATA: BrandData[] = [
   },
   {
     id: "emerson",
-    heroImage: "/product_hero_card/Emerson.png",
+    heroImage: "/product_images/emerson/image.png",
     name: "Emerson",
     fullName: "Emerson Electric Co.",
     tagline: "PACSystems, HMIs, Programmable Controllers & HVAC Automation",
