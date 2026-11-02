@@ -721,7 +721,7 @@ export const BRANDS_DATA: BrandData[] = [
             name: "Temperature & Pressure Transducers",
             desc: "Industrial thermocouples, RTD Pt100 probes, and piezoresistive pressure sensors for hydraulic and pneumatic presses.",
             specs: ["Gauge & absolute pressure", "High shock & vibration resistance"],
-            image: "/product_images/gefran/pressure_transducer.jpg"
+            image: "/product_images/gefran/pressure_transducer.png"
           }
         ]
       },
