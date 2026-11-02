@@ -262,7 +262,7 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
     tagline: "Turn-key Automated Conveyors, 90° Chain Tilters & SS304 Material Lifters",
     badge: "SP Enterprises • SAHPL Heavy Automation",
     iconName: "Truck",
-    image: "/manufacturing/products/chain_tilter_90deg.jpg",
+    image: "/manufacturing/products/image.png",
     description:
       "SP Enterprises manufactures and delivers the complete SAHPL material handling automation portfolio. Designed to streamline factory production, eliminate physical handling fatigue, and accelerate internal logistics, our systems are proven across leading automotive OEMs (Cummins, Mahindra) and pharmaceutical facilities (Fresenius-Kabi).",
     featuredClients: [
