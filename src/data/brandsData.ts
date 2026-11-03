@@ -684,15 +684,17 @@ export const BRANDS_DATA: BrandData[] = [
     heroImage: "/product_hero_card/Gefran.png",
     name: "Gefran",
     fullName: "Gefran S.p.A. (Italy / India)",
-    tagline: "Sensors, LVDT Displacement Transducers, Controllers & Drives",
+    tagline: "Linear TWIIST® Sensors, Melt Pressure Transducers, Controllers & Drives",
     badge: "Dealer & Supplier",
     accentColor: "#0284c7",
     logoBg: "linear-gradient(135deg, #0369a1 0%, #0284c7 100%)",
     logoColor: "#ffffff",
     filterCategory: "sensors",
+    externalReference: "https://www.gefran.com/products/position-sensors/linear-twiist/",
     overview:
-      "Gefran is a premier European manufacturer specializing in industrial sensors, linear displacement transducers (LVDT / magnetostrictive), melt pressure transmitters for polymer processing, digital process controllers, and variable frequency drives.",
+      "Gefran is a premier European manufacturer specializing in industrial sensors, patented Linear TWIIST® contactless multivariable position transducers, linear displacement transducers (LVDT / magnetostrictive), melt pressure transmitters for polymer processing, digital process controllers, and variable frequency drives.",
     keyFeatures: [
+      "Patented Linear TWIIST® contactless multivariable transducers measuring position, speed, tilt, and vibration",
       "Industry-standard Melt Pressure Transducers for plastic extrusion up to 538°C",
       "High-precision LVDT and non-contact magnetostrictive linear transducers (Hyperwave technology)",
       "Microprocessor controllers (Series 600, 800, 1200, 1600) with custom graphic displays",
@@ -700,6 +702,47 @@ export const BRANDS_DATA: BrandData[] = [
       "Extreme measurement repeatability and durability in aggressive industrial environments"
     ],
     categories: [
+      {
+        categoryName: "Linear TWIIST® Contactless Position Transducers",
+        products: [
+          {
+            name: "LM-C Contactless Linear TWIIST Position Sensor (CANopen)",
+            desc: "Contactless linear position transducer with TWIIST patented multi-variable technology. Measures position, velocity, triaxial tilt, vibration, and internal temperature over CANopen for Industry 4.0 preventive maintenance.",
+            specs: [
+              "Strokes: 100 to 1000 mm (1 µm resolution)",
+              "Multi-variable: Position, velocity, triaxial tilt, vibration & temp",
+              "Protocol: CANopen DS 301 / DSP 406 profile",
+              "Ingress & Temp: IP67 sealed, -40°C to +85°C, M12 5-pin"
+            ],
+            badge: "CANopen Multivariable",
+            image: "/product_images/gefran/twiist_lm_c.webp"
+          },
+          {
+            name: "LM-L Contactless Linear TWIIST Position Sensor (IO-Link)",
+            desc: "Contactless multi-variable linear transducer featuring IO-Link v1.1 interface for smart factory integration, real-time condition monitoring, and edge diagnostics in industrial and mobile hydraulics.",
+            specs: [
+              "Strokes: 100 to 1000 mm (1 µm resolution)",
+              "Multi-variable: Position, speed, 3-axis inclination, vibration & temp",
+              "Protocol: IO-Link v1.1 (COM3 230.4 kBaud) & SIO mode",
+              "Ingress & Temp: IP67 sealed body, -40°C to +85°C, M12 5-pole"
+            ],
+            badge: "IO-Link Multivariable",
+            image: "/product_images/gefran/twiist_lm_l.webp"
+          },
+          {
+            name: "LS-A Contactless Linear TWIIST Position Sensor (Analog Output)",
+            desc: "Patented contactless TWIIST position sensor with self-aligning mounting mechanism, available in single and redundant analog output configurations for machinery and mobile hydraulics.",
+            specs: [
+              "Strokes: 50 to 1000 mm",
+              "Outputs: 0-10 VDC, 4-20 mA, and ratiometric voltage",
+              "Configuration: Direct and reverse analog, single & redundant options",
+              "Mounting & Ingress: Self-aligning mechanism, IP67, -40°C to +85°C, M12"
+            ],
+            badge: "Analog Output",
+            image: "/product_images/gefran/twiist_ls_a.webp"
+          }
+        ]
+      },
       {
         categoryName: "Sensors & Linear Displacement Transducers",
         products: [
