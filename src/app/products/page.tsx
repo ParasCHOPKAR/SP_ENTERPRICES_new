@@ -93,18 +93,39 @@ function ProductsContent() {
       <Header />
 
       {/* Page Hero Banner */}
-      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #7f1d1d 100%)", padding: "4.5rem 0", color: "white" }}>
+      <section className="page-hero-banner" style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #7f1d1d 100%)", padding: "3.8rem 0 3.2rem", color: "white", position: "relative", overflow: "hidden" }}>
         <div className="container">
-          <div style={{ maxWidth: "800px" }}>
+          <div style={{ maxWidth: "850px", marginBottom: "2rem" }}>
             <div className="title-pill" style={{ background: "rgba(255,255,255,0.15)", color: "#f59e0b", borderColor: "rgba(255,255,255,0.25)" }}>
               <Cpu size={14} /> COMPLETE PRODUCT PORTFOLIO
             </div>
-            <h1 style={{ fontSize: "3rem", fontWeight: 800, lineHeight: 1.15, marginBottom: "1.2rem" }}>
+            <h1 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: "1rem" }}>
               Brands &amp; <span style={{ color: "#fbbf24" }}>Industrial Products</span>
             </h1>
-            <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: 1.6 }}>
+            <p style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.12rem)", color: "#cbd5e1", lineHeight: 1.6, margin: 0 }}>
               Click on any brand logo or card to inspect complete product specifications, model numbers, amperage ratings, and technical sheets.
             </p>
+          </div>
+
+          {/* 16:4 Master Brand Hero Banner */}
+          <div style={{
+            position: "relative",
+            width: "100%",
+            borderRadius: "16px",
+            overflow: "hidden",
+            boxShadow: "0 20px 45px rgba(0,0,0,0.5)",
+            border: "1px solid rgba(255,255,255,0.18)",
+            aspectRatio: "16 / 4",
+            background: "#0b1120"
+          }}>
+            <Image
+              src="/all_brands_hero_16_4.png"
+              alt="Authorized Channel Partner for Premier Industrial Automation Brands"
+              fill
+              priority
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              style={{ objectFit: "cover" }}
+            />
           </div>
         </div>
       </section>
