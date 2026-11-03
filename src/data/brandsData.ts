@@ -1146,77 +1146,221 @@ export const BRANDS_DATA: BrandData[] = [
     id: "emi-solutions",
     heroImage: "/home/hero_EMI_.png",
     name: "EMI Solutions (EMIS)",
-    fullName: "EMI Solutions Pvt. Ltd. (EMIS)",
-    tagline: "EMI / EMC Power Line Filters, EMP Protection & Suppression Solutions",
-    badge: "Dealer & Supplier",
+    fullName: "EMI Solutions Pvt. Ltd. (EMIS Global)",
+    tagline: "EMI / EMC Filters, Feedthrough Components, Power Quality & EMP Surge Protection",
+    badge: "Official Channel Partner & Supplier",
     accentColor: "#059669",
     logoBg: "linear-gradient(135deg, #064e3b 0%, #059669 100%)",
     logoColor: "#ffffff",
     filterCategory: "power",
+    externalReference: "https://emisglobal.com/products/",
     overview:
-      "EMI Solutions Pvt. Ltd. (EMIS) is a premier Indian manufacturer and solution provider for Electromagnetic Interference (EMI) and Electromagnetic Compatibility (EMC) compliance. From single and three-phase power line noise suppression filters to high-performance military-grade EMP chamber filters, feedthrough capacitors, and IEC power entry modules, EMIS delivers total noise suppression and electromagnetic immunity across critical industrial, medical, and defense systems.",
+      "EMI Solutions Pvt. Ltd. (EMIS) is a global leader and premier Indian manufacturer specializing in Electromagnetic Interference (EMI) and Electromagnetic Compatibility (EMC) compliance solutions. With cutting-edge testing facilities and comprehensive engineering, EMIS provides total electromagnetic noise suppression across 50 Hz to 40 GHz: from single, two, and three-phase power line noise filters, IEC power inlet modules, and feedthrough capacitors, to advanced dV/dt and sine wave power quality output filters, military-grade TEMPEST / HEMP chamber filters, and high-capacity surge protection devices.",
     keyFeatures: [
-      "High attenuation across broad frequency spectrum (10 kHz to 30 MHz conducted & high GHz radiated)",
-      "Chamber filters engineered for HEMP (High-Altitude Electromagnetic Pulse) & Tempest shielded enclosures",
-      "Comprehensive Single Phase (1A to 100A) and Three Phase (up to 1200A) line filters with low earth leakage",
-      "Panel and chassis-mount IEC inlet power entry filters with integrated fuse and DPST switch options",
-      "Power Feedthrough capacitors, cylindrical suppression filters, and industrial surge protection devices (SPD)"
+      "Broad Spectrum EMI/EMC Suppression: Solves conducted and radiated EMI challenges from 50 Hz up to 40 GHz across commercial, medical, and defense domains",
+      "Comprehensive Power Line Filters: Single-phase (MF300/MF310 IEC inlets, RN/RD series), two-phase (MF422), and heavy-duty three-phase delta/wye filters up to 1200A",
+      "Power Quality & Harmonic Mitigation: Tuned dV/dt motor protection filters, sinusoidal output filters, and passive harmonic filters (THDi < 5% / 8%, IEEE 519 compliant)",
+      "Military & Defense-Grade Protection: Certified TEMPEST SDIP-27 filters, MIL-STD-461E/F power line filters, MIL-STD-188-125 HEMP control/data line filters, and hospital MRI RF shielding",
+      "Advanced Surge Protection & Spark Quenching: Type 1+2 / Type 2 AC & DC surge protectors (SSP/TSP/DSP series), RC spark quenchers, and high-speed Gigabit RJ45 network protectors"
     ],
     categories: [
       {
-        categoryName: "EMI & EMC Power Line Filters",
+        categoryName: "EMI / EMC Power Line Filters",
         products: [
           {
-            name: "Single Phase EMI Power Line Filters",
-            desc: "Compact chassis and PCB-mount RFI power line noise suppression filters designed for single-phase equipment, automation controllers, and SMPS power supplies.",
-            specs: ["Current: 1A to 100A", "Voltage: 110V / 250V AC 50/60Hz", "Low leakage current (medical versions available)", "High differential & common mode attenuation"],
+            name: "Single Phase IEC Inlet Power Filters (MF300 / MF310 / MF320 Series)",
+            desc: "Chassis-mount IEC 320 C14 / C20 power entry filters with integrated EMI noise suppression, optional fuse holder drawer, DPST rocker power switch, and medical low-leakage (<5µA) variants.",
+            specs: ["Voltage: 250VAC, 50/60Hz", "Current: 1A to 20A", "IEC 320 C14 & C20 standard", "Snap-in & Screw mount", "Medical Grade M low leakage"],
+            badge: "IEC Inlet",
+            image: "/product_images/emis/single_phase_mf300.png"
+          },
+          {
+            name: "Single Phase Power Line Noise Filters (RN / RD Series)",
+            desc: "Compact chassis and PCB-mount RFI noise suppression filters designed for SMPS power supplies, instrumentation, industrial automation controllers, and sensitive electronics.",
+            specs: ["Operating Voltage: 250VAC / 300VAC", "Current Rating: 1A to 100A", "High differential & common mode attenuation", "Fast-on / screw / wire lead terminals"],
             badge: "Single Phase",
+            image: "/product_images/emis/single_phase_rn_series.png"
+          },
+          {
+            name: "Common Mode Chokes & Inductors (CMC71 / CMC73 / CMC74 Series)",
+            desc: "High-permeability toroidal core common-mode chokes offering exceptional noise suppression across wide frequency ranges up to 400Hz for PCB and power supplies.",
+            specs: ["Voltage: 250V to 600VAC / 850VDC", "Current: 0.25A to 64A", "Operating Frequency: DC to 400Hz", "Through-hole PCB & vertical mounting"],
+            badge: "CMC Chokes",
             image: "/product_images/emis/image.png"
           },
           {
-            name: "Three Phase EMI Filters (Delta & Wye)",
-            desc: "Heavy-duty three-phase (with or without neutral) RFI noise filters engineered specifically for Variable Frequency Drives (VFDs), inverters, servo systems, and CNC machinery.",
-            specs: ["Current: 5A to 1200A", "Voltage: 440V / 520V AC", "Mitigates motor drive harmonics & EMI feedback", "Finger-safe touch-proof terminal blocks"],
-            badge: "Three Phase",
-            image: "/product_images/emis/line_filters.jpg"
+            name: "Two Phase Power Line EMI Filters (MF422 Series)",
+            desc: "Specialized dual-phase (phase-to-phase) EMI filters engineered for 2-phase industrial machinery, dual-phase welding equipment, and commercial appliances.",
+            specs: ["Operating Voltage: 440VAC / 480VAC 50/60Hz", "Current: 5A to 100A", "Dual-stage high noise attenuation", "Finger-safe touch-proof terminal blocks"],
+            badge: "Two Phase",
+            image: "/product_images/emis/two_phase_mf422.webp"
           },
           {
-            name: "Chamber Filters with EMP Protection",
-            desc: "Severe-duty shielded room, test facility, and defense installation filters offering high-energy surge handling and multi-gigahertz attenuation against HEMP and EMP threats.",
-            specs: ["Attenuation: >100 dB from 14 kHz to 10 GHz", "MIL-STD-188-125 compliant", "High surge current withstand capacity", "Robust welded enclosure with RF gasket"],
-            badge: "MIL-STD HEMP",
-            image: "/product_images/emis/emp_chamber_filters.jpg"
+            name: "Three Phase Single Stage & 4-Wire Line Filters (MF423-3W & MF-423-4W Series)",
+            desc: "Industrial three-phase Delta (3-wire) and Star/Wye with Neutral (4-wire) RFI noise filters designed for motor drives, CNC machines, and factory power distribution.",
+            specs: ["Operating Voltage: 440VAC / 520VAC", "Current: 5A to 1200A", "Finger-safe IP20 touch terminals", "Mitigates common & differential mode feedback"],
+            badge: "Three Phase 3W/4W",
+            image: "/product_images/emis/three_phase_mf423_3w.webp"
+          },
+          {
+            name: "Three Phase Dual Stage & High Voltage Filters (MF-423-3-2D & MF423-HV Series)",
+            desc: "Multi-stage high-attenuation line filters and 690VAC heavy-duty filters designed for large Variable Frequency Drives (VFDs), solar central inverters, and wind turbines.",
+            specs: ["Operating Voltage: 440VAC / 520VAC / 690VAC", "Current: up to 1200A", "Extreme attenuation: 150 kHz to 30 MHz", "Book-style & compact chassis packaging"],
+            badge: "Dual Stage & HV",
+            image: "/product_images/emis/three_phase_dual_stage_mf423.webp"
+          },
+          {
+            name: "DC Power Line & EV Fast Charging EMI Filters (MF-610 & 450-EVX Series)",
+            desc: "High-performance DC noise suppression filters engineered for solar photovoltaic inverters, telecom DC power plants, battery energy storage systems (BESS), and electric vehicle fast chargers.",
+            specs: ["Operating Voltage: Up to 1200VDC", "Current Rating: 10A to 800A", "Low power loss & high thermal stability", "Chassis-mount with copper busbar / terminal block"],
+            badge: "DC & EV Fast Charge",
+            image: "/product_images/emis/dc_filter_evx.png"
           }
         ]
       },
       {
-        categoryName: "Feedthrough, Inlets & Power Suppression Components",
+        categoryName: "Feedthrough Components",
         products: [
           {
-            name: "Power Feedthrough Capacitors & Filters",
-            desc: "Threaded cylindrical and solder-in feedthrough capacitors designed for shielded cabinets, telecommunication basestations, and high-frequency power feeds.",
-            specs: ["Capacitance: 10 pF to 4.7 µF", "Operating Voltage: Up to 1000V DC / 440V AC", "Very high self-resonance frequency", "Hermetically sealed brass/nickel-plated body"],
-            badge: "Feedthrough",
-            image: "/product_images/emis/cylindrical_filters.jpg"
+            name: "Power Feedthrough Capacitors (FTC Series)",
+            desc: "Threaded cylindrical brass and nickel-plated feedthrough capacitors providing ultra-low self-inductance and continuous RF noise filtering up to multi-gigahertz frequencies.",
+            specs: ["Capacitance: 10 pF to 4.7 µF", "Operating Voltage: Up to 1000VDC / 440VAC", "Resonance Frequency: >1 GHz", "Hermetically sealed brass/nickel-plated body"],
+            badge: "Feedthrough FTC",
+            image: "/product_images/emis/feedthrough_capacitor.png"
           },
           {
-            name: "IEC Inlet Filter Modules",
-            desc: "Chassis-mount IEC 320 C14 & C20 power entry modules with integrated EMI noise filter, optional fuse holder, and illuminated rocker power switch.",
-            specs: ["Rated Current: 1A to 15A at 250V AC", "Snap-in and screw-mount options", "General purpose and low-leakage medical Grade M options", "UL / CE / VDE approvals"],
-            badge: "IEC Inlet",
-            image: "/product_images/emis/iec_inlet_filter.jpg"
+            name: "Bulkhead Feedthrough Filters (FTF Series)",
+            desc: "Integrated Pi, T, and C low-pass feedthrough filter assemblies engineered for shielded room bulkheads, RF microwave cabinets, radar installations, and defense power lines.",
+            specs: ["Current Rating: 5A to 300A", "Operating Voltage: 250VAC / 500VDC", "High insertion loss: > 70 dB @ 1 GHz", "Bolt-in & solder mounting styles"],
+            badge: "Feedthrough FTF",
+            image: "/product_images/emis/feedthrough_filter.png"
+          }
+        ]
+      },
+      {
+        categoryName: "Power Quality & Harmonic Solutions",
+        products: [
+          {
+            name: "dV/dt Output Motor Protection Filters (TPQDR-1 Series)",
+            desc: "Motor protection filters installed on VFD inverter output to limit voltage rate-of-rise (dV/dt < 500V/µs), suppressing peak motor terminal overvoltages and cable reflection spikes.",
+            specs: ["Motor Voltage: 380V - 500VAC", "Motor Power: 1.5 kW to 630 kW", "Limits dV/dt < 500V/µs", "Prevents motor winding insulation breakdown", "Enables motor cable lengths up to 150m"],
+            badge: "dV/dt Output Filter",
+            image: "/product_images/emis/output_filter_tpqdr.png"
           },
           {
-            name: "Power Surge Protection Devices (SPD) & EMC Components",
-            desc: "Specialized transient voltage surge suppressors, cylindrical suppression filter networks, spark quenchers, and EMC chokes for industrial equipment protection.",
-            specs: ["High discharge surge withstand (8/20 µs)", "Fast nanosecond response time", "Transient overvoltage clamping", "DIN rail & chassis mount"],
-            badge: "Surge Protection",
-            image: "/product_images/emis/pcb_potted_filters.jpg"
+            name: "Sine Wave Inverter Output Filters (SINEFILTER_HD Series)",
+            desc: "Heavy-duty LC low-pass sine wave filters transforming PWM drive output into a clean sinusoidal voltage waveform, completely eliminating acoustic motor hum and bearing currents.",
+            specs: ["Operating Voltage: 400V / 500VAC 50/60Hz", "Switching Frequency: 2 kHz to 8 kHz", "Residual ripple voltage: < 5%", "Supports ultra-long motor cables > 500m", "Eliminates high-frequency bearing fluting"],
+            badge: "Sine Wave Filter",
+            image: "/product_images/emis/sine_filter_hd.png"
+          },
+          {
+            name: "Passive Harmonic Filters (PHF & PHF2 Series)",
+            desc: "Tuned passive LC harmonic mitigation filters designed to eliminate 5th, 7th, 11th, and 13th harmonics from 3-phase rectifier inputs, achieving compliance with IEEE 519 standards.",
+            specs: ["Total Harmonic Current Distortion (THDi): < 5% or < 8%", "Voltage: 380V - 480VAC 50/60Hz", "Power Factor: > 0.98 at rated load", "IEEE 519-2022 compliant", "Current: 10A to 500A"],
+            badge: "THDi < 5% / 8%",
+            image: "/product_images/emis/passive_harmonic_filter_phf.png"
+          }
+        ]
+      },
+      {
+        categoryName: "Military Grade Filters & EMP Protection",
+        products: [
+          {
+            name: "TEMPEST Facility Power Line Shielding Filters (MF710 Series)",
+            desc: "Severe-duty shielded room and data center power line filters meeting NATO TEMPEST SDIP-27 and MIL-STD-188-125, attenuating cyber eavesdropping and RF electromagnetic emissions.",
+            specs: ["Attenuation: >100 dB from 14 kHz to 10 GHz", "Current: 16A to 1200A Single & 3-Phase", "TEMPEST SDIP-27 Level A compliant", "Welded RF-tight enclosure with RF mesh gasket"],
+            badge: "TEMPEST SDIP-27",
+            image: "/product_images/emis/mil_tempest_mf710.webp"
+          },
+          {
+            name: "MIL-STD-461E/F Defense Power Line Filters (MF423-3-3D-M Series)",
+            desc: "High-reliability defense-grade three-phase power filters tested and certified for CE101 and CE102 conducted emissions compliance on naval, airborne, and military vehicle electronics.",
+            specs: ["Standards: MIL-STD-461E / MIL-STD-461F", "Voltage: 440VAC 50/60/400Hz", "Current: 10A to 400A", "Heavy shock & vibration resistant housing"],
+            badge: "MIL-STD-461",
+            image: "/product_images/emis/mil_std_461_mf423.webp"
+          },
+          {
+            name: "HEMP Control & Signal Line Filters (HEMP-CLF & HEMP-TLF Series)",
+            desc: "Single-pair and multi-pair control and analog/digital telephone line EMP filters providing high-energy transient suppression and continuous RF attenuation against nuclear HEMP threats.",
+            specs: ["MIL-STD-188-125-1 & 2 compliant", "Voltage: 24VDC to 250VAC", "High surge current withstand (E1 & E2 pulses)", "Feedthrough bulkhead mounting"],
+            badge: "MIL-STD-188-125",
+            image: "/product_images/emis/mil_hemp_control_line.webp"
+          },
+          {
+            name: "High-Speed Data Line & Ethernet EMP Filters (RJ45 & RS-422 Series)",
+            desc: "High-speed Cat5e/Cat6 Ethernet and RS-422/RS-485 serial data line surge and EMP filters protecting defense command networks, radar feeds, and secure communications.",
+            specs: ["Data Rate: Gigabit 10/100/1000 Mbps & RS-422/485", "Surge Handling: IEC 61000-4-5 & MIL-STD-188-125", "Low insertion loss on high-speed data", "Cast aluminum shielded enclosure"],
+            badge: "Ethernet & Data EMP",
+            image: "/product_images/emis/mil_data_line_rj45.webp"
+          },
+          {
+            name: "Medical MRI Room RF Shielding Filters (MF420-2-2CF-M Series)",
+            desc: "Dedicated RF power line suppression filter engineered for hospital MRI scanning rooms and sensitive diagnostic imaging facilities, eliminating RF noise artifacts in MRI imagery.",
+            specs: ["Attenuation: >100 dB from 10 MHz to 1 GHz", "Operating Voltage: 250VAC / 440VAC", "Low earth leakage current", "Non-magnetic and RF-sealed enclosure"],
+            badge: "MRI RF Shielding",
+            image: "/product_images/emis/mil_mri_filter.png"
+          }
+        ]
+      },
+      {
+        categoryName: "Surge Protectors & Spark Quenchers",
+        products: [
+          {
+            name: "Single Phase DIN-Rail Surge Protectors (SSP2206 / SSP2406 Series)",
+            desc: "Pluggable Type 1+2 and Type 2 modular DIN-rail surge protective devices engineered for 230VAC single-phase power distribution panels and control cabinets.",
+            specs: ["Voltage: 230VAC / 275VAC", "Discharge Current (In): 20kA | (Imax): 40kA", "Visual green/red status indicator", "Remote signalling alarm dry contact", "DIN-rail 35mm mount"],
+            badge: "Single Phase SPD",
+            image: "/product_images/emis/surge_single_phase_ssp2206.png"
+          },
+          {
+            name: "Three Phase Industrial Surge Protectors (TSP3206 / TSP3406 / TSP4206 Series)",
+            desc: "High-capacity Type 1+2 / Type 2 three-phase surge arresters designed for main low-voltage switchboards, industrial motor control centers, and commercial facilities.",
+            specs: ["Voltage: 440VAC (3P+N / 3P)", "Maximum Discharge Current (Imax): up to 65kA (8/20 µs)", "Fast nanosecond response time (<25ns)", "Thermal disconnection protection", "Pluggable replaceable varistor cartridges"],
+            badge: "Three Phase SPD",
+            image: "/product_images/emis/surge_three_phase_tsp3206.png"
+          },
+          {
+            name: "Three Phase RC Spark Quenchers & Snubbers (T-RCF & TSP4083 Series)",
+            desc: "Precision resistor-capacitor (RC) snubber networks designed to extinguish electrical arc transients and contact bounce caused by switching relays, contactors, and solenoids.",
+            specs: ["Operating Voltage: Up to 440VAC 50/60Hz", "Suppresses high inductive back-EMF spikes", "Extends contactor contact life", "Chassis and DIN rail mounting options"],
+            badge: "Spark Quencher",
+            image: "/product_images/emis/surge_three_phase_rcf.webp"
+          },
+          {
+            name: "DC Solar Photovoltaic & Battery Surge Protectors (DSP406 Series)",
+            desc: "Photovoltaic and DC power bus surge protective device engineered to clamp lightning and switching overvoltages on solar combiner boxes, inverters, and battery storage systems.",
+            specs: ["Rated Voltage (Ucpv): 600VDC / 1000VDC", "Discharge Current (Imax): 40kA (8/20 µs)", "High-energy metal oxide varistors (MOV)", "DIN rail plug-in module"],
+            badge: "DC SPD 1000V",
+            image: "/product_images/emis/surge_dc_dsp406.png"
+          },
+          {
+            name: "Network & Gigabit Ethernet Signal Surge Protectors (NSPRJ45 Series)",
+            desc: "High-speed transient voltage surge suppressor equipped with RJ45 shielded connectors, designed to protect IP CCTV cameras, VoIP phones, switches, and PoE equipment from lightning induced surges.",
+            specs: ["Connector: RJ45 Shielded (In/Out)", "Data Rate: 10/100/1000 Mbps Gigabit", "PoE / PoE+ compatible", "Fast response time: < 1 ns", "Rugged metal ground lug for earth bonding"],
+            badge: "RJ45 Network SPD",
+            image: "/product_images/emis/surge_network_rj45.png"
           }
         ]
       }
     ],
-    certifications: ["CE Marked", "UL Recognized", "MIL-STD-188-125", "ISO 9001:2015", "RoHS Compliant"],
-    targetIndustries: ["Defense & Aerospace", "Industrial Automation & Drives", "Medical Imaging & Diagnostic Equipment", "Telecommunications & Data Centers", "Renewable Energy & Solar Inverters"]
+    certifications: [
+      "ISO 9001:2015 Certified",
+      "CE Marked",
+      "UL Recognized",
+      "MIL-STD-188-125 (HEMP)",
+      "MIL-STD-461E/F Compliant",
+      "TEMPEST SDIP-27",
+      "IEEE 519 Compliant",
+      "RoHS & REACH Compliant"
+    ],
+    targetIndustries: [
+      "Defense & Military Shelters",
+      "Industrial Automation & VFD Drives",
+      "Medical Imaging & MRI Suites",
+      "Telecommunications & Data Centers",
+      "Solar & Wind Renewable Energy",
+      "Electric Vehicles & Charging Infrastructure"
+    ]
   }
 ];

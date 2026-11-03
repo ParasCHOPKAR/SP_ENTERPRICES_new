@@ -150,6 +150,37 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
                 >
                   <Download size={16} /> Download {brand.name} PDF Catalogue
                 </a>
+                {brand.externalReference && (
+                  <a
+                    href={brand.externalReference}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.5rem",
+                      background: "rgba(255,255,255,0.08)",
+                      color: "#94a3b8",
+                      padding: "0.8rem 1.2rem",
+                      borderRadius: "8px",
+                      textDecoration: "none",
+                      fontSize: "0.9rem",
+                      fontWeight: 600,
+                      border: "1px solid rgba(255,255,255,0.18)",
+                      transition: "all 0.2s ease"
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.color = "#ffffff";
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)";
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.color = "#94a3b8";
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
+                    }}
+                  >
+                    <ExternalLink size={15} /> Official EMIS Portal
+                  </a>
+                )}
               </div>
             </div>
 
