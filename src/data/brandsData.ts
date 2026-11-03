@@ -684,21 +684,21 @@ export const BRANDS_DATA: BrandData[] = [
     heroImage: "/product_hero_card/Gefran.png",
     name: "Gefran",
     fullName: "Gefran S.p.A. (Italy / India)",
-    tagline: "Linear TWIIST® Sensors, Melt Pressure Transducers, Controllers & Drives",
+    tagline: "Linear TWIIST® & Position Sensors, Resistance Thermometers (RTD), Melt Pressure & Drives",
     badge: "Dealer & Supplier",
     accentColor: "#0284c7",
     logoBg: "linear-gradient(135deg, #0369a1 0%, #0284c7 100%)",
     logoColor: "#ffffff",
     filterCategory: "sensors",
-    externalReference: "https://www.gefran.com/products/position-sensors/linear-twiist/",
+    externalReference: "https://www.gefran.com/products/position-sensors/",
     overview:
-      "Gefran is a premier European manufacturer specializing in industrial sensors, patented Linear TWIIST® contactless multivariable position transducers, linear displacement transducers (LVDT / magnetostrictive), melt pressure transmitters for polymer processing, digital process controllers, and variable frequency drives.",
+      "Gefran is a premier European manufacturer specializing in industrial position sensors (patented Linear TWIIST®, linear potentiometers, Hyperwave magnetostrictives, MEMS inclinometers, draw wires), precision Resistance Thermometers (RTD Pt100/Pt1000), industry-standard melt pressure transmitters for polymer processing, digital process controllers, and variable frequency drives.",
     keyFeatures: [
       "Patented Linear TWIIST® contactless multivariable transducers measuring position, speed, tilt, and vibration",
-      "Industry-standard Melt Pressure Transducers for plastic extrusion up to 538°C",
-      "High-precision LVDT and non-contact magnetostrictive linear transducers (Hyperwave technology)",
-      "Microprocessor controllers (Series 600, 800, 1200, 1600) with custom graphic displays",
-      "ADV200 high-performance vector inverters with closed-loop field-oriented control",
+      "Complete Position Sensing: Linear potentiometers (LT/PK), magnetostrictive (WPG/MK4), rotary Hall sensors (GR3P), MEMS inclinometers (GIG), and draw-wire transducers (GSH)",
+      "High-accuracy Resistance Thermometers (RTD): Pt100/Pt1000 Class A & 1/3 DIN, amplified 4-20mA (AR2/AR6), bayonet extrusion (TR5), interchangeable MgO (TR2), and ambient (TRA)",
+      "Industry-standard Melt Pressure Transducers for plastic extrusion up to 538°C (mercury, oil, NaK filled)",
+      "Microprocessor controllers (Series 600, 800, 1200, 1600) and ADV200 high-performance vector inverters",
       "Extreme measurement repeatability and durability in aggressive industrial environments"
     ],
     categories: [
@@ -744,7 +744,173 @@ export const BRANDS_DATA: BrandData[] = [
         ]
       },
       {
-        categoryName: "Sensors & Linear Displacement Transducers",
+        categoryName: "Position Sensors (Linear, Rotary, Tilt & Wire-Draw)",
+        products: [
+          {
+            name: "Linear Potentiometric Transducers (LT / PK / PC Series)",
+            desc: "High-precision resistive linear position transducers with conductive plastic tracks, delivering infinite resolution and excellent linearity for industrial automation.",
+            specs: [
+              "Strokes: 50 mm to 1500 mm",
+              "Resolution: Infinite, linearity up to ±0.05%",
+              "Design: Cylindrical rod and profile casing types",
+              "Protection: IP65 / IP67 sealed, temp up to +100°C"
+            ],
+            badge: "Linear Potentiometer",
+            image: "/product_images/gefran/gefran_potentiometer_lt.jpg"
+          },
+          {
+            name: "Magnetostrictive Linear Transducers (Hyperwave WPG / MK4)",
+            desc: "Non-contact absolute position transducers utilizing Hyperwave magnetostrictive technology for wear-free, ultra-long-distance measurement in tough conditions.",
+            specs: [
+              "Strokes: up to 4000 mm",
+              "Resolution: down to 0.5 µm with high update rate",
+              "Outputs: 0-10V, 4-20mA, CANopen, SSI, IO-Link",
+              "Cursor: Non-contact magnetic floating cursor or sliding cursor"
+            ],
+            badge: "Hyperwave Contactless",
+            image: "/product_images/gefran/gefran_magnetostrictive_wpg.jpg"
+          },
+          {
+            name: "Rotary Position & Angular Sensors (GR3P / GRA Series)",
+            desc: "Contactless Hall effect and conductive plastic angular displacement sensors designed for mobile machinery, steer-by-wire, and agricultural equipment.",
+            specs: [
+              "Measurement range: 0° to 360° continuous rotation",
+              "Technology: Magnetic Hall effect contactless sensing",
+              "Outputs: Single / dual redundant analog voltage, current, CANopen",
+              "Protection: IP67 / IP69K sealed for harsh outdoor environments"
+            ],
+            badge: "Contactless Rotary",
+            image: "/product_images/gefran/gefran_rotary_gr3p.jpg"
+          },
+          {
+            name: "Industrial Inclinometers & Tilt Sensors (GIG / GIM Series)",
+            desc: "MEMS technology single and dual-axis inclinometers engineered for high-precision tilt angle measurement on aerial work platforms, cranes, and construction vehicles.",
+            specs: [
+              "Measurement range: ±10° up to ±180° / 360°",
+              "Accuracy: ±0.05° with thermal compensation",
+              "Outputs: 4-20mA, 0.5-4.5V, CANopen CiA 410",
+              "Housing: Rugged zinc-plated alloy or plastic, IP67/IP69K"
+            ],
+            badge: "MEMS Inclinometer",
+            image: "/product_images/gefran/gefran_inclinometer_gig.jpg"
+          },
+          {
+            name: "Draw Wire Displacement Sensors (GSH Series)",
+            desc: "Compact wire-actuated position transducers that convert linear movement into rotary signals for long stroke displacement measurement on lifts and telescopic booms.",
+            specs: [
+              "Stroke: up to 10,000 mm (10 meters)",
+              "Wire: Highly flexible stainless steel measuring cable",
+              "Outputs: Potentiometric, 4-20mA, 0-10V, CANopen",
+              "Construction: Heavy-duty anodized aluminum enclosure"
+            ],
+            badge: "Wire-Draw Transducer",
+            image: "/product_images/gefran/gefran_draw_wire_gsh.png"
+          }
+        ]
+      },
+      {
+        categoryName: "Resistance Thermometers (RTD Pt100 / Pt1000)",
+        products: [
+          {
+            name: "AR2 Series Amplified RTD with Interchangeable Insert",
+            desc: "Head-mounted resistance thermometer with interchangeable mineral insulated (MgO) insert and built-in 4-20mA loop-powered transmitter.",
+            specs: [
+              "Element: Pt100 Class A / 1/3 DIN according to IEC 751",
+              "Output: 4-20 mA 2-wire amplified linear output",
+              "Temp range: -50°C to +400°C",
+              "Insert: Spring-loaded interchangeable MgO insert for easy maintenance"
+            ],
+            badge: "Amplified 4-20mA",
+            image: "/product_images/gefran/gefran_rtd_ar2.jpg"
+          },
+          {
+            name: "AR6 / AR6M Series Compact Amplified RTD Sensors",
+            desc: "Compact resistance thermometers with integrated 4-20mA transmitter directly built into the sensor body for space-constrained industrial machinery.",
+            specs: [
+              "Stem: Stainless steel AISI 316 with mineral oxide MgO insulation",
+              "Output: 4-20mA (2-wire), factory calibrated",
+              "Electrical connection: M12 4-pin male connector or fixed cable",
+              "Protection: IP67 waterproof and vibration resistant"
+            ],
+            badge: "Compact Amplified",
+            image: "/product_images/gefran/gefran_rtd_ar6.jpg"
+          },
+          {
+            name: "TR1 / TR1M Series General Purpose Head-Mounted RTDs",
+            desc: "Standard industrial resistance thermometers with aluminum connection head and fixed or mineral-insulated MgO stem for piping and vessels.",
+            specs: [
+              "Element: Pt100, Pt1000 (2, 3, or 4 wire connection)",
+              "Operating range: -200°C to +600°C",
+              "Connection head: DIN B, IP65 with ceramic terminal block",
+              "Mounting: Welded thread, compression fitting, or flanged thermowell"
+            ],
+            badge: "Head Mount RTD",
+            image: "/product_images/gefran/gefran_rtd_tr1.jpg"
+          },
+          {
+            name: "TR2 Series Interchangeable Insert RTD Sensors",
+            desc: "Heavy-duty industrial RTD assemblies featuring spring-loaded interchangeable MgO inserts, allowing element replacement without draining process lines.",
+            specs: [
+              "Construction: DIN 43772 compliant thermowell configuration",
+              "Element: Pt100 single or duplex (dual elements)",
+              "Shock & Vibration: Excellent resistance via compacted MgO insulation",
+              "Process connection: 1/2\" Gas, 1/2\" NPT, 3/4\" NPT"
+            ],
+            badge: "Interchangeable MgO",
+            image: "/product_images/gefran/gefran_rtd_tr2.jpg"
+          },
+          {
+            name: "TR5 / TR5N Series Plastics Industry Bayonet RTDs",
+            desc: "Specialized resistance thermometers engineered with spring-loaded bayonet caps for temperature control in plastics extrusion, injection nozzles, and hot runners.",
+            specs: [
+              "Fitting: Bayonet cap with adjustable tension spring",
+              "Cable: Metal braided stainless steel armor over Teflon insulation",
+              "Element: Pt100 DIN Class A with fast thermal response",
+              "Temp range: 0°C to +350°C"
+            ],
+            badge: "Plastics & Extrusion",
+            image: "/product_images/gefran/gefran_rtd_tr5_plastics.jpg"
+          },
+          {
+            name: "TR6 / TR6M Series Flexible Cable-Type RTD Probes",
+            desc: "Versatile cable-type resistance thermometers with mineral insulated MgO flexible sheath and bendable transition joint for tight machine spaces.",
+            specs: [
+              "Sheath: AISI 316 bendable (bend radius 3x diameter)",
+              "Lead cable: Silicone, PTFE, or stainless steel overbraid",
+              "Stem diameters: 3 mm, 4.5 mm, 6 mm",
+              "Temp range: -50°C to +400°C / +600°C"
+            ],
+            badge: "Cable-Type Probe",
+            image: "/product_images/gefran/gefran_rtd_tr6_cable.jpg"
+          },
+          {
+            name: "TRM / TRPM Series Mineral Insulated Contact RTDs",
+            desc: "Curved and flat contact tip resistance thermometers designed for direct surface temperature measurement on pipes, molds, and bearing housings.",
+            specs: [
+              "Tip design: Curved saddle for pipe contact or flat contact shoe",
+              "Fast response: Ultra-low thermal inertia contact geometry",
+              "Insulation: Compacted magnesium oxide (MgO)",
+              "Mounting: Pipe clamp band or screw fastening"
+            ],
+            badge: "Surface Contact RTD",
+            image: "/product_images/gefran/gefran_rtd_trm_mgo.jpg"
+          },
+          {
+            name: "TRA Series Ambient & Room Temperature Transmitters",
+            desc: "Wall-mounted ambient temperature sensors with ventilated IP65 housing for HVAC, pharmaceutical cleanrooms, laboratories, and storage facilities.",
+            specs: [
+              "Measurement range: -20°C to +70°C",
+              "Accuracy: Class A Pt100 / ±0.2°C",
+              "Housing: Impact-resistant ABS enclosure with wall-mount bracket",
+              "Output options: Direct Pt100 (3-wire) or 4-20mA loop transmitter"
+            ],
+            badge: "Ambient & Cleanroom",
+            image: "/product_images/gefran/gefran_rtd_tra_ambient.jpg"
+          }
+        ]
+      },
+      {
+        categoryName: "Melt Pressure & Industrial Pressure Transducers",
         products: [
           {
             name: "Melt Pressure Transducers & Transmitters",
@@ -754,16 +920,10 @@ export const BRANDS_DATA: BrandData[] = [
             image: "/product_images/gefran/melt_pressure.jpg"
           },
           {
-            name: "LVDT & Linear Displacement Transducers",
-            desc: "Potentiometric position transducers (LT, PK, PC series) and non-contact magnetostrictive sensors (WPG, MK4).",
-            specs: ["Strokes from 10mm up to 4000mm", "Resolution down to 0.005mm", "Rod and profile types", "IP67 protection"],
-            badge: "LVDT & Linear",
-            image: "/product_images/gefran/lvdt_linear.jpg"
-          },
-          {
-            name: "Temperature & Pressure Transducers",
-            desc: "Industrial thermocouples, RTD Pt100 probes, and piezoresistive pressure sensors for hydraulic and pneumatic presses.",
-            specs: ["Gauge & absolute pressure", "High shock & vibration resistance"],
+            name: "Industrial Pressure Transducers",
+            desc: "Piezoresistive and bonded foil strain gauge pressure transmitters for hydraulic presses, pneumatic systems, and injection lines.",
+            specs: ["Gauge & absolute pressure 0-10 to 0-1000 bar", "High shock & vibration resistance", "Output: 4-20mA, 0-10V"],
+            badge: "Pressure Transducer",
             image: "/product_images/gefran/pressure_transducer.png"
           }
         ]
