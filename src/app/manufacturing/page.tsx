@@ -316,7 +316,7 @@ export default function ManufacturingPage() {
                         className="mfg-card-img"
                       />
                     )}
-                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.7) 0%, transparent 60%)" }} />
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.8) 0%, transparent 30%)", pointerEvents: "none" }} />
                     <span className="mfg-card-tag">
                       {navMeta?.tag || division.badge || "IN-HOUSE"}
                     </span>

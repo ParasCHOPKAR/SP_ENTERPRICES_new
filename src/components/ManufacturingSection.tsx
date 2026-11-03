@@ -266,14 +266,14 @@ export default function ManufacturingSection() {
                     <img
                       src={item.image}
                       alt={item.shortTitle}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      style={{ width: "100%", height: "100%", objectFit: "contain", padding: "8px" }}
                     />
                     <div style={{
                       position: "absolute",
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      background: "linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.45) 60%, transparent 100%)",
+                      background: "linear-gradient(to top, rgba(15, 23, 42, 0.88) 0%, transparent 35%)",
                       padding: "0.8rem 1rem",
                       display: "flex",
                       justifyContent: "space-between",

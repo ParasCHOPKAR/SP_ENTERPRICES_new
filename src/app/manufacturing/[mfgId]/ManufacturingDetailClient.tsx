@@ -548,20 +548,25 @@ export default function ManufacturingDetailClient({ mfgId: propMfgId }: { mfgId?
                 style={{
                   position: "relative",
                   width: "100%",
-                  height: "clamp(220px, 32vw, 360px)",
+                  height: "clamp(240px, 34vw, 380px)",
                   borderRadius: "14px",
                   overflow: "hidden",
                   margin: "1.2rem 0 2rem",
                   boxShadow: "0 8px 30px rgba(0,0,0,0.08)",
-                  border: "1px solid #e2e8f0"
+                  border: "1px solid #e2e8f0",
+                  background: "linear-gradient(135deg, #0b1120 0%, #1e293b 100%)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "1rem"
                 }}
               >
                 <img
                   src={activeItem.image}
                   alt={activeItem.title}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
                 />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.2) 60%, transparent 100%)" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(15,23,42,0.8) 0%, transparent 35%)", pointerEvents: "none" }} />
                 <div style={{ position: "absolute", bottom: "1.4rem", left: "1.6rem", right: "1.6rem", display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "0.8rem" }}>
                   <div>
                     <div style={{ fontSize: "0.75rem", fontWeight: 800, color: "#fbbf24", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "0.2rem" }}>
