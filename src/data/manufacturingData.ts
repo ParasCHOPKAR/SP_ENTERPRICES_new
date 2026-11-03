@@ -165,7 +165,9 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         image: "/manufacturing/products/apfc_capacitor_panel.jpg",
         images: [
           "/manufacturing/products/apfc_capacitor_panel.jpg",
-          "/manufacturing/products/apfc_capacitor_panel_banks.jpg"
+          "/manufacturing/products/apfc_capacitor_panel_banks.jpg",
+          "/manufacturing/products/apfc_capacitor_panel_fascia_meter.jpg",
+          "/manufacturing/products/apfc_capacitor_panel_internal_banks.jpg"
         ],
         description:
           "A capacitor panel maintains the power factor of the system automatically by switching the capacitor banks as per the needs of the system. Normally, an APFC relay along with a bank of capacitors, contactors and circuit breaker are the switchgear components used in the designing of the panel.",
