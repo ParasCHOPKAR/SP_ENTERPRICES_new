@@ -1363,7 +1363,7 @@ export const BRANDS_DATA: BrandData[] = [
             name: "GMP Fire-Rated Flush Glass Windows",
             desc: "Double-glazed flush inspection view panels mounted perfectly flush on both sides of partition walls.",
             specs: ["Tempered safety glass", "Integrated silica desiccant to prevent condensation", "Fire rating up to EI 60 minutes"],
-            image: "/product_images/cleangrad/cleanroom_walls.jpg"
+            image: "/product_images/cleangrad/cleangrad_flush_window.jpg"
           }
         ]
       },
@@ -1387,13 +1387,13 @@ export const BRANDS_DATA: BrandData[] = [
             name: "Cleanroom Doors with Inflatable / Magnetic Seals",
             desc: "Flush cleanroom doors with pneumatic inflatable active gaskets for hermetic containment in bio-hazard and sterile BSL suites.",
             specs: ["Inflatable seal automatically inflates on closure", "Touchless wave-to-open sensors", "Heavy-duty stainless steel fittings"],
-            image: "/product_images/cleangrad/cleanroom_walls.jpg"
+            image: "/product_images/cleangrad/cleangrad_inflatable_door.jpg"
           },
           {
             name: "Cleanroom Air Showers & Mist Decontamination Units",
             desc: "High-velocity filtered air jets to strip surface particulate from personnel before entering critical GMP Grade B/A zones.",
             specs: ["Nozzle air speed: 20-25 m/s", "Microprocessor programmed shower cycles", "Emergency panic egress buttons"],
-            image: "/product_images/cleangrad/dynamic_pass_box.jpg"
+            image: "/product_images/cleangrad/cleanroom_air_shower.jpg"
           }
         ]
       }
