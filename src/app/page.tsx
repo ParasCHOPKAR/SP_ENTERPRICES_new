@@ -145,7 +145,7 @@ export default function Home() {
                 inset: 0,
                 opacity: idx === currentHeroSlide ? 1 : 0,
                 transition: "opacity 0.6s ease-in-out, transform 2.2s ease-out",
-                transform: idx === currentHeroSlide ? "scale(1.02)" : "scale(1.0)",
+                transform: idx === currentHeroSlide ? "scale(1.01)" : "scale(1.0)",
                 zIndex: idx === currentHeroSlide ? 1 : 0,
                 pointerEvents: "none",
               }}
@@ -154,7 +154,7 @@ export default function Home() {
                 src={item.src}
                 alt={item.title}
                 fill
-                style={{ objectFit: "cover", objectPosition: "center" }}
+                style={{ objectFit: "cover", objectPosition: "right top" }}
                 priority={idx === 0}
               />
             </div>
@@ -174,28 +174,65 @@ export default function Home() {
             </p>
 
             <div className="hero-actions">
-              <Link href="/products" className="btn-primary">
-                Explore Products (14 Brands) <ArrowRight size={18} />
+              <Link
+                href="/products"
+                className="btn-primary"
+                style={{ padding: "0.55rem 1.15rem", fontSize: "0.82rem", borderRadius: "5px" }}
+              >
+                Explore Products (14 Brands) <ArrowRight size={16} />
               </Link>
-              <Link href="/manufacturing" className="btn-secondary" style={{ background: "#ffffff", color: "#c8102e", padding: "0.9rem 1.6rem", borderRadius: "6px", textDecoration: "none", fontWeight: "bold", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
-                <Cpu size={18} /> Manufacturing Side
+              <Link
+                href="/manufacturing"
+                className="btn-secondary"
+                style={{
+                  background: "#ffffff",
+                  color: "#c8102e",
+                  padding: "0.55rem 1.15rem",
+                  fontSize: "0.82rem",
+                  borderRadius: "5px",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.45rem"
+                }}
+              >
+                <Cpu size={16} /> Manufacturing Side
               </Link>
               <a
                 href="/01.SP Enterprises (1).pdf"
                 download="SP_Enterprises_Catalogue.pdf"
                 className="btn-outline"
-                style={{ padding: "0.9rem 1.5rem" }}
+                style={{ padding: "0.55rem 1.15rem", fontSize: "0.82rem", borderRadius: "5px" }}
               >
-                <Download size={18} /> PDF Brochure
+                <Download size={16} /> PDF Brochure
               </a>
             </div>
 
             {/* Quick Hero Brand Ticker */}
-            <div className="hero-brand-tags" style={{ marginTop: "2.5rem", display: "flex", flexWrap: "wrap", gap: "0.5rem", alignItems: "center" }}>
-              <span style={{ fontSize: "0.75rem", color: "#f59e0b", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", marginRight: "0.5rem" }}>
+            <div
+              className="hero-brand-tags"
+              style={{
+                marginTop: "0.55rem",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.4rem",
+                alignItems: "center"
+              }}
+            >
+              <span
+                style={{
+                  fontSize: "0.7rem",
+                  color: "#f59e0b",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  marginRight: "0.3rem"
+                }}
+              >
                 Featured Brands:
               </span>
-              {HERO_BG_IMAGES.slice(0, 8).map((slide, sIdx) => {
+              {HERO_BG_IMAGES.slice(0, 7).map((slide, sIdx) => {
                 const isCurrentSlide = sIdx === currentHeroSlide;
                 return (
                   <button
@@ -211,11 +248,11 @@ export default function Home() {
                     style={{
                       background: isCurrentSlide ? "rgba(200, 16, 46, 0.85)" : "rgba(255, 255, 255, 0.15)",
                       border: isCurrentSlide ? "1px solid #fbbf24" : "1px solid rgba(255, 255, 255, 0.25)",
-                      boxShadow: isCurrentSlide ? "0 0 14px rgba(251, 191, 36, 0.6)" : "none",
+                      boxShadow: isCurrentSlide ? "0 0 12px rgba(251, 191, 36, 0.6)" : "none",
                       color: "white",
-                      padding: "0.25rem 0.65rem",
-                      borderRadius: "14px",
-                      fontSize: "0.75rem",
+                      padding: "0.16rem 0.5rem",
+                      borderRadius: "12px",
+                      fontSize: "0.7rem",
                       fontWeight: isCurrentSlide ? 700 : 600,
                       cursor: "pointer",
                       transition: "all 0.25s ease"
@@ -228,9 +265,9 @@ export default function Home() {
               })}
               <Link
                 href="/products"
-                style={{ color: "#fbbf24", fontSize: "0.75rem", fontWeight: 700, textDecoration: "none", marginLeft: "0.5rem" }}
+                style={{ color: "#fbbf24", fontSize: "0.72rem", fontWeight: 700, textDecoration: "none", marginLeft: "0.3rem" }}
               >
-                +{BRANDS_DATA.length - 8} more &rarr;
+                +{BRANDS_DATA.length - 7} more &rarr;
               </Link>
             </div>
           </div>
@@ -241,15 +278,15 @@ export default function Home() {
           className="hero-slide-controls"
           style={{
             position: "absolute",
-            bottom: "1.5rem",
+            bottom: "calc(var(--hero-marquee-h, 72px) + 8px)",
             right: "clamp(1.5rem, 5vw, 4rem)",
             zIndex: 10,
             display: "flex",
             alignItems: "center",
-            gap: "0.6rem",
-            background: "rgba(15, 23, 42, 0.8)",
+            gap: "0.5rem",
+            background: "rgba(15, 23, 42, 0.85)",
             backdropFilter: "blur(10px)",
-            padding: "0.4rem 0.85rem",
+            padding: "0.3rem 0.75rem",
             borderRadius: "50px",
             border: "1px solid rgba(255, 255, 255, 0.2)",
             boxShadow: "0 8px 30px rgba(0, 0, 0, 0.45)",
@@ -358,164 +395,174 @@ export default function Home() {
             {currentHeroSlide + 1}/{HERO_BG_IMAGES.length}
           </span>
         </div>
-      </section>
 
-      {/* Authorized Global Brands Marquee Slider (Below Hero Section) */}
-      <section
-        className="hero-brand-marquee-section"
-        style={{
-          background: "linear-gradient(180deg, #07090e 0%, #12050a 50%, #07090e 100%)",
-          borderTop: "1px solid rgba(245, 158, 11, 0.35)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-          padding: "1.25rem 0 1.5rem 0",
-          position: "relative",
-          zIndex: 5,
-          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.4)"
-        }}
-      >
-        <div style={{ maxWidth: "1560px", margin: "0 auto", padding: "0 clamp(1rem, 3vw, 2.5rem)", marginBottom: "0.9rem" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.8rem" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-              <div
-                style={{
-                  width: "4px",
-                  height: "24px",
-                  background: "linear-gradient(180deg, #c8102e, #f59e0b)",
-                  borderRadius: "2px"
-                }}
-              />
-              <div>
-                <div
-                  style={{
-                    fontSize: "0.7rem",
-                    color: "#f59e0b",
-                    fontWeight: 800,
-                    letterSpacing: "1.2px",
-                    textTransform: "uppercase",
-                    lineHeight: 1.2
-                  }}
-                >
-                  AUTHORIZED DISTRIBUTION &amp; CHANNEL PARTNERS
-                </div>
-                <h2
-                  style={{
-                    fontSize: "1.05rem",
-                    fontWeight: 700,
-                    color: "#ffffff",
-                    letterSpacing: "0.3px",
-                    margin: 0
-                  }}
-                >
-                  Global Industrial Automation &amp; Control Brands
-                </h2>
-              </div>
-            </div>
-
-            <div style={{ display: "flex", alignItems: "center", gap: "1.1rem", flexWrap: "wrap" }}>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.45rem",
-                  fontSize: "0.78rem",
-                  color: "#cbd5e1"
-                }}
-              >
-                <ShieldCheck size={16} color="#ef4444" />
-                <span>100% Genuine Factory-Sealed OEM Stock</span>
-              </div>
-              <Link
-                href="/products"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.4rem",
-                  color: "#f59e0b",
-                  fontSize: "0.78rem",
-                  fontWeight: 700,
-                  textDecoration: "none",
-                  padding: "0.35rem 0.85rem",
-                  borderRadius: "20px",
-                  background: "rgba(245, 158, 11, 0.12)",
-                  border: "1px solid rgba(245, 158, 11, 0.35)",
-                  transition: "all 0.2s"
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(245, 158, 11, 0.25)";
-                  e.currentTarget.style.transform = "translateX(2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(245, 158, 11, 0.12)";
-                  e.currentTarget.style.transform = "translateX(0)";
-                }}
-              >
-                Explore All 14 Brands <ChevronRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Continuous Marquee Slider Track */}
+        {/* Authorized Global Brands Client Logo Marquee Bar (Visible in First Frame of Hero) */}
         <div
-          className="footer-marquee-container"
+          className="hero-brand-marquee-section"
           style={{
+            background: "linear-gradient(180deg, rgba(8, 11, 18, 0.94) 0%, rgba(5, 7, 12, 0.98) 100%)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            borderTop: "1px solid rgba(245, 158, 11, 0.35)",
+            borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+            padding: "0.3rem 0 0.45rem 0",
             position: "relative",
-            overflow: "hidden",
+            zIndex: 8,
             width: "100%",
-            padding: "0.3rem 0"
+            flexShrink: 0,
+            boxShadow: "0 -4px 20px rgba(0, 0, 0, 0.45)"
           }}
         >
-          {/* Left Edge Ambient Fade Mask */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              bottom: 0,
-              left: 0,
-              width: "100px",
-              background: "linear-gradient(to right, #07090e, transparent)",
-              zIndex: 2,
-              pointerEvents: "none"
-            }}
-          />
-
-          {/* Right Edge Ambient Fade Mask */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              bottom: 0,
-              right: 0,
-              width: "100px",
-              background: "linear-gradient(to left, #07090e, transparent)",
-              zIndex: 2,
-              pointerEvents: "none"
-            }}
-          />
-
-          <div className="footer-marquee-track">
-            {HOME_MARQUEE_BRAND_ITEMS.map((brand, index) => (
-              <Link
-                key={`home-marquee-${brand.id}-${index}`}
-                href={brand.href}
-                title={`${brand.name} - Explore Products`}
-                className="footer-marquee-card"
-              >
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
-                  loading="lazy"
+          <div style={{ maxWidth: "1560px", margin: "0 auto", padding: "0 clamp(1rem, 3vw, 2.5rem)", marginBottom: "0.22rem" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <div
                   style={{
-                    maxHeight: "34px",
-                    maxWidth: "125px",
-                    width: "auto",
-                    height: "auto",
-                    objectFit: "contain",
-                    display: "block"
+                    width: "3px",
+                    height: "15px",
+                    background: "linear-gradient(180deg, #c8102e, #f59e0b)",
+                    borderRadius: "2px"
                   }}
                 />
-              </Link>
-            ))}
+                <div style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", flexWrap: "wrap" }}>
+                  <span
+                    style={{
+                      fontSize: "0.64rem",
+                      color: "#f59e0b",
+                      fontWeight: 800,
+                      letterSpacing: "1.1px",
+                      textTransform: "uppercase",
+                      lineHeight: 1
+                    }}
+                  >
+                    AUTHORIZED CHANNEL PARTNERS
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "0.78rem",
+                      fontWeight: 700,
+                      color: "#ffffff",
+                      letterSpacing: "0.2px"
+                    }}
+                  >
+                    Global Industrial Automation &amp; Control Brands
+                  </span>
+                </div>
+              </div>
+
+              <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", flexWrap: "wrap" }}>
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.3rem",
+                    fontSize: "0.7rem",
+                    color: "#cbd5e1"
+                  }}
+                >
+                  <ShieldCheck size={13} color="#ef4444" />
+                  <span>100% Genuine Factory-Sealed OEM Stock</span>
+                </div>
+                <Link
+                  href="/products"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.25rem",
+                    color: "#f59e0b",
+                    fontSize: "0.7rem",
+                    fontWeight: 700,
+                    textDecoration: "none",
+                    padding: "0.18rem 0.65rem",
+                    borderRadius: "20px",
+                    background: "rgba(245, 158, 11, 0.12)",
+                    border: "1px solid rgba(245, 158, 11, 0.35)",
+                    transition: "all 0.2s"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(245, 158, 11, 0.25)";
+                    e.currentTarget.style.transform = "translateX(2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(245, 158, 11, 0.12)";
+                    e.currentTarget.style.transform = "translateX(0)";
+                  }}
+                >
+                  Explore All 14 Brands <ChevronRight size={12} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Continuous Marquee Slider Track */}
+          <div
+            className="footer-marquee-container"
+            style={{
+              position: "relative",
+              overflow: "hidden",
+              width: "100%",
+              padding: "0.08rem 0"
+            }}
+          >
+            {/* Left Edge Ambient Fade Mask */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                left: 0,
+                width: "80px",
+                background: "linear-gradient(to right, rgba(7, 9, 14, 0.98), transparent)",
+                zIndex: 2,
+                pointerEvents: "none"
+              }}
+            />
+
+            {/* Right Edge Ambient Fade Mask */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                right: 0,
+                width: "80px",
+                background: "linear-gradient(to left, rgba(7, 9, 14, 0.98), transparent)",
+                zIndex: 2,
+                pointerEvents: "none"
+              }}
+            />
+
+            <div className="footer-marquee-track">
+              {HOME_MARQUEE_BRAND_ITEMS.map((brand, index) => (
+                <Link
+                  key={`home-marquee-${brand.id}-${index}`}
+                  href={brand.href}
+                  title={`${brand.name} - Explore Products`}
+                  className="footer-marquee-card"
+                  style={{
+                    height: "38px",
+                    minWidth: "115px",
+                    padding: "0.2rem 0.65rem",
+                    margin: "0 0.35rem",
+                    borderRadius: "6px"
+                  }}
+                >
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    loading="eager"
+                    style={{
+                      maxHeight: "24px",
+                      maxWidth: "95px",
+                      width: "auto",
+                      height: "auto",
+                      objectFit: "contain",
+                      display: "block"
+                    }}
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
