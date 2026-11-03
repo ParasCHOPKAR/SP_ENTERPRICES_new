@@ -163,85 +163,486 @@ export const BRANDS_DATA: BrandData[] = [
       "Rugged heat sink mountable & DIN-rail ready designs"
     ],
     categories: [
-      {
-        categoryName: "Solid State Relays (SSR)",
-        products: [
           {
-            name: "Single Phase Solid State Relays",
-            desc: "02 to 07 Amps (PCB Mount) & 10 to 125 Amps (Panel Mount) for resistive and inductive loads.",
-            specs: ["Load: 24-480 VAC", "Control: 3-32 VDC / 90-280 VAC", "Opto-isolated: 4000 Vrms", "Zero Voltage Turn-on"],
-            badge: "02A ~ 125A",
-            image: "/product_images/ERI_img/Single_Phase_Solid_State_Relays.png"
+                "categoryName": "Temperature Measurement",
+                "products": [
+                      {
+                            "name": "JUMO Screw-in thermocouples",
+                            "desc": "With terminal head form B. Order Screw-in thermocouples directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Temp.: -200 to +800 °C",
+                                  "Insertion length 160 to 600 mm",
+                                  "Thermocouples type J, K, and L"
+                            ],
+                            "badge": "Top Seller",
+                            "image": "/product_images/jumo/jumo_temperature_901020.webp"
+                      },
+                      {
+                            "name": "JUMO Push-in thermocouples",
+                            "desc": "With form A terminal head. Order Push-in thermocouples directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Temp.: -200 to +1600 °C",
+                                  "Protection tube diameter 15 or 22 mm",
+                                  "Thermocouples type B, J, K, L, and S"
+                            ],
+                            "badge": "Type 901110",
+                            "image": "/product_images/jumo/jumo_temperature_901110.webp"
+                      },
+                      {
+                            "name": "JUMO Push-in thermocouples",
+                            "desc": "With bayonet fastener. Order Push-in thermocouples directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Temp.: 0 to 400 °C",
+                                  "Compensating cable Silicone/PTFE/metal braiding",
+                                  "Thermocouples type J, K, and L"
+                            ],
+                            "badge": "Type 901190",
+                            "image": "/product_images/jumo/jumo_temperature_901190.webp"
+                      },
+                      {
+                            "name": "JUMO Mineral-insulated thermocouples",
+                            "desc": "According to DIN 43710 and DIN EN 60584 with bare connection wires. Order Mineral-insulated thermocouples directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Temp.: -200 to +1200 °C",
+                                  "Thermocouples type J, K, L, N",
+                                  "Response time: t0.5 from 0.15 s"
+                            ],
+                            "badge": "Type 901210",
+                            "image": "/product_images/jumo/jumo_temperature_901210.webp"
+                      },
+                      {
+                            "name": "JUMO Thermocouples",
+                            "desc": "For devices and plants tested according to DIN EN 14597. Order Thermocouples directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Temp.: -35 to +1500 °C",
+                                  "Stainless steel 1.4571",
+                                  "Thermocouples type B, K, L, and S"
+                            ],
+                            "badge": "Type 901006",
+                            "image": "/product_images/jumo/jumo_temperature_901006.webp"
+                      }
+                ]
           },
           {
-            name: "Three Phase Solid State Relays",
-            desc: "Heavy-duty 3-pole switching for balanced 3-phase industrial heaters, ovens, and furnaces.",
-            specs: ["Load: 24-530 VAC 3-Phase", "Current: 25A, 40A, 60A, 80A, 100A, 125A", "Integrated LED status indicator"],
-            badge: "10A ~ 125A",
-            image: "/product_images/ERI_img/Three_Phase_Solid_State_Relays.png"
+                "categoryName": "Liquid Analysis",
+                "products": [
+                      {
+                            "name": "JUMO ecoLine/JUMO BlackLine pH",
+                            "desc": "pH combination electrode with glass or plastic shaft. The electrode acquires the pH value of water and aqueous-based media. It is used in such fields as swimming pools and in aquaristics.",
+                            "specs": [
+                                  "Measuring range: pH 0 to 12",
+                                  "Temperature: 0 to 60 °C",
+                                  "Insertion length: 120 mm"
+                            ],
+                            "badge": "Top Seller",
+                            "image": "/product_images/jumo/jumo_liquid_analysis_201005.webp"
+                      },
+                      {
+                            "name": "JUMO ecoLine/JUMO BlackLine Redox",
+                            "desc": "Redox combination electrode with glass or plastic shaft. The electrode acquires the redox potential of water and aqueous-based media. It is used in such fields as swimming pools and in aquaristics.",
+                            "specs": [
+                                  "Measuring range: ± 2000 mV",
+                                  "Temperature: 0 to 60 °C",
+                                  "Process pressure up to 6 bar"
+                            ],
+                            "badge": "Type 201010",
+                            "image": "/product_images/jumo/jumo_liquid_analysis_201010.webp"
+                      },
+                      {
+                            "name": "JUMO tecLine pH",
+                            "desc": "ph combination electrodes with ceramic or glass fiber diaphragm. The product acquires the pH value of water and aqueous-based media. It is used in various water applications.",
+                            "specs": [
+                                  "Measuring range: pH 0 to 14",
+                                  "Temperature: -5 to +135 °C",
+                                  "Insertion length: 120 or 225 mm"
+                            ],
+                            "badge": "Top Seller",
+                            "image": "/product_images/jumo/jumo_liquid_analysis_201020.webp"
+                      },
+                      {
+                            "name": "JUMO tecLine HD",
+                            "desc": "pH combination electrodes. The product acquires the pH value of water and aqueous-based media. It is for the most demanding applications with increased dirt and poison load.",
+                            "specs": [
+                                  "Measuring range: pH 0 to 14",
+                                  "Temperature: 0 to 135 °C",
+                                  "Process pressures up to 13 bar"
+                            ],
+                            "badge": "Top Seller",
+                            "image": "/product_images/jumo/jumo_liquid_analysis_201021.webp"
+                      },
+                      {
+                            "name": "JUMO tecLine HY",
+                            "desc": "pH combination electrodes for hygienic applications. Order JUMO tecLine HY directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: pH 0 to 14",
+                                  "Temperature: 0 to 135 °C",
+                                  "Process pressures up to 6 bar"
+                            ],
+                            "badge": "Type 201022",
+                            "image": "/product_images/jumo/jumo_liquid_analysis_201022.webp"
+                      }
+                ]
           },
           {
-            name: "Phase Control SSR",
-            desc: "Proportional phase angle control relays for precise thermal regulation and lamp dimming.",
-            specs: ["Input: 4-20mA, 0-10VDC or Potentiometer", "Smooth power variation 0-100%"],
-            image: "/product_images/ERI_img/Phase_Control_SSR.png"
+                "categoryName": "Flow Measurement",
+                "products": [
+                      {
+                            "name": "JUMO flowTRANS MAG I01",
+                            "desc": "Plug-in magnetic-inductive flow transmitter. Order JUMO flowTRANS MAG I01 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Pressures up to PN 16",
+                                  "Stainless steel sensor",
+                                  "Temperatures up to 150 °C"
+                            ],
+                            "badge": "Type 406010",
+                            "image": "/product_images/jumo/jumo_flow_406010.webp"
+                      },
+                      {
+                            "name": "JUMO flowTRANS MAG I02",
+                            "desc": "Plug-in magnetic-inductive flow transmitter with display. Order JUMO flowTRANS MAG I02 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Total and daily counter",
+                                  "Configurable inputs and outputs",
+                                  "Temperatures up to 110 °C"
+                            ],
+                            "badge": "Type 406011",
+                            "image": "/product_images/jumo/jumo_flow_406011.webp"
+                      },
+                      {
+                            "name": "JUMO flowTRANS PW I01",
+                            "desc": "Plug-in paddlewheel flow sensor. Order JUMO flowTRANS PW I01 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Pulse frequency signal",
+                                  "Pressures up to PN 10",
+                                  "Temperatures up to 70 °C"
+                            ],
+                            "badge": "Type 406020",
+                            "image": "/product_images/jumo/jumo_flow_406020.webp"
+                      },
+                      {
+                            "name": "JUMO flowTRANS US W01",
+                            "desc": "Ultrasonic flowmeter for liquids. Order JUMO flowTRANS US W01 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Nominal widths DN 15 to DN 32",
+                                  "Nominal pressure up to PN 16",
+                                  "Medium temperature up to 80 °C"
+                            ],
+                            "badge": "Top Seller",
+                            "image": "/product_images/jumo/jumo_flow_406050.webp"
+                      },
+                      {
+                            "name": "JUMO flowTRANS MAG H20",
+                            "desc": "Electromagnetic flowmeter. Order JUMO flowTRANS MAG H20 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Nominal width to DN 25",
+                                  "PN 16",
+                                  "SPE with PoDL"
+                            ],
+                            "badge": "Type 406065",
+                            "image": "/product_images/jumo/jumo_flow_406065.webp"
+                      }
+                ]
           },
           {
-            name: "Three Phase Motor Reversing SSR",
-            desc: "Solid-state forward/reverse direction switching for 3-phase AC induction motors with interlock delay.",
-            specs: ["Built-in reverse interlocking circuit", "Ultra-fast response time"],
-            image: "/product_images/ERI_img/Three_Phase_Motor_Reversing_SSR.png"
+                "categoryName": "Level Measurement & Switches",
+                "products": [
+                      {
+                            "name": "JUMO MAERA S25",
+                            "desc": "Level probe. Order JUMO MAERA S25 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: 2.5 to 10 mH2O",
+                                  "Medium temperature 0 to 50 °C",
+                                  "Cost-efficient version"
+                            ],
+                            "badge": "Type 401015",
+                            "image": "/product_images/jumo/jumo_level_401015.webp"
+                      },
+                      {
+                            "name": "JUMO MAERA S26",
+                            "desc": "Level probe. Order JUMO MAERA S26 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: 2.5 to 25 mH2O",
+                                  "Medium temperature 0 to 50 °C",
+                                  "Drinking water certified version"
+                            ],
+                            "badge": "Type 402090",
+                            "image": "/product_images/jumo/jumo_level_402090.webp"
+                      },
+                      {
+                            "name": "JUMO NESOS R01 LS",
+                            "desc": "Float switch in miniature form. Order JUMO NESOS R01 LS directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Guide tube length up to 500 mm",
+                                  "Medium temperature: -52 to 240 °C",
+                                  "Optional temperature sensor"
+                            ],
+                            "badge": "Type 408301",
+                            "image": "/product_images/jumo/jumo_level_408301.webp"
+                      },
+                      {
+                            "name": "JUMO NESOS R20 LT",
+                            "desc": "Level transmitter via float. Order JUMO NESOS R20 LT directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: 157 to 3895 mm",
+                                  "Medium temperature: -52 to 180 °C",
+                                  "Optional: display, temperature sensor"
+                            ],
+                            "badge": "Type 408320",
+                            "image": "/product_images/jumo/jumo_level_408320.webp"
+                      },
+                      {
+                            "name": "JUMO ZELOS C01 LS",
+                            "desc": "Capacitive level switch. Order JUMO ZELOS C01 LS directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "From liquids to bulk materials",
+                                  "Medium temperature: -40 to +200 °C",
+                                  "Automatic media detection"
+                            ],
+                            "badge": "Type 408401",
+                            "image": "/product_images/jumo/jumo_level_408401.webp"
+                      }
+                ]
           },
           {
-            name: "DIN Ready SSR & ECO SSR",
-            desc: "Compact modular relays with integrated heat sinks designed for quick 35mm DIN-rail snapping.",
-            specs: ["DIN Rail 35mm clip", "Integrated finger-safe terminal covers", "Optimized thermal dissipation"],
-            image: "/product_images/ERI_img/DIN_Ready_SSR_ECO_SSR.png"
+                "categoryName": "Actuators & Power Controllers",
+                "products": [
+                      {
+                            "name": "JUMO TYA 432",
+                            "desc": "Thyristor power switch. Order JUMO TYA 432 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Load currents 25 A and 50 A (max.)",
+                                  "Control voltage 4 to 32 V DC",
+                                  "Load voltages 230 V, 480 V (max.)"
+                            ],
+                            "badge": "Type 709010",
+                            "image": "/product_images/jumo/jumo_actuators_709010.webp"
+                      },
+                      {
+                            "name": "JUMO TYA 432",
+                            "desc": "Thyristor power switch. Order JUMO TYA 432 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Load currents 20 A, 25 A, 40 A, 60 A",
+                                  "Control voltage 5 to 32 V DC",
+                                  "Mains voltages 240 V, 600 V (max.)"
+                            ],
+                            "badge": "Type 709020",
+                            "image": "/product_images/jumo/jumo_actuators_709020.webp"
+                      },
+                      {
+                            "name": "JUMO IPC 300",
+                            "desc": "Electronic transformer. Order JUMO IPC 300 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Power up to 40 kW",
+                                  "Amplitude control",
+                                  "Protection of MoSi2 and SiC heating elements"
+                            ],
+                            "badge": "Type 709051",
+                            "image": "/product_images/jumo/jumo_actuators_709051.webp"
+                      },
+                      {
+                            "name": "JUMO TYA 201",
+                            "desc": "Single-phase thyristor power controller. Order JUMO TYA 201 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Single-phase operation",
+                                  "Load voltage 24 to 500 V",
+                                  "PROFINET or EtherCAT"
+                            ],
+                            "badge": "Type 709061",
+                            "image": "/product_images/jumo/jumo_actuators_709061.webp"
+                      },
+                      {
+                            "name": "JUMO TYA 202",
+                            "desc": "Three-phase thyristor power controller in three-phase economy circuit. Order JUMO TYA 202 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Star-delta three-phase operation",
+                                  "Load voltage 24 to 500 V",
+                                  "PROFINET or EtherCAT"
+                            ],
+                            "badge": "Type 709062",
+                            "image": "/product_images/jumo/jumo_actuators_709062.webp"
+                      }
+                ]
           },
           {
-            name: "DC-DC Solid State Relays & SCP SSR",
-            desc: "MOSFET and IGBT based DC switching with short circuit protection for battery and DC equipment.",
-            specs: ["DC Output: up to 200 VDC", "Fast microsecond switching speed"],
-            image: "/product_images/ERI_img/DC_DC_Solid_State_Relays_SCP_SSR.png"
+                "categoryName": "Humidity & CO2 Measurement",
+                "products": [
+                      {
+                            "name": "JUMO Wtrans E01",
+                            "desc": "Measuring probe for humidity, temperature, and CO2. Order JUMO Wtrans E01 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: 0 to 100 % RH",
+                                  "CO2 measuring range: 0 to 10000 ppm",
+                                  "Open air range 300 m"
+                            ],
+                            "badge": "Type 902928",
+                            "image": "/product_images/jumo/jumo_humidity_co2_902928.webp"
+                      },
+                      {
+                            "name": "JUMO Wtrans receiver",
+                            "desc": "Universal receiver for JUMO wireless measuring probes. Order JUMO Wtrans receiver directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Signals (0(4) to 20 mA, 0 to 10 V)",
+                                  "RS485 interface",
+                                  "Open air range 300 m"
+                            ],
+                            "badge": "Type 902931",
+                            "image": "/product_images/jumo/jumo_humidity_co2_902931.webp"
+                      },
+                      {
+                            "name": "JUMO Hygro transducer and hygrothermal transducer (capacitive)",
+                            "desc": "For applications in the air-conditioning sector. Order Hygro transducer and hygrothermal transducer (capacitive) directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: 0 to 100 % RH",
+                                  "Medium: air, pressureless (non-aggressive)",
+                                  "Pt100 temperature output"
+                            ],
+                            "badge": "Type 907020",
+                            "image": "/product_images/jumo/jumo_humidity_co2_907020.webp"
+                      },
+                      {
+                            "name": "JUMO Hygro transducer, hygrothermal transducer, and CO2 measuring probe",
+                            "desc": "For facility management and climate monitoring. Order Hygro transducer, hygrothermal transducer, and CO2 measuring probe directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: 0 to 100 % RH",
+                                  "Medium: air, pressureless",
+                                  "CO2 measuring range: 0 to 10000 ppm"
+                            ],
+                            "badge": "Type 907021",
+                            "image": "/product_images/jumo/jumo_humidity_co2_907021.webp"
+                      },
+                      {
+                            "name": "JUMO Capacitive hygrothermal transducer",
+                            "desc": "With intelligent interchangeable probes. Order Capacitive hygrothermal transducer directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: 0 to 100 % RH",
+                                  "Medium: air, pressureless",
+                                  "Separate probes for humidity & temperature"
+                            ],
+                            "badge": "Type 907027",
+                            "image": "/product_images/jumo/jumo_humidity_co2_907027.webp"
+                      }
+                ]
+          },
+          {
+                "categoryName": "Pressure & Differential Pressure",
+                "products": [
+                      {
+                            "name": "JUMO MIDAS",
+                            "desc": "Pressure transmitter. Order JUMO MIDAS directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "High chemical resistance",
+                                  "-1 to +100 bar relative pressure",
+                                  "Compact design type"
+                            ],
+                            "badge": "Type 401001",
+                            "image": "/product_images/jumo/jumo_pressure_401001.webp"
+                      },
+                      {
+                            "name": "JUMO MIDAS C08",
+                            "desc": "OEM pressure transmitter for basic applications. Order JUMO MIDAS C08 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "-1 to +60 bar relative pressure",
+                                  "Compensates -20 to +100 °C",
+                                  "Elastomer seal"
+                            ],
+                            "badge": "Type 401002",
+                            "image": "/product_images/jumo/jumo_pressure_401002.webp"
+                      },
+                      {
+                            "name": "JUMO MIDAS SI",
+                            "desc": "OEM pressure transmitter. Order JUMO MIDAS SI directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "1.6 bar relative to 25 bar absolute",
+                                  "Welded measuring system",
+                                  "Silicon sensor"
+                            ],
+                            "badge": "Type 401006",
+                            "image": "/product_images/jumo/jumo_pressure_401006.webp"
+                      },
+                      {
+                            "name": "JUMO MIDAS S19 R",
+                            "desc": "OEM pressure transmitter for railway applications. Order JUMO MIDAS S19 R directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "1.6 to 100 bar relative; 1.6 to 40 bar absolute",
+                                  "High EMC requirements",
+                                  "Specifically for railway technology"
+                            ],
+                            "badge": "Type 401008",
+                            "image": "/product_images/jumo/jumo_pressure_401008.webp"
+                      },
+                      {
+                            "name": "JUMO MIDAS DR",
+                            "desc": "Pressure transmitter for control cabinet mounting. Order JUMO MIDAS DR directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Measuring range: 0 to 16 bar relative",
+                                  "Elastomer seal",
+                                  "Compact design type"
+                            ],
+                            "badge": "Type 401009",
+                            "image": "/product_images/jumo/jumo_pressure_401009.webp"
+                      }
+                ]
+          },
+          {
+                "categoryName": "Automation, Controllers & Paperless Recorders",
+                "products": [
+                      {
+                            "name": "JUMO LOGOSCREEN 601",
+                            "desc": "Paperless recorder with touchscreen. Order JUMO LOGOSCREEN 601 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Max. 6 analog and max. 6 digital inputs",
+                                  "Max. 12 digital inputs/outputs",
+                                  "Batch report recording"
+                            ],
+                            "badge": "Type 706521",
+                            "image": "/product_images/jumo/jumo_automation_706521.webp"
+                      },
+                      {
+                            "name": "JUMO LOGOSCREEN 700",
+                            "desc": "Highly scalable paperless recorder. Order JUMO LOGOSCREEN 700 directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Max. 18 analog inputs and max. 18 digital inputs",
+                                  "Max. 24 digital inputs/outputs",
+                                  "Up to 5 batch reports at the same time"
+                            ],
+                            "badge": "Type 706530",
+                            "image": "/product_images/jumo/jumo_automation_706530.webp"
+                      },
+                      {
+                            "name": "JUMO DICON touch",
+                            "desc": "Two-Channel/Four-Channel Process and Program Controller. Order JUMO DICON touch directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Cascade control",
+                                  "Modbus master TCP/RTU",
+                                  "Up to 4 analog inputs"
+                            ],
+                            "badge": "Top Seller",
+                            "image": "/product_images/jumo/jumo_automation_703571.webp"
+                      },
+                      {
+                            "name": "JUMO diraTRON",
+                            "desc": "Compact controller. Order JUMO diraTRON directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "1 control channel",
+                                  "Display of individual texts",
+                                  "Service counter"
+                            ],
+                            "badge": "Top Seller",
+                            "image": "/product_images/jumo/jumo_automation_702110.webp"
+                      },
+                      {
+                            "name": "JUMO meroVIEW",
+                            "desc": "Multifunction digital indicator with PLC function. Order JUMO meroVIEW directly online from the leading manufacturer of measuring and sensor technology.",
+                            "specs": [
+                                  "Up to 5 universal analog inputs",
+                                  "Scalable structure using plug-in cards",
+                                  "4 DIN formats (size)"
+                            ],
+                            "badge": "Type 701551",
+                            "image": "/product_images/jumo/jumo_automation_701551.webp"
+                      }
+                ]
           }
-        ]
-      },
-      {
-        categoryName: "Input / Output (I/O) Modules & Interface Cards",
-        products: [
-          {
-            name: "AC Output Modules (3 - 5 Amp)",
-            desc: "Triac-based isolated output drivers for contactors, solenoids, valves, and motor starters.",
-            specs: ["Load: 12-280 VAC", "Logic: 5V, 12V, 24V DC", "Optical isolation 4KV"],
-            image: "/product_images/ERI_img/AC-Output-Modules-Amp.png"
-          },
-          {
-            name: "DC Output Modules (3 - 5 Amp)",
-            desc: "Transistor & MOSFET DC switching modules for PLCs and digital control systems.",
-            specs: ["Load: 3-60 VDC", "Logic: 5V, 12V, 24V DC"],
-            image: "/product_images/ERI_img/DC_Output_Modules.png"
-          },
-          {
-            name: "AC Input Modules (110 / 220 VAC)",
-            desc: "Safe conditioning and isolation of 110V/220V field voltages to digital micro-controller logic levels.",
-            specs: ["Field Input: 90-280 VAC", "Logic Output: 5V/15V/24V DC", "Filter delay suppression"],
-            image: "/product_images/ERI_img/AC-nput-Modules-110-220-VAC.png"
-          },
-          {
-            name: "DC Input Modules (48 / 110 / 220 VDC)",
-            desc: "Wide-range DC sense modules for high-voltage DC monitoring in power substations and panels.",
-            specs: ["Field Input: 48V, 110V, 220 VDC", "Optocoupler isolation"],
-            image: "/product_images/ERI_img/DC-Input-Modules-48 -110-220-VDC.png"
-          },
-          {
-            name: "Multi-Channel I/O Relay Interface Cards",
-            desc: "Modular DIN-rail mounting relay carrier boards available in 1, 2, 4, 8, 16, and 32 channels with LED status.",
-            specs: ["1 / 2 / 4 / 8 / 16 / 32 Channels", "Pluggable relays", "Common positive/negative jumpers", "Freewheeling diode protection"],
-            badge: "1 to 32 Channels",
-            image: "/product_images/ERI_img/Multi-Channel-I-O-Relay-Interface-Cards.png"
-          }
-        ]
-      }
     ],
     certifications: ["UL Recognized (USA)", "CE Conformity (Europe)", "RoHS Compliant", "ISO 9001:2015"],
     targetIndustries: ["Plastic Extrusion & Molding", "Packaging Machines", "Industrial Ovens & Furnaces", "Pharma Machinery", "Textile Automation"]
