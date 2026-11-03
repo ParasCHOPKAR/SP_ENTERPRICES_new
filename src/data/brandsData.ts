@@ -872,39 +872,7 @@ export const BRANDS_DATA: BrandData[] = [
           }
         ]
       },
-      {
-        categoryName: "RTD Temperature Probes, Transmitters & Recorders",
-        products: [
-          {
-            name: "RTD Temperature Probes & Elements (Pt100 / Pt1000)",
-            desc: "Screw-in, push-in, and sanitary Pt100/Pt1000 resistance thermometers with mineral-insulated cable and terminal heads.",
-            specs: ["Measurement: -200°C to +600°C", "Tolerance Class A, 1/3 DIN, 1/10 DIN", "Stainless steel thermowells"],
-            badge: "RTD Pt100 / Pt1000",
-            image: "/product_images/jumo/temperature_probe.jpg"
-          },
-          {
-            name: "Temperature Transmitters & Switches (dTRANS T01-T07)",
-            desc: "Head-mounted and DIN-rail programmable transmitters (dTRANS T01/T02/T05/T06/T07) with HART, SIL 2/3, and IO-Link.",
-            specs: ["4-20mA, HART 7, Modbus RTU, IO-Link", "Galvanic isolation 3.75kV", "SIL 2 / SIL 3 hardware/software"],
-            badge: "dTRANS Series",
-            image: "/product_images/jumo/temperature_probe.jpg"
-          },
-          {
-            name: "LOGOSCREEN Paperless Recorders",
-            desc: "State-of-the-art paperless chart recorders with touchscreen, batch reporting, FDA 21 CFR Part 11 security, and web server.",
-            specs: ["Up to 24 universal analog inputs", "Audit trail & tamper-proof data storage", "Ethernet / Modbus TCP"],
-            badge: "21 CFR Part 11",
-            image: "/product_images/jumo/logoscreen_recorder.webp"
-          },
-          {
-            name: "Wireless Temperature Sensors (Wtrans)",
-            desc: "Radio transmitter probes for wireless temperature acquisition in rotating tanks, autoclaves, and moving parts.",
-            specs: ["868.4 MHz radio band", "Transmission range up to 300m"],
-            badge: "Wtrans Wireless",
-            image: "/product_images/jumo/temperature_probe.jpg"
-          }
-        ]
-      },
+
       {
         categoryName: "Pressure, Humidity & Liquid Analysis",
         products: [
