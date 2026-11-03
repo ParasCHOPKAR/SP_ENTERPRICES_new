@@ -877,13 +877,6 @@ export const BRANDS_DATA: BrandData[] = [
         categoryName: "Pressure, Humidity & Liquid Analysis",
         products: [
           {
-            name: "Industrial Pressure Transmitters (MIDAS / dTRANS p)",
-            desc: "Piezoresistive and ceramic capacitive pressure transmitters for liquids, steam, gases, and sanitary hygienic lines.",
-            specs: ["Ranges: 0-10 mbar to 0-1000 bar", "Sanitary clamp, SMS, Varivent connections", "Accuracy up to 0.05%"],
-            badge: "MIDAS Series",
-            image: "/product_images/jumo/midas_pressure.webp"
-          },
-          {
             name: "Level Probes & Melt Transmitters",
             desc: "Hydrostatic submersible level probes for deep wells, boreholes, and tanks, plus melt pressure sensors.",
             specs: ["Submersible PUR/FEP cables", "Overvoltage lightning protection"],
