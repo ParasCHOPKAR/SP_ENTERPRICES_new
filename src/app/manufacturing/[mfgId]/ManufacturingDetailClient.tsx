@@ -21,7 +21,9 @@ import {
   ChevronLeft,
   Building2,
   CheckCircle,
-  ChevronRight
+  ChevronRight,
+  Maximize2,
+  X
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -38,68 +40,253 @@ function EquipmentGallery({
 }) {
   const allImages = images && images.length > 0 ? images : defaultImage ? [defaultImage] : [];
   const [activeIndex, setActiveIndex] = React.useState(0);
+  const [isZoomOpen, setIsZoomOpen] = React.useState(false);
 
   if (allImages.length === 0) return null;
 
   const currentImg = allImages[activeIndex] || allImages[0];
 
   return (
-    <div className="mfg-equipment-gallery-wrap">
-      <div className="mfg-equipment-img-wrapper">
-        <img
-          src={currentImg}
-          alt={`${name} photo ${activeIndex + 1}`}
-          className="mfg-equipment-img"
-        />
-        <div className="mfg-equipment-img-badge">
-          SP ENTERPRISES • SAHPL
+    <>
+      <div className="mfg-equipment-gallery-wrap">
+        <div
+          className="mfg-equipment-img-wrapper"
+          style={{ cursor: "pointer" }}
+          onClick={() => setIsZoomOpen(true)}
+          title="Click to view high-resolution photo"
+        >
+          <img
+            src={currentImg}
+            alt={`${name} photo ${activeIndex + 1}`}
+            className="mfg-equipment-img"
+          />
+          <div className="mfg-equipment-img-badge">
+            SP ENTERPRISES • SAHPL
+          </div>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsZoomOpen(true);
+            }}
+            style={{
+              position: "absolute",
+              top: 10,
+              right: 10,
+              background: "rgba(15, 23, 42, 0.8)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              color: "white",
+              borderRadius: "6px",
+              padding: "4px 8px",
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              fontSize: "0.72rem",
+              fontWeight: 600,
+              cursor: "pointer",
+              backdropFilter: "blur(4px)",
+              zIndex: 2
+            }}
+            title="Expand photo"
+          >
+            <Maximize2 size={13} /> Expand
+          </button>
+
+          {allImages.length > 1 && (
+            <div className="mfg-equipment-gallery-counter">
+              {activeIndex + 1} / {allImages.length} Photos
+            </div>
+          )}
+
+          {allImages.length > 1 && (
+            <div className="mfg-gallery-nav-btns">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+                }}
+                className="mfg-gallery-nav-btn"
+                aria-label="Previous photo"
+              >
+                &#8249;
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveIndex((prev) => (prev + 1) % allImages.length);
+                }}
+                className="mfg-gallery-nav-btn"
+                aria-label="Next photo"
+              >
+                &#8250;
+              </button>
+            </div>
+          )}
         </div>
 
         {allImages.length > 1 && (
-          <div className="mfg-equipment-gallery-counter">
-            {activeIndex + 1} / {allImages.length} Photos
-          </div>
-        )}
-
-        {allImages.length > 1 && (
-          <div className="mfg-gallery-nav-btns">
-            <button
-              type="button"
-              onClick={() => setActiveIndex((prev) => (prev - 1 + allImages.length) % allImages.length)}
-              className="mfg-gallery-nav-btn"
-              aria-label="Previous photo"
-            >
-              &#8249;
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveIndex((prev) => (prev + 1) % allImages.length)}
-              className="mfg-gallery-nav-btn"
-              aria-label="Next photo"
-            >
-              &#8250;
-            </button>
+          <div className="mfg-equipment-thumbnails-row">
+            {allImages.map((imgUrl, idx) => (
+              <button
+                type="button"
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                className={`mfg-thumb-btn ${idx === activeIndex ? "active" : ""}`}
+                aria-label={`View ${name} photo ${idx + 1}`}
+              >
+                <img src={imgUrl} alt={`${name} thumb ${idx + 1}`} />
+                <span className="mfg-thumb-num">{idx + 1}</span>
+              </button>
+            ))}
           </div>
         )}
       </div>
 
-      {allImages.length > 1 && (
-        <div className="mfg-equipment-thumbnails-row">
-          {allImages.map((imgUrl, idx) => (
-            <button
-              type="button"
-              key={idx}
-              onClick={() => setActiveIndex(idx)}
-              className={`mfg-thumb-btn ${idx === activeIndex ? "active" : ""}`}
-              aria-label={`View ${name} photo ${idx + 1}`}
+      {/* Lightbox Zoom Modal */}
+      {isZoomOpen && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 99999,
+            backgroundColor: "rgba(0, 0, 0, 0.92)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "1.5rem"
+          }}
+          onClick={() => setIsZoomOpen(false)}
+        >
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "1150px",
+              width: "100%",
+              maxHeight: "90vh",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center"
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                color: "white",
+                marginBottom: "1rem"
+              }}
             >
-              <img src={imgUrl} alt={`${name} thumb ${idx + 1}`} />
-              <span className="mfg-thumb-num">{idx + 1}</span>
-            </button>
-          ))}
+              <div>
+                <h4 style={{ margin: 0, fontSize: "1.2rem", fontWeight: 700 }}>{name}</h4>
+                <p style={{ margin: 0, fontSize: "0.85rem", color: "#94a3b8" }}>
+                  Photo {activeIndex + 1} of {allImages.length} • SP Enterprises Manufacturing Facility
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsZoomOpen(false)}
+                style={{
+                  background: "rgba(255,255,255,0.15)",
+                  border: "none",
+                  color: "white",
+                  width: "38px",
+                  height: "38px",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "background 0.2s"
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#c8102e")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.15)")}
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <div style={{ position: "relative", width: "100%", maxHeight: "78vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <img
+                src={currentImg}
+                alt={name}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "78vh",
+                  objectFit: "contain",
+                  borderRadius: "10px",
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.85)",
+                  border: "1px solid rgba(255,255,255,0.1)"
+                }}
+              />
+
+              {allImages.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => setActiveIndex((prev) => (prev - 1 + allImages.length) % allImages.length)}
+                    style={{
+                      position: "absolute",
+                      left: "12px",
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      width: "44px",
+                      height: "44px",
+                      borderRadius: "50%",
+                      background: "rgba(15,23,42,0.85)",
+                      color: "white",
+                      border: "1px solid rgba(255,255,255,0.3)",
+                      fontSize: "1.8rem",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      transition: "all 0.2s"
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "#c8102e")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(15,23,42,0.85)")}
+                  >
+                    &#8249;
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setActiveIndex((prev) => (prev + 1) % allImages.length)}
+                    style={{
+                      position: "absolute",
+                      right: "12px",
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      width: "44px",
+                      height: "44px",
+                      borderRadius: "50%",
+                      background: "rgba(15,23,42,0.85)",
+                      color: "white",
+                      border: "1px solid rgba(255,255,255,0.3)",
+                      fontSize: "1.8rem",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      transition: "all 0.2s"
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "#c8102e")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(15,23,42,0.85)")}
+                  >
+                    &#8250;
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
