@@ -40,7 +40,7 @@ const HOME_MARQUEE_BRAND_ITEMS = [
 
 const HERO_BG_IMAGES = [
   {
-    src: "/home/hero_EMI_.png",
+    src: "/product_hero_card/EMIS.png",
     brand: "EMI Solutions Pvt. Ltd. (EMIS)",
     id: "emi-solutions",
     title: "EMI Solutions Pvt. Ltd. (EMIS) — Power Line Filters, EMP Protection & Suppression Devices",
