@@ -40,7 +40,7 @@ const HOME_MARQUEE_BRAND_ITEMS = [
 
 const HERO_BG_IMAGES = [
   {
-    src: "/product_hero_card/EMIS.png",
+    src: "/home/hero_EMI_.png",
     brand: "EMI Solutions Pvt. Ltd. (EMIS)",
     id: "emi-solutions",
     title: "EMI Solutions Pvt. Ltd. (EMIS) — Power Line Filters, EMP Protection & Suppression Devices",
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="hero">
-        <div 
+        <div
           className="hero-bg-image"
           onMouseEnter={() => setIsHeroPaused(true)}
           onMouseLeave={() => setIsHeroPaused(false)}
@@ -828,8 +828,8 @@ export default function Home() {
       </section>
 
       {/* Interactive Products & Brand Directory */}
-      <BrandDirectory 
-        onSelectBrand={(brand) => router.push(`/products/${brand.id}`)} 
+      <BrandDirectory
+        onSelectBrand={(brand) => router.push(`/products/${brand.id}`)}
         hideFilters={true}
         showViewAll={true}
         asSlider={true}
