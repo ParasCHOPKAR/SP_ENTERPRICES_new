@@ -54,10 +54,11 @@ function ProductsContent() {
   ];
 
   const handleBrandClick = (brandId: string) => {
-    if (selectedBrand === brandId && brandId !== "all") {
+    if (brandId === "all") {
       setSelectedBrand("all");
+      setSearchQuery("");
     } else {
-      setSelectedBrand(brandId);
+      router.push(`/products/${brandId}`);
     }
   };
 
@@ -114,23 +115,34 @@ function ProductsContent() {
           {/* Controls Bar */}
           <div className="brand-filters-container">
             <div className="brand-category-tabs">
-              {brandTabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  type="button"
-                  className={`brand-cat-btn ${selectedBrand === tab.id ? "active" : ""}`}
-                  onClick={() => handleBrandClick(tab.id)}
-                >
-                  {tab.label}
-                </button>
-              ))}
+              {brandTabs.map((tab) => {
+                const isAll = tab.id === "all";
+                const href = isAll ? "/products" : `/products/${tab.id}`;
+                return (
+                  <Link
+                    key={tab.id}
+                    href={href}
+                    className={`brand-cat-btn ${selectedBrand === tab.id ? "active" : ""}`}
+                    style={{ textDecoration: "none" }}
+                    onClick={(e) => {
+                      if (isAll) {
+                        e.preventDefault();
+                        setSelectedBrand("all");
+                        setSearchQuery("");
+                      }
+                    }}
+                  >
+                    {tab.label}
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="brand-filter-search">
               <Search size={18} className="search-icon" />
               <input
                 type="text"
-                placeholder="Search across all 13 brands (e.g. SSR, SMPS, PID, LVDT)..."
+                placeholder={`Search across all ${BRANDS_DATA.length} brands (e.g. SSR, SMPS, PID, LVDT)...`}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -150,7 +162,7 @@ function ProductsContent() {
           <div style={{ background: "#fff1f2", border: "1px solid #fecdd3", padding: "0.9rem 1.4rem", borderRadius: "10px", marginBottom: "2.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontSize: "0.88rem", color: "#c8102e", fontWeight: 700 }}>
               <Sparkles size={18} color="#c8102e" />
-              <span>Showing {filteredBrands.length} of 13 Premier Engineering Brands</span>
+              <span>Showing {filteredBrands.length} of {BRANDS_DATA.length} Premier Engineering Brands</span>
             </div>
             <a
               href="/01.SP Enterprises (1).pdf"

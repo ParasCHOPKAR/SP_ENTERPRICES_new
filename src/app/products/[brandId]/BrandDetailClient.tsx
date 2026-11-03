@@ -35,6 +35,15 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
 
   const heroBgImage = brand.heroImage || BRAND_HERO_MAP[brand.id.toLowerCase()] || '/products_showcase.jpg';
 
+  const brandTabs = [
+    { id: "all", label: `All Brands (${BRANDS_DATA.length})`, href: "/products" },
+    ...BRANDS_DATA.map((b) => ({
+      id: b.id,
+      label: b.name,
+      href: `/products/${b.id}`,
+    })),
+  ];
+
   return (
     <div className="site-wrapper">
       <Header />
@@ -205,6 +214,32 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
                   style={{ objectFit: "cover" }}
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Navigation Switcher Tabs */}
+      <section style={{ background: "#ffffff", borderBottom: "1px solid #e2e8f0", padding: "1.2rem 0" }}>
+        <div className="container">
+          <div className="brand-filters-container" style={{ margin: 0 }}>
+            <div className="brand-category-tabs">
+              {brandTabs.map((tab) => {
+                const isActive =
+                  tab.id.toLowerCase() === brand.id.toLowerCase() ||
+                  (tab.id === "emis" && brand.id === "emi-solutions") ||
+                  (tab.id === "emi-solutions" && brand.id === "emis");
+                return (
+                  <Link
+                    key={tab.id}
+                    href={tab.href}
+                    className={`brand-cat-btn ${isActive ? "active" : ""}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    {tab.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
