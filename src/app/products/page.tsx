@@ -166,182 +166,182 @@ function ProductsContent() {
             {filteredBrands.map((brand) => {
               const bgImage = brand.heroImage || BRAND_HERO_MAP[brand.id.toLowerCase()] || '/products_showcase.jpg';
               return (
-              <div
-                key={brand.id}
-                style={{
-                  background: "white",
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                  border: "1px solid #e2e8f0",
-                  display: "flex",
-                  flexDirection: "column",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  cursor: "pointer",
-                }}
-                onClick={() => router.push(`/products/${brand.id}`)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    router.push(`/products/${brand.id}`);
-                  }
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.transform = "translateY(-6px)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 40px rgba(200, 16, 46, 0.15)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
-                }}
-              >
-                {/* Card Banner with Brand Hero Image */}
-                <div style={{
-                  position: "relative",
-                  height: "180px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  padding: "1.2rem",
-                  color: "white",
-                  overflow: "hidden"
-                }}>
-                  {/* Background Hero Image & Overlay */}
+                <div
+                  key={brand.id}
+                  style={{
+                    background: "white",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+                    border: "1px solid #e2e8f0",
+                    display: "flex",
+                    flexDirection: "column",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => router.push(`/products/${brand.id}`)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      router.push(`/products/${brand.id}`);
+                    }
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(-6px)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 20px 40px rgba(200, 16, 46, 0.15)";
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 10px 30px rgba(0,0,0,0.08)";
+                  }}
+                >
+                  {/* Card Banner with Brand Hero Image */}
                   <div style={{
-                    position: "absolute", inset: 0,
-                    backgroundImage: `url('${bgImage}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    zIndex: 0
-                  }} />
-                  <div style={{
-                    position: "absolute", inset: 0,
-                    background: "linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.7) 100%)",
-                    zIndex: 1
-                  }} />
-
-                  <div style={{ position: "relative", zIndex: 2, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{
-                      background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)",
-                      border: "1px solid rgba(255,255,255,0.3)", padding: "0.3rem 0.8rem",
-                      borderRadius: "50px", fontSize: "0.7rem", fontWeight: 700,
-                      display: "flex", alignItems: "center", gap: "0.3rem", letterSpacing: "0.5px"
-                    }}>
-                      <ShieldCheck size={12} /> VERIFIED PARTNER
-                    </span>
-                    <span style={{
-                      background: "#c8102e", color: "#fef08a",
-                      padding: "0.3rem 0.8rem", borderRadius: "6px",
-                      fontSize: "0.65rem", fontWeight: 800, letterSpacing: "1px"
-                    }}>
-                      {brand.filterCategory.toUpperCase()}
-                    </span>
-                  </div>
-                  
-                  <div style={{ position: "relative", zIndex: 2, marginTop: "auto" }}>
-                    <h3 style={{ fontSize: "1.9rem", fontWeight: 900, letterSpacing: "-0.5px", textShadow: "0 2px 10px rgba(0,0,0,0.5)", margin: 0 }}>
-                      {brand.name}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Card Body */}
-                <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column" }}>
-                  <h4 style={{ fontSize: "0.95rem", color: "#0f172a", fontWeight: 800, marginBottom: "0.4rem" }}>
-                    {brand.fullName}
-                  </h4>
-                  <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: 1.5, marginBottom: "1.5rem" }}>
-                    {brand.tagline}
-                  </p>
-
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" }}>
-                    {brand.categories.map((cat, cIdx) => (
-                      <div key={cIdx} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c8102e", flexShrink: 0 }} />
-                        <span style={{ fontSize: "0.82rem", color: "#334155", fontWeight: 600 }}>{cat.categoryName}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "auto" }}>
-                    {brand.categories
-                      .flatMap((c) => c.products)
-                      .slice(0, 3)
-                      .map((p, pIdx) => (
-                        <span key={pIdx} style={{
-                          background: "#f1f5f9", color: "#475569",
-                          padding: "0.3rem 0.6rem", borderRadius: "6px",
-                          fontSize: "0.72rem", fontWeight: 500
-                        }}>
-                          {p.name.length > 22 ? p.name.slice(0, 22) + "..." : p.name}
-                        </span>
-                      ))}
-                    {brand.categories.flatMap((c) => c.products).length > 3 && (
-                      <span style={{
-                        background: "#fff1f2", color: "#c8102e",
-                        padding: "0.3rem 0.6rem", borderRadius: "6px",
-                        fontSize: "0.72rem", fontWeight: 700
-                      }}>
-                        +{brand.categories.flatMap((c) => c.products).length - 3} more
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Card Footer */}
-                <div style={{
-                  padding: "0.85rem 1.4rem", borderTop: "1px solid #f1f5f9",
-                  display: "flex", justifyContent: "space-between", alignItems: "center",
-                  background: "#fafafa"
-                }}>
-                  <a
-                    href={`/brochures/${brand.id}.pdf`}
-                    download={`${brand.name.replace(/[^a-zA-Z0-9]/g, '_')}_Catalogue.pdf`}
-                    onClick={(e) => e.stopPropagation()}
-                    title={`Download ${brand.name} PDF Catalogue`}
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.35rem",
-                      background: "#fff1f2",
-                      color: "#c8102e",
-                      border: "1px solid #fecdd3",
-                      padding: "0.35rem 0.75rem",
-                      borderRadius: "6px",
-                      fontSize: "0.78rem",
-                      fontWeight: 700,
-                      textDecoration: "none",
-                      transition: "all 0.2s ease"
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.background = "#c8102e";
-                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.background = "#fff1f2";
-                      (e.currentTarget as HTMLElement).style.color = "#c8102e";
-                    }}
-                  >
-                    <Download size={13} /> PDF Brochure
-                  </a>
-
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#c8102e" }}>
-                      View Products
-                    </span>
+                    position: "relative",
+                    height: "180px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    padding: "1.2rem",
+                    color: "white",
+                    overflow: "hidden"
+                  }}>
+                    {/* Background Hero Image & Overlay */}
                     <div style={{
-                      width: "30px", height: "30px", borderRadius: "50%",
-                      background: "#c8102e", display: "flex", alignItems: "center", justifyContent: "center",
-                      boxShadow: "0 4px 10px rgba(200,16,46,0.3)"
-                    }}>
-                      <ArrowRight size={13} color="white" />
+                      position: "absolute", inset: 0,
+                      backgroundImage: `url('${bgImage}')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      zIndex: 0
+                    }} />
+                    <div style={{
+                      position: "absolute", inset: 0,
+                      background: "linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.7) 100%)",
+                      zIndex: 1
+                    }} />
+
+                    <div style={{ position: "relative", zIndex: 2, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <span style={{
+                        background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)",
+                        border: "1px solid rgba(255,255,255,0.3)", padding: "0.3rem 0.8rem",
+                        borderRadius: "50px", fontSize: "0.7rem", fontWeight: 700,
+                        display: "flex", alignItems: "center", gap: "0.3rem", letterSpacing: "0.5px"
+                      }}>
+                        <ShieldCheck size={12} /> VERIFIED PARTNER
+                      </span>
+                      <span style={{
+                        background: "#c8102e", color: "#fef08a",
+                        padding: "0.3rem 0.8rem", borderRadius: "6px",
+                        fontSize: "0.65rem", fontWeight: 800, letterSpacing: "1px"
+                      }}>
+                        {brand.filterCategory.toUpperCase()}
+                      </span>
+                    </div>
+
+                    <div style={{ position: "relative", zIndex: 2, marginTop: "auto" }}>
+                      <h3 style={{ fontSize: "1.9rem", fontWeight: 900, letterSpacing: "-0.5px", textShadow: "0 2px 10px rgba(0,0,0,0.5)", margin: 0 }}>
+                        {brand.name}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Card Body */}
+                  <div style={{ padding: "1.5rem", flex: 1, display: "flex", flexDirection: "column" }}>
+                    <h4 style={{ fontSize: "0.95rem", color: "#0f172a", fontWeight: 800, marginBottom: "0.4rem" }}>
+                      {brand.fullName}
+                    </h4>
+                    <p style={{ fontSize: "0.85rem", color: "#64748b", lineHeight: 1.5, marginBottom: "1.5rem" }}>
+                      {brand.tagline}
+                    </p>
+
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" }}>
+                      {brand.categories.map((cat, cIdx) => (
+                        <div key={cIdx} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                          <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c8102e", flexShrink: 0 }} />
+                          <span style={{ fontSize: "0.82rem", color: "#334155", fontWeight: 600 }}>{cat.categoryName}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "auto" }}>
+                      {brand.categories
+                        .flatMap((c) => c.products)
+                        .slice(0, 3)
+                        .map((p, pIdx) => (
+                          <span key={pIdx} style={{
+                            background: "#f1f5f9", color: "#475569",
+                            padding: "0.3rem 0.6rem", borderRadius: "6px",
+                            fontSize: "0.72rem", fontWeight: 500
+                          }}>
+                            {p.name.length > 22 ? p.name.slice(0, 22) + "..." : p.name}
+                          </span>
+                        ))}
+                      {brand.categories.flatMap((c) => c.products).length > 3 && (
+                        <span style={{
+                          background: "#fff1f2", color: "#c8102e",
+                          padding: "0.3rem 0.6rem", borderRadius: "6px",
+                          fontSize: "0.72rem", fontWeight: 700
+                        }}>
+                          +{brand.categories.flatMap((c) => c.products).length - 3} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Card Footer */}
+                  <div style={{
+                    padding: "0.85rem 1.4rem", borderTop: "1px solid #f1f5f9",
+                    display: "flex", justifyContent: "space-between", alignItems: "center",
+                    background: "#fafafa"
+                  }}>
+                    <a
+                      href={`/brochures/${brand.id}.pdf`}
+                      download={`${brand.name.replace(/[^a-zA-Z0-9]/g, '_')}_Catalogue.pdf`}
+                      onClick={(e) => e.stopPropagation()}
+                      title={`Download ${brand.name} PDF Catalogue`}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.35rem",
+                        background: "#fff1f2",
+                        color: "#c8102e",
+                        border: "1px solid #fecdd3",
+                        padding: "0.35rem 0.75rem",
+                        borderRadius: "6px",
+                        fontSize: "0.78rem",
+                        fontWeight: 700,
+                        textDecoration: "none",
+                        transition: "all 0.2s ease"
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = "#c8102e";
+                        (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = "#fff1f2";
+                        (e.currentTarget as HTMLElement).style.color = "#c8102e";
+                      }}
+                    >
+                      <Download size={13} /> PDF Brochure
+                    </a>
+
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#c8102e" }}>
+                        View Products
+                      </span>
+                      <div style={{
+                        width: "30px", height: "30px", borderRadius: "50%",
+                        background: "#c8102e", display: "flex", alignItems: "center", justifyContent: "center",
+                        boxShadow: "0 4px 10px rgba(200,16,46,0.3)"
+                      }}>
+                        <ArrowRight size={13} color="white" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
+              );
             })}
           </div>
 

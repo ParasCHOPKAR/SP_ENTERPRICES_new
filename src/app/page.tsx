@@ -106,6 +106,18 @@ const HERO_BG_IMAGES = [
     title: "Cermet Resistive Products & Dynamic Braking Resistors",
   },
   {
+    src: "/product_hero_card/JUMO-India.png",
+    brand: "JUMO India",
+    id: "jumo",
+    title: "JUMO India Precision Temperature, Pressure & Liquid Analysis Sensors",
+  },
+  {
+    src: "/product_hero_card/Cleangrad.png",
+    brand: "Clean Grad",
+    id: "cleangrad",
+    title: "Clean Grad Modular Cleanroom Systems & Containment Technology",
+  },
+  {
     src: "/home/hero_custom_bg.png",
     brand: "SCADA & Software",
     id: "automation-software",
@@ -232,7 +244,7 @@ export default function Home() {
               >
                 Featured Brands:
               </span>
-              {HERO_BG_IMAGES.slice(0, 7).map((slide, sIdx) => {
+              {HERO_BG_IMAGES.map((slide, sIdx) => {
                 const isCurrentSlide = sIdx === currentHeroSlide;
                 return (
                   <button
@@ -246,16 +258,17 @@ export default function Home() {
                       setCurrentHeroSlide(sIdx);
                     }}
                     style={{
-                      background: isCurrentSlide ? "rgba(200, 16, 46, 0.85)" : "rgba(255, 255, 255, 0.15)",
-                      border: isCurrentSlide ? "1px solid #fbbf24" : "1px solid rgba(255, 255, 255, 0.25)",
-                      boxShadow: isCurrentSlide ? "0 0 12px rgba(251, 191, 36, 0.6)" : "none",
+                      background: isCurrentSlide ? "rgba(200, 16, 46, 0.88)" : "rgba(255, 255, 255, 0.15)",
+                      border: isCurrentSlide ? "1px solid #fbbf24" : "1px solid rgba(255, 255, 255, 0.22)",
+                      boxShadow: isCurrentSlide ? "0 0 10px rgba(251, 191, 36, 0.65)" : "none",
                       color: "white",
-                      padding: "0.16rem 0.5rem",
+                      padding: "0.14rem 0.48rem",
                       borderRadius: "12px",
-                      fontSize: "0.7rem",
-                      fontWeight: isCurrentSlide ? 700 : 600,
+                      fontSize: "0.68rem",
+                      fontWeight: isCurrentSlide ? 700 : 500,
                       cursor: "pointer",
-                      transition: "all 0.25s ease"
+                      transition: "all 0.2s ease",
+                      whiteSpace: "nowrap"
                     }}
                     title={`Click to view ${slide.brand} products`}
                   >
@@ -263,12 +276,6 @@ export default function Home() {
                   </button>
                 );
               })}
-              <Link
-                href="/products"
-                style={{ color: "#fbbf24", fontSize: "0.72rem", fontWeight: 700, textDecoration: "none", marginLeft: "0.3rem" }}
-              >
-                +{BRANDS_DATA.length - 7} more &rarr;
-              </Link>
             </div>
           </div>
         </div>
