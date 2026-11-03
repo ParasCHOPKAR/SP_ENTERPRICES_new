@@ -752,42 +752,141 @@ export const BRANDS_DATA: BrandData[] = [
     heroImage: "/product_hero_card/JUMO-India.png",
     name: "JUMO India",
     fullName: "JUMO India Pvt. Ltd. (JUMO GmbH & Co. KG)",
-    tagline: "Precision Temperature, Pressure, Humidity & Liquid Analysis Instrumentation",
-    badge: "Dealer & Supplier",
+    tagline: "Industrial Thermocouples, RTDs, Precision Pressure, Humidity & Liquid Analysis",
+    badge: "Official Dealer & Partner",
     accentColor: "#1d4ed8",
     logoBg: "linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%)",
     logoColor: "#ffffff",
     filterCategory: "sensors",
+    externalReference: "https://www.jumo.group/in/en/products/temperature/thermocouples",
     overview:
-      "JUMO is a world-class German manufacturer of industrial sensor and automation technology. JUMO's portfolio covers the complete measurement chain: from temperature, pressure, and humidity probes to paperless recorders and liquid analysis instruments.",
+      "JUMO is a world-renowned German pioneer and manufacturer of industrial sensor and automation technology with over 50 years of experience in high-temperature measurement. JUMO's thermocouple portfolio is standardized according to DIN EN 60584, DIN 43710, and DIN 43732 covering thermocouple types K, J, N, S, R, and B for temperatures up to +1600°C. From screw-in, push-in, and mineral-insulated thermocouples to FDA 21 CFR Part 11 paperless recorders and sanitary transmitters, JUMO provides turnkey temperature instrumentation across all industrial processes.",
     keyFeatures: [
-      "High-precision RTD temperature probes (Pt100/Pt1000 Class A/AA) and thermocouple assemblies",
-      "Sanitary pressure transmitters with flush diaphragms for pharmaceutical & food industries",
-      "LOGOSCREEN paperless recorders compliant with FDA 21 CFR Part 11 electronic records",
-      "Liquid analytical sensors for pH, redox, electrolytic conductivity, and dissolved oxygen",
-      "TRON microprocessor controllers with advanced multi-channel program control"
+      "Standardized Thermocouples: Manufactured to DIN EN 60584, DIN 43710, and DIN 43732 for thermocouple types K, J, N, S, R, and B up to +1600°C",
+      "Flexible Mounting & Designs: Screw-in (Form B/J), push-in (Form A/B), bayonet spring-loaded, and mineral-insulated (MgO) cables with ultra-fast response (t0.5 from 0.15s)",
+      "Severe Duty & Safety Tested: DIN EN 14597 safety certified for boilers and furnaces, noble metal thermocouples with ceramic protection tubes (Alsint 99.7 / Pythagoras)",
+      "Specialized Industry Probes: Plastic melt thermocouples up to 2000 bar (Type 901090), steam-tight FOODtemp hygienic insertion probes (Type 901350)",
+      "Complete Measuring Chain: Compensating cables, polarized miniature/standard connectors, head transmitters (dTRANS T01-T07 HART/SIL), and LOGOSCREEN recorders"
     ],
     categories: [
       {
-        categoryName: "Temperature Measurement & Recording",
+        categoryName: "Industrial Thermocouples (DIN EN 60584 & DIN 43710)",
         products: [
           {
-            name: "RTD Temperature Probes & Elements",
+            name: "JUMO Screw-in Thermocouples with Form B Head (Type 901020)",
+            desc: "Industrial screw-in thermocouple with robust Form B terminal head designed for temperature acquisition in liquid and gaseous media, pipelines, boilers, and machinery.",
+            specs: ["Temp. Range: -200 to +800 °C", "Insertion Length: 160 to 600 mm", "Thermocouple Types: J, K, and L", "Connection: G 1/2, G 3/4, 1/2 NPT", "SIL & Metrological Certified"],
+            badge: "Type 901020",
+            image: "/product_images/jumo/jumo_901020_screw_in_thermocouple.webp"
+          },
+          {
+            name: "JUMO Screw-in Thermocouples with Form J Head (Type 901030)",
+            desc: "Compact screw-in thermocouple with space-saving Form J aluminum terminal head for tight machinery installations and heating systems.",
+            specs: ["Temp. Range: -200 to +800 °C", "Insertion Length: 50 to 300 mm", "Thermocouple Types: J, K, and L", "Protection Tube: Stainless steel 1.4571"],
+            badge: "Type 901030",
+            image: "/product_images/jumo/jumo_901030_screw_in_form_j.webp"
+          },
+          {
+            name: "JUMO Screw-in Thermocouples with Connecting Cable (Type 901050)",
+            desc: "Screw-in thermocouple with integrated flexible compensating cable, stainless steel sheath, and strain-relief transition spring for machine building.",
+            specs: ["Temp. Range: -200 to +600 °C", "Sheath Material: Stainless steel 1.4571", "Thermocouple Types: K and L", "Cable: Silicone, PTFE, or metal braiding"],
+            badge: "Type 901050",
+            image: "/product_images/jumo/jumo_901050_screw_in_cable.webp"
+          },
+          {
+            name: "JUMO Push-in Thermocouples with Form A Head (Type 901110)",
+            desc: "Heavy-duty push-in high-temperature thermocouple with heavy Form A terminal head and stop flange for furnaces, flue gas, incinerators, and thermal plants.",
+            specs: ["Temp. Range: -200 to +1600 °C", "Protection Tube Diameter: 15 mm or 22 mm", "Thermocouple Types: B, J, K, L, and S", "High-temperature ceramic or heat-resistant steel"],
+            badge: "Type 901110",
+            image: "/product_images/jumo/jumo_901110_push_in_form_a.webp"
+          },
+          {
+            name: "JUMO Push-in Thermocouples with Form B Head (Type 901120)",
+            desc: "Universal push-in thermocouple probe with Form B terminal head and adjustable compression fitting for duct and pipe temperature measurement.",
+            specs: ["Temp. Range: -200 to +1200 °C", "Insertion Length: 100 to 960 mm", "Thermocouple Types: B, J, K, L, and S", "Single or Duplex thermocouple elements"],
+            badge: "Type 901120",
+            image: "/product_images/jumo/jumo_901120_push_in_form_b.webp"
+          },
+          {
+            name: "JUMO Push-in Bayonet Thermocouples (Type 901190)",
+            desc: "Quick-mounting bayonet cap thermocouple with adjustable spring pressure for plastic injection molding machines, extruders, and hot runner tools.",
+            specs: ["Temp. Range: 0 to 400 °C", "Bayonet Cap: 12 mm / 15 mm dia", "Thermocouple Types: J, K, and L", "Compensating Cable: Metal braiding over glass fiber"],
+            badge: "Type 901190",
+            image: "/product_images/jumo/jumo_901190_bayonet_thermocouple.webp"
+          },
+          {
+            name: "JUMO Mineral-Insulated Thermocouples with Bare Wires (Type 901210)",
+            desc: "Flexible, bendable mineral-insulated thermocouple cable with compacted MgO insulation according to DIN 43710 and DIN EN 60584 for high-vibration applications.",
+            specs: ["Temp. Range: -200 to +1200 °C", "Sheath Diameter: 0.5 mm to 6.0 mm", "Fast Response: t0.5 from 0.15 s", "Thermocouple Types: J, K, L, N", "Vibration and pressure resistant"],
+            badge: "Type 901210",
+            image: "/product_images/jumo/jumo_901210_mineral_insulated.webp"
+          },
+          {
+            name: "JUMO Mineral-Insulated Thermocouples with Tab Connector (Type 901240)",
+            desc: "Mineral-insulated thermocouple probe terminated with miniature or standard polarized thermocouple connector plug for rapid tool disconnect.",
+            specs: ["Temp. Range: -200 to +1200 °C", "Connector: Standard / Miniature Tab Connector", "Thermocouple Types: J, K, L, N", "Inconel 600 / Stainless steel sheath"],
+            badge: "Type 901240",
+            image: "/product_images/jumo/jumo_901240_mineral_insulated_tab.webp"
+          },
+          {
+            name: "JUMO Safety Thermocouples DIN EN 14597 (Type 901006)",
+            desc: "Certified safety thermocouples for temperature control systems, heat transfer installations, and industrial furnaces tested according to DIN EN 14597.",
+            specs: ["Temp. Range: -35 to +1500 °C", "DIN EN 14597 Certified", "Thermocouple Types: B, K, L, and S", "Tested for thermal oil and boiler installations"],
+            badge: "DIN EN 14597",
+            image: "/product_images/jumo/jumo_901006_safety_en14597.webp"
+          },
+          {
+            name: "JUMO Straight Thermocouples with Ceramic Protection Tube (Type 909744)",
+            desc: "Severe-duty straight thermocouples with ceramic protection tube (Pythagoras / Alsint 99.7) for kilns, glass annealing, and molten non-ferrous metals.",
+            specs: ["Temp. Range: -200 to +1600 °C", "Length: 220 to 2040 mm", "Thermocouple Types: L, K, S, or B", "Noble metal PtRh-Pt thermocouples (Type S/B)"],
+            badge: "DIN 43 732",
+            image: "/product_images/jumo/jumo_909744_ceramic_thermocouple.webp"
+          },
+          {
+            name: "JUMO Screw-in Melt Thermocouples for Plastics Industry (Type 901090)",
+            desc: "Specialized melt temperature thermocouple with ceramic-insulated sharp or flat probe tip for extrusion heads and plastic melt channels.",
+            specs: ["Temp. Range: -40 to +600 °C", "Process Connection: 1/2-20 UNF-2A, M18x1.5", "Thermocouple Types: J, K, and L", "Pressure Resistant up to 2000 bar"],
+            badge: "Type 901090",
+            image: "/product_images/jumo/jumo_901090_melt_thermocouple.webp"
+          },
+          {
+            name: "JUMO FOODtemp Food Insertion Thermocouples (Type 901350)",
+            desc: "Hygienic penetration and insertion thermocouple probe with steam-tight ergonomic Teflon handle and penetration tip for meat, baking, and smoking chambers.",
+            specs: ["Temp. Range: -100 to +260 °C", "Food Grade Design", "Thermocouple Type: K", "Protection Type: IP67 steam-tight"],
+            badge: "FOODtemp",
+            image: "/product_images/jumo/jumo_901350_foodtemp.webp"
+          },
+          {
+            name: "JUMO Thermocouple Compensating Cables & Thermal Wire (Type 909735)",
+            desc: "Standardized compensating cables and thermal wires for the electrical connection between thermocouples and transmitters according to DIN EN 60584 & DIN 43714.",
+            specs: ["Temp. Range: -50 to +350 °C", "Standards: DIN EN 60584 & DIN 43714", "Insulation: PVC, Silicone, Teflon PTFE, Glass fiber with steel braiding", "Color-coded conductors for Type J, K, S, N"],
+            badge: "Type 909735",
+            image: "/product_images/jumo/jumo_909735_compensating_cables.webp"
+          },
+          {
+            name: "JUMO Polarized Plug Connectors for Thermocouples (Type 909760)",
+            desc: "Miniature and standard thermocouple plug connectors with true thermoelectric alloy pins to prevent parasitic thermal EMF errors.",
+            specs: ["Temp. Range: -60 to +200 °C", "Thermocouple Types: J, K, T, E, N, S, R, B", "Polarized flat and round pin versions", "Glass-filled thermoplastic body"],
+            badge: "Type 909760",
+            image: "/product_images/jumo/jumo_909760_connectors.webp"
+          }
+        ]
+      },
+      {
+        categoryName: "RTD Temperature Probes, Transmitters & Recorders",
+        products: [
+          {
+            name: "RTD Temperature Probes & Elements (Pt100 / Pt1000)",
             desc: "Screw-in, push-in, and sanitary Pt100/Pt1000 resistance thermometers with mineral-insulated cable and terminal heads.",
             specs: ["Measurement: -200°C to +600°C", "Tolerance Class A, 1/3 DIN, 1/10 DIN", "Stainless steel thermowells"],
             badge: "RTD Pt100 / Pt1000",
             image: "/product_images/jumo/temperature_probe.jpg"
           },
           {
-            name: "Industrial Thermocouples",
-            desc: "Single and duplex thermocouples (Type J, K, N, S, R, B) for furnaces, molten metals, and high-temp flues.",
-            specs: ["Range up to 1800°C", "Ceramic protective tubes (Pythagoras, Alsint)"],
-            image: "/product_images/jumo/temperature_probe.jpg"
-          },
-          {
-            name: "Temperature Transmitters & Switches",
-            desc: "Head-mounted and DIN-rail programmable transmitters (dTRANS T01/T02/T05) and mechanical dial/capillary thermostats.",
-            specs: ["4-20mA, HART, IO-Link outputs", "Galvanic isolation 3.75kV"],
+            name: "Temperature Transmitters & Switches (dTRANS T01-T07)",
+            desc: "Head-mounted and DIN-rail programmable transmitters (dTRANS T01/T02/T05/T06/T07) with HART, SIL 2/3, and IO-Link.",
+            specs: ["4-20mA, HART 7, Modbus RTU, IO-Link", "Galvanic isolation 3.75kV", "SIL 2 / SIL 3 hardware/software"],
+            badge: "dTRANS Series",
             image: "/product_images/jumo/temperature_probe.jpg"
           },
           {
@@ -801,6 +900,7 @@ export const BRANDS_DATA: BrandData[] = [
             name: "Wireless Temperature Sensors (Wtrans)",
             desc: "Radio transmitter probes for wireless temperature acquisition in rotating tanks, autoclaves, and moving parts.",
             specs: ["868.4 MHz radio band", "Transmission range up to 300m"],
+            badge: "Wtrans Wireless",
             image: "/product_images/jumo/temperature_probe.jpg"
           }
         ]
@@ -819,25 +919,44 @@ export const BRANDS_DATA: BrandData[] = [
             name: "Level Probes & Melt Transmitters",
             desc: "Hydrostatic submersible level probes for deep wells, boreholes, and tanks, plus melt pressure sensors.",
             specs: ["Submersible PUR/FEP cables", "Overvoltage lightning protection"],
+            badge: "Level & Melt",
             image: "/product_images/jumo/midas_pressure.webp"
           },
           {
             name: "Humidity Transducers & Hygrostats",
             desc: "Capacitive relative humidity and temperature transmitters for HVAC cleanrooms, chambers, and drying rooms.",
             specs: ["Range: 0 to 100% RH", "Operating temp -40°C to +180°C"],
+            badge: "Humidity & Temp",
             image: "/product_images/jumo/temperature_probe.jpg"
           },
           {
             name: "Liquid Analysis & TRON Controllers",
             desc: "Sensors and transmitters for pH, ORP, conductivity, turbidity, and chlorine, alongside TRON multi-channel controllers.",
             specs: ["AQUIS touch multi-channel display", "Flow measurement integration"],
+            badge: "Liquid Analysis",
             image: "/product_images/jumo/logoscreen_recorder.webp"
           }
         ]
       }
     ],
-    certifications: ["ISO 9001:2015", "FDA 21 CFR Part 11", "EHEDG Hygienic", "ATEX", "SIL Certified"],
-    targetIndustries: ["Pharmaceutical & Biotech", "Food & Beverage Processing", "Chemical & Petrochemical", "Water & Wastewater", "Furnace & Kiln Systems"]
+    certifications: [
+      "ISO 9001:2015",
+      "DIN EN 14597 (Safety Temperature Limiters)",
+      "DIN EN 60584 & DIN 43710",
+      "FDA 21 CFR Part 11",
+      "SIL 2 / SIL 3 Certified",
+      "ATEX / IECEx Explosion-Proof",
+      "EHEDG Hygienic Certified",
+      "H2ready Hydrogen Certified"
+    ],
+    targetIndustries: [
+      "Furnaces, Kilns & Metallurgy",
+      "Plastics & Extrusion Machinery",
+      "Pharmaceutical & Biotech",
+      "Food & Beverage Processing",
+      "Chemical & Petrochemical",
+      "Power Generation & Boiler Systems"
+    ]
   },
   {
     id: "emerson",
