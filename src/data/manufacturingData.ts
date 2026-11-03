@@ -140,7 +140,10 @@ export const MANUFACTURING_DATA: ManufacturingItem[] = [
         images: [
           "/manufacturing/products/annunciator_panel.jpg",
           "/manufacturing/products/annunciator_panel_multiwindow.jpg",
-          "/manufacturing/products/annunciator_panel_internal.jpg"
+          "/manufacturing/products/annunciator_panel_internal.jpg",
+          "/manufacturing/products/annunciator_panel_cwp_fascia_96window.jpg",
+          "/manufacturing/products/annunciator_panel_door_rear_modules.jpg",
+          "/manufacturing/products/annunciator_panel_internal_terminals_fan.jpg"
         ],
         description:
           "An Annunciator Panel is a Centralized Warning Panel (CWP). Group of lights used as a central indicator of status of equipment or systems in an industrial process, building or other installation. Usually, the annunciator panel includes a main warning lamp or audible signal to draw the attention of operating personnel to the annunciator panel for abnormal events or condition.",
