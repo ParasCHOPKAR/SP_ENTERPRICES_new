@@ -696,7 +696,7 @@ export const BRANDS_DATA: BrandData[] = [
     keyFeatures: [
       "Patented Linear TWIIST® contactless multivariable transducers measuring position, speed, tilt, and vibration",
       "Complete Position Sensing: Linear potentiometers (LT/PK), magnetostrictive (WPG/MK4), rotary Hall sensors (GR3P), MEMS inclinometers (GIG), and draw-wire transducers (GSH)",
-      "High-accuracy Resistance Thermometers (RTD): Pt100/Pt1000 Class A & 1/3 DIN, amplified 4-20mA (AR2/AR6), bayonet extrusion (TR5), interchangeable MgO (TR2), and ambient (TRA)",
+      "High-accuracy Resistance Thermometers (RTD): Pt100/Pt1000 Class A & 1/3 DIN, amplified 4-20mA (AR2/AR6), bayonet extrusion (TR5), and interchangeable MgO (TR2)",
       "Industry-standard Melt Pressure Transducers for plastic extrusion up to 538°C (mercury, oil, NaK filled)",
       "Microprocessor controllers (Series 600, 800, 1200, 1600) and ADV200 high-performance vector inverters",
       "Extreme measurement repeatability and durability in aggressive industrial environments"
@@ -882,30 +882,6 @@ export const BRANDS_DATA: BrandData[] = [
             ],
             badge: "Cable-Type Probe",
             image: "/product_images/gefran/gefran_rtd_tr6_cable.jpg"
-          },
-          {
-            name: "TRM / TRPM Series Mineral Insulated Contact RTDs",
-            desc: "Curved and flat contact tip resistance thermometers designed for direct surface temperature measurement on pipes, molds, and bearing housings.",
-            specs: [
-              "Tip design: Curved saddle for pipe contact or flat contact shoe",
-              "Fast response: Ultra-low thermal inertia contact geometry",
-              "Insulation: Compacted magnesium oxide (MgO)",
-              "Mounting: Pipe clamp band or screw fastening"
-            ],
-            badge: "Surface Contact RTD",
-            image: "/product_images/gefran/gefran_rtd_trm_mgo.jpg"
-          },
-          {
-            name: "TRA Series Ambient & Room Temperature Transmitters",
-            desc: "Wall-mounted ambient temperature sensors with ventilated IP65 housing for HVAC, pharmaceutical cleanrooms, laboratories, and storage facilities.",
-            specs: [
-              "Measurement range: -20°C to +70°C",
-              "Accuracy: Class A Pt100 / ±0.2°C",
-              "Housing: Impact-resistant ABS enclosure with wall-mount bracket",
-              "Output options: Direct Pt100 (3-wire) or 4-20mA loop transmitter"
-            ],
-            badge: "Ambient & Cleanroom",
-            image: "/product_images/gefran/gefran_rtd_tra_ambient.jpg"
           }
         ]
       },
