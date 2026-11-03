@@ -12,6 +12,7 @@ import { BRANDS_DATA, BRAND_HERO_MAP } from "@/data/brandsData";
 export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: string }) {
   const clientParams = useParams();
   const router = useRouter();
+  const [selectedCategory, setSelectedCategory] = React.useState<string>("all");
   
   const brandId = propBrandId || (clientParams?.brandId as string) || "";
   
@@ -270,27 +271,112 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
 
           {/* Complete Product Catalog */}
           <div>
-            <div style={{ display: "flex", borderBottom: "none", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2rem", flexWrap: "wrap", gap: "1rem" }}>
-              <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "#0f172a", display: "flex", alignItems: "center", gap: "0.6rem", margin: 0 }}>
-                <Cpu size={28} color="#c8102e" /> Complete Product Catalog
-              </h3>
-              <span style={{ background: "#fff1f2", color: "#c8102e", padding: "0.5rem 1rem", borderRadius: "8px", fontWeight: 700 }}>
-                {brand.categories.reduce((acc, cat) => acc + cat.products.length, 0)} Key Products Listed
+            <div style={{ display: "flex", borderBottom: "none", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "1.5rem", flexWrap: "wrap", gap: "1rem" }}>
+              <div>
+                <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "#0f172a", display: "flex", alignItems: "center", gap: "0.6rem", margin: "0 0 0.4rem 0" }}>
+                  <Cpu size={28} color="#c8102e" /> Complete Product Catalog
+                </h3>
+                <p style={{ margin: 0, fontSize: "0.95rem", color: "#64748b" }}>
+                  Explore verified products, specifications, and certified measurement instruments.
+                </p>
+              </div>
+              <span style={{ background: "#fff1f2", color: "#c8102e", padding: "0.5rem 1rem", borderRadius: "8px", fontWeight: 700, fontSize: "0.9rem" }}>
+                {brand.categories.reduce((acc, cat) => acc + cat.products.length, 0)} Total Products Listed
               </span>
             </div>
 
+            {/* Category Filter Pills (if multiple categories) */}
+            {brand.categories.length > 1 && (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem", marginBottom: "2rem" }}>
+                <button
+                  type="button"
+                  onClick={() => setSelectedCategory("all")}
+                  style={{
+                    padding: "0.5rem 1.1rem",
+                    borderRadius: "50px",
+                    border: selectedCategory === "all" ? "2px solid #c8102e" : "1px solid #cbd5e1",
+                    background: selectedCategory === "all" ? "#c8102e" : "#ffffff",
+                    color: selectedCategory === "all" ? "#ffffff" : "#334155",
+                    fontWeight: 700,
+                    fontSize: "0.85rem",
+                    cursor: "pointer",
+                    boxShadow: selectedCategory === "all" ? "0 4px 12px rgba(200, 16, 46, 0.25)" : "none",
+                    transition: "all 0.2s ease",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.4rem"
+                  }}
+                >
+                  <span>All Categories</span>
+                  <span style={{
+                    background: selectedCategory === "all" ? "rgba(255,255,255,0.25)" : "#f1f5f9",
+                    color: selectedCategory === "all" ? "#ffffff" : "#64748b",
+                    fontSize: "0.75rem",
+                    padding: "0.15rem 0.5rem",
+                    borderRadius: "10px",
+                    fontWeight: 700
+                  }}>
+                    {brand.categories.reduce((acc, cat) => acc + cat.products.length, 0)}
+                  </span>
+                </button>
+                {brand.categories.map((cat, idx) => {
+                  const isActive = selectedCategory === cat.categoryName;
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setSelectedCategory(cat.categoryName)}
+                      style={{
+                        padding: "0.5rem 1rem",
+                        borderRadius: "50px",
+                        border: isActive ? "2px solid #c8102e" : "1px solid #cbd5e1",
+                        background: isActive ? "#c8102e" : "#ffffff",
+                        color: isActive ? "#ffffff" : "#334155",
+                        fontWeight: 600,
+                        fontSize: "0.85rem",
+                        cursor: "pointer",
+                        boxShadow: isActive ? "0 4px 12px rgba(200, 16, 46, 0.25)" : "none",
+                        transition: "all 0.2s ease",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.4rem"
+                      }}
+                    >
+                      <span>{cat.categoryName}</span>
+                      <span style={{
+                        background: isActive ? "rgba(255,255,255,0.25)" : "#f1f5f9",
+                        color: isActive ? "#ffffff" : "#64748b",
+                        fontSize: "0.75rem",
+                        padding: "0.15rem 0.45rem",
+                        borderRadius: "10px",
+                        fontWeight: 700
+                      }}>
+                        {cat.products.length}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+
             <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-              {brand.categories.map((cat, idx) => (
+              {(selectedCategory === "all"
+                ? brand.categories
+                : brand.categories.filter((c) => c.categoryName === selectedCategory)
+              ).map((cat, idx) => (
                 <div key={idx} style={{ background: "white", borderRadius: "16px", overflow: "hidden", border: "1px solid #e2e8f0", boxShadow: "0 5px 15px rgba(0,0,0,0.03)" }}>
-                  <div style={{ background: "#f8fafc", padding: "1.5rem", borderBottom: "1px solid #e2e8f0", borderLeft: "5px solid #c8102e" }}>
-                    <h4 style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                  <div style={{ background: "#f8fafc", padding: "1.2rem 1.5rem", borderBottom: "1px solid #e2e8f0", borderLeft: "5px solid #c8102e", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <h4 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
                       {cat.categoryName}
                     </h4>
+                    <span style={{ background: "#e2e8f0", color: "#334155", fontSize: "0.8rem", fontWeight: 700, padding: "0.25rem 0.65rem", borderRadius: "20px" }}>
+                      {cat.products.length} Products
+                    </span>
                   </div>
                   <div style={{ padding: "clamp(1rem, 3vw, 2rem)", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 290px), 1fr))", gap: "1.5rem" }}>
                     {cat.products.map((prod, pIdx) => (
                       <div key={pIdx} style={{ border: "1px solid #e2e8f0", borderRadius: "12px", padding: "1.5rem", background: "#ffffff", display: "flex", flexDirection: "column", boxShadow: "0 2px 8px rgba(0,0,0,0.02)", transition: "all 0.25s ease" }}>
-                        <div style={{ width: "100%", height: "200px", backgroundColor: "#f8fafc", borderRadius: "10px", marginBottom: "1.2rem", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", border: prod.image ? "1px solid #e2e8f0" : "1px dashed #cbd5e1" }}>
+                        <div style={{ width: "100%", height: "200px", backgroundColor: "#ffffff", borderRadius: "10px", marginBottom: "1.2rem", position: "relative", overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", border: prod.image ? "1px solid #f1f5f9" : "1px dashed #cbd5e1" }}>
                            <Image 
                              src={prod.image || "/product_img_product.png"} 
                              alt={prod.name} 
@@ -298,25 +384,25 @@ export default function BrandDetailClient({ brandId: propBrandId }: { brandId?: 
                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                              style={{ 
                                objectFit: "contain", 
-                               padding: prod.image ? "0.6rem" : "1rem", 
-                               opacity: prod.image ? 1 : 0.8 
+                               padding: "0.75rem", 
+                               opacity: 1 
                              }} 
                            />
                         </div>
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", marginBottom: "0.8rem" }}>
-                          <h5 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#1e293b", margin: 0, lineHeight: 1.4 }}>{prod.name}</h5>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.8rem", marginBottom: "0.8rem" }}>
+                          <h5 style={{ fontSize: "1.05rem", fontWeight: 700, color: "#1e293b", margin: 0, lineHeight: 1.4 }}>{prod.name}</h5>
                           {prod.badge && (
                             <span style={{ border: "1px solid #c8102e", color: "#c8102e", fontSize: "0.7rem", fontWeight: 700, padding: "0.2rem 0.5rem", borderRadius: "4px", whiteSpace: "nowrap" }}>
                               {prod.badge}
                             </span>
                           )}
                         </div>
-                        <p style={{ fontSize: "0.9rem", color: "#64748b", lineHeight: 1.5, marginBottom: "1.2rem", flex: 1 }}>{prod.desc}</p>
+                        <p style={{ fontSize: "0.88rem", color: "#64748b", lineHeight: 1.5, marginBottom: "1.2rem", flex: 1 }}>{prod.desc}</p>
                         
                         {prod.specs && prod.specs.length > 0 && (
-                          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "auto" }}>
+                          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.45rem", marginTop: "auto" }}>
                             {prod.specs.map((spec, sIdx) => (
-                              <span key={sIdx} style={{ background: "#f1f5f9", color: "#475569", fontSize: "0.75rem", padding: "0.3rem 0.6rem", borderRadius: "4px", fontWeight: 500 }}>
+                              <span key={sIdx} style={{ background: "#f1f5f9", color: "#475569", fontSize: "0.75rem", padding: "0.25rem 0.55rem", borderRadius: "4px", fontWeight: 500 }}>
                                 {spec}
                               </span>
                             ))}
